@@ -13,6 +13,7 @@
 		AFE66C801CCA122A000931E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE66C7F1CCA122A000931E9 /* Assets.xcassets */; };
 		AFE66C831CCA122A000931E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE66C811CCA122A000931E9 /* LaunchScreen.storyboard */; };
 		AFE66C8E1CCA122A000931E9 /* logadogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE66C8D1CCA122A000931E9 /* logadogTests.swift */; };
+		AFE66C9C1CCA3A9F000931E9 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE66C9A1CCA3A9F000931E9 /* KeychainWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 		AFE66C891CCA122A000931E9 /* logadogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = logadogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE66C8D1CCA122A000931E9 /* logadogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logadogTests.swift; sourceTree = "<group>"; };
 		AFE66C8F1CCA122A000931E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFE66C991CCA3A9E000931E9 /* logadog-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "logadog-Bridging-Header.h"; sourceTree = "<group>"; };
+		AFE66C9A1CCA3A9F000931E9 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		AFE66C9B1CCA3A9F000931E9 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		AFE66C771CCA122A000931E9 /* logadog */ = {
 			isa = PBXGroup;
 			children = (
+				AFE66C981CCA3A93000931E9 /* libs */,
 				AFE66C781CCA122A000931E9 /* AppDelegate.swift */,
 				AFE66C7A1CCA122A000931E9 /* SignupViewController.swift */,
 				AFE66C7C1CCA122A000931E9 /* Main.storyboard */,
@@ -94,6 +99,16 @@
 				AFE66C8F1CCA122A000931E9 /* Info.plist */,
 			);
 			path = logadogTests;
+			sourceTree = "<group>";
+		};
+		AFE66C981CCA3A93000931E9 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				AFE66C9A1CCA3A9F000931E9 /* KeychainWrapper.m */,
+				AFE66C9B1CCA3A9F000931E9 /* KeychainWrapper.h */,
+				AFE66C991CCA3A9E000931E9 /* logadog-Bridging-Header.h */,
+			);
+			name = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE66C9C1CCA3A9F000931E9 /* KeychainWrapper.m in Sources */,
 				AFE66C7B1CCA122A000931E9 /* SignupViewController.swift in Sources */,
 				AFE66C791CCA122A000931E9 /* AppDelegate.swift in Sources */,
 			);
@@ -329,10 +345,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = logadog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = es.islandsapps.logadog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "logadog/logadog-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -340,10 +359,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = logadog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = es.islandsapps.logadog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "logadog/logadog-Bridging-Header.h";
 			};
 			name = Release;
 		};
