@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFAC88491CD23C8E000F811A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC88481CD23C8E000F811A /* StartViewController.swift */; };
+		AFAC884B1CD24798000F811A /* DogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC884A1CD24798000F811A /* DogsTableViewController.swift */; };
+		AFAC884E1CD341BB000F811A /* jsonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC884D1CD341BB000F811A /* jsonHandler.swift */; };
+		AFAC88511CD3498C000F811A /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC88501CD3498C000F811A /* Messages.swift */; };
+		AFAC88531CD34999000F811A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC88521CD34999000F811A /* Colors.swift */; };
+		AFAC88551CD35045000F811A /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC88541CD35045000F811A /* Dog.swift */; };
+		AFB7EDC81CCF672D00D1AFE9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7EDC71CCF672D00D1AFE9 /* LoginViewController.swift */; };
+		AFB7EDCB1CCF67CE00D1AFE9 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7EDCA1CCF67CE00D1AFE9 /* ApplicationSettings.swift */; };
+		AFB7EDD01CCF9CB300D1AFE9 /* CreateDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7EDCF1CCF9CB300D1AFE9 /* CreateDogViewController.swift */; };
 		AFE66C791CCA122A000931E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE66C781CCA122A000931E9 /* AppDelegate.swift */; };
 		AFE66C7B1CCA122A000931E9 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE66C7A1CCA122A000931E9 /* SignupViewController.swift */; };
 		AFE66C7E1CCA122A000931E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE66C7C1CCA122A000931E9 /* Main.storyboard */; };
@@ -27,6 +36,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AFAC88481CD23C8E000F811A /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		AFAC884A1CD24798000F811A /* DogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
+		AFAC884D1CD341BB000F811A /* jsonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonHandler.swift; sourceTree = "<group>"; };
+		AFAC88501CD3498C000F811A /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		AFAC88521CD34999000F811A /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		AFAC88541CD35045000F811A /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		AFB7EDC71CCF672D00D1AFE9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AFB7EDCA1CCF67CE00D1AFE9 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
+		AFB7EDCC1CCF98E900D1AFE9 /* Authentication.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Authentication.playground; sourceTree = "<group>"; };
+		AFB7EDCF1CCF9CB300D1AFE9 /* CreateDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateDogViewController.swift; sourceTree = "<group>"; };
 		AFE66C751CCA122A000931E9 /* logadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = logadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE66C781CCA122A000931E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFE66C7A1CCA122A000931E9 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -60,9 +79,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AFAC884C1CD341A2000F811A /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AFAC884D1CD341BB000F811A /* jsonHandler.swift */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		AFAC884F1CD34970000F811A /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				AFB7EDCA1CCF67CE00D1AFE9 /* ApplicationSettings.swift */,
+				AFAC88501CD3498C000F811A /* Messages.swift */,
+				AFAC88521CD34999000F811A /* Colors.swift */,
+			);
+			name = settings;
+			sourceTree = "<group>";
+		};
+		AFB7EDC61CCF66FC00D1AFE9 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFE66C7A1CCA122A000931E9 /* SignupViewController.swift */,
+				AFB7EDC71CCF672D00D1AFE9 /* LoginViewController.swift */,
+				AFB7EDCF1CCF9CB300D1AFE9 /* CreateDogViewController.swift */,
+				AFAC88481CD23C8E000F811A /* StartViewController.swift */,
+				AFAC884A1CD24798000F811A /* DogsTableViewController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
 		AFE66C6C1CCA122A000931E9 = {
 			isa = PBXGroup;
 			children = (
+				AFB7EDCC1CCF98E900D1AFE9 /* Authentication.playground */,
 				AFE66C771CCA122A000931E9 /* logadog */,
 				AFE66C8C1CCA122A000931E9 /* logadogTests */,
 				AFE66C761CCA122A000931E9 /* Products */,
@@ -81,13 +131,15 @@
 		AFE66C771CCA122A000931E9 /* logadog */ = {
 			isa = PBXGroup;
 			children = (
+				AFAC884F1CD34970000F811A /* settings */,
+				AFAC884C1CD341A2000F811A /* helpers */,
+				AFB7EDC61CCF66FC00D1AFE9 /* controllers */,
 				AFE66C981CCA3A93000931E9 /* libs */,
-				AFE66C781CCA122A000931E9 /* AppDelegate.swift */,
-				AFE66C7A1CCA122A000931E9 /* SignupViewController.swift */,
 				AFE66C7C1CCA122A000931E9 /* Main.storyboard */,
 				AFE66C7F1CCA122A000931E9 /* Assets.xcassets */,
 				AFE66C811CCA122A000931E9 /* LaunchScreen.storyboard */,
 				AFE66C841CCA122A000931E9 /* Info.plist */,
+				AFAC88541CD35045000F811A /* Dog.swift */,
 			);
 			path = logadog;
 			sourceTree = "<group>";
@@ -104,6 +156,7 @@
 		AFE66C981CCA3A93000931E9 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				AFE66C781CCA122A000931E9 /* AppDelegate.swift */,
 				AFE66C9A1CCA3A9F000931E9 /* KeychainWrapper.m */,
 				AFE66C9B1CCA3A9F000931E9 /* KeychainWrapper.h */,
 				AFE66C991CCA3A9E000931E9 /* logadog-Bridging-Header.h */,
@@ -214,9 +267,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFB7EDC81CCF672D00D1AFE9 /* LoginViewController.swift in Sources */,
+				AFAC88531CD34999000F811A /* Colors.swift in Sources */,
+				AFAC88551CD35045000F811A /* Dog.swift in Sources */,
+				AFAC88491CD23C8E000F811A /* StartViewController.swift in Sources */,
+				AFB7EDD01CCF9CB300D1AFE9 /* CreateDogViewController.swift in Sources */,
 				AFE66C9C1CCA3A9F000931E9 /* KeychainWrapper.m in Sources */,
+				AFAC884B1CD24798000F811A /* DogsTableViewController.swift in Sources */,
 				AFE66C7B1CCA122A000931E9 /* SignupViewController.swift in Sources */,
 				AFE66C791CCA122A000931E9 /* AppDelegate.swift in Sources */,
+				AFAC88511CD3498C000F811A /* Messages.swift in Sources */,
+				AFB7EDCB1CCF67CE00D1AFE9 /* ApplicationSettings.swift in Sources */,
+				AFAC884E1CD341BB000F811A /* jsonHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +473,7 @@
 				AFE66C941CCA122A000931E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFE66C951CCA122A000931E9 /* Build configuration list for PBXNativeTarget "logadogTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +482,7 @@
 				AFE66C971CCA122A000931E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

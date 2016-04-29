@@ -1,31 +1,35 @@
 //
-//  SignupViewController.swift
+//  LoginViewController.swift
 //  logadog
 //
-//  Created by Henrik Fogelberg on 2016-04-22.
+//  Created by Henrik Fogelberg on 2016-04-26.
 //  Copyright © 2016 Henrik Fogelberg. All rights reserved.
 //
 
 import UIKit
 
-class SignupViewController: UIViewController {
-    
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
+class LoginViewController: UIViewController {
+
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
-    @IBAction func signupButtonTapped(sender: AnyObject) {
-        var running = true
-        let myUrl = NSURL(string: "\(API_ROUTE_URL)\(Routes.USERS)")
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func loginButtonTapped(sender: AnyObject) {
+        var running = false
+        let myUrl = NSURL(string: "\(API_ROUTE_URL)\(Routes.AUTHENTICATE)")
         let request = NSMutableURLRequest(URL:myUrl!)
-        request.HTTPMethod = "\(Verbs.GET)"
-        let postString = "name=\(nameTextField.text)&email=\(emailTextField.text)&username=\(usernameTextField.text)&password=\(passwordTextField.text)"
+        request.HTTPMethod = "\(Verbs.POST)"
+        let postString = "username=\(usernameTextField.text)&password=\(passwordTextField.text)"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
@@ -65,12 +69,20 @@ class SignupViewController: UIViewController {
                         MyKeychainWrapper.writeToKeychain()
                         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "logadogLoginKey")
                         NSUserDefaults.standardUserDefaults().synchronize()
+                        
+                        print("We have a token!")
+                        
+                        dispatch_async(dispatch_get_main_queue()) {
+                            [unowned self] in
+                            self.performSegueWithIdentifier("loginShowDogsSegue", sender: self)
+                        }
+                        
                     } else {
                         let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
                         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
                         self.presentViewController(alert, animated: true, completion: nil)
                     }
-
+                    
                     running = false
                 }
             } catch {
@@ -78,12 +90,12 @@ class SignupViewController: UIViewController {
             }
         }
         
+        running = true
+        task.resume()
+        
         while running {
             print("Running")
             sleep(1)
         }
-        
-        task.resume()
     }
 }
-
