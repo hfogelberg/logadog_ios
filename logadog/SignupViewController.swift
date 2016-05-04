@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class SignupViewController: UIViewController {
     
@@ -21,11 +22,22 @@ class SignupViewController: UIViewController {
     }
 
     @IBAction func signupButtonTapped(sender: AnyObject) {
-        var running = true
+        var running = false
+        var message: String?
+        var status: Int?
+        var user_id: String?
+        var token: String?
+        
         let myUrl = NSURL(string: "\(API_ROUTE_URL)\(Routes.USERS)")
         let request = NSMutableURLRequest(URL:myUrl!)
-        request.HTTPMethod = "\(Verbs.GET)"
-        let postString = "name=\(nameTextField.text)&email=\(emailTextField.text)&username=\(usernameTextField.text)&password=\(passwordTextField.text)"
+        request.HTTPMethod = "\(Verbs.POST)"
+        
+        let username = usernameTextField.text!
+        let password = passwordTextField.text!
+        let name = nameTextField.text!
+        let email = emailTextField.text!
+        
+        let postString = "username=\(username)&password=\(password)&name=\(name)&email=\(email)"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
@@ -45,32 +57,20 @@ class SignupViewController: UIViewController {
             do {
                 let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
                 print(jsonDictionary)
+                
                 if let jsonDictionary:NSDictionary = jsonDictionary {
-                    let message = jsonDictionary["message"] as? String
-                    let success = jsonDictionary["success"] as! Bool
-                    let user_id = jsonDictionary["user_id"] as? String
-                    let token = jsonDictionary["token"] as? String
-                    print("message: \(message)")
-                    
-                    if success {
-                        // Save username and password in Keychain
-                        let hasLoginKey = NSUserDefaults.standardUserDefaults().boolForKey("logadogLoginKey")
-                        if hasLoginKey == false {
-                            NSUserDefaults.standardUserDefaults().setValue(user_id, forKey: "user_id")
-                            NSUserDefaults.standardUserDefaults().setValue(token, forKey: "token")
-                        }
-                        
-                        let MyKeychainWrapper = KeychainWrapper()
-                        MyKeychainWrapper.mySetObject(self.passwordTextField.text, forKey:kSecValueData)
-                        MyKeychainWrapper.writeToKeychain()
-                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "logadogLoginKey")
-                        NSUserDefaults.standardUserDefaults().synchronize()
-                    } else {
-                        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-                        self.presentViewController(alert, animated: true, completion: nil)
+                    if let messageResponse = jsonDictionary["message"] as? String {
+                        message = messageResponse
                     }
-
+                    if let successResponse = jsonDictionary["success"] as? Int {
+                        status = successResponse
+                    }
+                    if let userResponse = jsonDictionary["user_id"] as? String {
+                        user_id = userResponse
+                    }
+                    if let tokenResponse = jsonDictionary["token"] as? String {
+                        token = tokenResponse
+                    }
                     running = false
                 }
             } catch {
@@ -78,12 +78,28 @@ class SignupViewController: UIViewController {
             }
         }
         
+        running = true
+        task.resume()
+        
         while running {
             print("Running")
             sleep(1)
         }
         
-        task.resume()
+        if status == TRUE {
+            KeychainWrapper.setString(token!, forKey: KEYCHAIN_TOKEN)
+            KeychainWrapper.setString(user_id!, forKey: KEYCHAIN_USER)
+            
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.performSegueWithIdentifier("signupShowDogsSegue", sender: self)
+            }
+            
+        } else {
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
 }
 

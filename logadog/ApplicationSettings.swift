@@ -10,17 +10,3 @@ import Foundation
 
 let API_ROUTE_URL = "http://localhost:3000/api/"
 
-enum Routes: String {
-    case AUTHENTICATE = "authenticate"
-    case USERS = "users"
-    case DOGS = "dogs"
-}
-
-
-enum Verbs: String {
-    case GET = "GET"
-    case POST = "POST"
-    case PUT = "PUT"
-}
-
-

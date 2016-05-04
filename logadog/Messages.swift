@@ -8,4 +8,6 @@
 
 import Foundation
 
-let REQUIRED_TOKEN_MISSING = "You've been logged out from the system. Please log in again"
+let MSG_SIGN_IN = "Sign in"
+let MSG_TOKEN_MISSING = "You have been signed out of the app. Please log in again"
+let MSG_TOKEN_INVALID = "Please log in again"

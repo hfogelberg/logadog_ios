@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		938FEA48A1354FA712A94959 /* Pods_logadog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3E7A02AAD3C347AD062F10 /* Pods_logadog.framework */; };
+		AF3A6F911CD7577C001ED9D8 /* TokenHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F901CD7577C001ED9D8 /* TokenHelper.swift */; };
+		AF3A6F931CD7581F001ED9D8 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F921CD7581F001ED9D8 /* Api.swift */; };
+		AF3A6F951CD7893F001ED9D8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F941CD7893F001ED9D8 /* Constants.swift */; };
 		AFAC88491CD23C8E000F811A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC88481CD23C8E000F811A /* StartViewController.swift */; };
 		AFAC884B1CD24798000F811A /* DogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC884A1CD24798000F811A /* DogsTableViewController.swift */; };
 		AFAC884E1CD341BB000F811A /* jsonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC884D1CD341BB000F811A /* jsonHandler.swift */; };
@@ -22,7 +26,6 @@
 		AFE66C801CCA122A000931E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE66C7F1CCA122A000931E9 /* Assets.xcassets */; };
 		AFE66C831CCA122A000931E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE66C811CCA122A000931E9 /* LaunchScreen.storyboard */; };
 		AFE66C8E1CCA122A000931E9 /* logadogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE66C8D1CCA122A000931E9 /* logadogTests.swift */; };
-		AFE66C9C1CCA3A9F000931E9 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE66C9A1CCA3A9F000931E9 /* KeychainWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BFEFB41F3BE9CBE1DD2AEA9 /* Pods-logadog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-logadog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-logadog/Pods-logadog.debug.xcconfig"; sourceTree = "<group>"; };
+		AF3A6F901CD7577C001ED9D8 /* TokenHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenHelper.swift; sourceTree = "<group>"; };
+		AF3A6F921CD7581F001ED9D8 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		AF3A6F941CD7893F001ED9D8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AFAC88481CD23C8E000F811A /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		AFAC884A1CD24798000F811A /* DogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
 		AFAC884D1CD341BB000F811A /* jsonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonHandler.swift; sourceTree = "<group>"; };
@@ -57,8 +64,8 @@
 		AFE66C8D1CCA122A000931E9 /* logadogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logadogTests.swift; sourceTree = "<group>"; };
 		AFE66C8F1CCA122A000931E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFE66C991CCA3A9E000931E9 /* logadog-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "logadog-Bridging-Header.h"; sourceTree = "<group>"; };
-		AFE66C9A1CCA3A9F000931E9 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
-		AFE66C9B1CCA3A9F000931E9 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		BFF60E7ABA4A9AC050C2D95E /* Pods-logadog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-logadog.release.xcconfig"; path = "Pods/Target Support Files/Pods-logadog/Pods-logadog.release.xcconfig"; sourceTree = "<group>"; };
+		CC3E7A02AAD3C347AD062F10 /* Pods_logadog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_logadog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				938FEA48A1354FA712A94959 /* Pods_logadog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +87,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		051A737611DC8BFF0DC8C764 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC3E7A02AAD3C347AD062F10 /* Pods_logadog.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8EDB3EDFC432FCF923972DA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BFEFB41F3BE9CBE1DD2AEA9 /* Pods-logadog.debug.xcconfig */,
+				BFF60E7ABA4A9AC050C2D95E /* Pods-logadog.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF3A6F981CD9F7B0001ED9D8 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				AFAC88541CD35045000F811A /* Dog.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		AFAC884C1CD341A2000F811A /* helpers */ = {
 			isa = PBXGroup;
 			children = (
 				AFAC884D1CD341BB000F811A /* jsonHandler.swift */,
+				AF3A6F901CD7577C001ED9D8 /* TokenHelper.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -93,6 +127,8 @@
 				AFB7EDCA1CCF67CE00D1AFE9 /* ApplicationSettings.swift */,
 				AFAC88501CD3498C000F811A /* Messages.swift */,
 				AFAC88521CD34999000F811A /* Colors.swift */,
+				AF3A6F921CD7581F001ED9D8 /* Api.swift */,
+				AF3A6F941CD7893F001ED9D8 /* Constants.swift */,
 			);
 			name = settings;
 			sourceTree = "<group>";
@@ -116,6 +152,8 @@
 				AFE66C771CCA122A000931E9 /* logadog */,
 				AFE66C8C1CCA122A000931E9 /* logadogTests */,
 				AFE66C761CCA122A000931E9 /* Products */,
+				8EDB3EDFC432FCF923972DA4 /* Pods */,
+				051A737611DC8BFF0DC8C764 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +169,8 @@
 		AFE66C771CCA122A000931E9 /* logadog */ = {
 			isa = PBXGroup;
 			children = (
+				AF3A6F981CD9F7B0001ED9D8 /* models */,
+				AFE66C781CCA122A000931E9 /* AppDelegate.swift */,
 				AFAC884F1CD34970000F811A /* settings */,
 				AFAC884C1CD341A2000F811A /* helpers */,
 				AFB7EDC61CCF66FC00D1AFE9 /* controllers */,
@@ -139,7 +179,6 @@
 				AFE66C7F1CCA122A000931E9 /* Assets.xcassets */,
 				AFE66C811CCA122A000931E9 /* LaunchScreen.storyboard */,
 				AFE66C841CCA122A000931E9 /* Info.plist */,
-				AFAC88541CD35045000F811A /* Dog.swift */,
 			);
 			path = logadog;
 			sourceTree = "<group>";
@@ -156,9 +195,6 @@
 		AFE66C981CCA3A93000931E9 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				AFE66C781CCA122A000931E9 /* AppDelegate.swift */,
-				AFE66C9A1CCA3A9F000931E9 /* KeychainWrapper.m */,
-				AFE66C9B1CCA3A9F000931E9 /* KeychainWrapper.h */,
 				AFE66C991CCA3A9E000931E9 /* logadog-Bridging-Header.h */,
 			);
 			name = libs;
@@ -171,9 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFE66C921CCA122A000931E9 /* Build configuration list for PBXNativeTarget "logadog" */;
 			buildPhases = (
+				9386006646B6B3B55165D16A /* Check Pods Manifest.lock */,
 				AFE66C711CCA122A000931E9 /* Sources */,
 				AFE66C721CCA122A000931E9 /* Frameworks */,
 				AFE66C731CCA122A000931E9 /* Resources */,
+				746523EA0139E6DC8A977291 /* Embed Pods Frameworks */,
+				8762720819281BFA692CA4B3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,6 +301,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		746523EA0139E6DC8A977291 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-logadog/Pods-logadog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8762720819281BFA692CA4B3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-logadog/Pods-logadog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9386006646B6B3B55165D16A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AFE66C711CCA122A000931E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -272,13 +359,15 @@
 				AFAC88551CD35045000F811A /* Dog.swift in Sources */,
 				AFAC88491CD23C8E000F811A /* StartViewController.swift in Sources */,
 				AFB7EDD01CCF9CB300D1AFE9 /* CreateDogViewController.swift in Sources */,
-				AFE66C9C1CCA3A9F000931E9 /* KeychainWrapper.m in Sources */,
+				AF3A6F951CD7893F001ED9D8 /* Constants.swift in Sources */,
 				AFAC884B1CD24798000F811A /* DogsTableViewController.swift in Sources */,
 				AFE66C7B1CCA122A000931E9 /* SignupViewController.swift in Sources */,
 				AFE66C791CCA122A000931E9 /* AppDelegate.swift in Sources */,
 				AFAC88511CD3498C000F811A /* Messages.swift in Sources */,
 				AFB7EDCB1CCF67CE00D1AFE9 /* ApplicationSettings.swift in Sources */,
 				AFAC884E1CD341BB000F811A /* jsonHandler.swift in Sources */,
+				AF3A6F931CD7581F001ED9D8 /* Api.swift in Sources */,
+				AF3A6F911CD7577C001ED9D8 /* TokenHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +494,7 @@
 		};
 		AFE66C931CCA122A000931E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BFEFB41F3BE9CBE1DD2AEA9 /* Pods-logadog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -419,6 +509,7 @@
 		};
 		AFE66C941CCA122A000931E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFF60E7ABA4A9AC050C2D95E /* Pods-logadog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

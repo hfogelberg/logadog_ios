@@ -7,58 +7,109 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class DogsTableViewController: UITableViewController {
-    
-    var dogs = [Dog].self
+
+    var dogs: [Dog] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("DogsTableViewController")
         
         getMyDogs()
     }
     
-    func getMyDogs() {        var running = false
-        let dogs = jsonHandler.fetchJsonString("dogs", urlParams: "", httpVerb: "GET", mustHaveToken: true)
-        running = true
+    func getMyDogs() {
+        var status = 0
+        var message = ""
+        var token = ""
+        var userId = ""
         
-        print(dogs)
+        if let tokenVal: String = KeychainWrapper.stringForKey(KEYCHAIN_TOKEN) {
+            token = tokenVal
+        }
+        
+        if let userIdVal: String = KeychainWrapper.stringForKey(KEYCHAIN_USER) {
+            userId = userIdVal
+        }
+        
+        let urlWithParams =  "\(API_ROUTE_URL)\(Routes.DOGS)/\(userId)?token=\(token)"
+        print("Get Dogs url:  \(urlWithParams)")
+        let myUrl = NSURL(string: urlWithParams)
+        let request = NSMutableURLRequest(URL:myUrl!)
+        request.HTTPMethod = "\(Verbs.GET)"
+        
+        if token != "" {
+//            request.addValue("Token token=\(token)", forHTTPHeaderField: "x-access-token")
+            
+            // Excute HTTP Request
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+                data, response, error in
 
+                if error != nil
+                {
+                    status = FALSE
+                    
+                    
+                } else {
+                    do {
+                        if let response = NSString(data: data!, encoding: NSUTF8StringEncoding) {
+                            print(response)
+                            let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                            if let statusResponse = jsonDictionary["success"] as? Int {
+                                status = statusResponse
+                            }
+                            if let messageResponse = jsonDictionary["message"] as? String {
+                                message = messageResponse
+                            }
+                            if let dogResponse = jsonDictionary["dogs"] as! NSArray? {
+                                for dog in dogResponse {
+                                    var name = ""
+                                    var breed = ""
+                                    
+                                    if let dogName = dog["name"] as? String {
+                                        name = dogName
+                                    }
+                                    
+                                    if let dogBreed = dog["breed"] as? String {
+                                        breed = dogBreed
+                                    }
+                                    
+                                    let newDog = Dog(name: name, breed: breed)
+                                    self.dogs.append(newDog)
+                                }
+                                self.tableView.reloadData()
+                            }
+                            
+                            if status == FALSE {
+                                let messageTitle = MSG_SIGN_IN
+                                let alert = UIAlertController(title: messageTitle, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                                alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: {(action:UIAlertAction) in
+                                    dispatch_async(dispatch_get_main_queue()) {
+                                        self.performSegueWithIdentifier("returnToLoginSegue", sender: self)
+                                    }
+                                }))
+                                self.presentViewController(alert, animated: true, completion: nil);
+                            } else {
+                                
+                            }
+                        }
+                    } catch {
+                        status = FALSE
+                        // ToDo: Fix error message and use constant
+                        message = "Error reading from server"
+                        print(message)
+                    }
+                }
+            }
+            
+        
+            task.resume()
+        } else {
+            // ToDo
+            // No token. Show error message
+        }
     }
-    
-//    func getMyDogs() {
-//        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-//
-//        
-//        let userPasswordString = "dogs\(checkTokenAndGetUSer())"
-//        let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
-//        let base64EncodedCredential = userPasswordData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue:0))
-//         let authString = "Basic \(base64EncodedCredential)"
-//         config.HTTPAdditionalHeaders = ["Authorization" : authString]
-//         let session = NSURLSession(configuration: config)
-//        
-//         var running = false
-//         let url = NSURL(string: "\(API_ROUTE_URL)login")
-//         let task = session.dataTaskWithURL(url!) {
-//             (let data, let response, let error) in
-//             if let _ = response as? NSHTTPURLResponse {
-//                 let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//                 print(dataString)
-//             }
-//             running = false
-//         }
-//        
-//         running = true
-//         task.resume()
-//         
-//         while running {
-//             print("waiting...")
-//             sleep(1)
-//         }
-//    }
-    
     func checkTokenAndGetUSer() -> String {
         let hasLogin = NSUserDefaults.standardUserDefaults().boolForKey("logadogLoginKey")
         
@@ -81,19 +132,17 @@ class DogsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.dogs.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        
+        let dog = self.dogs[indexPath.row]
+        cell.textLabel!.text = dog.name
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

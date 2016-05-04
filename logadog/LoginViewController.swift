@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController {
 
@@ -26,10 +27,18 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(sender: AnyObject) {
         var running = false
+        var message = ""
+        var success = 0
+        var userId = ""
+        var token = ""
+        
         let myUrl = NSURL(string: "\(API_ROUTE_URL)\(Routes.AUTHENTICATE)")
         let request = NSMutableURLRequest(URL:myUrl!)
         request.HTTPMethod = "\(Verbs.POST)"
-        let postString = "username=\(usernameTextField.text)&password=\(passwordTextField.text)"
+        
+        let username = usernameTextField.text!
+        let password = passwordTextField.text!
+        let postString = "username=\(username)&password=\(password)"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
@@ -49,41 +58,47 @@ class LoginViewController: UIViewController {
             do {
                 let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
                 print(jsonDictionary)
+                
                 if let jsonDictionary:NSDictionary = jsonDictionary {
-                    let message = jsonDictionary["message"] as? String
-                    let success = jsonDictionary["success"] as! Bool
-                    let user_id = jsonDictionary["user_id"] as? String
-                    let token = jsonDictionary["token"] as? String
-                    print("message: \(message)")
+                    if let messageVal = jsonDictionary["message"] as? String {
+                        print(messageVal)
+                        message = messageVal
+                    }
                     
-                    if success {
-                        // Save username and password in Keychain
-                        let hasLoginKey = NSUserDefaults.standardUserDefaults().boolForKey("logadogLoginKey")
-                        if hasLoginKey == false {
-                            NSUserDefaults.standardUserDefaults().setValue(user_id, forKey: "user_id")
-                            NSUserDefaults.standardUserDefaults().setValue(token, forKey: "token")
-                        }
-                        
-                        let MyKeychainWrapper = KeychainWrapper()
-                        MyKeychainWrapper.mySetObject(self.passwordTextField.text, forKey:kSecValueData)
-                        MyKeychainWrapper.writeToKeychain()
-                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "logadogLoginKey")
-                        NSUserDefaults.standardUserDefaults().synchronize()
-                        
-                        print("We have a token!")
-                        
-                        dispatch_async(dispatch_get_main_queue()) {
-                            [unowned self] in
-                            self.performSegueWithIdentifier("loginShowDogsSegue", sender: self)
-                        }
-                        
-                    } else {
-                        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-                        self.presentViewController(alert, animated: true, completion: nil)
+                    if let successVal = jsonDictionary["success"] as? Int {
+                        success = successVal
+                    }
+                    
+                    if let userIdVal = jsonDictionary["user_id"] as? String {
+                        userId = userIdVal
+                    }
+                    
+                    if let tokenVal =  jsonDictionary["token"] as? String {
+                        token = tokenVal
+                        print("Logged in. This is the token \(token)")
+                        print("")
                     }
                     
                     running = false
+                    
+                    if success == TRUE {
+                        print("Success. Saving token to Keychain")
+                        print(token)
+                        KeychainWrapper.setString(token, forKey: KEYCHAIN_TOKEN)
+                        KeychainWrapper.setString(userId, forKey: KEYCHAIN_USER)
+                        
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.performSegueWithIdentifier("loginShowDogsSegue", sender: self)
+                        }
+                    } else {
+                        print("Error")
+                        print(message)
+                        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.presentViewController(alert, animated: true, completion: nil)
+                        }
+                    }
                 }
             } catch {
                 print(err)

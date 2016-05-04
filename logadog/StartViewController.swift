@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class StartViewController: UIViewController {
     override func viewDidLoad() {
@@ -14,21 +15,17 @@ class StartViewController: UIViewController {
         
         let hasToken = hasLoginToken()
         if hasToken == true {
-            print("dogsListSegue")
             dispatch_async(dispatch_get_main_queue()) {
-                [unowned self] in
                 self.performSegueWithIdentifier("dogsListSegue", sender: self)
             }
         }
     }
     
     func hasLoginToken() -> Bool {
-        let hasLogin = NSUserDefaults.standardUserDefaults().boolForKey("logadogLoginKey")
+        let token: String? = KeychainWrapper.stringForKey(KEYCHAIN_TOKEN)
+        print(token)
         
-        if hasLogin {
-            if let storedUsername = NSUserDefaults.standardUserDefaults().valueForKey("username") as? String {
-                print(storedUsername)
-            }
+        if (token != nil) {
             return true
         } else {
             return false
