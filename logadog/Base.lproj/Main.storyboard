@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Uc3-tE-e2R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ltj-yx-5kj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -147,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TXt-1l-iSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1372" y="-251"/>
+            <point key="canvasLocation" x="1964" y="-1283"/>
         </scene>
         <!--My Dogs-->
         <scene sceneID="Wwh-7l-dmT">
@@ -174,6 +174,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="My Dogs" id="qut-BB-uEh">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="vG6-2o-sfP">
+                            <connections>
+                                <action selector="menuButton:" destination="Gon-52-31p" id="LF6-32-h50"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gjj-Ka-Apo">
                             <connections>
                                 <segue destination="szw-9H-jlg" kind="show" identifier="addDogSegue" id="9MW-9g-i9f"/>
@@ -182,12 +187,13 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="menuButton" destination="vG6-2o-sfP" id="BvR-6x-cn9"/>
                         <segue destination="x5h-gb-fFm" kind="show" identifier="returnToLoginSegue" id="qac-Pt-xBy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kno-Iy-0iO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="642"/>
+            <point key="canvasLocation" x="2150" y="1512"/>
         </scene>
         <!--Create Dog View Controller-->
         <scene sceneID="QCu-zW-BuZ">
@@ -228,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6r-B5-zKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3070" y="676"/>
+            <point key="canvasLocation" x="4474" y="948"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="6RD-fc-6H1">
@@ -302,7 +308,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7h-Sc-H2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244" y="684"/>
+            <point key="canvasLocation" x="204" y="948"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="AyN-Zp-MJM">
+            <objects>
+                <viewController id="ltj-yx-5kj" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QL9-Ak-ALr"/>
+                        <viewControllerLayoutGuide type="bottom" id="lHS-EE-oTn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k9A-jM-unz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="c1s-7u-nTL" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="wYT-or-mR7"/>
+                        <segue destination="wP4-Ba-ZoD" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="Akl-a4-7bA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R8G-FY-Qf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-684" y="2160"/>
+        </scene>
+        <!--Menu Table View Controller-->
+        <scene sceneID="LMg-Jj-7CZ">
+            <objects>
+                <tableViewController id="wP4-Ba-ZoD" customClass="MenuTableViewController" customModule="logadog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rab-kv-OfS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="zxP-u3-a0c">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zxP-u3-a0c" id="TpZ-jJ-B07">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wP4-Ba-ZoD" id="Lia-vt-BtE"/>
+                            <outlet property="delegate" destination="wP4-Ba-ZoD" id="fBq-nc-db8"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hcr-xA-SMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="2480"/>
         </scene>
         <!--Log a Dog-->
         <scene sceneID="9CW-X1-jXz">
@@ -315,12 +371,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Gon-52-31p" kind="relationship" relationship="rootViewController" id="CLp-Lo-TRp"/>
+                        <segue destination="c1s-7u-nTL" kind="relationship" relationship="rootViewController" id="CLp-Lo-TRp"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEB-CN-zUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="848" y="624"/>
+            <point key="canvasLocation" x="1984" y="-216"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bN3-fL-XQ3">
@@ -338,10 +394,30 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5h-mz-1fG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-738" y="-251"/>
+            <point key="canvasLocation" x="-1492" y="-291"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="U7H-hC-TAJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c1s-7u-nTL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="qDy-4v-XDq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9aD-yN-nXH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gon-52-31p" kind="relationship" relationship="rootViewController" id="58Z-LO-mBR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XS0-XI-ShN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1338" y="1512"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="wYT-or-mR7"/>
         <segue reference="qac-Pt-xBy"/>
         <segue reference="n6p-zK-12k"/>
     </inferredMetricsTieBreakers>

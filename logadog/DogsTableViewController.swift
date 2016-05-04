@@ -11,13 +11,19 @@ import SwiftKeychainWrapper
 
 class DogsTableViewController: UITableViewController {
 
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+
     var dogs: [Dog] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        menuButton.target = self.revealViewController()
+        menuButton.action = Selector("revealToggle:")
+        
         getMyDogs()
     }
+    
     
     func getMyDogs() {
         var status = 0
@@ -34,7 +40,6 @@ class DogsTableViewController: UITableViewController {
         }
         
         let urlWithParams =  "\(API_ROUTE_URL)\(Routes.DOGS)/\(userId)?token=\(token)"
-        print("Get Dogs url:  \(urlWithParams)")
         let myUrl = NSURL(string: urlWithParams)
         let request = NSMutableURLRequest(URL:myUrl!)
         request.HTTPMethod = "\(Verbs.GET)"
@@ -54,7 +59,6 @@ class DogsTableViewController: UITableViewController {
                 } else {
                     do {
                         if let response = NSString(data: data!, encoding: NSUTF8StringEncoding) {
-                            print(response)
                             let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                             if let statusResponse = jsonDictionary["success"] as? Int {
                                 status = statusResponse

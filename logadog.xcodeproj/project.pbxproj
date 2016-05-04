@@ -11,6 +11,8 @@
 		AF3A6F911CD7577C001ED9D8 /* TokenHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F901CD7577C001ED9D8 /* TokenHelper.swift */; };
 		AF3A6F931CD7581F001ED9D8 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F921CD7581F001ED9D8 /* Api.swift */; };
 		AF3A6F951CD7893F001ED9D8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F941CD7893F001ED9D8 /* Constants.swift */; };
+		AF3A6F9B1CDA0C1D001ED9D8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F9A1CDA0C1D001ED9D8 /* SWRevealViewController.m */; };
+		AF3A6F9F1CDA1934001ED9D8 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F9E1CDA1934001ED9D8 /* MenuTableViewController.swift */; };
 		AFAC88491CD23C8E000F811A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC88481CD23C8E000F811A /* StartViewController.swift */; };
 		AFAC884B1CD24798000F811A /* DogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC884A1CD24798000F811A /* DogsTableViewController.swift */; };
 		AFAC884E1CD341BB000F811A /* jsonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC884D1CD341BB000F811A /* jsonHandler.swift */; };
@@ -43,6 +45,9 @@
 		AF3A6F901CD7577C001ED9D8 /* TokenHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenHelper.swift; sourceTree = "<group>"; };
 		AF3A6F921CD7581F001ED9D8 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		AF3A6F941CD7893F001ED9D8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AF3A6F991CDA0C1D001ED9D8 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		AF3A6F9A1CDA0C1D001ED9D8 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		AF3A6F9E1CDA1934001ED9D8 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		AFAC88481CD23C8E000F811A /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		AFAC884A1CD24798000F811A /* DogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
 		AFAC884D1CD341BB000F811A /* jsonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonHandler.swift; sourceTree = "<group>"; };
@@ -141,6 +146,7 @@
 				AFB7EDCF1CCF9CB300D1AFE9 /* CreateDogViewController.swift */,
 				AFAC88481CD23C8E000F811A /* StartViewController.swift */,
 				AFAC884A1CD24798000F811A /* DogsTableViewController.swift */,
+				AF3A6F9E1CDA1934001ED9D8 /* MenuTableViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 		AFE66C981CCA3A93000931E9 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				AF3A6F991CDA0C1D001ED9D8 /* SWRevealViewController.h */,
+				AF3A6F9A1CDA0C1D001ED9D8 /* SWRevealViewController.m */,
 				AFE66C991CCA3A9E000931E9 /* logadog-Bridging-Header.h */,
 			);
 			name = libs;
@@ -356,7 +364,9 @@
 			files = (
 				AFB7EDC81CCF672D00D1AFE9 /* LoginViewController.swift in Sources */,
 				AFAC88531CD34999000F811A /* Colors.swift in Sources */,
+				AF3A6F9B1CDA0C1D001ED9D8 /* SWRevealViewController.m in Sources */,
 				AFAC88551CD35045000F811A /* Dog.swift in Sources */,
+				AF3A6F9F1CDA1934001ED9D8 /* MenuTableViewController.swift in Sources */,
 				AFAC88491CD23C8E000F811A /* StartViewController.swift in Sources */,
 				AFB7EDD01CCF9CB300D1AFE9 /* CreateDogViewController.swift in Sources */,
 				AF3A6F951CD7893F001ED9D8 /* Constants.swift in Sources */,
