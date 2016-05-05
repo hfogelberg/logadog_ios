@@ -13,6 +13,8 @@
 		AF3A6F951CD7893F001ED9D8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F941CD7893F001ED9D8 /* Constants.swift */; };
 		AF3A6F9B1CDA0C1D001ED9D8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F9A1CDA0C1D001ED9D8 /* SWRevealViewController.m */; };
 		AF3A6F9F1CDA1934001ED9D8 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F9E1CDA1934001ED9D8 /* MenuTableViewController.swift */; };
+		AF3A6FA11CDA2A9B001ED9D8 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6FA01CDA2A9B001ED9D8 /* ContactsTableViewController.swift */; };
+		AF3A6FA31CDA475B001ED9D8 /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6FA21CDA475B001ED9D8 /* DogViewController.swift */; };
 		AFAC88491CD23C8E000F811A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC88481CD23C8E000F811A /* StartViewController.swift */; };
 		AFAC884B1CD24798000F811A /* DogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC884A1CD24798000F811A /* DogsTableViewController.swift */; };
 		AFAC884E1CD341BB000F811A /* jsonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC884D1CD341BB000F811A /* jsonHandler.swift */; };
@@ -48,6 +50,8 @@
 		AF3A6F991CDA0C1D001ED9D8 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		AF3A6F9A1CDA0C1D001ED9D8 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		AF3A6F9E1CDA1934001ED9D8 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		AF3A6FA01CDA2A9B001ED9D8 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		AF3A6FA21CDA475B001ED9D8 /* DogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
 		AFAC88481CD23C8E000F811A /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		AFAC884A1CD24798000F811A /* DogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
 		AFAC884D1CD341BB000F811A /* jsonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonHandler.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				AFAC88481CD23C8E000F811A /* StartViewController.swift */,
 				AFAC884A1CD24798000F811A /* DogsTableViewController.swift */,
 				AF3A6F9E1CDA1934001ED9D8 /* MenuTableViewController.swift */,
+				AF3A6FA01CDA2A9B001ED9D8 /* ContactsTableViewController.swift */,
+				AF3A6FA21CDA475B001ED9D8 /* DogViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -373,6 +379,8 @@
 				AFAC884B1CD24798000F811A /* DogsTableViewController.swift in Sources */,
 				AFE66C7B1CCA122A000931E9 /* SignupViewController.swift in Sources */,
 				AFE66C791CCA122A000931E9 /* AppDelegate.swift in Sources */,
+				AF3A6FA31CDA475B001ED9D8 /* DogViewController.swift in Sources */,
+				AF3A6FA11CDA2A9B001ED9D8 /* ContactsTableViewController.swift in Sources */,
 				AFAC88511CD3498C000F811A /* Messages.swift in Sources */,
 				AFB7EDCB1CCF67CE00D1AFE9 /* ApplicationSettings.swift in Sources */,
 				AFAC884E1CD341BB000F811A /* jsonHandler.swift in Sources */,

@@ -21,6 +21,8 @@ class DogsTableViewController: UITableViewController {
         menuButton.target = self.revealViewController()
         menuButton.action = Selector("revealToggle:")
         
+//        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
         getMyDogs()
     }
     
@@ -147,7 +149,18 @@ class DogsTableViewController: UITableViewController {
         
         return cell
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDogSegue" {
+            let id: Int = (self.tableView.indexPathForSelectedRow?.row)!
+            print("Id: \(id)")
+            let dog = self.dogs[id]
+            let navController: UINavigationController = (segue.destinationViewController as! UINavigationController)
+            let destination = (navController.topViewController as! DogViewController)
+            destination.dog = dog
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

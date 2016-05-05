@@ -1,4 +1,4 @@
-//
+    //
 //  MenuTableViewController.swift
 //  logadog
 //
@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class MenuTableViewController: UITableViewController {
     
@@ -17,7 +18,7 @@ class MenuTableViewController: UITableViewController {
         
         print("MenuTableViewController")
         
-        MenuArray = ["Home", "Contacts", "Calendar"]
+        MenuArray = ["Home", "Contacts", "Calendar", "Diary", "Sign Out"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,4 +43,29 @@ class MenuTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.row {
+            case MENU_HOME:
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier("dogsListSegue", sender: self)
+                }
+            case MENU_CONTACTS:
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier("contactsListSegue", sender: self)
+                }
+            case MENU_CALENDAR:
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier("dogsListSegue", sender: self)
+                }
+            case MENU_SIGN_OUT:
+                KeychainWrapper.removeObjectForKey(KEYCHAIN_TOKEN)
+                KeychainWrapper.removeObjectForKey(KEYCHAIN_USER)
+            default:
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier("dogsListSegue", sender: self)
+            }
+        }
+    }
 }
+
