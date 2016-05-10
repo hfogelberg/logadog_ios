@@ -1,116 +1,62 @@
 //
 //  LoginViewController.swift
-//  logadog
+//  Logadog
 //
-//  Created by Henrik Fogelberg on 2016-04-26.
+//  Created by Henrik Fogelberg on 2016-05-10.
 //  Copyright © 2016 Henrik Fogelberg. All rights reserved.
 //
 
 import UIKit
-import SwiftKeychainWrapper
 
-class LoginViewController: UIViewController {
-
+class LoginViewController: UIViewController, APIControllerProtocol {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var api : APIController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        view.backgroundColor = Colors().backgoundColor()
     }
     
-    @IBAction func loginButtonTapped(sender: AnyObject) {
-        var running = false
-        var message = ""
-        var success = 0
-        var userId = ""
-        var token = ""
+    @IBAction func loginTapped(sender: AnyObject) {
+        var username = ""
+        var password = ""
         
-        let myUrl = NSURL(string: "\(API_ROUTE_URL)\(Routes.AUTHENTICATE)")
-        let request = NSMutableURLRequest(URL:myUrl!)
-        request.HTTPMethod = "\(Verbs.POST)"
-        
-        let username = usernameTextField.text!
-        let password = passwordTextField.text!
-        let postString = "username=\(username)&password=\(password)"
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            data, response, error in
-            
-            if error != nil
-            {
-                print("error=\(error)")
-                return
-            }
-            
-            print("response = \(response)")
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("responseString = \(responseString)")
-            
-            var err: NSError?
-            do {
-                let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
-                print(jsonDictionary)
-                
-                if let jsonDictionary:NSDictionary = jsonDictionary {
-                    if let messageVal = jsonDictionary["message"] as? String {
-                        print(messageVal)
-                        message = messageVal
-                    }
-                    
-                    if let successVal = jsonDictionary["success"] as? Int {
-                        success = successVal
-                    }
-                    
-                    if let userIdVal = jsonDictionary["user_id"] as? String {
-                        userId = userIdVal
-                    }
-                    
-                    if let tokenVal =  jsonDictionary["token"] as? String {
-                        token = tokenVal
-                        print("Logged in. This is the token \(token)")
-                        print("")
-                    }
-                    
-                    running = false
-                    
-                    if success == TRUE {
-                        print("Success. Saving token to Keychain")
-                        print(token)
-                        KeychainWrapper.setString(token, forKey: KEYCHAIN_TOKEN)
-                        KeychainWrapper.setString(userId, forKey: KEYCHAIN_USER)
-                        
-                        dispatch_async(dispatch_get_main_queue()) {
-                            self.performSegueWithIdentifier("loginShowDogsSegue", sender: self)
-                        }
-                    } else {
-                        print("Error")
-                        print(message)
-                        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-                        dispatch_async(dispatch_get_main_queue()) {
-                            self.presentViewController(alert, animated: true, completion: nil)
-                        }
-                    }
-                }
-            } catch {
-                print(err)
-            }
+        if let usernameTxt = self.usernameTextField.text {
+            username = usernameTxt
         }
         
-        running = true
-        task.resume()
+        if let passwordTxt = self.passwordTextField.text {
+            password = passwordTxt
+        }
         
-        while running {
-            print("Running")
-            sleep(1)
+        if ((username != "") && (password != "")) {
+            let postString = "username=\(username)&password=\(password)"
+            
+            self.api = APIController(delegate: self)
+            self.api!.postJson(postString, route: "authenticate", verb: "POST")
+        }
+    }
+    
+    func didRecieveAPIResults(status: Int, message: String, results: NSDictionary) {
+        if results.count > 0 {
+            var token = ""
+            var userName = ""
+            var userId = ""
+            
+            if let tokenVal = results["token"] as? String {
+                token = tokenVal
+            }
+            if let usernameVal = results["username"] as? String {
+                userName = usernameVal
+            }
+            if let userIdVal = results["user_id"] as? String {
+                userId = userIdVal
+            }
+            
+            TokenController.saveTokenAndUser(token, userId: userId, userName: userName)
         }
     }
 }

@@ -3,7 +3,7 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'logadog' do
+target 'Logadog' do
 pod 'SwiftKeychainWrapper'
 end
 

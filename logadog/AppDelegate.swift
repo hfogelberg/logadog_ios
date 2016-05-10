@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  logadog
+//  Logadog
 //
-//  Created by Henrik Fogelberg on 2016-04-22.
+//  Created by Henrik Fogelberg on 2016-05-09.
 //  Copyright © 2016 Henrik Fogelberg. All rights reserved.
 //
 

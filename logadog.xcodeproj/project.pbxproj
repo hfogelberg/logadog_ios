@@ -7,276 +7,200 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		938FEA48A1354FA712A94959 /* Pods_logadog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3E7A02AAD3C347AD062F10 /* Pods_logadog.framework */; };
-		AF3A6F911CD7577C001ED9D8 /* TokenHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F901CD7577C001ED9D8 /* TokenHelper.swift */; };
-		AF3A6F931CD7581F001ED9D8 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F921CD7581F001ED9D8 /* Api.swift */; };
-		AF3A6F951CD7893F001ED9D8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F941CD7893F001ED9D8 /* Constants.swift */; };
-		AF3A6F9B1CDA0C1D001ED9D8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F9A1CDA0C1D001ED9D8 /* SWRevealViewController.m */; };
-		AF3A6F9F1CDA1934001ED9D8 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6F9E1CDA1934001ED9D8 /* MenuTableViewController.swift */; };
-		AF3A6FA11CDA2A9B001ED9D8 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6FA01CDA2A9B001ED9D8 /* ContactsTableViewController.swift */; };
-		AF3A6FA31CDA475B001ED9D8 /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A6FA21CDA475B001ED9D8 /* DogViewController.swift */; };
-		AFAC88491CD23C8E000F811A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC88481CD23C8E000F811A /* StartViewController.swift */; };
-		AFAC884B1CD24798000F811A /* DogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC884A1CD24798000F811A /* DogsTableViewController.swift */; };
-		AFAC884E1CD341BB000F811A /* jsonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC884D1CD341BB000F811A /* jsonHandler.swift */; };
-		AFAC88511CD3498C000F811A /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC88501CD3498C000F811A /* Messages.swift */; };
-		AFAC88531CD34999000F811A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC88521CD34999000F811A /* Colors.swift */; };
-		AFAC88551CD35045000F811A /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAC88541CD35045000F811A /* Dog.swift */; };
-		AFB7EDC81CCF672D00D1AFE9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7EDC71CCF672D00D1AFE9 /* LoginViewController.swift */; };
-		AFB7EDCB1CCF67CE00D1AFE9 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7EDCA1CCF67CE00D1AFE9 /* ApplicationSettings.swift */; };
-		AFB7EDD01CCF9CB300D1AFE9 /* CreateDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7EDCF1CCF9CB300D1AFE9 /* CreateDogViewController.swift */; };
-		AFE66C791CCA122A000931E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE66C781CCA122A000931E9 /* AppDelegate.swift */; };
-		AFE66C7B1CCA122A000931E9 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE66C7A1CCA122A000931E9 /* SignupViewController.swift */; };
-		AFE66C7E1CCA122A000931E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE66C7C1CCA122A000931E9 /* Main.storyboard */; };
-		AFE66C801CCA122A000931E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE66C7F1CCA122A000931E9 /* Assets.xcassets */; };
-		AFE66C831CCA122A000931E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE66C811CCA122A000931E9 /* LaunchScreen.storyboard */; };
-		AFE66C8E1CCA122A000931E9 /* logadogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE66C8D1CCA122A000931E9 /* logadogTests.swift */; };
+		AF9CE6D61CE0D62C005CD151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6D51CE0D62C005CD151 /* AppDelegate.swift */; };
+		AF9CE6DB1CE0D62C005CD151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9CE6D91CE0D62C005CD151 /* Main.storyboard */; };
+		AF9CE6DD1CE0D62C005CD151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF9CE6DC1CE0D62C005CD151 /* Assets.xcassets */; };
+		AF9CE6E01CE0D62C005CD151 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9CE6DE1CE0D62C005CD151 /* LaunchScreen.storyboard */; };
+		AF9CE6E81CE0D6AA005CD151 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6E71CE0D6AA005CD151 /* SignupViewController.swift */; };
+		AF9CE6ED1CE0E0BB005CD151 /* TokenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6EC1CE0E0BB005CD151 /* TokenController.swift */; };
+		AF9CE6EF1CE0E122005CD151 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6EE1CE0E122005CD151 /* Constants.swift */; };
+		AF9CE6F21CE0E63C005CD151 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6F11CE0E63C005CD151 /* StartViewController.swift */; };
+		AF9CE6F41CE0EB20005CD151 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6F31CE0EB20005CD151 /* ApiHelper.swift */; };
+		AF9CE6F81CE0F01B005CD151 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6F71CE0F01B005CD151 /* ApplicationSettings.swift */; };
+		AF9CE6FA1CE0F032005CD151 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6F91CE0F032005CD151 /* Api.swift */; };
+		AF9CE6FC1CE1D8E8005CD151 /* DogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6FB1CE1D8E8005CD151 /* DogsTableViewController.swift */; };
+		AF9CE6FE1CE1D968005CD151 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6FD1CE1D968005CD151 /* LoginViewController.swift */; };
+		AF9CE7011CE1DB8C005CD151 /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE7001CE1DB8C005CD151 /* JsonResponse.swift */; };
+		AF9CE7031CE1E057005CD151 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE7021CE1E057005CD151 /* Colors.swift */; };
+		AF9CE7051CE213B6005CD151 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE7041CE213B6005CD151 /* APIController.swift */; };
+		F33DA45B2C81B6267CE0596E /* Pods_Logadog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5926CF13827B22049758E8C0 /* Pods_Logadog.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		AFE66C8A1CCA122A000931E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AFE66C6D1CCA122A000931E9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AFE66C741CCA122A000931E9;
-			remoteInfo = logadog;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		2BFEFB41F3BE9CBE1DD2AEA9 /* Pods-logadog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-logadog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-logadog/Pods-logadog.debug.xcconfig"; sourceTree = "<group>"; };
-		AF3A6F901CD7577C001ED9D8 /* TokenHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenHelper.swift; sourceTree = "<group>"; };
-		AF3A6F921CD7581F001ED9D8 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		AF3A6F941CD7893F001ED9D8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		AF3A6F991CDA0C1D001ED9D8 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		AF3A6F9A1CDA0C1D001ED9D8 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		AF3A6F9E1CDA1934001ED9D8 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		AF3A6FA01CDA2A9B001ED9D8 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
-		AF3A6FA21CDA475B001ED9D8 /* DogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
-		AFAC88481CD23C8E000F811A /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		AFAC884A1CD24798000F811A /* DogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
-		AFAC884D1CD341BB000F811A /* jsonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsonHandler.swift; sourceTree = "<group>"; };
-		AFAC88501CD3498C000F811A /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
-		AFAC88521CD34999000F811A /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		AFAC88541CD35045000F811A /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
-		AFB7EDC71CCF672D00D1AFE9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		AFB7EDCA1CCF67CE00D1AFE9 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
-		AFB7EDCC1CCF98E900D1AFE9 /* Authentication.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Authentication.playground; sourceTree = "<group>"; };
-		AFB7EDCF1CCF9CB300D1AFE9 /* CreateDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateDogViewController.swift; sourceTree = "<group>"; };
-		AFE66C751CCA122A000931E9 /* logadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = logadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFE66C781CCA122A000931E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFE66C7A1CCA122A000931E9 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		AFE66C7D1CCA122A000931E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AFE66C7F1CCA122A000931E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AFE66C821CCA122A000931E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AFE66C841CCA122A000931E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFE66C891CCA122A000931E9 /* logadogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = logadogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFE66C8D1CCA122A000931E9 /* logadogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logadogTests.swift; sourceTree = "<group>"; };
-		AFE66C8F1CCA122A000931E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFE66C991CCA3A9E000931E9 /* logadog-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "logadog-Bridging-Header.h"; sourceTree = "<group>"; };
-		BFF60E7ABA4A9AC050C2D95E /* Pods-logadog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-logadog.release.xcconfig"; path = "Pods/Target Support Files/Pods-logadog/Pods-logadog.release.xcconfig"; sourceTree = "<group>"; };
-		CC3E7A02AAD3C347AD062F10 /* Pods_logadog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_logadog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5926CF13827B22049758E8C0 /* Pods_Logadog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Logadog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF9CE6D21CE0D62C005CD151 /* Logadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF9CE6D51CE0D62C005CD151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF9CE6DA1CE0D62C005CD151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF9CE6DC1CE0D62C005CD151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF9CE6DF1CE0D62C005CD151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF9CE6E11CE0D62C005CD151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF9CE6E71CE0D6AA005CD151 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		AF9CE6EC1CE0E0BB005CD151 /* TokenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenController.swift; sourceTree = "<group>"; };
+		AF9CE6EE1CE0E122005CD151 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AF9CE6F11CE0E63C005CD151 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		AF9CE6F31CE0EB20005CD151 /* ApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
+		AF9CE6F71CE0F01B005CD151 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
+		AF9CE6F91CE0F032005CD151 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		AF9CE6FB1CE1D8E8005CD151 /* DogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
+		AF9CE6FD1CE1D968005CD151 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AF9CE7001CE1DB8C005CD151 /* JsonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonResponse.swift; sourceTree = "<group>"; };
+		AF9CE7021CE1E057005CD151 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		AF9CE7041CE213B6005CD151 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		B9B30351961A5390D5D7C12C /* Pods-Logadog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logadog.release.xcconfig"; path = "Pods/Target Support Files/Pods-Logadog/Pods-Logadog.release.xcconfig"; sourceTree = "<group>"; };
+		C6F909479685781150F1082D /* Pods-Logadog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logadog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Logadog/Pods-Logadog.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AFE66C721CCA122A000931E9 /* Frameworks */ = {
+		AF9CE6CF1CE0D62C005CD151 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				938FEA48A1354FA712A94959 /* Pods_logadog.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFE66C861CCA122A000931E9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				F33DA45B2C81B6267CE0596E /* Pods_Logadog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		051A737611DC8BFF0DC8C764 /* Frameworks */ = {
+		23A9FB2FB01D36F9122EF8B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CC3E7A02AAD3C347AD062F10 /* Pods_logadog.framework */,
+				5926CF13827B22049758E8C0 /* Pods_Logadog.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8EDB3EDFC432FCF923972DA4 /* Pods */ = {
+		AF9CE6C91CE0D62C005CD151 = {
 			isa = PBXGroup;
 			children = (
-				2BFEFB41F3BE9CBE1DD2AEA9 /* Pods-logadog.debug.xcconfig */,
-				BFF60E7ABA4A9AC050C2D95E /* Pods-logadog.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		AF3A6F981CD9F7B0001ED9D8 /* models */ = {
-			isa = PBXGroup;
-			children = (
-				AFAC88541CD35045000F811A /* Dog.swift */,
-			);
-			name = models;
-			sourceTree = "<group>";
-		};
-		AFAC884C1CD341A2000F811A /* helpers */ = {
-			isa = PBXGroup;
-			children = (
-				AFAC884D1CD341BB000F811A /* jsonHandler.swift */,
-				AF3A6F901CD7577C001ED9D8 /* TokenHelper.swift */,
-			);
-			name = helpers;
-			sourceTree = "<group>";
-		};
-		AFAC884F1CD34970000F811A /* settings */ = {
-			isa = PBXGroup;
-			children = (
-				AFB7EDCA1CCF67CE00D1AFE9 /* ApplicationSettings.swift */,
-				AFAC88501CD3498C000F811A /* Messages.swift */,
-				AFAC88521CD34999000F811A /* Colors.swift */,
-				AF3A6F921CD7581F001ED9D8 /* Api.swift */,
-				AF3A6F941CD7893F001ED9D8 /* Constants.swift */,
-			);
-			name = settings;
-			sourceTree = "<group>";
-		};
-		AFB7EDC61CCF66FC00D1AFE9 /* controllers */ = {
-			isa = PBXGroup;
-			children = (
-				AFE66C7A1CCA122A000931E9 /* SignupViewController.swift */,
-				AFB7EDC71CCF672D00D1AFE9 /* LoginViewController.swift */,
-				AFB7EDCF1CCF9CB300D1AFE9 /* CreateDogViewController.swift */,
-				AFAC88481CD23C8E000F811A /* StartViewController.swift */,
-				AFAC884A1CD24798000F811A /* DogsTableViewController.swift */,
-				AF3A6F9E1CDA1934001ED9D8 /* MenuTableViewController.swift */,
-				AF3A6FA01CDA2A9B001ED9D8 /* ContactsTableViewController.swift */,
-				AF3A6FA21CDA475B001ED9D8 /* DogViewController.swift */,
-			);
-			name = controllers;
-			sourceTree = "<group>";
-		};
-		AFE66C6C1CCA122A000931E9 = {
-			isa = PBXGroup;
-			children = (
-				AFB7EDCC1CCF98E900D1AFE9 /* Authentication.playground */,
-				AFE66C771CCA122A000931E9 /* logadog */,
-				AFE66C8C1CCA122A000931E9 /* logadogTests */,
-				AFE66C761CCA122A000931E9 /* Products */,
-				8EDB3EDFC432FCF923972DA4 /* Pods */,
-				051A737611DC8BFF0DC8C764 /* Frameworks */,
+				AF9CE6D41CE0D62C005CD151 /* Logadog */,
+				AF9CE6D31CE0D62C005CD151 /* Products */,
+				D7AEBA00855EAB4DB87DA62B /* Pods */,
+				23A9FB2FB01D36F9122EF8B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		AFE66C761CCA122A000931E9 /* Products */ = {
+		AF9CE6D31CE0D62C005CD151 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AFE66C751CCA122A000931E9 /* logadog.app */,
-				AFE66C891CCA122A000931E9 /* logadogTests.xctest */,
+				AF9CE6D21CE0D62C005CD151 /* Logadog.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AFE66C771CCA122A000931E9 /* logadog */ = {
+		AF9CE6D41CE0D62C005CD151 /* Logadog */ = {
 			isa = PBXGroup;
 			children = (
-				AF3A6F981CD9F7B0001ED9D8 /* models */,
-				AFE66C781CCA122A000931E9 /* AppDelegate.swift */,
-				AFAC884F1CD34970000F811A /* settings */,
-				AFAC884C1CD341A2000F811A /* helpers */,
-				AFB7EDC61CCF66FC00D1AFE9 /* controllers */,
-				AFE66C981CCA3A93000931E9 /* libs */,
-				AFE66C7C1CCA122A000931E9 /* Main.storyboard */,
-				AFE66C7F1CCA122A000931E9 /* Assets.xcassets */,
-				AFE66C811CCA122A000931E9 /* LaunchScreen.storyboard */,
-				AFE66C841CCA122A000931E9 /* Info.plist */,
+				AF9CE6FF1CE1DB7A005CD151 /* Classes */,
+				AF9CE6E91CE0D72D005CD151 /* Controllers */,
+				AF9CE6EB1CE0DE34005CD151 /* Libs */,
+				AF9CE6EA1CE0D735005CD151 /* Settings */,
+				AF9CE6F01CE0E407005CD151 /* ViewControllers */,
+				AF9CE6D51CE0D62C005CD151 /* AppDelegate.swift */,
+				AF9CE6D91CE0D62C005CD151 /* Main.storyboard */,
+				AF9CE6DC1CE0D62C005CD151 /* Assets.xcassets */,
+				AF9CE6DE1CE0D62C005CD151 /* LaunchScreen.storyboard */,
+				AF9CE6E11CE0D62C005CD151 /* Info.plist */,
 			);
-			path = logadog;
+			path = Logadog;
 			sourceTree = "<group>";
 		};
-		AFE66C8C1CCA122A000931E9 /* logadogTests */ = {
+		AF9CE6E91CE0D72D005CD151 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AFE66C8D1CCA122A000931E9 /* logadogTests.swift */,
-				AFE66C8F1CCA122A000931E9 /* Info.plist */,
+				AF9CE6EC1CE0E0BB005CD151 /* TokenController.swift */,
+				AF9CE6F31CE0EB20005CD151 /* ApiHelper.swift */,
+				AF9CE7041CE213B6005CD151 /* APIController.swift */,
 			);
-			path = logadogTests;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
-		AFE66C981CCA3A93000931E9 /* libs */ = {
+		AF9CE6EA1CE0D735005CD151 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				AF3A6F991CDA0C1D001ED9D8 /* SWRevealViewController.h */,
-				AF3A6F9A1CDA0C1D001ED9D8 /* SWRevealViewController.m */,
-				AFE66C991CCA3A9E000931E9 /* logadog-Bridging-Header.h */,
+				AF9CE6F91CE0F032005CD151 /* Api.swift */,
+				AF9CE6F71CE0F01B005CD151 /* ApplicationSettings.swift */,
+				AF9CE6EE1CE0E122005CD151 /* Constants.swift */,
+				AF9CE7021CE1E057005CD151 /* Colors.swift */,
 			);
-			name = libs;
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		AF9CE6EB1CE0DE34005CD151 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		AF9CE6F01CE0E407005CD151 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF9CE6E71CE0D6AA005CD151 /* SignupViewController.swift */,
+				AF9CE6F11CE0E63C005CD151 /* StartViewController.swift */,
+				AF9CE6FB1CE1D8E8005CD151 /* DogsTableViewController.swift */,
+				AF9CE6FD1CE1D968005CD151 /* LoginViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AF9CE6FF1CE1DB7A005CD151 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AF9CE7001CE1DB8C005CD151 /* JsonResponse.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D7AEBA00855EAB4DB87DA62B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6F909479685781150F1082D /* Pods-Logadog.debug.xcconfig */,
+				B9B30351961A5390D5D7C12C /* Pods-Logadog.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AFE66C741CCA122A000931E9 /* logadog */ = {
+		AF9CE6D11CE0D62C005CD151 /* Logadog */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFE66C921CCA122A000931E9 /* Build configuration list for PBXNativeTarget "logadog" */;
+			buildConfigurationList = AF9CE6E41CE0D62C005CD151 /* Build configuration list for PBXNativeTarget "Logadog" */;
 			buildPhases = (
-				9386006646B6B3B55165D16A /* Check Pods Manifest.lock */,
-				AFE66C711CCA122A000931E9 /* Sources */,
-				AFE66C721CCA122A000931E9 /* Frameworks */,
-				AFE66C731CCA122A000931E9 /* Resources */,
-				746523EA0139E6DC8A977291 /* Embed Pods Frameworks */,
-				8762720819281BFA692CA4B3 /* Copy Pods Resources */,
+				FC0036DDFADE8354EF669670 /* Check Pods Manifest.lock */,
+				AF9CE6CE1CE0D62C005CD151 /* Sources */,
+				AF9CE6CF1CE0D62C005CD151 /* Frameworks */,
+				AF9CE6D01CE0D62C005CD151 /* Resources */,
+				DE267BCB15B6CDE599E8A941 /* Embed Pods Frameworks */,
+				3A77EAD9E4462E9B4DD73020 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = logadog;
-			productName = logadog;
-			productReference = AFE66C751CCA122A000931E9 /* logadog.app */;
+			name = Logadog;
+			productName = Logadog;
+			productReference = AF9CE6D21CE0D62C005CD151 /* Logadog.app */;
 			productType = "com.apple.product-type.application";
-		};
-		AFE66C881CCA122A000931E9 /* logadogTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AFE66C951CCA122A000931E9 /* Build configuration list for PBXNativeTarget "logadogTests" */;
-			buildPhases = (
-				AFE66C851CCA122A000931E9 /* Sources */,
-				AFE66C861CCA122A000931E9 /* Frameworks */,
-				AFE66C871CCA122A000931E9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AFE66C8B1CCA122A000931E9 /* PBXTargetDependency */,
-			);
-			name = logadogTests;
-			productName = logadogTests;
-			productReference = AFE66C891CCA122A000931E9 /* logadogTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AFE66C6D1CCA122A000931E9 /* Project object */ = {
+		AF9CE6CA1CE0D62C005CD151 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Henrik Fogelberg";
 				TargetAttributes = {
-					AFE66C741CCA122A000931E9 = {
+					AF9CE6D11CE0D62C005CD151 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 53LFDNJTBE;
-					};
-					AFE66C881CCA122A000931E9 = {
-						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 53LFDNJTBE;
-						TestTargetID = AFE66C741CCA122A000931E9;
 					};
 				};
 			};
-			buildConfigurationList = AFE66C701CCA122A000931E9 /* Build configuration list for PBXProject "logadog" */;
+			buildConfigurationList = AF9CE6CD1CE0D62C005CD151 /* Build configuration list for PBXProject "Logadog" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -284,54 +208,31 @@
 				en,
 				Base,
 			);
-			mainGroup = AFE66C6C1CCA122A000931E9;
-			productRefGroup = AFE66C761CCA122A000931E9 /* Products */;
+			mainGroup = AF9CE6C91CE0D62C005CD151;
+			productRefGroup = AF9CE6D31CE0D62C005CD151 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AFE66C741CCA122A000931E9 /* logadog */,
-				AFE66C881CCA122A000931E9 /* logadogTests */,
+				AF9CE6D11CE0D62C005CD151 /* Logadog */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AFE66C731CCA122A000931E9 /* Resources */ = {
+		AF9CE6D01CE0D62C005CD151 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFE66C831CCA122A000931E9 /* LaunchScreen.storyboard in Resources */,
-				AFE66C801CCA122A000931E9 /* Assets.xcassets in Resources */,
-				AFE66C7E1CCA122A000931E9 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFE66C871CCA122A000931E9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				AF9CE6E01CE0D62C005CD151 /* LaunchScreen.storyboard in Resources */,
+				AF9CE6DD1CE0D62C005CD151 /* Assets.xcassets in Resources */,
+				AF9CE6DB1CE0D62C005CD151 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		746523EA0139E6DC8A977291 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-logadog/Pods-logadog-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8762720819281BFA692CA4B3 /* Copy Pods Resources */ = {
+		3A77EAD9E4462E9B4DD73020 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -343,10 +244,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-logadog/Pods-logadog-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Logadog/Pods-Logadog-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9386006646B6B3B55165D16A /* Check Pods Manifest.lock */ = {
+		DE267BCB15B6CDE599E8A941 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Logadog/Pods-Logadog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC0036DDFADE8354EF669670 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -364,62 +280,41 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AFE66C711CCA122A000931E9 /* Sources */ = {
+		AF9CE6CE1CE0D62C005CD151 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFB7EDC81CCF672D00D1AFE9 /* LoginViewController.swift in Sources */,
-				AFAC88531CD34999000F811A /* Colors.swift in Sources */,
-				AF3A6F9B1CDA0C1D001ED9D8 /* SWRevealViewController.m in Sources */,
-				AFAC88551CD35045000F811A /* Dog.swift in Sources */,
-				AF3A6F9F1CDA1934001ED9D8 /* MenuTableViewController.swift in Sources */,
-				AFAC88491CD23C8E000F811A /* StartViewController.swift in Sources */,
-				AFB7EDD01CCF9CB300D1AFE9 /* CreateDogViewController.swift in Sources */,
-				AF3A6F951CD7893F001ED9D8 /* Constants.swift in Sources */,
-				AFAC884B1CD24798000F811A /* DogsTableViewController.swift in Sources */,
-				AFE66C7B1CCA122A000931E9 /* SignupViewController.swift in Sources */,
-				AFE66C791CCA122A000931E9 /* AppDelegate.swift in Sources */,
-				AF3A6FA31CDA475B001ED9D8 /* DogViewController.swift in Sources */,
-				AF3A6FA11CDA2A9B001ED9D8 /* ContactsTableViewController.swift in Sources */,
-				AFAC88511CD3498C000F811A /* Messages.swift in Sources */,
-				AFB7EDCB1CCF67CE00D1AFE9 /* ApplicationSettings.swift in Sources */,
-				AFAC884E1CD341BB000F811A /* jsonHandler.swift in Sources */,
-				AF3A6F931CD7581F001ED9D8 /* Api.swift in Sources */,
-				AF3A6F911CD7577C001ED9D8 /* TokenHelper.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFE66C851CCA122A000931E9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AFE66C8E1CCA122A000931E9 /* logadogTests.swift in Sources */,
+				AF9CE6F21CE0E63C005CD151 /* StartViewController.swift in Sources */,
+				AF9CE7051CE213B6005CD151 /* APIController.swift in Sources */,
+				AF9CE7031CE1E057005CD151 /* Colors.swift in Sources */,
+				AF9CE6F81CE0F01B005CD151 /* ApplicationSettings.swift in Sources */,
+				AF9CE6ED1CE0E0BB005CD151 /* TokenController.swift in Sources */,
+				AF9CE6E81CE0D6AA005CD151 /* SignupViewController.swift in Sources */,
+				AF9CE6F41CE0EB20005CD151 /* ApiHelper.swift in Sources */,
+				AF9CE6D61CE0D62C005CD151 /* AppDelegate.swift in Sources */,
+				AF9CE7011CE1DB8C005CD151 /* JsonResponse.swift in Sources */,
+				AF9CE6FA1CE0F032005CD151 /* Api.swift in Sources */,
+				AF9CE6EF1CE0E122005CD151 /* Constants.swift in Sources */,
+				AF9CE6FE1CE1D968005CD151 /* LoginViewController.swift in Sources */,
+				AF9CE6FC1CE1D8E8005CD151 /* DogsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		AFE66C8B1CCA122A000931E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AFE66C741CCA122A000931E9 /* logadog */;
-			targetProxy = AFE66C8A1CCA122A000931E9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		AFE66C7C1CCA122A000931E9 /* Main.storyboard */ = {
+		AF9CE6D91CE0D62C005CD151 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AFE66C7D1CCA122A000931E9 /* Base */,
+				AF9CE6DA1CE0D62C005CD151 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		AFE66C811CCA122A000931E9 /* LaunchScreen.storyboard */ = {
+		AF9CE6DE1CE0D62C005CD151 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AFE66C821CCA122A000931E9 /* Base */,
+				AF9CE6DF1CE0D62C005CD151 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -427,7 +322,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		AFE66C901CCA122A000931E9 /* Debug */ = {
+		AF9CE6E21CE0D62C005CD151 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -472,7 +367,7 @@
 			};
 			name = Debug;
 		};
-		AFE66C911CCA122A000931E9 /* Release */ = {
+		AF9CE6E31CE0D62C005CD151 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -510,90 +405,52 @@
 			};
 			name = Release;
 		};
-		AFE66C931CCA122A000931E9 /* Debug */ = {
+		AF9CE6E51CE0D62C005CD151 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BFEFB41F3BE9CBE1DD2AEA9 /* Pods-logadog.debug.xcconfig */;
+			baseConfigurationReference = C6F909479685781150F1082D /* Pods-Logadog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = logadog/Info.plist;
+				INFOPLIST_FILE = Logadog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = es.islandsapps.logadog;
+				PRODUCT_BUNDLE_IDENTIFIER = es.islandsapps.Logadog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "logadog/logadog-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		AFE66C941CCA122A000931E9 /* Release */ = {
+		AF9CE6E61CE0D62C005CD151 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFF60E7ABA4A9AC050C2D95E /* Pods-logadog.release.xcconfig */;
+			baseConfigurationReference = B9B30351961A5390D5D7C12C /* Pods-Logadog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = logadog/Info.plist;
+				INFOPLIST_FILE = Logadog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = es.islandsapps.logadog;
+				PRODUCT_BUNDLE_IDENTIFIER = es.islandsapps.Logadog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "logadog/logadog-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		AFE66C961CCA122A000931E9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = logadogTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = es.islandsapps.logadogTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/logadog.app/logadog";
-			};
-			name = Debug;
-		};
-		AFE66C971CCA122A000931E9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = logadogTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = es.islandsapps.logadogTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/logadog.app/logadog";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AFE66C701CCA122A000931E9 /* Build configuration list for PBXProject "logadog" */ = {
+		AF9CE6CD1CE0D62C005CD151 /* Build configuration list for PBXProject "Logadog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFE66C901CCA122A000931E9 /* Debug */,
-				AFE66C911CCA122A000931E9 /* Release */,
+				AF9CE6E21CE0D62C005CD151 /* Debug */,
+				AF9CE6E31CE0D62C005CD151 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFE66C921CCA122A000931E9 /* Build configuration list for PBXNativeTarget "logadog" */ = {
+		AF9CE6E41CE0D62C005CD151 /* Build configuration list for PBXNativeTarget "Logadog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFE66C931CCA122A000931E9 /* Debug */,
-				AFE66C941CCA122A000931E9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AFE66C951CCA122A000931E9 /* Build configuration list for PBXNativeTarget "logadogTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AFE66C961CCA122A000931E9 /* Debug */,
-				AFE66C971CCA122A000931E9 /* Release */,
+				AF9CE6E51CE0D62C005CD151 /* Debug */,
+				AF9CE6E61CE0D62C005CD151 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = AFE66C6D1CCA122A000931E9 /* Project object */;
+	rootObject = AF9CE6CA1CE0D62C005CD151 /* Project object */;
 }

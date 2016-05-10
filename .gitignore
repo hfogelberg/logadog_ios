@@ -17,7 +17,7 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
-TideTracker/AppSettings.swift
+Logadog/Settings/ApplicationSettings.swift
 
 ## Other
 *.moved-aside

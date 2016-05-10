@@ -1,8 +1,8 @@
 //
 //  Constants.swift
-//  logadog
+//  Logadog
 //
-//  Created by Henrik Fogelberg on 2016-05-02.
+//  Created by Henrik Fogelberg on 2016-05-09.
 //  Copyright © 2016 Henrik Fogelberg. All rights reserved.
 //
 
@@ -15,7 +15,8 @@ let FALSE = 0
 
 // Keychain
 let KEYCHAIN_TOKEN = "logadog_token"
-let KEYCHAIN_USER = "logadoge_user_id"
+let KEYCHAIN_USER_ID = "logadoge_user_id"
+let KEYCHAIN_USER_NAME = "logadog_user_name"
 
 // Menu
 let MENU_HOME = 0
