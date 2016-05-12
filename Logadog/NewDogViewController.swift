@@ -76,6 +76,9 @@ class NewDogViewController: UIViewController, APIControllerProtocol {
     func didRecieveAPIResults(status: Int, message: String, results: NSDictionary) {
         if status == TRUE {
             
+            dispatch_async(dispatch_get_main_queue()) {
+                self.navigationController!.popViewControllerAnimated(true)
+            }
         } else {
             print(message)
             // ToDo: Show error

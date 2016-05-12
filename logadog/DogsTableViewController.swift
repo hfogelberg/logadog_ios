@@ -29,6 +29,12 @@ class DogsTableViewController: UITableViewController, DogControllerProtocol, API
         getDogs()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        print("viewWillAppear")
+        super.viewWillAppear(animated) 
+        getDogs()
+    }
+    
     func checkValidToken() {
         if let token = TokenController.getToken() {
             // There is a token. Check with the server that it's valid
