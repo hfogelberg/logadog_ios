@@ -33,12 +33,6 @@ class SignupViewController: UIViewController {
         
         let postString = "username=\(username)&password=\(password)&name=\(name)&email=\(email)"
         
-        
-//        let (jsonResponse, responseData) = ApiHelper.postJson(postString, ROUTE_USERS, VERB_POST)
-//        let (jsonResponse, responseData) = ApiHelper.postJson(postString, route: ROUTE_USERS, verb: VERB_POST)
-//        print(jsonResponse)
-//        print(responseData)
-        
     }
     
 }

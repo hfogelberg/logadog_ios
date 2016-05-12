@@ -36,7 +36,7 @@ class LoginViewController: UIViewController, APIControllerProtocol {
             let postString = "username=\(username)&password=\(password)"
             
             self.api = APIController(delegate: self)
-            self.api!.postJson(postString, route: "authenticate", verb: "POST")
+            self.api!.postJson(postString, route: ROUTE_AUTHENTICATE)
         }
     }
     
@@ -46,17 +46,25 @@ class LoginViewController: UIViewController, APIControllerProtocol {
             var userName = ""
             var userId = ""
             
-            if let tokenVal = results["token"] as? String {
-                token = tokenVal
-            }
-            if let usernameVal = results["username"] as? String {
-                userName = usernameVal
-            }
-            if let userIdVal = results["user_id"] as? String {
-                userId = userIdVal
+            if status == TRUE{
+                if let tokenVal = results["token"] as? String {
+                    token = tokenVal
+                }
+                if let usernameVal = results["username"] as? String {
+                    userName = usernameVal
+                }
+                if let userIdVal = results["user_id"] as? String {
+                    userId = userIdVal
+                }
+                
+                TokenController.saveTokenAndUser(token, userId: userId, userName: userName)
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier("dogsListSegue", sender: self)
+                }
+            } else {
+             // Todo: Error message
             }
             
-            TokenController.saveTokenAndUser(token, userId: userId, userName: userName)
         }
     }
 }

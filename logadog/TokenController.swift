@@ -25,7 +25,7 @@ class TokenController {
         return KeychainWrapper.stringForKey(KEYCHAIN_TOKEN) as String?
     }
     
-    func getUserId() -> String? {
+    static func getUserId() -> String? {
         return KeychainWrapper.stringForKey(KEYCHAIN_USER_ID) as String?
     }
     

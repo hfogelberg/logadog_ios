@@ -8,44 +8,96 @@
 
 import UIKit
 
-class DogsTableViewController: UITableViewController {
-
+class DogsTableViewController: UITableViewController, DogControllerProtocol, APIControllerProtocol {
+    var tokenApi : APIController?
+    var api : DogController?
+    var dogs: NSArray = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        // To be on the safe side check that there's a valid token
+        if TokenController.hasToken() {
+            checkValidToken()
+        } else {
+            dispatch_async(dispatch_get_main_queue()) {
+                self.performSegueWithIdentifier("loginSegue", sender: self)
+            }
+        }
+        
+        view.backgroundColor = Colors().backgoundColor()
+        getDogs()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func checkValidToken() {
+        if let token = TokenController.getToken() {
+            // There is a token. Check with the server that it's valid
+            let postString = "token=\(token)"
+            self.tokenApi = APIController(delegate: self)
+            self.tokenApi!.getJson(postString, route: ROUTE_CHECK_TOKEN)
+        } else {
+            dispatch_async(dispatch_get_main_queue()) {
+                self.performSegueWithIdentifier("loginSegue", sender: self)
+            }
+        }
+    }
+    
+    func didRecieveAPIResults(status: Int, message: String, results: NSDictionary) {
+        if status == FALSE {
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
+                UIAlertAction in
+                self.performSegueWithIdentifier("loginSegue", sender: self)
+            }
+            alert.addAction(okAction)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func getDogs() {
+        print("getDogs")
+        let token = TokenController.getToken() as String!
+        let userId = TokenController.getUserId() as String!
+        
+        let params = "token=\(token)"
+        
+        self.api = DogController(delegate: self)
+        self.api!.getDogsArray(params, route: ROUTE_DOGS + "/\(userId)")
+        
+    }
+    
+    func didRecieveDogsResult(status: Int, message: String, dogs: Array<Dog>) {
+        print("Dogs received")
+        print(dogs.count)
+        self.dogs = dogs
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.dogs.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        print(self.dogs[indexPath.row])
+        let item = self.dogs[indexPath.row] as! NSDictionary
+        
+//        let dog = Dog(name: "\(item["name"])", breed: "\(item["breed"])")
+        var name = ""
+        if let nameVal =  item["name"] {
+            name = item["name"]! as! String
+        }
+        cell.textLabel?.text = name
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

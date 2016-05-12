@@ -15,7 +15,6 @@
 		AF9CE6ED1CE0E0BB005CD151 /* TokenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6EC1CE0E0BB005CD151 /* TokenController.swift */; };
 		AF9CE6EF1CE0E122005CD151 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6EE1CE0E122005CD151 /* Constants.swift */; };
 		AF9CE6F21CE0E63C005CD151 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6F11CE0E63C005CD151 /* StartViewController.swift */; };
-		AF9CE6F41CE0EB20005CD151 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6F31CE0EB20005CD151 /* ApiHelper.swift */; };
 		AF9CE6F81CE0F01B005CD151 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6F71CE0F01B005CD151 /* ApplicationSettings.swift */; };
 		AF9CE6FA1CE0F032005CD151 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6F91CE0F032005CD151 /* Api.swift */; };
 		AF9CE6FC1CE1D8E8005CD151 /* DogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6FB1CE1D8E8005CD151 /* DogsTableViewController.swift */; };
@@ -23,6 +22,8 @@
 		AF9CE7011CE1DB8C005CD151 /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE7001CE1DB8C005CD151 /* JsonResponse.swift */; };
 		AF9CE7031CE1E057005CD151 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE7021CE1E057005CD151 /* Colors.swift */; };
 		AF9CE7051CE213B6005CD151 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE7041CE213B6005CD151 /* APIController.swift */; };
+		AF9CE7071CE28378005CD151 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE7061CE28378005CD151 /* Dog.swift */; };
+		AF9CE7091CE35999005CD151 /* DogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE7081CE35999005CD151 /* DogController.swift */; };
 		F33DA45B2C81B6267CE0596E /* Pods_Logadog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5926CF13827B22049758E8C0 /* Pods_Logadog.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +39,6 @@
 		AF9CE6EC1CE0E0BB005CD151 /* TokenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenController.swift; sourceTree = "<group>"; };
 		AF9CE6EE1CE0E122005CD151 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AF9CE6F11CE0E63C005CD151 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		AF9CE6F31CE0EB20005CD151 /* ApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
 		AF9CE6F71CE0F01B005CD151 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
 		AF9CE6F91CE0F032005CD151 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		AF9CE6FB1CE1D8E8005CD151 /* DogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +46,8 @@
 		AF9CE7001CE1DB8C005CD151 /* JsonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonResponse.swift; sourceTree = "<group>"; };
 		AF9CE7021CE1E057005CD151 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		AF9CE7041CE213B6005CD151 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		AF9CE7061CE28378005CD151 /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		AF9CE7081CE35999005CD151 /* DogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogController.swift; sourceTree = "<group>"; };
 		B9B30351961A5390D5D7C12C /* Pods-Logadog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logadog.release.xcconfig"; path = "Pods/Target Support Files/Pods-Logadog/Pods-Logadog.release.xcconfig"; sourceTree = "<group>"; };
 		C6F909479685781150F1082D /* Pods-Logadog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logadog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Logadog/Pods-Logadog.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				AF9CE6EC1CE0E0BB005CD151 /* TokenController.swift */,
-				AF9CE6F31CE0EB20005CD151 /* ApiHelper.swift */,
 				AF9CE7041CE213B6005CD151 /* APIController.swift */,
+				AF9CE7081CE35999005CD151 /* DogController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -147,6 +149,7 @@
 		AF9CE6FF1CE1DB7A005CD151 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AF9CE7061CE28378005CD151 /* Dog.swift */,
 				AF9CE7001CE1DB8C005CD151 /* JsonResponse.swift */,
 			);
 			name = Classes;
@@ -286,12 +289,13 @@
 			files = (
 				AF9CE6F21CE0E63C005CD151 /* StartViewController.swift in Sources */,
 				AF9CE7051CE213B6005CD151 /* APIController.swift in Sources */,
+				AF9CE7091CE35999005CD151 /* DogController.swift in Sources */,
 				AF9CE7031CE1E057005CD151 /* Colors.swift in Sources */,
 				AF9CE6F81CE0F01B005CD151 /* ApplicationSettings.swift in Sources */,
 				AF9CE6ED1CE0E0BB005CD151 /* TokenController.swift in Sources */,
 				AF9CE6E81CE0D6AA005CD151 /* SignupViewController.swift in Sources */,
-				AF9CE6F41CE0EB20005CD151 /* ApiHelper.swift in Sources */,
 				AF9CE6D61CE0D62C005CD151 /* AppDelegate.swift in Sources */,
+				AF9CE7071CE28378005CD151 /* Dog.swift in Sources */,
 				AF9CE7011CE1DB8C005CD151 /* JsonResponse.swift in Sources */,
 				AF9CE6FA1CE0F032005CD151 /* Api.swift in Sources */,
 				AF9CE6EF1CE0E122005CD151 /* Constants.swift in Sources */,

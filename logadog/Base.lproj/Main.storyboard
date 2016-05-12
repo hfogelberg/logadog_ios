@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Signup View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="oBr-4k-UBQ">
             <objects>
-                <viewController storyboardIdentifier="StartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3eI-s3-UZb" customClass="SignupViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3eI-s3-UZb" customClass="StartViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lnm-ju-S2h"/>
                         <viewControllerLayoutGuide type="bottom" id="4w2-NI-k0r"/>
@@ -42,7 +42,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="mKq-RD-a1z" kind="show" id="mQF-Ui-gnU"/>
+                        <segue destination="7U1-ld-hqA" kind="show" identifier="dogsListSegue" id="mQF-Ui-gnU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjK-Vm-WZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -94,7 +94,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="OYc-zw-D3Z" id="hpJ-pI-IKi"/>
                         <outlet property="usernameTextField" destination="aV9-a5-VLZ" id="Uxt-7s-UTg"/>
-                        <segue destination="mKq-RD-a1z" kind="show" identifier="dogsListSegue" id="Gu2-fH-Cy8"/>
+                        <segue destination="7U1-ld-hqA" kind="show" identifier="dogsListSegue" id="Gu2-fH-Cy8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Lh-58-KpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,7 +173,7 @@
                         <outlet property="passwordTextField" destination="OnE-ie-RUi" id="D9I-Qk-cLc"/>
                         <outlet property="repeatTetField" destination="dAs-zV-Iio" id="qlK-3p-838"/>
                         <outlet property="usernameTextField" destination="Ce4-a8-gY1" id="KB4-o2-Zkt"/>
-                        <segue destination="mKq-RD-a1z" kind="show" identifier="dogsListSegue" id="nXb-Qh-zVR"/>
+                        <segue destination="7U1-ld-hqA" kind="show" identifier="dogsListSegue" id="nXb-Qh-zVR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cas-Wd-iD1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,12 +189,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BCy-Zp-A5z">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="BCy-Zp-A5z">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BCy-Zp-A5z" id="5Z7-Cx-EZz">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -203,13 +204,38 @@
                             <outlet property="delegate" destination="mKq-RD-a1z" id="TNg-6K-eKi"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="SoI-Mh-ij1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="c1G-CX-aA6">
+                            <connections>
+                                <action selector="newDogTapped:" destination="mKq-RD-a1z" id="pmu-2C-d2Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uy8-cZ-glr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="8"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l4j-Op-OuJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7U1-ld-hqA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WQw-s6-XGn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mKq-RD-a1z" kind="relationship" relationship="rootViewController" id="1DN-tL-RDp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qr8-rS-y48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1093" y="8"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Gu2-fH-Cy8"/>
+        <segue reference="nXb-Qh-zVR"/>
     </inferredMetricsTieBreakers>
 </document>
