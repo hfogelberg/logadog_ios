@@ -11,13 +11,17 @@ import Foundation
 class Dog {
     var name: String = ""
     var breed: String = ""
+    var gender: String = ""
     
-    init(name: String?, breed: String?) {
+    init(name: String?, breed: String?, gender: String?) {
         if let nameVal = name {
             self.name = nameVal
         }
         if let breedVal = breed {
             self.breed = breedVal
+        }
+        if let genderVal = gender {
+            self.gender = genderVal
         }
     }
 }

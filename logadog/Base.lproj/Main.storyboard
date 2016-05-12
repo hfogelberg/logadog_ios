@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -208,6 +210,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="c1G-CX-aA6">
                             <connections>
                                 <action selector="newDogTapped:" destination="mKq-RD-a1z" id="pmu-2C-d2Z"/>
+                                <segue destination="jMI-Mq-OqD" kind="show" identifier="newDogSegue" id="iVd-X7-dG7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -215,6 +218,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uy8-cZ-glr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1905" y="8"/>
+        </scene>
+        <!--New Dog View Controller-->
+        <scene sceneID="s2x-nu-dhZ">
+            <objects>
+                <viewController id="jMI-Mq-OqD" customClass="NewDogViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J57-IF-a7y"/>
+                        <viewControllerLayoutGuide type="bottom" id="TXp-ao-X4K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X60-re-qcy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KEY-Kd-fvj">
+                                <rect key="frame" x="50" y="100" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Breed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ago-Y8-Y1E">
+                                <rect key="frame" x="50" y="158" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FT9-C2-kGd">
+                                <rect key="frame" x="155" y="214" width="121" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="wui-VS-8hN"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                </segments>
+                                <connections>
+                                    <action selector="genderChanged:" destination="jMI-Mq-OqD" eventType="valueChanged" id="diN-kO-cOG"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMb-pF-V9l">
+                                <rect key="frame" x="50" y="217" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPP-Mr-uvo">
+                                <rect key="frame" x="510" y="498" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="jMI-Mq-OqD" eventType="touchUpInside" id="jNv-0C-0GB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FT9-C2-kGd" firstAttribute="top" secondItem="ago-Y8-Y1E" secondAttribute="bottom" constant="26" id="GOU-d1-pyY"/>
+                            <constraint firstItem="ago-Y8-Y1E" firstAttribute="top" secondItem="KEY-Kd-fvj" secondAttribute="bottom" constant="28" id="Kw7-TU-wGA"/>
+                            <constraint firstItem="KEY-Kd-fvj" firstAttribute="centerX" secondItem="X60-re-qcy" secondAttribute="centerX" id="Lre-lc-Vrq"/>
+                            <constraint firstItem="KEY-Kd-fvj" firstAttribute="trailing" secondItem="ago-Y8-Y1E" secondAttribute="trailing" id="MgZ-mJ-kcZ"/>
+                            <constraint firstItem="FT9-C2-kGd" firstAttribute="leading" secondItem="vMb-pF-V9l" secondAttribute="trailing" constant="48" id="Rc9-Kp-d7B"/>
+                            <constraint firstItem="vMb-pF-V9l" firstAttribute="baseline" secondItem="FT9-C2-kGd" secondAttribute="firstBaseline" id="Xis-Bs-Cjj"/>
+                            <constraint firstItem="KEY-Kd-fvj" firstAttribute="leading" secondItem="X60-re-qcy" secondAttribute="leadingMargin" constant="30" id="ZeY-9E-ePo"/>
+                            <constraint firstItem="KEY-Kd-fvj" firstAttribute="leading" secondItem="ago-Y8-Y1E" secondAttribute="leading" id="aXM-Pp-g3x"/>
+                            <constraint firstItem="KEY-Kd-fvj" firstAttribute="top" secondItem="J57-IF-a7y" secondAttribute="bottom" constant="36" id="crX-cJ-gF2"/>
+                            <constraint firstItem="FT9-C2-kGd" firstAttribute="baseline" secondItem="vMb-pF-V9l" secondAttribute="firstBaseline" id="fY8-yt-DMJ"/>
+                            <constraint firstItem="vMb-pF-V9l" firstAttribute="top" secondItem="ago-Y8-Y1E" secondAttribute="bottom" constant="29" id="hjf-bh-bzn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OPP-Mr-uvo" secondAttribute="trailing" constant="36" id="j6Z-Yl-qiS"/>
+                            <constraint firstItem="ago-Y8-Y1E" firstAttribute="leading" secondItem="vMb-pF-V9l" secondAttribute="leading" id="wwZ-hA-yKs"/>
+                            <constraint firstItem="FT9-C2-kGd" firstAttribute="baseline" secondItem="vMb-pF-V9l" secondAttribute="baseline" id="yIg-zc-Hj2"/>
+                            <constraint firstItem="TXp-ao-X4K" firstAttribute="top" secondItem="OPP-Mr-uvo" secondAttribute="bottom" constant="72" id="z8C-fO-dxt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="breedTextField" destination="ago-Y8-Y1E" id="HBC-xK-WBB"/>
+                        <outlet property="genderSwitch" destination="FT9-C2-kGd" id="mvI-k0-B7B"/>
+                        <outlet property="nameTextField" destination="KEY-Kd-fvj" id="CMq-Ua-HhA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="myJ-R1-2vG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2675" y="8"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l4j-Op-OuJ">

@@ -33,10 +33,10 @@ class LoginViewController: UIViewController, APIControllerProtocol {
         }
         
         if ((username != "") && (password != "")) {
-            let postString = "username=\(username)&password=\(password)"
+            let params = "username=\(username)&password=\(password)"
             
             self.api = APIController(delegate: self)
-            self.api!.postJson(postString, route: ROUTE_AUTHENTICATE)
+            self.api!.postJson(params, route: ROUTE_AUTHENTICATE)
         }
     }
     

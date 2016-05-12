@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF75FC6D1CE4990D009F092C /* NewDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75FC6C1CE4990D009F092C /* NewDogViewController.swift */; };
 		AF9CE6D61CE0D62C005CD151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CE6D51CE0D62C005CD151 /* AppDelegate.swift */; };
 		AF9CE6DB1CE0D62C005CD151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9CE6D91CE0D62C005CD151 /* Main.storyboard */; };
 		AF9CE6DD1CE0D62C005CD151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF9CE6DC1CE0D62C005CD151 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		5926CF13827B22049758E8C0 /* Pods_Logadog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Logadog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF75FC6C1CE4990D009F092C /* NewDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDogViewController.swift; sourceTree = "<group>"; };
 		AF9CE6D21CE0D62C005CD151 /* Logadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9CE6D51CE0D62C005CD151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9CE6DA1CE0D62C005CD151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				AF9CE6F11CE0E63C005CD151 /* StartViewController.swift */,
 				AF9CE6FB1CE1D8E8005CD151 /* DogsTableViewController.swift */,
 				AF9CE6FD1CE1D968005CD151 /* LoginViewController.swift */,
+				AF75FC6C1CE4990D009F092C /* NewDogViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				AF9CE6EF1CE0E122005CD151 /* Constants.swift in Sources */,
 				AF9CE6FE1CE1D968005CD151 /* LoginViewController.swift in Sources */,
 				AF9CE6FC1CE1D8E8005CD151 /* DogsTableViewController.swift in Sources */,
+				AF75FC6D1CE4990D009F092C /* NewDogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

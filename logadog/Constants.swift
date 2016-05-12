@@ -24,3 +24,7 @@ let MENU_CONTACTS = 1
 let MENU_CALENDAR = 2
 let MENU_DIARY = 3
 let MENU_SIGN_OUT = 4
+
+// Dog
+let MALE = "Male"
+let FEMALE = "Female"
