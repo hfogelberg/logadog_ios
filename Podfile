@@ -4,6 +4,7 @@
 use_frameworks!
 
 target 'Logadog' do
+pod 'SwiftyJSON'
 pod 'SwiftKeychainWrapper'
 end
 

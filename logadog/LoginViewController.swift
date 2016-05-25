@@ -2,69 +2,70 @@
 //  LoginViewController.swift
 //  Logadog
 //
-//  Created by Henrik Fogelberg on 2016-05-10.
+//  Created by Henrik Fogelberg on 2016-05-25.
 //  Copyright © 2016 Henrik Fogelberg. All rights reserved.
 //
 
 import UIKit
+import SwiftyJSON
 
-class LoginViewController: UIViewController, APIControllerProtocol {
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+class LoginViewController: UIViewController {
+    @IBOutlet weak var usernameTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
     
-    var api : APIController?
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = Colors().backgoundColor()
     }
     
-    @IBAction func loginTapped(sender: AnyObject) {
+    @IBAction func loginbuttonTapped(sender: AnyObject) {
         var username = ""
         var password = ""
         
-        if let usernameTxt = self.usernameTextField.text {
-            username = usernameTxt
+        if let usernameVal = usernameTextfield.text as String? {
+            username = usernameVal
         }
         
-        if let passwordTxt = self.passwordTextField.text {
-            password = passwordTxt
+        if let passwordVal = passwordTextfield.text as String? {
+            password = passwordVal
         }
         
-        if ((username != "") && (password != "")) {
+        if username != "" && password != "" {
             let params = "username=\(username)&password=\(password)"
             
-            self.api = APIController(delegate: self)
-            self.api!.postJson(params, route: ROUTE_AUTHENTICATE)
-        }
-    }
-    
-    func didRecieveAPIResults(status: Int, message: String, results: NSDictionary) {
-        if results.count > 0 {
-            var token = ""
-            var userName = ""
-            var userId = ""
-            
-            if status == TRUE{
-                if let tokenVal = results["token"] as? String {
-                    token = tokenVal
-                }
-                if let usernameVal = results["username"] as? String {
-                    userName = usernameVal
-                }
-                if let userIdVal = results["user_id"] as? String {
-                    userId = userIdVal
+            RestApiManager.sharedInstance.authenticate(params) { (json: JSON) -> () in
+                var status = STATUS_OK
+                
+                print(json)
+                
+                if let statusVal = json["status"].rawString() as String? {
+                    status = Int(statusVal)!
                 }
                 
-                TokenController.saveTokenAndUser(token, userId: userId, userName: userName)
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.performSegueWithIdentifier("dogsListSegue", sender: self)
+                if status == STATUS_OK {
+                    var userId = ""
+                    var username = ""
+                    var token = ""
+                    
+                    let user = json["user"]
+                    
+                    if let userVal = user["user_id"].rawString() as String? {
+                        userId = userVal
+                    }
+                    if let usernameVal = user["username"].rawString() as String? {
+                        username = usernameVal
+                    }
+                    if let tokenVal = user["token"].rawString() as String? {
+                        token = tokenVal
+                    }
+                    
+                    TokenController.saveTokenAndUser(token, userId: userId, userName: username)
+                    
+                } else {
+                    // Todo: Show allert etc
                 }
-            } else {
-             // Todo: Error message
             }
-            
+        } else {
+            // Todo: Show allert etc
         }
     }
 }

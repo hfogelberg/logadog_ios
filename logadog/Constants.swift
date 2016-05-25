@@ -28,3 +28,12 @@ let MENU_SIGN_OUT = 4
 // Dog
 let MALE = "Male"
 let FEMALE = "Female"
+
+// Status
+let STATUS_OK = 0
+let STATUS_TOKEN_INVALID = -1
+let STATUS_UNKNOWN_USER = -2
+let STATUS_WRONG_PASSWORD = -3
+let STATUS_HTTP_FORBIDDEN = 403
+
+

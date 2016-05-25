@@ -1,10 +1,13 @@
 PODS:
   - SwiftKeychainWrapper (1.0.11)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - SwiftKeychainWrapper
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   SwiftKeychainWrapper: 011a6946923948ffa49708014dd691164d7621d1
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0
