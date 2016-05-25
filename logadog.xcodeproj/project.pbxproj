@@ -23,6 +23,8 @@
 		AFDB2B391CF5D14E00236890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B381CF5D14E00236890 /* Main.storyboard */; };
 		AFDB2B3E1CF5D8B800236890 /* DogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B3D1CF5D8B800236890 /* DogsTableViewController.swift */; };
 		AFDB2B401CF5E2EB00236890 /* AddDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B3F1CF5E2EB00236890 /* AddDogViewController.swift */; };
+		AFDB2B421CF5E3C900236890 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B411CF5E3C900236890 /* ApplicationSettings.swift */; };
+		AFDB2B441CF5F49B00236890 /* Statuscode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B431CF5F49B00236890 /* Statuscode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		AFDB2B381CF5D14E00236890 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AFDB2B3D1CF5D8B800236890 /* DogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
 		AFDB2B3F1CF5E2EB00236890 /* AddDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDogViewController.swift; sourceTree = "<group>"; };
+		AFDB2B411CF5E3C900236890 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
+		AFDB2B431CF5F49B00236890 /* Statuscode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statuscode.swift; sourceTree = "<group>"; };
 		CA07CBE447803FE19E17AFB2 /* Pods_Logadog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Logadog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,6 +123,7 @@
 				AFDB2B281CF5B10300236890 /* Colors.swift */,
 				AFDB2B291CF5B10300236890 /* Constants.swift */,
 				AFDB2B2A1CF5B10300236890 /* ErrorMessages.swift */,
+				AFDB2B431CF5F49B00236890 /* Statuscode.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 		AFDB2B231CF5B0A600236890 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				AFDB2B411CF5E3C900236890 /* ApplicationSettings.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFDB2B421CF5E3C900236890 /* ApplicationSettings.swift in Sources */,
 				AFDB2B311CF5B12600236890 /* LoginViewController.swift in Sources */,
 				AFDB2B271CF5B0D800236890 /* ApiController.swift in Sources */,
 				AFDB2B331CF5B7C600236890 /* SignupViewController.swift in Sources */,
@@ -288,6 +295,7 @@
 				AFDB2B2C1CF5B10300236890 /* Colors.swift in Sources */,
 				AFDB2B351CF5BCE000236890 /* StartViewController.swift in Sources */,
 				AFDB2B111CF5B02300236890 /* AppDelegate.swift in Sources */,
+				AFDB2B441CF5F49B00236890 /* Statuscode.swift in Sources */,
 				AFDB2B401CF5E2EB00236890 /* AddDogViewController.swift in Sources */,
 				AFDB2B2E1CF5B10300236890 /* ErrorMessages.swift in Sources */,
 				AFDB2B371CF5BFD500236890 /* Api.swift in Sources */,
