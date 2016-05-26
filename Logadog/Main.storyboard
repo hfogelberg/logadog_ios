@@ -209,6 +209,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aR-KR-FvN">
+                                <rect key="frame" x="236" y="299" width="106" height="30"/>
+                                <state key="normal" title="Add Apperance"/>
+                                <connections>
+                                    <segue destination="4de-x7-HpW" kind="show" identifier="newAppearanceSegue" id="6b8-P7-XdW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -221,6 +228,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwC-yC-fap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3529" y="-162"/>
+        </scene>
+        <!--New Apperance View Controller-->
+        <scene sceneID="Tnf-Dq-ZWL">
+            <objects>
+                <viewController id="4de-x7-HpW" customClass="NewApperanceViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rfh-nP-ILy"/>
+                        <viewControllerLayoutGuide type="bottom" id="7lE-pF-Vit"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7gU-PG-ImP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Color" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PFf-p5-yHy">
+                                <rect key="frame" x="50" y="100" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPF-GE-FV8">
+                                <rect key="frame" x="50" y="150" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WiR-d3-O73">
+                                <rect key="frame" x="50" y="200" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXZ-SD-ZvT">
+                                <rect key="frame" x="270" y="542" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="4de-x7-HpW" eventType="touchUpInside" id="9vh-J7-1M6"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4vQ-AZ-sd4">
+                                <rect key="frame" x="50" y="261" width="500" height="261"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4vQ-AZ-sd4" firstAttribute="top" secondItem="WiR-d3-O73" secondAttribute="bottom" constant="31" id="5pZ-tt-gK8"/>
+                            <constraint firstItem="ZPF-GE-FV8" firstAttribute="top" secondItem="PFf-p5-yHy" secondAttribute="bottom" constant="20" id="6xc-d2-P9x"/>
+                            <constraint firstItem="WiR-d3-O73" firstAttribute="top" secondItem="ZPF-GE-FV8" secondAttribute="bottom" constant="20" id="B4A-m9-wsC"/>
+                            <constraint firstItem="PFf-p5-yHy" firstAttribute="leading" secondItem="7gU-PG-ImP" secondAttribute="leadingMargin" constant="30" id="Crj-eZ-cKH"/>
+                            <constraint firstItem="PFf-p5-yHy" firstAttribute="centerX" secondItem="7gU-PG-ImP" secondAttribute="centerX" id="Ezi-1b-mtc"/>
+                            <constraint firstItem="ZPF-GE-FV8" firstAttribute="trailing" secondItem="PFf-p5-yHy" secondAttribute="trailing" id="VtJ-Ki-2Ii"/>
+                            <constraint firstItem="WiR-d3-O73" firstAttribute="leading" secondItem="4vQ-AZ-sd4" secondAttribute="leading" id="VyK-CJ-Z3E"/>
+                            <constraint firstItem="7lE-pF-Vit" firstAttribute="top" secondItem="ZXZ-SD-ZvT" secondAttribute="bottom" constant="28" id="ZiV-Ef-XIz"/>
+                            <constraint firstItem="PFf-p5-yHy" firstAttribute="leading" secondItem="ZPF-GE-FV8" secondAttribute="leading" id="gLk-aA-chZ"/>
+                            <constraint firstItem="PFf-p5-yHy" firstAttribute="top" secondItem="rfh-nP-ILy" secondAttribute="bottom" constant="36" id="lUd-CN-6qV"/>
+                            <constraint firstItem="WiR-d3-O73" firstAttribute="trailing" secondItem="4vQ-AZ-sd4" secondAttribute="trailing" id="tyx-Ml-Sep"/>
+                            <constraint firstItem="ZXZ-SD-ZvT" firstAttribute="leading" secondItem="7gU-PG-ImP" secondAttribute="leading" constant="270" id="vbj-fx-QPW"/>
+                            <constraint firstItem="WiR-d3-O73" firstAttribute="trailing" secondItem="ZPF-GE-FV8" secondAttribute="trailing" id="wft-69-6pW"/>
+                            <constraint firstItem="ZPF-GE-FV8" firstAttribute="leading" secondItem="WiR-d3-O73" secondAttribute="leading" id="x3J-D6-3xl"/>
+                            <constraint firstItem="ZXZ-SD-ZvT" firstAttribute="top" secondItem="4vQ-AZ-sd4" secondAttribute="bottom" constant="20" id="z9x-HH-2Vl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorTextfield" destination="PFf-p5-yHy" id="q25-xL-xd1"/>
+                        <outlet property="commentTextview" destination="4vQ-AZ-sd4" id="rJj-kM-214"/>
+                        <outlet property="heightTextfield" destination="ZPF-GE-FV8" id="nZI-D3-bSF"/>
+                        <outlet property="weightTextfield" destination="WiR-d3-O73" id="Utw-dv-LqX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zGi-9X-YmV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4354" y="-162"/>
         </scene>
         <!--Add Dog View Controller-->
         <scene sceneID="OUz-Ju-KXF">

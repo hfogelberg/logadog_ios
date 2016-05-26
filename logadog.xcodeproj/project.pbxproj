@@ -27,6 +27,8 @@
 		AFDB2B4A1CF6F64600236890 /* DogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B491CF6F64600236890 /* DogsTableViewController.swift */; };
 		AFDB2B4D1CF7096900236890 /* DogObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B4C1CF7096900236890 /* DogObject.swift */; };
 		AFDB2B4F1CF71C8200236890 /* ShowDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */; };
+		AFDB2B531CF72A5A00236890 /* AppearanceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */; };
+		AFDB2B551CF72B2200236890 /* NewApperanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B541CF72B2200236890 /* NewApperanceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		AFDB2B491CF6F64600236890 /* DogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
 		AFDB2B4C1CF7096900236890 /* DogObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogObject.swift; sourceTree = "<group>"; };
 		AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDogViewController.swift; sourceTree = "<group>"; };
+		AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceObject.swift; sourceTree = "<group>"; };
+		AFDB2B541CF72B2200236890 /* NewApperanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewApperanceViewController.swift; sourceTree = "<group>"; };
 		CA07CBE447803FE19E17AFB2 /* Pods_Logadog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Logadog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -159,6 +163,7 @@
 				AFDB2B3F1CF5E2EB00236890 /* AddDogViewController.swift */,
 				AFDB2B491CF6F64600236890 /* DogsTableViewController.swift */,
 				AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */,
+				AFDB2B541CF72B2200236890 /* NewApperanceViewController.swift */,
 			);
 			name = Viewcontrollers;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				AFDB2B4C1CF7096900236890 /* DogObject.swift */,
+				AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 				AFDB2B4D1CF7096900236890 /* DogObject.swift in Sources */,
 				AFDB2B311CF5B12600236890 /* LoginViewController.swift in Sources */,
 				AFDB2B271CF5B0D800236890 /* ApiController.swift in Sources */,
+				AFDB2B531CF72A5A00236890 /* AppearanceObject.swift in Sources */,
 				AFDB2B331CF5B7C600236890 /* SignupViewController.swift in Sources */,
 				AFDB2B4A1CF6F64600236890 /* DogsTableViewController.swift in Sources */,
 				AFDB2B2F1CF5B10300236890 /* TokenController.swift in Sources */,
@@ -316,6 +323,7 @@
 				AFDB2B401CF5E2EB00236890 /* AddDogViewController.swift in Sources */,
 				AFDB2B2E1CF5B10300236890 /* ErrorMessages.swift in Sources */,
 				AFDB2B371CF5BFD500236890 /* Api.swift in Sources */,
+				AFDB2B551CF72B2200236890 /* NewApperanceViewController.swift in Sources */,
 				AFDB2B2D1CF5B10300236890 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

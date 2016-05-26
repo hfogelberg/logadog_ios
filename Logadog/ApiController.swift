@@ -46,6 +46,12 @@ class RestApiManager: NSObject {
         })
     }
     
+    func updateDog(body: [String:String], onCompletion: (JSON) -> Void) {
+        let route = "\(API_ROUTE_URL)/\(INFO_DESCRIPTION)"
+        makeHTTPPostRequest(route, params: body, onCompletion: {json, err in
+            onCompletion(json as JSON)
+        })
+    }
     
     func postHttp(params: [String:String], route: String, onCompletion: (JSON) -> Void) {
         let route = "\(API_ROUTE_URL)/\(route)"
@@ -55,7 +61,6 @@ class RestApiManager: NSObject {
         })
     }
     
-    // MARK: Perform a GET Request
     private func makeHTTPGetRequest(urlWithParams: String, onCompletion: ServiceResponse) {
         let request = NSMutableURLRequest(URL: NSURL(string: urlWithParams)!)
         print(request)
@@ -73,18 +78,13 @@ class RestApiManager: NSObject {
         task.resume()
     }
     
-    // MARK: Perform a POST Request
     private func makeHTTPPostRequest(path: String, params: [String: String], onCompletion: ServiceResponse) {
         let request = NSMutableURLRequest(URL: NSURL(string: path)!)
         
-        // Set the method to POST
         request.HTTPMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField:"Content-Type")
 
-        
         do {
-            // Set the POST body for the request
-            //let jsonBody = try NSJSONSerialization.dataWithJSONObject(params, options: .PrettyPrinted)
             let jsonBody = try NSJSONSerialization.dataWithJSONObject(params, options: [])
 
             request.HTTPBody = jsonBody

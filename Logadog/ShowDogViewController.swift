@@ -28,5 +28,10 @@ class ShowDogViewController: UIViewController {
         genderLabel.text = dog.gender
     }
     
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "newAppearanceSegue" {
+            let nextScene = segue.destinationViewController as! NewApperanceViewController
+            nextScene.dogId = dog.id
+        }
+    }
 }
