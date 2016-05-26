@@ -14,8 +14,10 @@ class DogsTableViewController: UITableViewController {
     var dogs = [DogObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("DogsTableViewController")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.dogs.removeAll()
         getDogs()
     }
     
@@ -24,14 +26,13 @@ class DogsTableViewController: UITableViewController {
         let token = TokenController.getToken()
         let userId = TokenController.getUserId()
         
+        self.dogs.removeAll()
+        
         if token != "" && userId != "" {
             let params = "userid=\(userId)&token=\(token)"
             print(params)
             RestApiManager.sharedInstance.getDogs(params) { (json: JSON) -> () in
                 var status = STATUS_OK
-                
-                print(json)
-                
                 if let statusVal = json["status"].rawString() as String? {
                     status = Int(statusVal)!
                 }
@@ -39,10 +40,9 @@ class DogsTableViewController: UITableViewController {
                 if status == STATUS_OK {
                     if let dogs = json["dogs"].array {
                         for dog in dogs {
-                            print(dog)
                             self.dogs.append(DogObject(json: dog))
-                            
                         }
+                        
                         dispatch_async(dispatch_get_main_queue(),{
                             self.tableView.reloadData()
                         })
@@ -54,13 +54,8 @@ class DogsTableViewController: UITableViewController {
                 }
             }
         } else {
-            print("Not token. Redirect to Start")
+            print("Invalid token. Redirect to Start")
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -70,18 +65,32 @@ class DogsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let num = self.dogs.count
+        print("numberOfRowsInSection: \(num)")
+        
         return self.dogs.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         let dog = self.dogs[indexPath.row]
-        
         cell.textLabel!.text = dog.name
-
         return cell
     }
-
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDogSegue" {
+            let nextScene = segue.destinationViewController as! ShowDogViewController
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                print("Index: \(self.dogs[indexPath.row])")
+                let dog = self.dogs[indexPath.row]
+                nextScene.dog = dog
+            }
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -116,15 +125,4 @@ class DogsTableViewController: UITableViewController {
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

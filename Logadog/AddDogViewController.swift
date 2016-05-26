@@ -57,7 +57,20 @@ class AddDogViewController: UIViewController {
         ]
         
         RestApiManager.sharedInstance.postHttp(body, route: ROUTE_DOGS, onCompletion:  { (json: JSON) -> () in
+            var status = STATUS_OK
+            
             print(json)
+            
+            if let statusVal = json["status"].rawString() as String? {
+                status = Int(statusVal)!
+            }
+            
+            if status == STATUS_OK {
+                self.navigationController?.popViewControllerAnimated(true)
+            } else {
+                // ToDo: Dsiplay error message
+                print("ERROR: \(status)")
+            }
         })
     }
 }

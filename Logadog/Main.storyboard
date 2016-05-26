@@ -179,6 +179,49 @@
             </objects>
             <point key="canvasLocation" x="855" y="1619"/>
         </scene>
+        <!--Show Dog View Controller-->
+        <scene sceneID="oW1-wd-lGK">
+            <objects>
+                <viewController id="l2x-LY-QsQ" customClass="ShowDogViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bft-Th-wDw"/>
+                        <viewControllerLayoutGuide type="bottom" id="SPs-a6-yOE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bX6-a0-eV6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MpW-c1-Ahi">
+                                <rect key="frame" x="50" y="100" width="500" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V91-wu-70c">
+                                <rect key="frame" x="50" y="150" width="500" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abA-CB-WB3">
+                                <rect key="frame" x="51" y="201" width="500" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="breedLabel" destination="V91-wu-70c" id="DQx-d3-iVL"/>
+                        <outlet property="genderLabel" destination="abA-CB-WB3" id="1Qb-mt-fNR"/>
+                        <outlet property="nameLabel" destination="MpW-c1-Ahi" id="GDk-nr-0tO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwC-yC-fap" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3529" y="-162"/>
+        </scene>
         <!--Add Dog View Controller-->
         <scene sceneID="OUz-Ju-KXF">
             <objects>
@@ -240,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuC-2k-blv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3562" y="451"/>
+            <point key="canvasLocation" x="3549" y="636"/>
         </scene>
         <!--Dogs Table View Controller-->
         <scene sceneID="jjK-I0-vE1">
@@ -258,6 +301,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="l2x-LY-QsQ" kind="show" identifier="showDogSegue" id="hNk-an-ZeF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
