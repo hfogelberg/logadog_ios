@@ -56,16 +56,13 @@ class StartViewController: UIViewController {
                 status = Int(statusVal)!
             }
             
-            if status == STATUS_OK {
-            
-                
-            } else {
+            if status != STATUS_OK {
                 // Todo: Show error message
+                TokenController.removeTokenAndUser()
                 retVal = false
             }
         })
         
         return retVal
     }
-    
 }

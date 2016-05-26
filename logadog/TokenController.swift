@@ -32,18 +32,23 @@ class TokenController {
         }
     }
     
-    static func getToken() -> String? {
-        let token = KeychainWrapper.stringForKey(KEYCHAIN_TOKEN) as String?
-        
-        if token == "null" {
-            return nil
-        } else {
-            return token
+    static func getToken() -> String {
+        var token: String = ""
+        if let tokenVal = KeychainWrapper.stringForKey(KEYCHAIN_TOKEN) as String? {
+            token = tokenVal
         }
+        
+        return token
     }
     
-    static func getUserId() -> String? {
-        return KeychainWrapper.stringForKey(KEYCHAIN_USER_ID) as String?
+    static func getUserId() -> String {
+        var userid = ""
+        
+        if let idVal = KeychainWrapper.stringForKey(KEYCHAIN_USER_ID) as String? {
+            userid = idVal
+        }
+        
+        return userid
     }
     
     static func saveTokenAndUser(token : String, userId: String, userName: String) -> Bool {

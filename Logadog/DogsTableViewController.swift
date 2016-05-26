@@ -2,7 +2,7 @@
 //  DogsTableViewController.swift
 //  Logadog
 //
-//  Created by Henrik Fogelberg on 2016-05-25.
+//  Created by Henrik Fogelberg on 2016-05-26.
 //  Copyright © 2016 Henrik Fogelberg. All rights reserved.
 //
 
@@ -11,52 +11,76 @@ import SwiftyJSON
 
 class DogsTableViewController: UITableViewController {
     
-    var dogs = [AnyObject]()
-
+    var dogs = [DogObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         print("DogsTableViewController")
         getDogs()
     }
     
-    func getDogs(){
+    func getDogs() {
+        print("getDogs")
         let token = TokenController.getToken()
         let userId = TokenController.getUserId()
         
-        let params = "userid=\(userId)&token=\(token)"
-        RestApiManager.sharedInstance.getDogs(params) { (json: JSON) -> () in
-            var status = STATUS_OK
-            
-            print(json)
-            
-            if let statusVal = json["status"].rawString() as String? {
-                status = Int(statusVal)!
+        if token != "" && userId != "" {
+            let params = "userid=\(userId)&token=\(token)"
+            print(params)
+            RestApiManager.sharedInstance.getDogs(params) { (json: JSON) -> () in
+                var status = STATUS_OK
+                
+                print(json)
+                
+                if let statusVal = json["status"].rawString() as String? {
+                    status = Int(statusVal)!
+                }
+                
+                if status == STATUS_OK {
+                    if let dogs = json["dogs"].array {
+                        for dog in dogs {
+                            print(dog)
+                            self.dogs.append(DogObject(json: dog))
+                            
+                        }
+                        dispatch_async(dispatch_get_main_queue(),{
+                            self.tableView.reloadData()
+                        })
+                    }
+                } else {
+                    // ToDo
+                    print("Some error. For now redirect to start and remove token")
+                    TokenController.removeTokenAndUser()
+                }
             }
-            
-            if status == STATUS_OK {
-                print(json["dogs"])
-            }
+        } else {
+            print("Not token. Redirect to Start")
         }
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dogs.count
+        return self.dogs.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let dog = self.dogs[indexPath.row]
+        
+        cell.textLabel!.text = dog.name
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

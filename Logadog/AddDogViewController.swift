@@ -52,8 +52,8 @@ class AddDogViewController: UIViewController {
             "name": name,
             "breed": breed,
             "gender": gender,
-            "token": TokenController.getToken()!,
-            "userid": TokenController.getUserId()!
+            "token": TokenController.getToken(),
+            "userid": TokenController.getUserId()
         ]
         
         RestApiManager.sharedInstance.postHttp(body, route: ROUTE_DOGS, onCompletion:  { (json: JSON) -> () in

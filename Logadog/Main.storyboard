@@ -33,6 +33,7 @@
                                 <state key="normal" title="Log in"/>
                                 <connections>
                                     <action selector="loginbuttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wgb-Y7-SzN"/>
+                                    <segue destination="JHm-HL-7OI" kind="show" identifier="dogsListSegue" id="7is-ZC-6fX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -55,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141" y="-111"/>
+            <point key="canvasLocation" x="1009" y="-47"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="JHa-Bm-WDc">
@@ -70,36 +71,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQP-Zu-7eS">
-                                <rect key="frame" x="274" y="214" width="52" height="30"/>
+                                <rect key="frame" x="215" y="412" width="52" height="30"/>
                                 <state key="normal" title="Sign up"/>
                                 <connections>
-                                    <segue destination="zON-nP-xvK" kind="showDetail" identifier="signupSegue" id="GJv-Ha-mJw"/>
+                                    <segue destination="zON-nP-xvK" kind="show" identifier="signupSegue" id="Clj-ZW-RlM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUm-v9-H6G">
-                                <rect key="frame" x="279" y="407" width="42" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUm-v9-H6G">
+                                <rect key="frame" x="220" y="275" width="42" height="30"/>
                                 <state key="normal" title="Log in"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="loginSegue" id="mPf-g8-1iH"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="loginSegue" id="Fki-LH-w7x"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NUm-v9-H6G" firstAttribute="centerX" secondItem="yQP-Zu-7eS" secondAttribute="centerX" id="BaE-xF-IGh"/>
-                            <constraint firstItem="yQP-Zu-7eS" firstAttribute="top" secondItem="BpW-Ck-2ww" secondAttribute="bottom" constant="194" id="CAe-Ke-wOb"/>
-                            <constraint firstItem="5zR-Fo-FQo" firstAttribute="top" secondItem="NUm-v9-H6G" secondAttribute="bottom" constant="165" id="Oba-6z-whl"/>
-                            <constraint firstItem="NUm-v9-H6G" firstAttribute="centerX" secondItem="a4U-3w-pa7" secondAttribute="centerX" id="o4W-Sa-pp5"/>
+                            <constraint firstItem="yQP-Zu-7eS" firstAttribute="centerX" secondItem="NUm-v9-H6G" secondAttribute="centerX" id="Cg1-J4-9bt"/>
+                            <constraint firstItem="NUm-v9-H6G" firstAttribute="top" secondItem="BpW-Ck-2ww" secondAttribute="bottom" constant="255" id="Ku8-At-OP8"/>
+                            <constraint firstItem="5zR-Fo-FQo" firstAttribute="top" secondItem="yQP-Zu-7eS" secondAttribute="bottom" constant="158" id="OAg-TW-exd"/>
+                            <constraint firstItem="yQP-Zu-7eS" firstAttribute="leading" secondItem="a4U-3w-pa7" secondAttribute="leading" constant="215" id="aua-wE-MrT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MRd-js-66B"/>
                     <connections>
-                        <segue destination="iXX-Gq-4oq" kind="showDetail" identifier="dogsListSegue" id="kY9-Z7-BP1"/>
+                        <segue destination="JHm-HL-7OI" kind="show" identifier="dogsListSegue" id="FwO-jH-Kib"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ux4-S4-49C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="633"/>
+            <point key="canvasLocation" x="259" y="505"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="IdO-je-x0y">
@@ -176,42 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nmo-nw-JtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="1894"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="vK8-AQ-rzR">
-            <objects>
-                <tableViewController id="ocE-7H-AHC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qgQ-Nn-7Hi">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KAn-wa-DVd">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KAn-wa-DVd" id="qDp-5A-RNp">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ocE-7H-AHC" id="cvJ-ah-AVM"/>
-                            <outlet property="delegate" destination="ocE-7H-AHC" id="xKG-xk-v6k"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="rtP-ih-14s">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zMV-AG-M0d">
-                            <connections>
-                                <segue destination="AV7-l6-dus" kind="show" identifier="AddDogSegue" action="showDetailViewController:sender:" id="hi0-4g-bKF"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="smx-vt-sK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3498" y="809"/>
+            <point key="canvasLocation" x="855" y="1619"/>
         </scene>
         <!--Add Dog View Controller-->
         <scene sceneID="OUz-Ju-KXF">
@@ -274,25 +240,63 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuC-2k-blv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4292" y="876"/>
+            <point key="canvasLocation" x="3562" y="451"/>
+        </scene>
+        <!--Dogs Table View Controller-->
+        <scene sceneID="jjK-I0-vE1">
+            <objects>
+                <tableViewController id="3bc-gV-rg0" customClass="DogsTableViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="528-b3-XVv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="bmj-vd-SeY">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bmj-vd-SeY" id="2mW-7g-Ac0">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3bc-gV-rg0" id="SpM-lJ-Ohe"/>
+                            <outlet property="delegate" destination="3bc-gV-rg0" id="TTN-Ew-MRm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="TzU-mQ-IiE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lYO-Po-VUp">
+                            <connections>
+                                <segue destination="AV7-l6-dus" kind="show" identifier="newDogSegue" action="showDetailViewController:sender:" id="5aK-ha-KpB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IkQ-yR-GOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2695" y="451"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="WVh-In-tIQ">
+        <scene sceneID="aje-UU-Yon">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iXX-Gq-4oq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JHm-HL-7OI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9M6-re-Ga3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ry1-hW-G4H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ocE-7H-AHC" kind="relationship" relationship="rootViewController" id="FOD-5P-T2N"/>
+                        <segue destination="3bc-gV-rg0" kind="relationship" relationship="rootViewController" id="P2w-8u-0fG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pog-lj-1tm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iR6-IM-Q02" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2686" y="809"/>
+            <point key="canvasLocation" x="1883" y="451"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FwO-jH-Kib"/>
+    </inferredMetricsTieBreakers>
 </document>
