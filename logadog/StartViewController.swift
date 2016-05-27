@@ -10,6 +10,10 @@ import UIKit
 import SwiftyJSON
 
 class StartViewController: UIViewController {
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,7 @@ class StartViewController: UIViewController {
                 }
             } else {
                 // There is a token, but it's expired. Log in again
+                TokenController.removeTokenAndUser()
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     self.performSegueWithIdentifier("loginSegue", sender: self)
@@ -53,7 +58,11 @@ class StartViewController: UIViewController {
             print(json)
             
             if let statusVal = json["status"].rawString() as String? {
-                status = Int(statusVal)!
+                if statusVal != "null"{
+                    status = Int(statusVal)!
+                } else {
+                    status = STATUS_SERVER_ERROR
+                }
             }
             
             if status != STATUS_OK {

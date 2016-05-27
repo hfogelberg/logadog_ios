@@ -13,6 +13,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -38,7 +42,11 @@ class LoginViewController: UIViewController {
                 print(json)
                 
                 if let statusVal = json["status"].rawString() as String? {
-                    status = Int(statusVal)!
+                    if statusVal != "null" {
+                        status = Int(statusVal)!
+                    } else {
+                        status = STATUS_SERVER_ERROR
+                    }
                 }
                 
                 if status == STATUS_OK {
@@ -65,7 +73,12 @@ class LoginViewController: UIViewController {
                     }
                     
                 } else {
-                    // Todo: Show allert etc
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        let alertController = UIAlertController(title: "Error", message: "We have a problem with our server.Please try again later", preferredStyle: .Alert)
+                        alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    }
                 }
             }
         } else {

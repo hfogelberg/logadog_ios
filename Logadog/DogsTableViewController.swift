@@ -48,16 +48,26 @@ class DogsTableViewController: UITableViewController {
                         })
                     }
                 } else {
-                    // ToDo
-                    print("Some error. For now redirect to start and remove token")
-                    TokenController.removeTokenAndUser()
+                    self.redirectToStart()
                 }
             }
         } else {
-            print("Invalid token. Redirect to Start")
+            self.redirectToStart()
         }
     }
 
+    func redirectToStart() {
+        print("Invalid token or some error. Redirect to Start")
+        TokenController.removeTokenAndUser()
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            let alertController = UIAlertController(title: "Error", message: "We have a problem with our server.Please try again later", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

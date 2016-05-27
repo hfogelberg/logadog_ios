@@ -28,6 +28,8 @@ class ErrorMessages {
                 message = "You have been signed logged out. Please sign in again."
             case STATUS_TOKEN_AUTHENTICATION_FAILED:
                 message = "You have been signed logged out. Please sign in again."
+            case STATUS_SERVER_ERROR:
+                message = "We are experiencing server problems. Please try again later."
             default:
                 message = "An error has occured. Please restart the app and try again later."
         }
