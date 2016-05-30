@@ -64,7 +64,8 @@ class DogsTableViewController: UITableViewController {
         dispatch_async(dispatch_get_main_queue()) {
             let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { action in
-                self.performSegueWithIdentifier("loginSegue", sender: self) }))
+                self.performSegueWithIdentifier("loginSegue", sender: self) })
+            )
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }

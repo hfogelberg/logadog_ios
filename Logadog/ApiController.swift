@@ -74,13 +74,13 @@ class RestApiManager: NSObject {
         })
     }
     
-    func postHttp(params: [String:String], route: String, onCompletion: (JSON) -> Void) {
-        let route = "\(API_ROUTE_URL)/\(route)"
-        
-        makeHTTPPostRequest(route, params: params, onCompletion:  {json, err in
-            onCompletion(json as JSON)
-        })
-    }
+//    func postHttp(params: [String:String], route: String, onCompletion: (JSON) -> Void) {
+//        let route = "\(API_ROUTE_URL)/\(route)"
+//        
+//        makeHTTPPostRequest(route, params: params, onCompletion:  {json, err in
+//            onCompletion(json as JSON)
+//        })
+//    }
     
     private func makeHTTPGetRequest(urlWithParams: String, onCompletion: ServiceResponse) {
         let request = NSMutableURLRequest(URL: NSURL(string: urlWithParams)!)

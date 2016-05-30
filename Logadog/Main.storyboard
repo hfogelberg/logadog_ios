@@ -222,7 +222,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="fR5-uJ-z0n">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="nW1-tR-1Sa"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="nW1-tR-1Sa">
+                            <connections>
+                                <segue destination="AV7-l6-dus" kind="show" identifier="changeDogSegue" id="NXe-yD-2ly"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -379,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuC-2k-blv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4673" y="720"/>
+            <point key="canvasLocation" x="5573" y="1060"/>
         </scene>
         <!--Dogs Table View Controller-->
         <scene sceneID="jjK-I0-vE1">
@@ -414,6 +418,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginSegue" id="RBT-JL-Fda"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IkQ-yR-GOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -457,6 +464,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KbV-IA-3SG"/>
+        <segue reference="ZEQ-R3-q2L"/>
+        <segue reference="ujV-Lj-T7i"/>
+        <segue reference="RBT-JL-Fda"/>
     </inferredMetricsTieBreakers>
 </document>

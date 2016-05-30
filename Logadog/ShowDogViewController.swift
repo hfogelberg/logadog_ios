@@ -34,7 +34,7 @@ class ShowDogViewController: UIViewController {
             nextScene.dogId = dog.id
         } else if segue.identifier == "changeDogSegue" {
             let nextScene = segue.destinationViewController as! AddDogViewController
-            nextScene.dogId = dog.id
+            nextScene.dog = dog
         }
     }
 }

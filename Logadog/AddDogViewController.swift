@@ -16,12 +16,27 @@ class AddDogViewController: UIViewController {
     @IBOutlet weak var genderSwitch: UISegmentedControl!
     
     var gender = MALE
-    var dogId = ""
+    var dog: DogObject!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if dog != nil {
+            showDog()
+        }
     }
     
+    
+    func showDog(){
+        nameTextfield.text = dog.name
+        breedTextfield.text = dog.breed
+
+        if gender == MALE {
+            self.genderSwitch.selectedSegmentIndex = 0
+        } else {
+            self.genderSwitch.selectedSegmentIndex = 1
+        }
+    }
     
     @IBAction func genderSwitchChanged(sender: AnyObject) {
         switch genderSwitch.selectedSegmentIndex
@@ -49,7 +64,7 @@ class AddDogViewController: UIViewController {
             breed = breedVal
         }
         
-        if dogId == "" {
+        if dog == nil {
             body = [
                 "name": name,
                 "breed": breed,
@@ -65,7 +80,7 @@ class AddDogViewController: UIViewController {
                 "breed": breed,
                 "gender": gender,
                 "token": TokenController.getToken(),
-                "dogid": self.dogId
+                "dogid": self.dog.id
             ]
             
             route = ROUTE_CHANGE_DOG
@@ -75,7 +90,8 @@ class AddDogViewController: UIViewController {
     }
     
     func postJson(route: String, body:[String:String]) {
-        RestApiManager.sharedInstance.postHttp(body, route: ROUTE_DOGS, onCompletion:  { (json: JSON) -> () in
+        //RestApiManager.sharedInstance.postRequest(body, route: route, onCompletion:  { (json: JSON) -> () in
+        RestApiManager.sharedInstance.postRequest(route, params: body, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             print(json)
             
@@ -84,9 +100,9 @@ class AddDogViewController: UIViewController {
             }
             
             if status == STATUS_OK {
-//                self.navigationController?.popViewControllerAnimated(true)
-                if let navController = self.navigationController {
-                    navController.popViewControllerAnimated(true)
+                dispatch_async(dispatch_get_main_queue()) {
+//                    self.navigationController?.popViewControllerAnimated(true)
+                    self.navigationController?.popToRootViewControllerAnimated(true)
                 }
             } else {
                 // ToDo: Dsiplay error message
