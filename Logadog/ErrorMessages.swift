@@ -16,6 +16,8 @@ class ErrorMessages {
                 message = "You have been signed logged out. Please sign in again."
             case STATUS_UNKNOWN_USER:
                 message = "Wrong user name or password."
+            case STATUS_NO_USERNAME_OR_PASSWORD:
+                message = "Username or password missing."
             case STATUS_WRONG_PASSWORD:
                 message = "Wrong user name or password."
             case STATUS_HTTP_FORBIDDEN:

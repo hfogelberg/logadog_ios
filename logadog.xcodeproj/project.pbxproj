@@ -29,6 +29,7 @@
 		AFDB2B4F1CF71C8200236890 /* ShowDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */; };
 		AFDB2B531CF72A5A00236890 /* AppearanceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */; };
 		AFDB2B551CF72B2200236890 /* NewApperanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B541CF72B2200236890 /* NewApperanceViewController.swift */; };
+		AFDB2B571CF83CC100236890 /* ChangeDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B561CF83CC100236890 /* ChangeDogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDogViewController.swift; sourceTree = "<group>"; };
 		AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceObject.swift; sourceTree = "<group>"; };
 		AFDB2B541CF72B2200236890 /* NewApperanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewApperanceViewController.swift; sourceTree = "<group>"; };
+		AFDB2B561CF83CC100236890 /* ChangeDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeDogViewController.swift; sourceTree = "<group>"; };
 		CA07CBE447803FE19E17AFB2 /* Pods_Logadog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Logadog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,35 @@
 				CA07CBE447803FE19E17AFB2 /* Pods_Logadog.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF30FE181CFAC66D00C3B7DC /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				AFDB2B341CF5BCE000236890 /* StartViewController.swift */,
+				AFDB2B321CF5B7C600236890 /* SignupViewController.swift */,
+				AFDB2B301CF5B12600236890 /* LoginViewController.swift */,
+			);
+			name = Start;
+			sourceTree = "<group>";
+		};
+		AF30FE191CFAC67D00C3B7DC /* Dog */ = {
+			isa = PBXGroup;
+			children = (
+				AFDB2B3F1CF5E2EB00236890 /* AddDogViewController.swift */,
+				AFDB2B491CF6F64600236890 /* DogsTableViewController.swift */,
+				AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */,
+				AFDB2B561CF83CC100236890 /* ChangeDogViewController.swift */,
+			);
+			name = Dog;
+			sourceTree = "<group>";
+		};
+		AF30FE1A1CFAC69400C3B7DC /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				AFDB2B541CF72B2200236890 /* NewApperanceViewController.swift */,
+			);
+			name = Appearance;
 			sourceTree = "<group>";
 		};
 		AFDB2B041CF5B02300236890 = {
@@ -157,13 +188,9 @@
 		AFDB2B251CF5B0B200236890 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				AFDB2B341CF5BCE000236890 /* StartViewController.swift */,
-				AFDB2B321CF5B7C600236890 /* SignupViewController.swift */,
-				AFDB2B301CF5B12600236890 /* LoginViewController.swift */,
-				AFDB2B3F1CF5E2EB00236890 /* AddDogViewController.swift */,
-				AFDB2B491CF6F64600236890 /* DogsTableViewController.swift */,
-				AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */,
-				AFDB2B541CF72B2200236890 /* NewApperanceViewController.swift */,
+				AF30FE1A1CFAC69400C3B7DC /* Appearance */,
+				AF30FE181CFAC66D00C3B7DC /* Start */,
+				AF30FE191CFAC67D00C3B7DC /* Dog */,
 			);
 			name = Viewcontrollers;
 			sourceTree = "<group>";
@@ -322,6 +349,7 @@
 				AFDB2B441CF5F49B00236890 /* Statuscode.swift in Sources */,
 				AFDB2B401CF5E2EB00236890 /* AddDogViewController.swift in Sources */,
 				AFDB2B2E1CF5B10300236890 /* ErrorMessages.swift in Sources */,
+				AFDB2B571CF83CC100236890 /* ChangeDogViewController.swift in Sources */,
 				AFDB2B371CF5BFD500236890 /* Api.swift in Sources */,
 				AFDB2B551CF72B2200236890 /* NewApperanceViewController.swift in Sources */,
 				AFDB2B2D1CF5B10300236890 /* Constants.swift in Sources */,

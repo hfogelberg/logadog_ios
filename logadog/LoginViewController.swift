@@ -73,9 +73,10 @@ class LoginViewController: UIViewController {
                     }
                     
                 } else {
+                    let message = ErrorMessages.messageForErrorCode(status)
                     
                     dispatch_async(dispatch_get_main_queue()) {
-                        let alertController = UIAlertController(title: "Error", message: "We have a problem with our server.Please try again later", preferredStyle: .Alert)
+                        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
                         alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
                         self.presentViewController(alertController, animated: true, completion: nil)
                     }

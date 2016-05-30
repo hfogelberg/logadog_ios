@@ -1,12 +1,15 @@
 PODS:
+  - IQKeyboardManager (4.0.3)
   - SwiftKeychainWrapper (1.0.11)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - SwiftKeychainWrapper
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  IQKeyboardManager: be9695ffc5a52077deb4847608f338771022d6d1
   SwiftKeychainWrapper: 011a6946923948ffa49708014dd691164d7621d1
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 

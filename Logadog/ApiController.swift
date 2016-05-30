@@ -14,8 +14,29 @@ typealias ServiceResponse = (JSON, NSError?) -> Void
 class RestApiManager: NSObject {
     static let sharedInstance = RestApiManager()
     
+    func getRequest(route: String, params: String, onCompletion: (JSON) -> Void) {
+        let route = "\(API_ROUTE_URL)/\(route)?\(params)"
+        print("Get appearance route")
+        print(route)
+        print("")
+        makeHTTPGetRequest(route, onCompletion: { json, err in
+            onCompletion(json as JSON)
+        })
+    }
+    
+    func postRequest(route: String, params: [String:String], onCompletion: (JSON) -> Void) {
+        let route = "\(API_ROUTE_URL)/\(route)"
+        makeHTTPPostRequest(route, params: params, onCompletion:  {json, err in
+            onCompletion(json as JSON)
+        })
+    }
+    
     func getDogs(params: String, onCompletion: (JSON) -> Void) {
         let route = "\(API_ROUTE_URL)/\(ROUTE_DOGS)?\(params)"
+        print("Get dogs route:")
+        print(route)
+        print("")
+        
         
         makeHTTPGetRequest(route, onCompletion: {json, err in
             onCompletion(json as JSON)
@@ -46,8 +67,8 @@ class RestApiManager: NSObject {
         })
     }
     
-    func updateDog(body: [String:String], onCompletion: (JSON) -> Void) {
-        let route = "\(API_ROUTE_URL)/\(INFO_DESCRIPTION)"
+    func updateDog(body: [String:String], route: String, onCompletion: (JSON) -> Void) {
+        let route = "\(API_ROUTE_URL)/\(route)"
         makeHTTPPostRequest(route, params: body, onCompletion: {json, err in
             onCompletion(json as JSON)
         })

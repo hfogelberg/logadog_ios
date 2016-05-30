@@ -16,5 +16,5 @@ let ROUTE_DOGS = "dogs"
 let ROUTE_CHECK_TOKEN = "checktoken"
 let ROUTE_BREEDS = "breeds"
 let ROUTE_DETAILS = "details"
-
-let INFO_DESCRIPTION = "description"
+let ROUTE_APPEARANCE = "appearance"
+let ROUTE_CHANGE_DOG = "changedog"

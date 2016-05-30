@@ -76,6 +76,10 @@ class SignupViewController: UIViewController {
                     
                     TokenController.saveTokenAndUser(token, userId: userId, userName: username)
                     
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.performSegueWithIdentifier("dogsListSegue", sender: self)
+                    }
+                    
                 } else {
                     // Todo: Show allert etc
                 }

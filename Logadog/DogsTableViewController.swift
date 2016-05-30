@@ -48,28 +48,28 @@ class DogsTableViewController: UITableViewController {
                         })
                     }
                 } else {
-                    self.redirectToStart()
+                    self.redirectToStart(status)
                 }
             }
         } else {
-            self.redirectToStart()
+            self.redirectToStart(STATUS_NO_TOKEN)
         }
     }
 
-    func redirectToStart() {
+    func redirectToStart(statusCode: Int) {
         print("Invalid token or some error. Redirect to Start")
         TokenController.removeTokenAndUser()
+        let message = ErrorMessages.messageForErrorCode(statusCode)
         
         dispatch_async(dispatch_get_main_queue()) {
-            let alertController = UIAlertController(title: "Error", message: "We have a problem with our server.Please try again later", preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { action in
+                self.performSegueWithIdentifier("loginSegue", sender: self) }))
             self.presentViewController(alertController, animated: true, completion: nil)
-            
         }
     }
     
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -90,6 +90,7 @@ class DogsTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("prepare for segue")
         if segue.identifier == "showDogSegue" {
             let nextScene = segue.destinationViewController as! ShowDogViewController
             

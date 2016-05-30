@@ -16,11 +16,11 @@ class AddDogViewController: UIViewController {
     @IBOutlet weak var genderSwitch: UISegmentedControl!
     
     var gender = MALE
+    var dogId = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     
     
     @IBAction func genderSwitchChanged(sender: AnyObject) {
@@ -35,10 +35,11 @@ class AddDogViewController: UIViewController {
         }
     }
     
-    
     @IBAction func saveButtonTapped(sender: AnyObject) {
         var name = ""
         var breed = ""
+        var route = ""
+        var body: [String:String]
         
         if let nameVal = nameTextfield.text as String? {
             name = nameVal
@@ -48,17 +49,34 @@ class AddDogViewController: UIViewController {
             breed = breedVal
         }
         
-        let body = [
-            "name": name,
-            "breed": breed,
-            "gender": gender,
-            "token": TokenController.getToken(),
-            "userid": TokenController.getUserId()
-        ]
+        if dogId == "" {
+            body = [
+                "name": name,
+                "breed": breed,
+                "gender": gender,
+                "token": TokenController.getToken(),
+                "userid": TokenController.getUserId()
+            ]
+            
+            route = ROUTE_DOGS
+        } else {
+            body = [
+                "name": name,
+                "breed": breed,
+                "gender": gender,
+                "token": TokenController.getToken(),
+                "dogid": self.dogId
+            ]
+            
+            route = ROUTE_CHANGE_DOG
+        }
         
+        postJson(route, body: body)
+    }
+    
+    func postJson(route: String, body:[String:String]) {
         RestApiManager.sharedInstance.postHttp(body, route: ROUTE_DOGS, onCompletion:  { (json: JSON) -> () in
             var status = STATUS_OK
-            
             print(json)
             
             if let statusVal = json["status"].rawString() as String? {
@@ -66,7 +84,10 @@ class AddDogViewController: UIViewController {
             }
             
             if status == STATUS_OK {
-                self.navigationController?.popViewControllerAnimated(true)
+//                self.navigationController?.popViewControllerAnimated(true)
+                if let navController = self.navigationController {
+                    navController.popViewControllerAnimated(true)
+                }
             } else {
                 // ToDo: Dsiplay error message
                 print("ERROR: \(status)")
