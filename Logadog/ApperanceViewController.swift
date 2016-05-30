@@ -46,7 +46,6 @@ class ApperanceViewController: UIViewController {
                         self.commentTextview.editable = false
                         
                     }
-                    
                 })
         }
     }

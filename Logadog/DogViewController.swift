@@ -90,7 +90,6 @@ class DogViewController: UIViewController {
     }
     
     func postJson(route: String, body:[String:String]) {
-        //RestApiManager.sharedInstance.postRequest(body, route: route, onCompletion:  { (json: JSON) -> () in
         RestApiManager.sharedInstance.postRequest(route, params: body, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             print(json)
@@ -101,7 +100,6 @@ class DogViewController: UIViewController {
             
             if status == STATUS_OK {
                 dispatch_async(dispatch_get_main_queue()) {
-//                    self.navigationController?.popViewControllerAnimated(true)
                     self.navigationController?.popToRootViewControllerAnimated(true)
                 }
             } else {
