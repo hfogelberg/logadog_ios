@@ -89,7 +89,7 @@ class NewApperanceViewController: UIViewController {
             "token": TokenController.getToken()
         ]
         
-        RestApiManager.sharedInstance.updateDog(appearance, route: ROUTE_APPEARANCE, onCompletion: { (json: JSON) -> () in
+        RestApiManager.sharedInstance.postRequest(ROUTE_APPEARANCE, params: appearance, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             
             print(json)

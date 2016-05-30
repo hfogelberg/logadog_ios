@@ -48,7 +48,7 @@ class SignupViewController: UIViewController {
                 "password": password
             ]
             
-            RestApiManager.sharedInstance.signup(body) { (json: JSON) -> () in
+            RestApiManager.sharedInstance.postRequest(ROUTE_USERS, params: body) {(json:JSON) -> () in
                 var status = STATUS_OK
                 
                 print(json)

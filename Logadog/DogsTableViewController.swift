@@ -31,7 +31,7 @@ class DogsTableViewController: UITableViewController {
         if token != "" && userId != "" {
             let params = "userid=\(userId)&token=\(token)"
             print(params)
-            RestApiManager.sharedInstance.getDogs(params) { (json: JSON) -> () in
+            RestApiManager.sharedInstance.getRequest(ROUTE_DOGS, params: params) {(json:JSON) -> () in
                 var status = STATUS_OK
                 if let statusVal = json["status"].rawString() as String? {
                     status = Int(statusVal)!

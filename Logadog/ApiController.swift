@@ -31,51 +31,8 @@ class RestApiManager: NSObject {
         })
     }
     
-    func getDogs(params: String, onCompletion: (JSON) -> Void) {
-        let route = "\(API_ROUTE_URL)/\(ROUTE_DOGS)?\(params)"
-        print("Get dogs route:")
-        print(route)
-        print("")
-        
-        
-        makeHTTPGetRequest(route, onCompletion: {json, err in
-            onCompletion(json as JSON)
-        })
-    }
-    
-    func validateToken(params: String, onCompletion: (JSON) -> Void) {
-        let route = "\(API_ROUTE_URL)/\(ROUTE_CHECK_TOKEN)?\(params)"
-        
-        makeHTTPGetRequest(route, onCompletion: {json, err in
-            onCompletion(json as JSON)
-        })
-    }
-
-    func authenticate(params: String, onCompletion: (JSON) -> Void) {
-        let route = "\(API_ROUTE_URL)/authenticate?\(params)"
-        
-        makeHTTPGetRequest(route, onCompletion: {json, err in
-            onCompletion(json as JSON)
-        })
-    }
-    
-    func signup(params: [String:String], onCompletion: (JSON) -> Void) {
-        let route = "\(API_ROUTE_URL)/users"
-        
-        makeHTTPPostRequest(route, params: params, onCompletion:  {json, err in
-            onCompletion(json as JSON)
-        })
-    }
-    
-    func updateDog(body: [String:String], route: String, onCompletion: (JSON) -> Void) {
-        let route = "\(API_ROUTE_URL)/\(route)"
-        makeHTTPPostRequest(route, params: body, onCompletion: {json, err in
-            onCompletion(json as JSON)
-        })
-    }
-    
-//    func postHttp(params: [String:String], route: String, onCompletion: (JSON) -> Void) {
-//        let route = "\(API_ROUTE_URL)/\(route)"
+//    func signup(params: [String:String], onCompletion: (JSON) -> Void) {
+//        let route = "\(API_ROUTE_URL)/users"
 //        
 //        makeHTTPPostRequest(route, params: params, onCompletion:  {json, err in
 //            onCompletion(json as JSON)

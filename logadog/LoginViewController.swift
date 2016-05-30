@@ -36,8 +36,7 @@ class LoginViewController: UIViewController {
         if username != "" && password != "" {
             let params = "username=\(username)&password=\(password)"
             
-            RestApiManager.sharedInstance.authenticate(params) { (json: JSON) -> () in
-                var status = STATUS_OK
+            RestApiManager.sharedInstance.getRequest(ROUTE_AUTHENTICATE, params: params) { (json: JSON) -> () in                var status = STATUS_OK
                 
                 print(json)
                 

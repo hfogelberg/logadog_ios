@@ -52,8 +52,7 @@ class StartViewController: UIViewController {
         var retVal = true
         let params = "token=\(token)"
         
-        RestApiManager.sharedInstance.validateToken(params, onCompletion:  { (json: JSON) -> () in
-            var status = STATUS_OK
+        RestApiManager.sharedInstance.getRequest(ROUTE_CHECK_TOKEN, params: params, onCompletion: {(json:JSON) ->() in            var status = STATUS_OK
             
             print(json)
             
