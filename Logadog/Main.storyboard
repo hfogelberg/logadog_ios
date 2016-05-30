@@ -217,6 +217,13 @@
                                     <segue destination="4de-x7-HpW" kind="show" identifier="appearanceSegue" id="jSK-eW-USI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oN6-Rs-mGj">
+                                <rect key="frame" x="274" y="377" width="52" height="30"/>
+                                <state key="normal" title="Identity"/>
+                                <connections>
+                                    <segue destination="des-jp-2VI" kind="show" identifier="identitySegue" id="b3r-Rw-Z5T"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -239,10 +246,10 @@
             </objects>
             <point key="canvasLocation" x="5985" y="-136"/>
         </scene>
-        <!--New Apperance View Controller-->
+        <!--Apperance View Controller-->
         <scene sceneID="Tnf-Dq-ZWL">
             <objects>
-                <viewController id="4de-x7-HpW" customClass="NewApperanceViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4de-x7-HpW" customClass="ApperanceViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rfh-nP-ILy"/>
                         <viewControllerLayoutGuide type="bottom" id="7lE-pF-Vit"/>
@@ -317,12 +324,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zGi-9X-YmV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6704" y="-136"/>
+            <point key="canvasLocation" x="7080" y="-628"/>
         </scene>
-        <!--Add Dog View Controller-->
+        <!--Identity View Controller-->
+        <scene sceneID="0tI-yz-fBs">
+            <objects>
+                <viewController id="des-jp-2VI" customClass="IdentityViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MDx-Nl-knh"/>
+                        <viewControllerLayoutGuide type="bottom" id="bQT-iD-p6O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gsv-Lf-fdK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chipmark" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A74-WD-5hf">
+                                <rect key="frame" x="50" y="100" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Earmark" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rZd-At-Na3">
+                                <rect key="frame" x="50" y="150" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passport number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ha-IF-z6z">
+                                <rect key="frame" x="50" y="200" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ojo-HN-civ">
+                                <rect key="frame" x="51" y="250" width="500" height="191"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnQ-l0-9Ew">
+                                <rect key="frame" x="283" y="488" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="des-jp-2VI" eventType="touchUpInside" id="xck-Nl-63H"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="chipmarkTextfield" destination="A74-WD-5hf" id="hDk-ap-BLz"/>
+                        <outlet property="commenttextview" destination="ojo-HN-civ" id="WxT-Sy-CZV"/>
+                        <outlet property="earmarktextfield" destination="rZd-At-Na3" id="biZ-eF-Fog"/>
+                        <outlet property="passportTextfield" destination="7Ha-IF-z6z" id="ssD-iF-fxl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVD-16-kxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7080" y="348"/>
+        </scene>
+        <!--Dog View Controller-->
         <scene sceneID="OUz-Ju-KXF">
             <objects>
-                <viewController id="AV7-l6-dus" customClass="AddDogViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AV7-l6-dus" customClass="DogViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="alq-c3-DoD"/>
                         <viewControllerLayoutGuide type="bottom" id="Y9m-iK-bhH"/>
@@ -465,7 +527,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZEQ-R3-q2L"/>
-        <segue reference="ujV-Lj-T7i"/>
         <segue reference="RBT-JL-Fda"/>
+        <segue reference="NXe-yD-2ly"/>
     </inferredMetricsTieBreakers>
 </document>

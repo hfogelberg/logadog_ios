@@ -1,5 +1,5 @@
 //
-//  AddDogViewController.swift
+//  DogViewController.swift
 //  Logadog
 //
 //  Created by Henrik Fogelberg on 2016-05-25.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class AddDogViewController: UIViewController {
+class DogViewController: UIViewController {
     
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var breedTextfield: UITextField!

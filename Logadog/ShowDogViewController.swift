@@ -30,10 +30,10 @@ class ShowDogViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "appearanceSegue" {
-            let nextScene = segue.destinationViewController as! NewApperanceViewController
+            let nextScene = segue.destinationViewController as! ApperanceViewController
             nextScene.dogId = dog.id
         } else if segue.identifier == "changeDogSegue" {
-            let nextScene = segue.destinationViewController as! AddDogViewController
+            let nextScene = segue.destinationViewController as! DogViewController
             nextScene.dog = dog
         }
     }

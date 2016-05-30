@@ -1,5 +1,5 @@
 //
-//  NewApperanceViewController.swift
+//  ApperanceViewController.swift
 //  Logadog
 //
 //  Created by Henrik Fogelberg on 2016-05-26.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class NewApperanceViewController: UIViewController {
+class ApperanceViewController: UIViewController {
     var dogId: String = ""
     
     @IBOutlet weak var colorTextfield: UITextField!
