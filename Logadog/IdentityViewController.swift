@@ -53,12 +53,12 @@ class IdentityViewController: UIViewController {
                     comment = commentVal
                 }
             
-                self.displaIdentity(chip, passport: passport, earmark: earmark, comment: comment)
+                self.displayIdentity(chip, passport: passport, earmark: earmark, comment: comment)
             }
         })
     }
     
-    func displaIdentity(chip: String, passport: String, earmark: String, comment: String) {
+    func displayIdentity(chip: String, passport: String, earmark: String, comment: String) {
         
         dispatch_async(dispatch_get_main_queue()) {
             self.chipmarkTextfield.borderStyle = .None
@@ -103,6 +103,9 @@ class IdentityViewController: UIViewController {
         if let commentVal = self.commenttextview.text as String? {
             comment = commentVal
         }
+        
+        
+        print(comment)
         
         body = [
             "chip": chip,

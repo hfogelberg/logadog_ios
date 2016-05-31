@@ -22,6 +22,10 @@ class ApperanceViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool){
+        getAppearance()
+    }
+    
+    func getAppearance(){
         self.commentTextview.scrollRangeToVisible(NSMakeRange(0, 0))
         
         if dogId != "" {
@@ -29,28 +33,65 @@ class ApperanceViewController: UIViewController {
             let token = TokenController.getToken()
             let params = "dogid=\(dogId)&token=\(token)"
             
-                RestApiManager.sharedInstance.getRequest(ROUTE_APPEARANCE, params: params, onCompletion: { (json: JSON) -> () in
-                    dispatch_async(dispatch_get_main_queue()) {
-                        let dog = json["dog"]
-                        print(dog["color"].stringValue)
+            RestApiManager.sharedInstance.getRequest(ROUTE_APPEARANCE, params: params, onCompletion: { (json: JSON) -> () in
+                print(json)
+                var color = ""
+                var height = ""
+                var weight = ""
+                var comment = ""
+                
+                if json["appearance"] != JSON.null {
+                    print("Has appearance")
                     
-                            
-                        self.colorTextfield.text = dog["color"].stringValue
-                        self.heightTextfield.text = dog["heightInCm"].stringValue
-                        self.weightTextfield.text = dog["weightInKg"].stringValue
-                        self.commentTextview.text = dog["comment"].stringValue
-
-                        self.colorTextfield.enabled = false
-                        self.heightTextfield.enabled = false
-                        self.weightTextfield.enabled = false
-                        self.commentTextview.editable = false
-                        
+                    if let colorVal = json["appearance", "color"].stringValue as String? {
+                        color = colorVal
                     }
-                })
+                    if let heightVal = json["appearance", "heightInCm"].stringValue as String? {
+                        height = heightVal
+                    }
+                    if let weightVal = json["appearance", "weightInKg"].stringValue as String? {
+                        weight = weightVal
+                    }
+                    if let commentVal = json["appearance", "comment"].stringValue as String? {
+                        comment = commentVal
+                    }
+                    
+                    self.displayAppearance(color, height: height, weight: weight, comment: comment)
+                }
+            })
+        }
+    }
+    
+    func displayAppearance(color: String, height: String, weight: String, comment: String){
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.colorTextfield.text = color
+            self.weightTextfield.text = weight
+            self.heightTextfield.text = height
+            self.commentTextview.text = comment
+            
+            self.colorTextfield.borderStyle = .None
+            self.heightTextfield.borderStyle = .None
+            self.weightTextfield.borderStyle = .None
+            
+            self.colorTextfield.enabled = false
+            self.heightTextfield.enabled = false
+            self.weightTextfield.enabled = false
+            self.commentTextview.editable = false
+            
         }
     }
     
     @IBAction func editButtonTapped(sender: AnyObject) {
+        self.colorTextfield.borderStyle = .RoundedRect
+        self.heightTextfield.borderStyle = .RoundedRect
+        self.weightTextfield.borderStyle = .RoundedRect
+        
+        self.colorTextfield.enabled = true
+        self.heightTextfield.enabled = true
+        self.weightTextfield.enabled = true
+        self.commentTextview.editable = true
+        
         self.colorTextfield.enabled = true
         self.heightTextfield.enabled = true
         self.weightTextfield.enabled = true
