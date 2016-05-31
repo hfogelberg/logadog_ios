@@ -221,7 +221,7 @@
                                 <rect key="frame" x="274" y="377" width="52" height="30"/>
                                 <state key="normal" title="Identity"/>
                                 <connections>
-                                    <segue destination="des-jp-2VI" kind="show" identifier="identitySegue" id="b3r-Rw-Z5T"/>
+                                    <segue destination="des-jp-2VI" kind="show" identifier="identitySegue" id="UIw-f6-BdT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -370,16 +370,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="hzl-I4-2z2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="aLs-Bl-1IH">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="des-jp-2VI" id="bop-bI-Mpp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="chipmarkTextfield" destination="A74-WD-5hf" id="hDk-ap-BLz"/>
                         <outlet property="commenttextview" destination="ojo-HN-civ" id="WxT-Sy-CZV"/>
                         <outlet property="earmarktextfield" destination="rZd-At-Na3" id="biZ-eF-Fog"/>
                         <outlet property="passportTextfield" destination="7Ha-IF-z6z" id="ssD-iF-fxl"/>
+                        <outlet property="saveButton" destination="fnQ-l0-9Ew" id="guk-4Q-PAa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVD-16-kxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7080" y="348"/>
+            <point key="canvasLocation" x="6922" y="480"/>
         </scene>
         <!--Dog View Controller-->
         <scene sceneID="OUz-Ju-KXF">

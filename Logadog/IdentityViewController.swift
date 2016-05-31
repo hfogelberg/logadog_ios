@@ -14,12 +14,69 @@ class IdentityViewController: UIViewController {
     @IBOutlet weak var earmarktextfield: UITextField!
     @IBOutlet weak var passportTextfield: UITextField!
     @IBOutlet weak var commenttextview: UITextView!
+    @IBOutlet weak var saveButton: UIButton!
     
     var dogId = ""
     
     override func viewDidLoad() {
-        print("IdentityVC")
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        getIdentity()
+    }
+    
+    func getIdentity(){
+        let token = TokenController.getToken()
+        let params = "dogid=\(dogId)&token=\(token)"
+        
+        RestApiManager.sharedInstance.getRequest(ROUTE_IDENTITY, params: params, onCompletion: { (json: JSON) -> () in
+            print(json)
+            var chip = ""
+            var passport = ""
+            var earmark = ""
+            var comment = ""
+            
+            if json["identity"] != JSON.null {
+                print("Has identity")
+            
+                if let chipVal = json["identity", "chip"].stringValue as String? {
+                    chip = chipVal
+                }
+                if let passportVal = json["identity", "passport"].stringValue as String? {
+                    passport = passportVal
+                }
+                if let earmarkVal = json["identity", "earmark"].stringValue as String? {
+                    earmark = earmarkVal
+                }
+                if let commentVal = json["identity", "comment"].stringValue as String? {
+                    comment = commentVal
+                }
+            
+                self.displaIdentity(chip, passport: passport, earmark: earmark, comment: comment)
+            }
+        })
+    }
+    
+    func displaIdentity(chip: String, passport: String, earmark: String, comment: String) {
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.chipmarkTextfield.borderStyle = .None
+            self.passportTextfield.borderStyle = .None
+            self.earmarktextfield.borderStyle = .None
+        
+            self.chipmarkTextfield.enabled = false
+            self.passportTextfield.enabled = false
+            self.earmarktextfield.enabled = false
+            self.commenttextview.editable = false
+        
+            self.chipmarkTextfield.text = chip
+            self.passportTextfield.text = passport
+            self.earmarktextfield.text = earmark
+            self.commenttextview.text = comment
+        
+            self.saveButton.hidden = true
+        }
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
@@ -57,7 +114,37 @@ class IdentityViewController: UIViewController {
         ]
         
         RestApiManager.sharedInstance.postRequest(ROUTE_IDENTITY, params: body, onCompletion: {(json: JSON) -> () in
+            var status = STATUS_OK
+            
             print(json)
+            
+            if let statusVal = json["status"].rawString() as String? {
+                status = Int(statusVal)!
+            }
+            
+            if status == STATUS_OK {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+            } else {
+                // ToDo: Dsiplay error message
+                print("ERROR: \(status)")
+            }
         })
+    }
+    
+    @IBAction func editButtonTapped(sender: AnyObject) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.chipmarkTextfield.borderStyle = .RoundedRect
+            self.passportTextfield.borderStyle = .RoundedRect
+            self.earmarktextfield.borderStyle = .RoundedRect
+        
+            self.chipmarkTextfield.enabled = true
+            self.passportTextfield.enabled = true
+            self.earmarktextfield.enabled = true
+            self.commenttextview.editable = true
+        
+            self.saveButton.hidden = false
+        }
     }
 }
