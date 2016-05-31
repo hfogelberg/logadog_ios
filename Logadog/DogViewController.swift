@@ -21,6 +21,8 @@ class DogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
+        
         if dog != nil {
             showDog()
         }

@@ -8,14 +8,13 @@
 import Foundation
 import UIKit
 
+let COLOR_BACKGROUND_VIEW = "F8E490"
+let COLOR_BUTTON = "964042"
+let COLOR_TABLE_TEXT = "48947E"
+
 class Colors {
-    let BACKGROUND_VIEW = "F8E490"
     
-    func backgoundColor() -> UIColor {
-        return self.colorWithHexString(BACKGROUND_VIEW)
-    }
-    
-    func colorWithHexString (hex:String) -> UIColor {
+    static func colorWithHexString (hex:String) -> UIColor {
         var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
         
         if (cString.hasPrefix("#")) {
@@ -34,7 +33,6 @@ class Colors {
         NSScanner(string: rString).scanHexInt(&r)
         NSScanner(string: gString).scanHexInt(&g)
         NSScanner(string: bString).scanHexInt(&b)
-        
         
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
     }

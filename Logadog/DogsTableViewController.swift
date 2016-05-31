@@ -14,6 +14,8 @@ class DogsTableViewController: UITableViewController {
     var dogs = [DogObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -76,16 +78,16 @@ class DogsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let num = self.dogs.count
-        print("numberOfRowsInSection: \(num)")
-        
         return self.dogs.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        cell.contentView.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clearColor()
         let dog = self.dogs[indexPath.row]
         cell.textLabel!.text = dog.name
+        cell.textLabel?.textColor = Colors.colorWithHexString(COLOR_TABLE_TEXT)
         return cell
     }
     

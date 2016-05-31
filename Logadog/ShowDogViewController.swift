@@ -16,8 +16,15 @@ class ShowDogViewController: UIViewController {
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     
+    @IBOutlet weak var appearanceButton: UIButton!
+    @IBOutlet weak var identityButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
+        identityButton.setTitleColor(Colors.colorWithHexString(COLOR_BUTTON), forState: .Normal)
+        appearanceButton.setTitleColor(Colors.colorWithHexString(COLOR_BUTTON), forState: .Normal)
         
         showDog()
     }
