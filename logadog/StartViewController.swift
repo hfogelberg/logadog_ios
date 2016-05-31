@@ -10,9 +10,15 @@ import UIKit
 import SwiftyJSON
 
 class StartViewController: UIViewController {
+    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = true
+        
+        view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
+        signupButton.setTitleColor(Colors.colorWithHexString(COLOR_BUTTON), forState: .Normal)
+        loginButton.setTitleColor(Colors.colorWithHexString(COLOR_BUTTON), forState: .Normal)
     }
 
     override func viewDidLoad() {

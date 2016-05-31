@@ -12,9 +12,13 @@ import SwiftyJSON
 class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
+        
+        view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
+        loginButton.setTitleColor(Colors.colorWithHexString(COLOR_BUTTON), forState: .Normal)
     }
     
     override func viewDidLoad() {

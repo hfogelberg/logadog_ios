@@ -14,9 +14,13 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var usernameTexfield: UITextField!
     @IBOutlet weak var emailTexfield: UITextField!
     @IBOutlet weak var paswordTextfield: UITextField!
+    @IBOutlet weak var signupButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
+        signupButton.setTitleColor(Colors.colorWithHexString(COLOR_BUTTON), forState: .Normal)
     }
     
     @IBAction func signupButtonTapped(sender: AnyObject) {

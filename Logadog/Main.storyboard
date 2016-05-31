@@ -51,6 +51,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="bCv-in-0nU" id="eVM-r9-3pL"/>
                         <outlet property="passwordTextfield" destination="429-4y-PmP" id="knJ-K8-CQe"/>
                         <outlet property="usernameTextfield" destination="clz-Am-i20" id="fbl-kQ-2at"/>
                         <segue destination="JHm-HL-7OI" kind="show" identifier="dogsListSegue" id="dex-nJ-rAV"/>
@@ -97,6 +98,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="MRd-js-66B"/>
                     <connections>
+                        <outlet property="loginButton" destination="NUm-v9-H6G" id="L1l-2E-G8C"/>
+                        <outlet property="signupButton" destination="yQP-Zu-7eS" id="yft-YU-jvQ"/>
                         <segue destination="JHm-HL-7OI" kind="show" identifier="dogsListSegue" id="ZEQ-R3-q2L"/>
                     </connections>
                 </viewController>
@@ -175,6 +178,7 @@
                         <outlet property="emailTexfield" destination="2D3-vK-jLG" id="EOY-c8-hpG"/>
                         <outlet property="nameTextfield" destination="DNq-AS-WWk" id="ZBd-BI-qXn"/>
                         <outlet property="paswordTextfield" destination="h2t-kD-Zu7" id="ToN-OE-K0M"/>
+                        <outlet property="signupButton" destination="iDn-m1-eTI" id="KUV-jM-IAi"/>
                         <outlet property="usernameTexfield" destination="29w-t2-uMk" id="eM1-VZ-g2o"/>
                     </connections>
                 </viewController>
@@ -582,8 +586,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dex-nJ-rAV"/>
-        <segue reference="RBT-JL-Fda"/>
+        <segue reference="KbV-IA-3SG"/>
+        <segue reference="Fki-LH-w7x"/>
         <segue reference="ujV-Lj-T7i"/>
     </inferredMetricsTieBreakers>
 </document>
