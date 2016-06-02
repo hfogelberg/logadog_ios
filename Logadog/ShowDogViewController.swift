@@ -18,6 +18,7 @@ class ShowDogViewController: UIViewController {
     
     @IBOutlet weak var appearanceButton: UIButton!
     @IBOutlet weak var identityButton: UIButton!
+    @IBOutlet weak var insuranceButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class ShowDogViewController: UIViewController {
         view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
         identityButton.setTitleColor(Colors.colorWithHexString(COLOR_BUTTON), forState: .Normal)
         appearanceButton.setTitleColor(Colors.colorWithHexString(COLOR_BUTTON), forState: .Normal)
+        insuranceButton.setTitleColor(Colors.colorWithHexString(COLOR_BUTTON), forState: .Normal)
         
         showDog()
     }
