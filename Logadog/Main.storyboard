@@ -20,17 +20,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="henrik" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="clz-Am-i20">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="henrik" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="clz-Am-i20">
                                 <rect key="frame" x="50" y="100" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="henrik" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="429-4y-PmP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="henrik" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="429-4y-PmP">
                                 <rect key="frame" x="50" y="200" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCv-in-0nU">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCv-in-0nU">
                                 <rect key="frame" x="279" y="300" width="42" height="30"/>
                                 <state key="normal" title="Log in"/>
                                 <connections>
@@ -233,6 +233,13 @@
                                     <segue destination="des-jp-2VI" kind="show" identifier="identitySegue" id="UIw-f6-BdT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCb-WW-7R5">
+                                <rect key="frame" x="267" y="456" width="67" height="30"/>
+                                <state key="normal" title="Insurance"/>
+                                <connections>
+                                    <segue destination="CfC-yW-TMV" kind="show" identifier="insuranceSegue" id="ZZQ-Wu-Lij"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -352,6 +359,120 @@
             </objects>
             <point key="canvasLocation" x="7080" y="-628"/>
         </scene>
+        <!--Insurance View Controller-->
+        <scene sceneID="CUh-h5-Rwl">
+            <objects>
+                <viewController id="CfC-yW-TMV" customClass="InsuranceViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5ut-C0-Tra"/>
+                        <viewControllerLayoutGuide type="bottom" id="PBl-CI-b4H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bbo-zm-ot4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0KD-YT-roE">
+                                <rect key="frame" x="50" y="100" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BKk-M8-WTd">
+                                <rect key="frame" x="50" y="150" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insurancenumber" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqM-Me-LSk">
+                                <rect key="frame" x="50" y="200" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Renewal date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MRe-da-TwE">
+                                <rect key="frame" x="50" y="250" width="225" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="MK9-XS-vi1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount, vet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wh8-Ty-Zjs">
+                                <rect key="frame" x="50" y="300" width="225" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount, life" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3u-sT-1fJ">
+                                <rect key="frame" x="325" y="300" width="225" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Annual cost" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhc-dq-t7q">
+                                <rect key="frame" x="325" y="250" width="225" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="62r-BQ-MLE">
+                                <rect key="frame" x="50" y="350" width="500" height="154"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPo-gM-bK1">
+                                <rect key="frame" x="446" y="512" width="104" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="SyI-4s-D2Z"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="CfC-yW-TMV" eventType="touchUpInside" id="Pfg-02-pdK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0KD-YT-roE" firstAttribute="trailing" secondItem="BKk-M8-WTd" secondAttribute="trailing" id="6r0-Cf-mht"/>
+                            <constraint firstItem="BKk-M8-WTd" firstAttribute="trailing" secondItem="zqM-Me-LSk" secondAttribute="trailing" id="F4b-ri-tP8"/>
+                            <constraint firstItem="wh8-Ty-Zjs" firstAttribute="leading" secondItem="62r-BQ-MLE" secondAttribute="leading" id="Fpd-Qb-jvJ"/>
+                            <constraint firstItem="yhc-dq-t7q" firstAttribute="leading" secondItem="MRe-da-TwE" secondAttribute="trailing" constant="50" id="Glx-1n-Rej"/>
+                            <constraint firstItem="PBl-CI-b4H" firstAttribute="top" secondItem="sPo-gM-bK1" secondAttribute="bottom" constant="14" id="If8-IY-OnR"/>
+                            <constraint firstItem="sPo-gM-bK1" firstAttribute="top" secondItem="62r-BQ-MLE" secondAttribute="bottom" constant="8" symbolic="YES" id="LiF-tS-D0a"/>
+                            <constraint firstItem="MRe-da-TwE" firstAttribute="trailing" secondItem="wh8-Ty-Zjs" secondAttribute="trailing" id="Oli-Du-Zre"/>
+                            <constraint firstItem="0KD-YT-roE" firstAttribute="leading" secondItem="BKk-M8-WTd" secondAttribute="leading" id="Pjk-7X-uV2"/>
+                            <constraint firstItem="yhc-dq-t7q" firstAttribute="trailing" secondItem="zqM-Me-LSk" secondAttribute="trailing" id="Pp2-Ak-iAv"/>
+                            <constraint firstItem="62r-BQ-MLE" firstAttribute="trailing" secondItem="sPo-gM-bK1" secondAttribute="trailing" id="QWm-c8-I6O"/>
+                            <constraint firstItem="zqM-Me-LSk" firstAttribute="top" secondItem="BKk-M8-WTd" secondAttribute="bottom" constant="20" id="S8C-ZQ-hBs"/>
+                            <constraint firstItem="0KD-YT-roE" firstAttribute="leading" secondItem="Bbo-zm-ot4" secondAttribute="leadingMargin" constant="30" id="Uua-1k-5Td"/>
+                            <constraint firstItem="yhc-dq-t7q" firstAttribute="trailing" secondItem="K3u-sT-1fJ" secondAttribute="trailing" id="Xqh-Q6-m9x"/>
+                            <constraint firstItem="wh8-Ty-Zjs" firstAttribute="top" secondItem="MRe-da-TwE" secondAttribute="bottom" constant="20" id="XwB-HV-E9K"/>
+                            <constraint firstItem="62r-BQ-MLE" firstAttribute="top" secondItem="wh8-Ty-Zjs" secondAttribute="bottom" constant="20" id="ZwX-jh-i0V"/>
+                            <constraint firstItem="0KD-YT-roE" firstAttribute="top" secondItem="5ut-C0-Tra" secondAttribute="bottom" constant="36" id="aQd-cq-xs1"/>
+                            <constraint firstItem="K3u-sT-1fJ" firstAttribute="baseline" secondItem="wh8-Ty-Zjs" secondAttribute="baseline" id="bbb-qt-JDu"/>
+                            <constraint firstItem="BKk-M8-WTd" firstAttribute="top" secondItem="0KD-YT-roE" secondAttribute="bottom" constant="20" id="cyT-11-PUe"/>
+                            <constraint firstItem="zqM-Me-LSk" firstAttribute="leading" secondItem="MRe-da-TwE" secondAttribute="leading" id="fHS-fx-dcl"/>
+                            <constraint firstItem="zqM-Me-LSk" firstAttribute="leading" secondItem="BKk-M8-WTd" secondAttribute="leading" id="fgP-qM-vsG"/>
+                            <constraint firstItem="MRe-da-TwE" firstAttribute="top" secondItem="zqM-Me-LSk" secondAttribute="bottom" constant="20" id="nRr-0n-Z9p"/>
+                            <constraint firstItem="zqM-Me-LSk" firstAttribute="centerX" secondItem="Bbo-zm-ot4" secondAttribute="centerX" id="oTi-RI-m3c"/>
+                            <constraint firstItem="K3u-sT-1fJ" firstAttribute="leading" secondItem="yhc-dq-t7q" secondAttribute="leading" id="qEQ-aR-4PT"/>
+                            <constraint firstItem="yhc-dq-t7q" firstAttribute="baseline" secondItem="MRe-da-TwE" secondAttribute="baseline" id="weB-jg-wNd"/>
+                            <constraint firstItem="MRe-da-TwE" firstAttribute="leading" secondItem="wh8-Ty-Zjs" secondAttribute="leading" id="zmE-kS-s8Z"/>
+                            <constraint firstItem="62r-BQ-MLE" firstAttribute="trailing" secondItem="K3u-sT-1fJ" secondAttribute="trailing" id="ztO-Ah-uBv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentTextview" destination="62r-BQ-MLE" id="U8M-dn-t54"/>
+                        <outlet property="companyTextfield" destination="0KD-YT-roE" id="Di9-cn-K2z"/>
+                        <outlet property="costTextfield" destination="yhc-dq-t7q" id="oUW-vj-bQ2"/>
+                        <outlet property="insuranceNumberTextfield" destination="zqM-Me-LSk" id="vp4-z7-kYX"/>
+                        <outlet property="lifeTextfield" destination="K3u-sT-1fJ" id="TdJ-V0-paR"/>
+                        <outlet property="productTextfield" destination="BKk-M8-WTd" id="cs0-cZ-ihV"/>
+                        <outlet property="renewaldateTextfield" destination="MRe-da-TwE" id="qJ8-f0-wXH"/>
+                        <outlet property="saveButton" destination="sPo-gM-bK1" id="f08-vM-TLB"/>
+                        <outlet property="vetTextfield" destination="wh8-Ty-Zjs" id="7vC-n7-5L1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8P-PP-N10" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7080" y="310"/>
+        </scene>
         <!--Identity View Controller-->
         <scene sceneID="0tI-yz-fBs">
             <objects>
@@ -414,7 +535,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVD-16-kxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6922" y="480"/>
+            <point key="canvasLocation" x="6010" y="774"/>
         </scene>
         <!--Dog View Controller-->
         <scene sceneID="OUz-Ju-KXF">
@@ -588,6 +709,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="KbV-IA-3SG"/>
         <segue reference="Fki-LH-w7x"/>
-        <segue reference="ujV-Lj-T7i"/>
+        <segue reference="NXe-yD-2ly"/>
     </inferredMetricsTieBreakers>
 </document>

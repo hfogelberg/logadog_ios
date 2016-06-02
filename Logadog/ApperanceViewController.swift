@@ -27,8 +27,6 @@ class ApperanceViewController: UIViewController {
     }
     
     func getAppearance(){
-        self.commentTextview.scrollRangeToVisible(NSMakeRange(0, 0))
-        
         if dogId != "" {
             
             let token = TokenController.getToken()

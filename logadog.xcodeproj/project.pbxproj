@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07F292B9CE51B3E936688A44 /* Pods_Logadog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA07CBE447803FE19E17AFB2 /* Pods_Logadog.framework */; };
 		AF30FE1C1CFC71AC00C3B7DC /* IdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30FE1B1CFC71AC00C3B7DC /* IdentityViewController.swift */; };
+		AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */; };
 		AFDB2B111CF5B02300236890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B101CF5B02300236890 /* AppDelegate.swift */; };
 		AFDB2B181CF5B02300236890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B171CF5B02300236890 /* Assets.xcassets */; };
 		AFDB2B1B1CF5B02300236890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B191CF5B02300236890 /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 		4B432B444DCEED43E54D8144 /* Pods-Logadog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logadog.release.xcconfig"; path = "Pods/Target Support Files/Pods-Logadog/Pods-Logadog.release.xcconfig"; sourceTree = "<group>"; };
 		9932E1B7869A1CD13CB90B4E /* Pods-Logadog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logadog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Logadog/Pods-Logadog.debug.xcconfig"; sourceTree = "<group>"; };
 		AF30FE1B1CFC71AC00C3B7DC /* IdentityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityViewController.swift; sourceTree = "<group>"; };
+		AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		AFDB2B0D1CF5B02300236890 /* Logadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDB2B101CF5B02300236890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFDB2B171CF5B02300236890 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				AFDB2B491CF6F64600236890 /* DogsTableViewController.swift */,
 				AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */,
 				AF30FE1B1CFC71AC00C3B7DC /* IdentityViewController.swift */,
+				AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */,
 			);
 			name = Dog;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				AFDB2B311CF5B12600236890 /* LoginViewController.swift in Sources */,
 				AFDB2B271CF5B0D800236890 /* ApiController.swift in Sources */,
 				AFDB2B531CF72A5A00236890 /* AppearanceObject.swift in Sources */,
+				AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */,
 				AFDB2B331CF5B7C600236890 /* SignupViewController.swift in Sources */,
 				AFDB2B4A1CF6F64600236890 /* DogsTableViewController.swift in Sources */,
 				AFDB2B2F1CF5B10300236890 /* TokenController.swift in Sources */,

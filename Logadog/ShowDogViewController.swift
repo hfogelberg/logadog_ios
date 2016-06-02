@@ -45,6 +45,9 @@ class ShowDogViewController: UIViewController {
         } else if segue.identifier == "identitySegue" {
             let nextScene = segue.destinationViewController as! IdentityViewController
             nextScene.dogId = dog.id
+        } else if segue.identifier == "insuranceSegue"{
+            let nextScene = segue.destinationViewController as! InsuranceViewController
+            nextScene.dogId = dog.id
         }
     }
 }
