@@ -112,6 +112,26 @@ class InsuranceViewController: UIViewController {
     }
     
     
+    @IBAction func editButtonTapped(sender: AnyObject) {
+        self.companyTextfield.borderStyle = .RoundedRect
+        self.productTextfield.borderStyle = .RoundedRect
+        self.insuranceNumberTextfield.borderStyle = .RoundedRect
+        self.renewaldateTextfield.borderStyle = .RoundedRect
+        self.costTextfield.borderStyle = .RoundedRect
+        self.lifeTextfield.borderStyle = .RoundedRect
+        self.vetTextfield.borderStyle = .RoundedRect
+        
+        self.companyTextfield.enabled = true
+        self.productTextfield.enabled = true
+        self.insuranceNumberTextfield.enabled = true
+        self.renewaldateTextfield.enabled = true
+        self.costTextfield.enabled = true
+        self.lifeTextfield.enabled = true
+        self.vetTextfield.enabled = true
+        self.commentTextview.editable = true
+    }
+    
+    
     @IBAction func saveButtonTapped(sender: AnyObject) {
         var company = ""
         var product = ""
