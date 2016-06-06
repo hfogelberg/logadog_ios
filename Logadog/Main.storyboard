@@ -528,7 +528,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RkS-8s-hM8">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="RkS-8s-hM8">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RkS-8s-hM8" id="kOx-pT-7KG">
@@ -555,10 +555,10 @@
             </objects>
             <point key="canvasLocation" x="8595" y="323"/>
         </scene>
-        <!--View Controller-->
+        <!--Medication View Controller-->
         <scene sceneID="Pqc-pa-0id">
             <objects>
-                <viewController id="QEg-jJ-nb4" sceneMemberID="viewController">
+                <viewController id="QEg-jJ-nb4" customClass="MedicationViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fRW-PQ-pPn"/>
                         <viewControllerLayoutGuide type="bottom" id="PTn-tA-TmF"/>
@@ -590,8 +590,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="q94-iX-KDu">
-                                <rect key="frame" x="50" y="293" width="500" height="210"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="q94-iX-KDu">
+                                <rect key="frame" x="50" y="292" width="500" height="210"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -600,6 +600,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQb-aM-P2o">
                                 <rect key="frame" x="510" y="511" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="QEg-jJ-nb4" eventType="touchUpInside" id="yBU-cW-GN6"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Next time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC9-LI-1vO">
                                 <rect key="frame" x="330" y="250" width="220" height="30"/>
@@ -635,6 +638,14 @@
                         <barButtonItem title="Item" id="H02-4D-rAf"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="amountTextfield" destination="3ZI-WF-Oj8" id="inP-xc-wtx"/>
+                        <outlet property="commentTextview" destination="q94-iX-KDu" id="95Z-hf-qqA"/>
+                        <outlet property="costTextfield" destination="uwA-To-BhU" id="VfS-Q4-3g4"/>
+                        <outlet property="makeTextfield" destination="IBK-LM-D5c" id="E3R-J4-qRj"/>
+                        <outlet property="productTypetextfield" destination="FcW-pf-Red" id="hgM-mc-AXO"/>
+                        <outlet property="reminderTextfield" destination="fC9-LI-1vO" id="1Z5-Vh-QH9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23S-0J-dm7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -33,6 +33,7 @@
 		AFDB2B531CF72A5A00236890 /* AppearanceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */; };
 		AFDB2B551CF72B2200236890 /* ApperanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B541CF72B2200236890 /* ApperanceViewController.swift */; };
 		AFEFA8C11D05735200F883AC /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFA8C01D05735200F883AC /* MedicationViewController.swift */; };
+		AFEFA8C31D058D0300F883AC /* MedicationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFA8C21D058D0300F883AC /* MedicationObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceObject.swift; sourceTree = "<group>"; };
 		AFDB2B541CF72B2200236890 /* ApperanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApperanceViewController.swift; sourceTree = "<group>"; };
 		AFEFA8C01D05735200F883AC /* MedicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
+		AFEFA8C21D058D0300F883AC /* MedicationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationObject.swift; sourceTree = "<group>"; };
 		CA07CBE447803FE19E17AFB2 /* Pods_Logadog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Logadog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -208,6 +210,7 @@
 			children = (
 				AFDB2B4C1CF7096900236890 /* DogObject.swift */,
 				AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */,
+				AFEFA8C21D058D0300F883AC /* MedicationObject.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				AFDB2B371CF5BFD500236890 /* Api.swift in Sources */,
 				AFDB2B551CF72B2200236890 /* ApperanceViewController.swift in Sources */,
 				AF278C6B1D0084FC004D085D /* MedicationTableViewController.swift in Sources */,
+				AFEFA8C31D058D0300F883AC /* MedicationObject.swift in Sources */,
 				AFDB2B2D1CF5B10300236890 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
