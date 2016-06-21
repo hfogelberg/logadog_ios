@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class MedicationObject {
+    var medicationId = ""
     var medicationType = ""
     var product = ""
     var amount = ""
@@ -18,6 +19,7 @@ class MedicationObject {
     var reminderDate = ""
     
     init(json:JSON) {
+        self.medicationId = json["_id"].stringValue
         self.medicationType = json["medicationType"].stringValue
         self.product = json["product"].stringValue
         self.amount = json["amount"].stringValue

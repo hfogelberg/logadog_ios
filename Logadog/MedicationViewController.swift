@@ -19,9 +19,55 @@ class MedicationViewController: UIViewController {
     @IBOutlet weak var commentTextview: UITextView!
     
     var dogId = ""
+    var medication: MedicationObject!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
+        
+        
+        if medication != nil {
+            self.showMedication()
+        }
+    }
+    
+    func showMedication() {
+        self.productTypetextfield.text = self.medication.medicationType
+        self.makeTextfield.text = self.medication.product
+        self.amountTextfield.text = self.medication.amount
+        self.costTextfield.text = self.medication.cost
+        self.reminderTextfield.text = self.medication.reminderDate
+        self.commentTextview.text = self.medication.comment
+        
+        self.productTypetextfield.borderStyle = .None
+        self.makeTextfield.borderStyle = .None
+        self.amountTextfield.borderStyle = .None
+        self.costTextfield.borderStyle = .None
+        self.reminderTextfield.borderStyle = .None
+        
+        self.productTypetextfield.enabled = false
+        self.makeTextfield.enabled = false
+        self.amountTextfield.enabled = false
+        self.costTextfield.enabled = false
+        self.reminderTextfield.enabled = false
+    }
+    
+    
+    @IBAction func editButtonTapped(sender: AnyObject) {
+        print("Edit button tapped")
+        
+        self.productTypetextfield.enabled = true
+        self.makeTextfield.enabled = true
+        self.amountTextfield.enabled = true
+        self.costTextfield.enabled = true
+        self.reminderTextfield.enabled = true
+        
+        self.productTypetextfield.borderStyle = .RoundedRect
+        self.makeTextfield.borderStyle = .RoundedRect
+        self.amountTextfield.borderStyle = .RoundedRect
+        self.costTextfield.borderStyle = .RoundedRect
+        self.reminderTextfield.borderStyle = .RoundedRect
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
@@ -67,6 +113,26 @@ class MedicationViewController: UIViewController {
             "token": TokenController.getToken()
         ]
         
+        if self.medication == nil {
+            self.createMedication(medication)
+        } else {
+            self.updateMedication(medication)
+        }
+        
+    }
+    
+    func updateMedication(medication: [String:String] ){
+        let medicationId = self.medication.medicationId
+        let route = "\(ROUTE_MEDICATION)/\(medicationId)"
+        
+        RestApiManager.sharedInstance.postRequest(route, params: medication, onCompletion: {(json:JSON) -> () in
+            var status = STATUS_OK
+            
+            print(json)
+        })
+    }
+        
+    func createMedication(medication: [String:String]) {
         RestApiManager.sharedInstance.postRequest(ROUTE_MEDICATION, params: medication, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             
@@ -85,6 +151,5 @@ class MedicationViewController: UIViewController {
                 print("ERROR: \(status)")
             }
         })
-        
     }
 }

@@ -95,7 +95,18 @@ class MedicationTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let nextScene = segue.destinationViewController as! MedicationViewController
-        nextScene.dogId = self.dogId
+        if segue.identifier == "showMedicationSegue" {
+            let nextScene = segue.destinationViewController as! MedicationViewController
+            nextScene.dogId = self.dogId
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                print("Index: \(self.medications[indexPath.row])")
+                let medication = self.medications[indexPath.row]
+                nextScene.medication = medication
+            }
+        } else if segue.identifier == "addMedicationSegue" {
+            let nextScene = segue.destinationViewController as! MedicationViewController
+            nextScene.dogId = self.dogId
+        }
     }
 }
