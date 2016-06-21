@@ -14,11 +14,13 @@ class DogObject {
     var name: String!
     var breed: String!
     var gender: String!
+    var dob: String!
     
     init(json: JSON) {
         id = json["_id"].stringValue
         name = json["name"].stringValue
         breed = json["breed"].stringValue
         gender = json["gender"].stringValue
+        dob = json["dob"].stringValue
     }
 }

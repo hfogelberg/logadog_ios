@@ -90,6 +90,7 @@ class DogViewController: UIViewController {
         var breed = ""
         var route = ""
         var body: [String:String]
+        var dob = ""
         
         if let nameVal = nameTextfield.text as String? {
             name = nameVal
@@ -99,11 +100,18 @@ class DogViewController: UIViewController {
             breed = breedVal
         }
         
+        if let dobVal = dobTextfield.text as String? {
+            dob = dobVal
+        }
+        
+        print("Date of birth: \(dob)")
+        
         if dog == nil {
             body = [
                 "name": name,
                 "breed": breed,
                 "gender": gender,
+                "dob": dob,
                 "token": TokenController.getToken(),
                 "userid": TokenController.getUserId()
             ]
@@ -114,6 +122,7 @@ class DogViewController: UIViewController {
                 "name": name,
                 "breed": breed,
                 "gender": gender,
+                "dob": dob,
                 "token": TokenController.getToken(),
                 "dogid": self.dog.id
             ]
