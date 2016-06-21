@@ -10,29 +10,46 @@ import UIKit
 
 class ActivityViewController: UIViewController {
     
+    @IBOutlet weak var typeTextfield: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var clubTextField: UITextField!
+    @IBOutlet weak var resultTextField: UITextField!
+    @IBOutlet weak var isCompetitionSegue: UISegmentedControl!
+    @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var dateView: UIView!
+    @IBOutlet weak var activityDatePicker: UIDatePicker!
+    
     var dogId: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Activity VC. Dog id: \(dogId)")
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Don't use IQKeyboardManager for this field
+        dateTextField.inputAccessoryView = UIView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(animated: Bool) {
+        dateView.hidden = true
     }
-    */
-
+    
+    @IBAction func datePickerDoneTapped(sender: AnyObject) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.stringFromDate(activityDatePicker.date)
+        dateTextField.text = date
+        self.dateView.hidden = true
+    }
+    
+    @IBAction func dateCancelTapped(sender: AnyObject) {
+        dateView.hidden = true
+    }
+    
+    @IBAction func dateFieldTapped(sender: AnyObject) {
+       dateView.hidden = false
+    }
+    
+    @IBAction func saveTapped(sender: AnyObject) {
+        print("Save tapped")
+    }
 }

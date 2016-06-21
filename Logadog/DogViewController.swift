@@ -29,8 +29,6 @@ class DogViewController: UIViewController {
         
         // Don't use IQKeyboardManager for this field
         dobTextfield.inputAccessoryView = UIView()
-//        self.dobTextfield.inputAccessoryView = dateView
-//         dobTextfield.addDoneOnKeyboardWithTarget(self, action: Selector(self.dateDoneAction()))
         
         if dog != nil {
             showDog()
@@ -64,13 +62,10 @@ class DogViewController: UIViewController {
         }
     }
     
-    @IBAction func dobTextfieldTappd(sender: AnyObject) {
-        print("DOB field tapped")
-        self.dateView.hidden = false
+    @IBAction func dobTextfieldTappd(sender: AnyObject) {        self.dateView.hidden = false
     }
     
     @IBAction func dobDoneButtonTapped(sender: AnyObject) {
-        print("Done tapped")
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let dobDate = dateFormatter.stringFromDate(dobPicker.date)
@@ -79,11 +74,8 @@ class DogViewController: UIViewController {
     }
     
     @IBAction func dobCancelTapped(sender: AnyObject) {
-        print("Cancel tapped")
         self.dateView.hidden = true
     }
-    
-    
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
         var name = ""
