@@ -11,6 +11,7 @@
 		AF278C6B1D0084FC004D085D /* MedicationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF278C6A1D0084FC004D085D /* MedicationTableViewController.swift */; };
 		AF30FE1C1CFC71AC00C3B7DC /* IdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30FE1B1CFC71AC00C3B7DC /* IdentityViewController.swift */; };
 		AF5BC3F01D1986FA00E76343 /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5BC3EF1D1986FA00E76343 /* ActivitiesTableViewController.swift */; };
+		AF5BC3F21D19892100E76343 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5BC3F11D19892100E76343 /* ActivityViewController.swift */; };
 		AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */; };
 		AFDB2B111CF5B02300236890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B101CF5B02300236890 /* AppDelegate.swift */; };
 		AFDB2B181CF5B02300236890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B171CF5B02300236890 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		AF278C6A1D0084FC004D085D /* MedicationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationTableViewController.swift; sourceTree = "<group>"; };
 		AF30FE1B1CFC71AC00C3B7DC /* IdentityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityViewController.swift; sourceTree = "<group>"; };
 		AF5BC3EF1D1986FA00E76343 /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
+		AF5BC3F11D19892100E76343 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		AFDB2B0D1CF5B02300236890 /* Logadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDB2B101CF5B02300236890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				AF278C6A1D0084FC004D085D /* MedicationTableViewController.swift */,
 				AFEFA8C01D05735200F883AC /* MedicationViewController.swift */,
 				AF5BC3EF1D1986FA00E76343 /* ActivitiesTableViewController.swift */,
+				AF5BC3F11D19892100E76343 /* ActivityViewController.swift */,
 			);
 			name = Dog;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				AFDB2B271CF5B0D800236890 /* ApiController.swift in Sources */,
 				AFDB2B531CF72A5A00236890 /* AppearanceObject.swift in Sources */,
 				AFEFA8C11D05735200F883AC /* MedicationViewController.swift in Sources */,
+				AF5BC3F21D19892100E76343 /* ActivityViewController.swift in Sources */,
 				AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */,
 				AFDB2B331CF5B7C600236890 /* SignupViewController.swift in Sources */,
 				AFDB2B4A1CF6F64600236890 /* DogsTableViewController.swift in Sources */,

@@ -253,7 +253,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRk-E8-9GY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRk-E8-9GY">
                                 <rect key="frame" x="270" y="486" width="63" height="30"/>
                                 <state key="normal" title="Activities"/>
                                 <connections>
@@ -268,6 +268,7 @@
                             <constraint firstItem="VCb-WW-7R5" firstAttribute="top" secondItem="7aR-KR-FvN" secondAttribute="bottom" constant="17" id="7T8-v1-ZlZ"/>
                             <constraint firstItem="oN6-Rs-mGj" firstAttribute="centerX" secondItem="bX6-a0-eV6" secondAttribute="centerX" id="83T-cD-1Lb"/>
                             <constraint firstItem="P5P-H5-mMI" firstAttribute="leading" secondItem="abA-CB-WB3" secondAttribute="leading" id="CNN-Og-pUG"/>
+                            <constraint firstItem="jRk-E8-9GY" firstAttribute="centerX" secondItem="abA-CB-WB3" secondAttribute="centerX" id="HKM-2z-g8C"/>
                             <constraint firstItem="oN6-Rs-mGj" firstAttribute="top" secondItem="VCb-WW-7R5" secondAttribute="bottom" constant="22" id="KUO-wX-c5z"/>
                             <constraint firstItem="7aR-KR-FvN" firstAttribute="centerX" secondItem="VCb-WW-7R5" secondAttribute="centerX" id="OSp-vT-0sJ"/>
                             <constraint firstItem="V91-wu-70c" firstAttribute="top" secondItem="MpW-c1-Ahi" secondAttribute="bottom" constant="29" id="Oz8-IB-wdD"/>
@@ -280,6 +281,7 @@
                             <constraint firstItem="7aR-KR-FvN" firstAttribute="centerX" secondItem="V91-wu-70c" secondAttribute="centerX" id="g6x-Zv-YTQ"/>
                             <constraint firstItem="oN6-Rs-mGj" firstAttribute="centerX" secondItem="XOw-rz-w7M" secondAttribute="centerX" id="g7E-7l-7Y0"/>
                             <constraint firstItem="oN6-Rs-mGj" firstAttribute="centerX" secondItem="VCb-WW-7R5" secondAttribute="centerX" id="gen-85-Uee"/>
+                            <constraint firstItem="jRk-E8-9GY" firstAttribute="top" secondItem="XOw-rz-w7M" secondAttribute="bottom" constant="18" id="nWK-D0-ifJ"/>
                             <constraint firstItem="abA-CB-WB3" firstAttribute="top" secondItem="V91-wu-70c" secondAttribute="bottom" constant="30" id="uvR-MO-nPb"/>
                             <constraint firstItem="P5P-H5-mMI" firstAttribute="top" secondItem="abA-CB-WB3" secondAttribute="bottom" constant="27" id="ztm-ZL-SkY"/>
                         </constraints>
@@ -600,7 +602,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Udr-Fj-MWY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="47l-ft-JvO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="47l-ft-JvO">
+                            <connections>
+                                <segue destination="urA-zm-65Z" kind="show" identifier="activitySegue" id="pNC-jT-8Oi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="My7-0Y-enA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -993,6 +999,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSE-RE-yIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1063" y="-117"/>
+        </scene>
+        <!--Activity View Controller-->
+        <scene sceneID="Nkr-ZP-bOL">
+            <objects>
+                <viewController id="urA-zm-65Z" customClass="ActivityViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RZy-Ce-nbS"/>
+                        <viewControllerLayoutGuide type="bottom" id="gME-Z7-syj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wfg-vD-8Fg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CTw-S4-bCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10232" y="1431"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
