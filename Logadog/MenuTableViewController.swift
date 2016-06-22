@@ -35,7 +35,10 @@ class MenuTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == MENU_CONTACTS {
+        if indexPath.row == MENU_HOME {
+            performSegueWithIdentifier("dogsListSegue", sender: nil)
+        }
+        else if indexPath.row == MENU_CONTACTS {
             performSegueWithIdentifier("contactsSegue", sender: nil)
         }
     }
