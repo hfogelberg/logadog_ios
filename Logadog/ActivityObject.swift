@@ -21,7 +21,7 @@ class ActivityObject {
     
     init(json:JSON) {
         activityId = json["_id"].stringValue
-        activityType = json["activityDate"].stringValue
+        activityType = json["activityType"].stringValue
         city = json["city"].stringValue
         club = json["club"].stringValue
         result = json["result"].stringValue

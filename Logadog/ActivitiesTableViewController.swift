@@ -7,48 +7,55 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ActivitiesTableViewController: UITableViewController {
     var dogId = ""
+    var activities = [ActivityObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("Dog id: \(dogId)")
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.getActivities()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func getActivities() {
+        let token = TokenController.getToken()
+        let params = "dogid=\(self.dogId)&token=\(token)"
+        self.activities.removeAll()
+        
+        RestApiManager.sharedInstance.getRequest(ROUTE_ACTIVITY, params: params, onCompletion: {(json:JSON)->() in
+            if let activities = json["activities"].array {
+                for activity in activities {
+                    self.activities.append(ActivityObject(json: activity))
+                }
+                
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.tableView.reloadData()
+                })
+            }
+        })
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return activities.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        
+        let activity = self.activities[indexPath.row]
+        cell.textLabel!.text = activity.activityType
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
