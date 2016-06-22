@@ -15,7 +15,7 @@ class ActivityObject {
     var city = ""
     var club = ""
     var result = ""
-    var isCompetition = FALSE
+    var isCompetition = ""
     var comment = ""
     var activityDate = ""
     
@@ -25,7 +25,7 @@ class ActivityObject {
         city = json["city"].stringValue
         club = json["club"].stringValue
         result = json["result"].stringValue
-        isCompetition = json["isCompetition"].intValue
+        isCompetition = json["isCompetition"].stringValue
         comment = json["comment"].stringValue
         activityDate = json["activityDate"].stringValue
     }

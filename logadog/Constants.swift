@@ -28,4 +28,7 @@ let MENU_SIGN_OUT = 4
 // Dog
 let MALE = "Male"
 let FEMALE = "Female"
+let COMPETITION = "Competition"
+let PRACTICE = "Practise"
+
 

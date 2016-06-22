@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ActivityViewController: UIViewController {
     
@@ -19,8 +20,10 @@ class ActivityViewController: UIViewController {
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var activityDatePicker: UIDatePicker!
+    @IBOutlet weak var isCompetitionSwitch: UISegmentedControl!
     
     var dogId: String = ""
+    var isCompetition = PRACTICE
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,19 @@ class ActivityViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         dateView.hidden = true
+    }
+    
+    
+    @IBAction func isCompetitionChanged(sender: AnyObject) {
+        switch isCompetitionSwitch.selectedSegmentIndex
+        {
+        case 0:
+            self.isCompetition = PRACTICE
+        case 1:
+            self.isCompetition = COMPETITION
+        default:
+            break;
+        }
     }
     
     @IBAction func datePickerDoneTapped(sender: AnyObject) {
@@ -51,5 +67,71 @@ class ActivityViewController: UIViewController {
     
     @IBAction func saveTapped(sender: AnyObject) {
         print("Save tapped")
+        
+        var activityType = ""
+        var city = ""
+        var club = ""
+        var result = ""
+        var comment = ""
+        var activityDate = ""
+        
+        if let typeVal = typeTextfield.text as String? {
+            activityType = typeVal
+        }
+        
+        if let cityVal = cityTextField.text as String? {
+            city = cityVal
+        }
+        
+        if let clubVal = clubTextField.text as String? {
+            club = clubVal
+        }
+        
+        if let resultVal = resultTextField.text as String? {
+            result = resultVal
+        }
+        
+        if let commentVal = commentTextView.text as String? {
+            comment = commentVal
+        }
+        
+        if let dateVal = dateTextField.text as String? {
+            activityDate = dateVal
+        }
+        
+        let activity = [
+            "activityType": activityType,
+            "city": city,
+            "club": club,
+            "result": result,
+            isCompetition: isCompetition,
+            "comment": comment,
+            "dogid": self.dogId,
+            "token": TokenController.getToken()
+        ]
+        
+        self.createActivity(activity)
+        
+    }
+    
+    func createActivity(activity: [String:String]) {
+        RestApiManager.sharedInstance.postRequest(ROUTE_ACTIVITY, params: activity, onCompletion: {(json: JSON) -> () in
+            var status = STATUS_OK
+            
+            print(json)
+            
+            if let statusVal = json["status"].rawString() as String? {
+                status = Int(statusVal)!
+            }
+            
+            if status == STATUS_OK {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+            } else {
+                // ToDo: Dsiplay error message
+                print("ERROR: \(status)")
+            }
+        })
     }
 }

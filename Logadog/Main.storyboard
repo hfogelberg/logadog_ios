@@ -1033,6 +1033,9 @@
                                     <segment title="Practice"/>
                                     <segment title="Competition"/>
                                 </segments>
+                                <connections>
+                                    <action selector="isCompetitionChanged:" destination="urA-zm-65Z" eventType="valueChanged" id="d0r-c9-lDj"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Result" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7f-C5-Hws">
                                 <rect key="frame" x="425" y="248" width="125" height="30"/>
@@ -1160,7 +1163,7 @@
                         <outlet property="commentTextView" destination="2Et-aw-XCL" id="yW3-av-2dj"/>
                         <outlet property="dateTextField" destination="s3k-Qo-wyB" id="NZd-z9-Tpz"/>
                         <outlet property="dateView" destination="Uxa-a4-co3" id="Wdp-Gn-g4c"/>
-                        <outlet property="isCompetitionSegue" destination="dxu-PZ-uqE" id="Sif-70-qEW"/>
+                        <outlet property="isCompetitionSwitch" destination="dxu-PZ-uqE" id="zfh-dP-LAe"/>
                         <outlet property="resultTextField" destination="K7f-C5-Hws" id="L9t-9c-cgL"/>
                         <outlet property="typeTextfield" destination="syd-6V-Ju5" id="PYh-G7-eX9"/>
                     </connections>
