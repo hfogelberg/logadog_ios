@@ -14,6 +14,7 @@
 		AF5BC3F21D19892100E76343 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5BC3F11D19892100E76343 /* ActivityViewController.swift */; };
 		AF5BC3F41D199F4000E76343 /* ActivityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5BC3F31D199F4000E76343 /* ActivityObject.swift */; };
 		AF5BC3F81D1ABD9B00E76343 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5BC3F71D1ABD9B00E76343 /* SWRevealViewController.m */; };
+		AF5BC3FC1D1AD59200E76343 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5BC3FB1D1AD59200E76343 /* MenuTableViewController.swift */; };
 		AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */; };
 		AFDB2B111CF5B02300236890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B101CF5B02300236890 /* AppDelegate.swift */; };
 		AFDB2B181CF5B02300236890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B171CF5B02300236890 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		AF5BC3F51D1ABD9A00E76343 /* Logadog-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Logadog-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF5BC3F61D1ABD9B00E76343 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		AF5BC3F71D1ABD9B00E76343 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		AF5BC3FB1D1AD59200E76343 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		AFDB2B0D1CF5B02300236890 /* Logadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDB2B101CF5B02300236890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				AF30FE181CFAC66D00C3B7DC /* Start */,
 				AF30FE191CFAC67D00C3B7DC /* Dog */,
+				AF5BC3FB1D1AD59200E76343 /* MenuTableViewController.swift */,
 			);
 			name = Viewcontrollers;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				AF5BC3F81D1ABD9B00E76343 /* SWRevealViewController.m in Sources */,
 				AFDB2B271CF5B0D800236890 /* ApiController.swift in Sources */,
 				AFDB2B531CF72A5A00236890 /* AppearanceObject.swift in Sources */,
+				AF5BC3FC1D1AD59200E76343 /* MenuTableViewController.swift in Sources */,
 				AFEFA8C11D05735200F883AC /* MedicationViewController.swift in Sources */,
 				AF5BC3F21D19892100E76343 /* ActivityViewController.swift in Sources */,
 				AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */,
