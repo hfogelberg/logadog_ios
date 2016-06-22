@@ -18,13 +18,6 @@ let KEYCHAIN_TOKEN = "logadog_token"
 let KEYCHAIN_USER_ID = "logadoge_user_id"
 let KEYCHAIN_USER_NAME = "logadog_user_name"
 
-// Menu
-let MENU_HOME = 0
-let MENU_CONTACTS = 1
-let MENU_CALENDAR = 2
-let MENU_DIARY = 3
-let MENU_SIGN_OUT = 4
-
 // Dog
 let MALE = "Male"
 let FEMALE = "Female"
