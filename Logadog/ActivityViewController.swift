@@ -15,13 +15,15 @@ class ActivityViewController: UIViewController {
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var clubTextField: UITextField!
     @IBOutlet weak var resultTextField: UITextField!
-    @IBOutlet weak var isCompetitionSegue: UISegmentedControl!
+    @IBOutlet weak var timeTextField: UITextField!
+    @IBOutlet weak var positionTextField: UITextField!
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var activityDatePicker: UIDatePicker!
     @IBOutlet weak var isCompetitionSwitch: UISegmentedControl!
     
+    var activity: ActivityObject!
     var dogId: String = ""
     var isCompetition = PRACTICE
 
@@ -34,8 +36,48 @@ class ActivityViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         dateView.hidden = true
+        
+        if activity != nil {
+            self.showActivity()
+        }
     }
     
+    
+    func showActivity() {
+        self.typeTextfield.text = activity.activityType
+        self .clubTextField.text = activity.club
+        self.cityTextField.text = activity.city
+        self.resultTextField.text = activity.result
+        self.positionTextField.text = activity.position
+        self.timeTextField.text = activity.time
+        self.commentTextView.text = activity.comment
+        self.dateTextField.text = activity.activityDate
+
+        if self.isCompetition == COMPETITION {
+            self.isCompetitionSwitch.selectedSegmentIndex = 0
+        } else {
+            self.isCompetitionSwitch.selectedSegmentIndex = 1
+        }
+        
+        self.typeTextfield.enabled = false
+        self.clubTextField.enabled = false
+        self.cityTextField.enabled = false
+        self.resultTextField.enabled = false
+        self.positionTextField.enabled = false
+        self.timeTextField.enabled = false
+        self.dateTextField.enabled = false
+        self.commentTextView.editable = false
+        self.isCompetitionSwitch.enabled = false
+        self.dateTextField.enabled = false
+        
+        self.typeTextfield.borderStyle = .None
+        self.clubTextField.borderStyle = .None
+        self.cityTextField.borderStyle = .None
+        self.resultTextField.borderStyle = .None
+        self.positionTextField.borderStyle = .None
+        self.timeTextField.borderStyle = .None
+        self.dateTextField.borderStyle = .None
+    }
     
     @IBAction func isCompetitionChanged(sender: AnyObject) {
         switch isCompetitionSwitch.selectedSegmentIndex
@@ -72,6 +114,8 @@ class ActivityViewController: UIViewController {
         var city = ""
         var club = ""
         var result = ""
+        var position = ""
+        var time = ""
         var comment = ""
         var activityDate = ""
         
@@ -91,6 +135,14 @@ class ActivityViewController: UIViewController {
             result = resultVal
         }
         
+        if let positionVal = positionTextField.text as String? {
+            position = positionVal
+        }
+        
+        if let timeVal = timeTextField.text as String? {
+            time = timeVal
+        }
+        
         if let commentVal = commentTextView.text as String? {
             comment = commentVal
         }
@@ -104,8 +156,11 @@ class ActivityViewController: UIViewController {
             "city": city,
             "club": club,
             "result": result,
+            "position": position,
+            "time": time,
             isCompetition: isCompetition,
             "comment": comment,
+            "activityDate": activityDate,
             "dogid": self.dogId,
             "token": TokenController.getToken()
         ]

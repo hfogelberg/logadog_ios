@@ -594,6 +594,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="urA-zm-65Z" kind="show" identifier="showActivitySegue" id="zej-db-6fb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1164,7 +1167,9 @@
                         <outlet property="dateTextField" destination="s3k-Qo-wyB" id="NZd-z9-Tpz"/>
                         <outlet property="dateView" destination="Uxa-a4-co3" id="Wdp-Gn-g4c"/>
                         <outlet property="isCompetitionSwitch" destination="dxu-PZ-uqE" id="zfh-dP-LAe"/>
+                        <outlet property="positionTextField" destination="N3f-IW-kHU" id="Mvu-N6-9Ji"/>
                         <outlet property="resultTextField" destination="K7f-C5-Hws" id="L9t-9c-cgL"/>
+                        <outlet property="timeTextField" destination="Kq9-yT-wXr" id="cw7-O8-siP"/>
                         <outlet property="typeTextfield" destination="syd-6V-Ju5" id="PYh-G7-eX9"/>
                     </connections>
                 </viewController>
@@ -1177,6 +1182,7 @@
         <segue reference="Fki-LH-w7x"/>
         <segue reference="KbV-IA-3SG"/>
         <segue reference="NXe-yD-2ly"/>
+        <segue reference="zej-db-6fb"/>
         <segue reference="4W1-0r-eyX"/>
     </inferredMetricsTieBreakers>
 </document>

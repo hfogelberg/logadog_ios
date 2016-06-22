@@ -97,6 +97,15 @@ class ActivitiesTableViewController: UITableViewController {
         if segue.identifier == "activitySegue" {
             let nextScene = segue.destinationViewController as! ActivityViewController
             nextScene.dogId = self.dogId
+        } else if segue.identifier == "showActivitySegue" {
+            let nextScene = segue.destinationViewController as! ActivityViewController
+            nextScene.dogId = self.dogId
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                print("Index: \(self.activities[indexPath.row])")
+                let activity = self.activities[indexPath.row]
+                nextScene.activity = activity
+            }
         }
     }
 }
