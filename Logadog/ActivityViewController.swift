@@ -22,6 +22,8 @@ class ActivityViewController: UIViewController {
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var activityDatePicker: UIDatePicker!
     @IBOutlet weak var isCompetitionSwitch: UISegmentedControl!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var activity: ActivityObject!
     var dogId: String = ""
@@ -39,6 +41,11 @@ class ActivityViewController: UIViewController {
         
         if activity != nil {
             self.showActivity()
+            self.saveButton.enabled = false
+            self.editButton.enabled = true
+        } else {
+            self.saveButton.enabled = true
+            self.editButton.enabled = false
         }
     }
     
@@ -89,6 +96,34 @@ class ActivityViewController: UIViewController {
         default:
             break;
         }
+    }
+    
+    @IBAction func editButtonTapped(sender: AnyObject) {
+        self.editButton.enabled = false
+        self.saveButton.enabled = true
+        
+        self.enableFields()
+    }
+    
+    func enableFields() {
+        self.typeTextfield.enabled = true
+        self.clubTextField.enabled = true
+        self.cityTextField.enabled = true
+        self.resultTextField.enabled = true
+        self.positionTextField.enabled = true
+        self.timeTextField.enabled = true
+        self.dateTextField.enabled = true
+        self.commentTextView.editable = true
+        self.isCompetitionSwitch.enabled = true
+        self.dateTextField.enabled = true
+        
+        self.typeTextfield.borderStyle = .RoundedRect
+        self.clubTextField.borderStyle = .RoundedRect
+        self.cityTextField.borderStyle = .RoundedRect
+        self.resultTextField.borderStyle = .RoundedRect
+        self.positionTextField.borderStyle = .RoundedRect
+        self.timeTextField.borderStyle = .RoundedRect
+        self.dateTextField.borderStyle = .RoundedRect
     }
     
     @IBAction func datePickerDoneTapped(sender: AnyObject) {
@@ -165,8 +200,24 @@ class ActivityViewController: UIViewController {
             "token": TokenController.getToken()
         ]
         
-        self.createActivity(activity)
+        if self.activity == nil {
+            self.createActivity(activity)
+        } else {
+            self.updateActivity(activity)
+        }
+    }
+    
+    func updateActivity(activity:[String:String]) {
+        let activityId = self.activity.activityId
+        let route = "\(ROUTE_ACTIVITY)/\(activityId)"
         
+        RestApiManager.sharedInstance.postRequest(route, params: activity, onCompletion: {(json:JSON) -> () in
+            var status = STATUS_OK
+            
+            print(json)
+            
+            // ToDo: Handle error and fix navigation
+        })
     }
     
     func createActivity(activity: [String:String]) {

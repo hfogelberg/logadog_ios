@@ -129,6 +129,8 @@ class MedicationViewController: UIViewController {
             var status = STATUS_OK
             
             print(json)
+            
+            // ToDo: Handle error and fix navigation
         })
     }
         

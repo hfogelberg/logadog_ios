@@ -13,6 +13,7 @@
 		AF5BC3F01D1986FA00E76343 /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5BC3EF1D1986FA00E76343 /* ActivitiesTableViewController.swift */; };
 		AF5BC3F21D19892100E76343 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5BC3F11D19892100E76343 /* ActivityViewController.swift */; };
 		AF5BC3F41D199F4000E76343 /* ActivityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5BC3F31D199F4000E76343 /* ActivityObject.swift */; };
+		AF5BC3F81D1ABD9B00E76343 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5BC3F71D1ABD9B00E76343 /* SWRevealViewController.m */; };
 		AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */; };
 		AFDB2B111CF5B02300236890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B101CF5B02300236890 /* AppDelegate.swift */; };
 		AFDB2B181CF5B02300236890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B171CF5B02300236890 /* Assets.xcassets */; };
@@ -47,6 +48,9 @@
 		AF5BC3EF1D1986FA00E76343 /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		AF5BC3F11D19892100E76343 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		AF5BC3F31D199F4000E76343 /* ActivityObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityObject.swift; sourceTree = "<group>"; };
+		AF5BC3F51D1ABD9A00E76343 /* Logadog-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Logadog-Bridging-Header.h"; sourceTree = "<group>"; };
+		AF5BC3F61D1ABD9B00E76343 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		AF5BC3F71D1ABD9B00E76343 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		AFDB2B0D1CF5B02300236890 /* Logadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDB2B101CF5B02300236890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +213,9 @@
 		AFDB2B3A1CF5D32700236890 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				AF5BC3F61D1ABD9B00E76343 /* SWRevealViewController.h */,
+				AF5BC3F71D1ABD9B00E76343 /* SWRevealViewController.m */,
+				AF5BC3F51D1ABD9A00E76343 /* Logadog-Bridging-Header.h */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -352,6 +359,7 @@
 				AF30FE1C1CFC71AC00C3B7DC /* IdentityViewController.swift in Sources */,
 				AFDB2B4D1CF7096900236890 /* DogObject.swift in Sources */,
 				AFDB2B311CF5B12600236890 /* LoginViewController.swift in Sources */,
+				AF5BC3F81D1ABD9B00E76343 /* SWRevealViewController.m in Sources */,
 				AFDB2B271CF5B0D800236890 /* ApiController.swift in Sources */,
 				AFDB2B531CF72A5A00236890 /* AppearanceObject.swift in Sources */,
 				AFEFA8C11D05735200F883AC /* MedicationViewController.swift in Sources */,
@@ -478,10 +486,13 @@
 			baseConfigurationReference = 9932E1B7869A1CD13CB90B4E /* Pods-Logadog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Logadog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = es.islandsapps.Logadog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Logadog/Logadog-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -490,10 +501,12 @@
 			baseConfigurationReference = 4B432B444DCEED43E54D8144 /* Pods-Logadog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Logadog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = es.islandsapps.Logadog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Logadog/Logadog-Bridging-Header.h";
 			};
 			name = Release;
 		};

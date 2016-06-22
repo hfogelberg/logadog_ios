@@ -6,6 +6,7 @@
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -1153,11 +1154,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2jq-Gg-hBM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="5YY-2G-z70">
-                            <connections>
-                                <action selector="saveTapped:" destination="urA-zm-65Z" id="saq-dY-KaH"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="5YY-2G-z70">
+                                <connections>
+                                    <action selector="saveTapped:" destination="urA-zm-65Z" id="saq-dY-KaH"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="1MV-Hj-94d">
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="urA-zm-65Z" id="6fX-g1-RHM"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="activityDatePicker" destination="AEk-j5-YWF" id="NCU-p6-2Z5"/>
@@ -1166,9 +1174,11 @@
                         <outlet property="commentTextView" destination="2Et-aw-XCL" id="yW3-av-2dj"/>
                         <outlet property="dateTextField" destination="s3k-Qo-wyB" id="NZd-z9-Tpz"/>
                         <outlet property="dateView" destination="Uxa-a4-co3" id="Wdp-Gn-g4c"/>
+                        <outlet property="editButton" destination="1MV-Hj-94d" id="uQT-3x-9zU"/>
                         <outlet property="isCompetitionSwitch" destination="dxu-PZ-uqE" id="zfh-dP-LAe"/>
                         <outlet property="positionTextField" destination="N3f-IW-kHU" id="Mvu-N6-9Ji"/>
                         <outlet property="resultTextField" destination="K7f-C5-Hws" id="L9t-9c-cgL"/>
+                        <outlet property="saveButton" destination="5YY-2G-z70" id="K06-2d-RPW"/>
                         <outlet property="timeTextField" destination="Kq9-yT-wXr" id="cw7-O8-siP"/>
                         <outlet property="typeTextfield" destination="syd-6V-Ju5" id="PYh-G7-eX9"/>
                     </connections>
