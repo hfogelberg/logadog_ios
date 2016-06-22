@@ -11,9 +11,14 @@ import SwiftyJSON
 
 class DogsTableViewController: UITableViewController {
     
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     var dogs = [DogObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuButton.target = self.revealViewController()
+        menuButton.action = Selector("revealToggle:")
         
         view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
     }
