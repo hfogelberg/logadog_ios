@@ -118,12 +118,11 @@ class IdentityViewController: UIViewController {
         ]
         
         RestApiManager.sharedInstance.postRequest(ROUTE_IDENTITY, params: body, onCompletion: {(json: JSON) -> () in
-            var status = STATUS_OK
+            var status = ""
             
-            print(json)
             
-            if let statusVal = json["status"].rawString() as String? {
-                status = Int(statusVal)!
+            if let statusVal = json["status"].stringValue as String? {
+                status = statusVal
             }
             
             if status == STATUS_OK {
@@ -131,8 +130,15 @@ class IdentityViewController: UIViewController {
                     self.navigationController?.popViewControllerAnimated(true)
                 }
             } else {
-                // ToDo: Dsiplay error message
-                print("ERROR: \(status)")
+                var message = ""
+                if let messageVal = json["message"].stringValue as String? {
+                    message = messageVal
+                }
+                dispatch_async(dispatch_get_main_queue()) {
+                    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+                    alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
             }
         })
     }

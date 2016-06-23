@@ -8,9 +8,11 @@
 
 import Foundation
 
-let API_ROUTE_URL = "http://localhost:3000/api"
+//let API_ROUTE_URL = "http://localhost:3000/api"
+let API_ROUTE_URL = "http://localhost:3000/api/v1"
 
-let ROUTE_AUTHENTICATE = "authenticate"
+//let ROUTE_AUTHENTICATE = "authenticate"
+let ROUTE_AUTHENTICATE = "login"
 let ROUTE_USERS = "users"
 let ROUTE_DOGS = "dogs"
 let ROUTE_CHECK_TOKEN = "checktoken"

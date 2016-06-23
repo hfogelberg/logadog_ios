@@ -8,6 +8,8 @@
 
 import Foundation
 
+let MESSAGE_NO_TOKEN = "Please log in again or sign up"
+
 class ErrorMessages {
     static func messageForErrorCode(errorCode: Int) -> String {
         var message = ""

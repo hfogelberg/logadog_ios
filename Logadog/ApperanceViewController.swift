@@ -129,12 +129,12 @@ class ApperanceViewController: UIViewController {
         ]
         
         RestApiManager.sharedInstance.postRequest(ROUTE_APPEARANCE, params: appearance, onCompletion: {(json: JSON) -> () in
-            var status = STATUS_OK
+            var status = ""
             
             print(json)
             
             if let statusVal = json["status"].rawString() as String? {
-                status = Int(statusVal)!
+                status = statusVal
             }
             
             if status == STATUS_OK {
@@ -142,8 +142,15 @@ class ApperanceViewController: UIViewController {
                     self.navigationController?.popViewControllerAnimated(true)
                 }
             } else {
-                // ToDo: Dsiplay error message
-                print("ERROR: \(status)")
+                var message = ""
+                if let messageVal = json["message"].stringValue as String? {
+                    message = messageVal
+                }
+                dispatch_async(dispatch_get_main_queue()) {
+                    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+                    alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
             }
         })
     }

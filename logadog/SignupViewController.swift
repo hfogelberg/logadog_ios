@@ -53,39 +53,44 @@ class SignupViewController: UIViewController {
             ]
             
             RestApiManager.sharedInstance.postRequest(ROUTE_USERS, params: body) {(json:JSON) -> () in
-                var status = STATUS_OK
+                var status = ""
                 
                 print(json)
                 
                 if let statusVal = json["status"].rawString() as String? {
-                    status = Int(statusVal)!
+                    status = statusVal
                 }
                 
                 if status == STATUS_OK {
                     var userId = ""
-                    var username = ""
                     var token = ""
                     
                     let user = json["user"]
                     
-                    if let userVal = user["user_id"].rawString() as String? {
+                    if let userVal = user["userId"].rawString() as String? {
                         userId = userVal
                     }
-                    if let usernameVal = user["username"].rawString() as String? {
-                        username = usernameVal
-                    }
-                    if let tokenVal = user["token"].rawString() as String? {
+   
+                    if let tokenVal = user["authToken"].rawString() as String? {
                         token = tokenVal
                     }
                     
-                    TokenController.saveTokenAndUser(token, userId: userId, userName: username)
+                    TokenController.saveTokenAndUser(token, userId: userId)
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         self.performSegueWithIdentifier("dogsListSegue", sender: self)
                     }
                     
                 } else {
-                    // Todo: Show allert etc
+                    var message = ""
+                    if let messageVal = json["message"].stringValue as String? {
+                        message = messageVal
+                    }
+                    dispatch_async(dispatch_get_main_queue()) {
+                        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+                        alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    }
                 }
             }
         } else {

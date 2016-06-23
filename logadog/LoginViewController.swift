@@ -38,46 +38,48 @@ class LoginViewController: UIViewController {
         }
         
         if username != "" && password != "" {
-            let params = "username=\(username)&password=\(password)"
+            //let params = "username=\(username)&password=\(password)"
+            let params:[String:String] = [
+                "username": username,
+                "password": password
+            ]
             
-            RestApiManager.sharedInstance.getRequest(ROUTE_AUTHENTICATE, params: params) { (json: JSON) -> () in                var status = STATUS_OK
-                
+            //RestApiManager.sharedInstance.getRequest(ROUTE_AUTHENTICATE, params: params) { (json: JSON) -> () in
+            RestApiManager.sharedInstance.postRequest(ROUTE_AUTHENTICATE, params: params) {(json:JSON) -> () in
                 print(json)
+
+                var status = ""
+                var message = ""
                 
                 if let statusVal = json["status"].rawString() as String? {
-                    if statusVal != "null" {
-                        status = Int(statusVal)!
-                    } else {
-                        status = STATUS_SERVER_ERROR
-                    }
+                    status = statusVal
+                }
+                
+                if let messageVal = json["message"].stringValue as String? {
+                    message = messageVal
                 }
                 
                 if status == STATUS_OK {
                     var userId = ""
-                    var username = ""
                     var token = ""
                     
-                    let user = json["user"]
+                    let user = json["data"]
                     
-                    if let userVal = user["user_id"].rawString() as String? {
+                    if let userVal = user["userId"].rawString() as String? {
                         userId = userVal
                     }
-                    if let usernameVal = user["username"].rawString() as String? {
-                        username = usernameVal
-                    }
-                    if let tokenVal = user["token"].rawString() as String? {
+
+                    if let tokenVal = user["authToken"].rawString() as String? {
                         token = tokenVal
                     }
                     
-                    TokenController.saveTokenAndUser(token, userId: userId, userName: username)
+                    TokenController.saveTokenAndUser(token, userId: userId)
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         self.performSegueWithIdentifier("dogsListSegue", sender: self)
                     }
                     
                 } else {
-                    let message = ErrorMessages.messageForErrorCode(status)
-                    
                     dispatch_async(dispatch_get_main_queue()) {
                         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
                         alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))

@@ -29,7 +29,6 @@ class DogsTableViewController: UITableViewController {
     }
     
     func getDogs() {
-        print("getDogs")
         let token = TokenController.getToken()
         let userId = TokenController.getUserId()
         
@@ -40,8 +39,8 @@ class DogsTableViewController: UITableViewController {
             print(params)
             RestApiManager.sharedInstance.getRequest(ROUTE_DOGS, params: params) {(json:JSON) -> () in
                 var status = STATUS_OK
-                if let statusVal = json["status"].rawString() as String? {
-                    status = Int(statusVal)!
+                if let statusVal = json["status"].stringValue as String? {
+                    status = statusVal
                 }
                 
                 if status == STATUS_OK {
@@ -55,18 +54,21 @@ class DogsTableViewController: UITableViewController {
                         })
                     }
                 } else {
-                    self.redirectToStart(status)
+                    var message = ""
+                    if let messageVal = json["message"].stringValue as String? {
+                        message = messageVal
+                    }
+
+                    self.redirectToStart(message)
                 }
             }
         } else {
-            self.redirectToStart(STATUS_NO_TOKEN)
+            self.redirectToStart(MESSAGE_NO_TOKEN)
         }
     }
 
-    func redirectToStart(statusCode: Int) {
-        print("Invalid token or some error. Redirect to Start")
+    func redirectToStart(message: String) {
         TokenController.removeTokenAndUser()
-        let message = ErrorMessages.messageForErrorCode(statusCode)
         
         dispatch_async(dispatch_get_main_queue()) {
             let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)

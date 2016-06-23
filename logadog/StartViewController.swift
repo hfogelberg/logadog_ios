@@ -62,16 +62,22 @@ class StartViewController: UIViewController {
             
             print(json)
             
-            if let statusVal = json["status"].rawString() as String? {
-                if statusVal != "null"{
-                    status = Int(statusVal)!
-                } else {
-                    status = STATUS_SERVER_ERROR
-                }
+            if let statusVal = json["status"].stringValue as String? {
+                status = statusVal
             }
             
             if status != STATUS_OK {
-                // Todo: Show error message
+                var message = ""
+                if let messageVal = json["message"].stringValue as String? {
+                    message = messageVal
+                }
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+                    alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+                
                 TokenController.removeTokenAndUser()
                 retVal = false
             }
