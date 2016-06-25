@@ -32,10 +32,9 @@ class InsuranceViewController: UIViewController {
     
     func getInsurance() {
         if dogId != "" {
-            let token = TokenController.getToken()
-            let params = "dogid=\(dogId)&token=\(token)"
+            let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_INSURANCE)"
             
-            RestApiManager.sharedInstance.getRequest(ROUTE_INSURANCE, params: params, onCompletion: { (json: JSON) -> () in
+            RestApiManager.sharedInstance.getRequest(route, onCompletion: { (json: JSON) -> () in
                 print(json)
                 if json["insurance"] != JSON.null {
                     var company = ""
@@ -188,7 +187,9 @@ class InsuranceViewController: UIViewController {
             "token": TokenController.getToken()
         ]
         
-        RestApiManager.sharedInstance.postRequest(ROUTE_INSURANCE, params: params, onCompletion: {(json:JSON) -> () in
+        let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_INSURANCE)"
+        
+        RestApiManager.sharedInstance.postRequest(route, params: params, onCompletion: {(json:JSON) -> () in
             print(json)
         })
     }
