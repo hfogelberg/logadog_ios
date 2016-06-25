@@ -190,6 +190,7 @@ class InsuranceViewController: UIViewController {
         let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_INSURANCE)"
         
         RestApiManager.sharedInstance.postRequest(route, params: params, onCompletion: {(json:JSON) -> () in
+            // Todo: Handle response
             print(json)
         })
     }

@@ -22,11 +22,10 @@ class MedicationTableViewController: UITableViewController {
     }
     
     func getMedications() {
-        let token = TokenController.getToken()
-        let params = "dogid=\(self.dogId)&token=\(token)"
         self.medications.removeAll()
+        let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_MEDICATION)"
         
-        RestApiManager.sharedInstance.getRequest(ROUTE_MEDICATION, params: params, onCompletion: {(json:JSON)->() in
+        RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
             if let medications = json["medications"].array {
                 for medication in medications {
                     self.medications.append(MedicationObject(json: medication))

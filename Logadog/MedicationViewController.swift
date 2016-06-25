@@ -108,9 +108,7 @@ class MedicationViewController: UIViewController {
             "amount": amount,
             "cost": cost,
             "reminder": reminder,
-            "comment": comment,
-            "dogid": self.dogId,
-            "token": TokenController.getToken()
+            "comment": comment
         ]
         
         if self.medication == nil {
@@ -149,29 +147,31 @@ class MedicationViewController: UIViewController {
     }
     
     func createMedication(medication: [String:String]) {
-        RestApiManager.sharedInstance.postRequest(ROUTE_MEDICATION, params: medication, onCompletion: {(json: JSON) -> () in
-            var status = ""
-            
-            
-            if let statusVal = json["status"].stringValue as String? {
-                status = statusVal
-            }
-            
-            if status == STATUS_OK {
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.navigationController?.popViewControllerAnimated(true)
-                }
-            } else {
-                var message = ""
-                if let messageVal = json["message"].stringValue as String? {
-                    message = messageVal
-                }
-                dispatch_async(dispatch_get_main_queue()) {
-                    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
-                    alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
-                    self.presentViewController(alertController, animated: true, completion: nil)
-                }
-            }
+        let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_MEDICATION)"
+        RestApiManager.sharedInstance.postRequest(route, params: medication, onCompletion: {(json: JSON) -> () in
+            print(json)
+//            var status = ""
+//            
+//            
+//            if let statusVal = json["status"].stringValue as String? {
+//                status = statusVal
+//            }
+//            
+//            if status == STATUS_OK {
+//                dispatch_async(dispatch_get_main_queue()) {
+//                    self.navigationController?.popViewControllerAnimated(true)
+//                }
+//            } else {
+//                var message = ""
+//                if let messageVal = json["message"].stringValue as String? {
+//                    message = messageVal
+//                }
+//                dispatch_async(dispatch_get_main_queue()) {
+//                    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+//                    alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
+//                    self.presentViewController(alertController, animated: true, completion: nil)
+//                }
+//            }
         })
     }
 }
