@@ -28,35 +28,27 @@ class ApperanceViewController: UIViewController {
     
     func getAppearance(){
         if dogId != "" {
-            
-            let token = TokenController.getToken()
-            let params = "dogid=\(dogId)&token=\(token)"
-            
-            RestApiManager.sharedInstance.getRequest(ROUTE_APPEARANCE, params: params, onCompletion: { (json: JSON) -> () in
-                print(json)
+            let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_APPEARANCE)"
+            RestApiManager.sharedInstance.getRequest(route, params: "", onCompletion: { (json: JSON) -> () in
                 var color = ""
                 var height = ""
                 var weight = ""
                 var comment = ""
                 
-                if json["appearance"] != JSON.null {
-                    print("Has appearance")
-                    
-                    if let colorVal = json["appearance", "color"].stringValue as String? {
-                        color = colorVal
-                    }
-                    if let heightVal = json["appearance", "heightInCm"].stringValue as String? {
-                        height = heightVal
-                    }
-                    if let weightVal = json["appearance", "weightInKg"].stringValue as String? {
-                        weight = weightVal
-                    }
-                    if let commentVal = json["appearance", "comment"].stringValue as String? {
-                        comment = commentVal
-                    }
-                    
-                    self.displayAppearance(color, height: height, weight: weight, comment: comment)
+                if let colorVal = json["appearance", "color"].stringValue as String? {
+                    color = colorVal
                 }
+                if let heightVal = json["appearance", "heightInCm"].stringValue as String? {
+                    height = heightVal
+                }
+                if let weightVal = json["appearance", "weightInKg"].stringValue as String? {
+                    weight = weightVal
+                }
+                if let commentVal = json["appearance", "comment"].stringValue as String? {
+                    comment = commentVal
+                }
+                
+                self.displayAppearance(color, height: height, weight: weight, comment: comment)
             })
         }
     }
@@ -124,11 +116,11 @@ class ApperanceViewController: UIViewController {
             "color": color,
             "heightInCm": height,
             "weightInKg": weight,
-            "comment": comment,
-            "token": TokenController.getToken()
+            "comment": comment
         ]
         
-        RestApiManager.sharedInstance.postRequest(ROUTE_APPEARANCE, params: appearance, onCompletion: {(json: JSON) -> () in
+        let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_APPEARANCE)"
+        RestApiManager.sharedInstance.postRequest(route, params: appearance, onCompletion: {(json: JSON) -> () in
             var status = ""
             
             print(json)

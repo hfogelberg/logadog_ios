@@ -104,18 +104,16 @@ class DogViewController: UIViewController {
                 "breed": breed,
                 "gender": gender,
                 "dob": dob,
-                "token": TokenController.getToken(),
-                "userid": TokenController.getUserId()
+                "userId": TokenController.getUserId()
             ]
             
-            route = ROUTE_DOGS
+            route = ROUTE_PETS
         } else {
             body = [
                 "name": name,
                 "breed": breed,
                 "gender": gender,
                 "dob": dob,
-                "token": TokenController.getToken(),
                 "dogid": self.dog.id
             ]
             

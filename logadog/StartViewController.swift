@@ -26,9 +26,9 @@ class StartViewController: UIViewController {
         
         let token = getToken()
         if !(token ?? "").isEmpty {
-           let hasValidToken = tokenIsValid(token!)
+           //let hasValidToken = tokenIsValid(token!)
             
-            if hasValidToken == true {
+            //if hasValidToken == true {
                 // There's a valid token. Show dogs list
                 dispatch_async(dispatch_get_main_queue()) {
                     self.performSegueWithIdentifier("dogsListSegue", sender: self)
@@ -54,35 +54,35 @@ class StartViewController: UIViewController {
         return token
     }
     
-    func tokenIsValid(token: String) -> Bool {
-        var retVal = true
-        let params = "token=\(token)"
-        
-        RestApiManager.sharedInstance.getRequest(ROUTE_CHECK_TOKEN, params: params, onCompletion: {(json:JSON) ->() in            var status = STATUS_OK
-            
-            print(json)
-            
-            if let statusVal = json["status"].stringValue as String? {
-                status = statusVal
-            }
-            
-            if status != STATUS_OK {
-                var message = ""
-                if let messageVal = json["message"].stringValue as String? {
-                    message = messageVal
-                }
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
-                    alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
-                    self.presentViewController(alertController, animated: true, completion: nil)
-                }
-                
-                TokenController.removeTokenAndUser()
-                retVal = false
-            }
-        })
-        
-        return retVal
-    }
-}
+//    func tokenIsValid(token: String) -> Bool {
+//        var retVal = true
+//        let params = "token=\(token)"
+//        
+//        RestApiManager.sharedInstance.getRequest(ROUTE_CHECK_TOKEN, params: params, onCompletion: {(json:JSON) ->() in            var status = STATUS_OK
+//            
+//            print(json)
+//            
+//            if let statusVal = json["status"].stringValue as String? {
+//                status = statusVal
+//            }
+//            
+//            if status != STATUS_OK {
+//                var message = ""
+//                if let messageVal = json["message"].stringValue as String? {
+//                    message = messageVal
+//                }
+//                
+//                dispatch_async(dispatch_get_main_queue()) {
+//                    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+//                    alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
+//                    self.presentViewController(alertController, animated: true, completion: nil)
+//                }
+//                
+//                TokenController.removeTokenAndUser()
+//                retVal = false
+//            }
+//        })
+//        
+//        return retVal
+//    }
+//}

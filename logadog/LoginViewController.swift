@@ -44,8 +44,8 @@ class LoginViewController: UIViewController {
                 "password": password
             ]
             
-            //RestApiManager.sharedInstance.getRequest(ROUTE_AUTHENTICATE, params: params) { (json: JSON) -> () in
-            RestApiManager.sharedInstance.postRequest(ROUTE_AUTHENTICATE, params: params) {(json:JSON) -> () in
+            
+            RestApiManager.sharedInstance.postRequest(ROUTE_AUTHENTICATE, params: params, authenticated: false) {(json:JSON) -> () in
                 print(json)
 
                 var status = ""

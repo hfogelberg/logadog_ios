@@ -35,16 +35,18 @@ class DogsTableViewController: UITableViewController {
         self.dogs.removeAll()
         
         if token != "" && userId != "" {
-            let params = "userid=\(userId)&token=\(token)"
-            print(params)
-            RestApiManager.sharedInstance.getRequest(ROUTE_DOGS, params: params) {(json:JSON) -> () in
-                var status = STATUS_OK
-                if let statusVal = json["status"].stringValue as String? {
-                    status = statusVal
-                }
-                
-                if status == STATUS_OK {
-                    if let dogs = json["dogs"].array {
+//            let params = "userid=\(userId)&token=\(token)"
+//            let params = "userId=\(userId)"
+//            print(params)
+            RestApiManager.sharedInstance.getRequest(ROUTE_MY_PETS, params: "") {(json:JSON) -> () in
+//                var status = STATUS_OK
+//                if let statusVal = json["status"].stringValue as String? {
+//                    status = statusVal
+//                }
+//                
+//                if status == STATUS_OK {
+                print(json)
+                    if let dogs = json.array {
                         for dog in dogs {
                             self.dogs.append(DogObject(json: dog))
                         }
@@ -53,14 +55,14 @@ class DogsTableViewController: UITableViewController {
                             self.tableView.reloadData()
                         })
                     }
-                } else {
-                    var message = ""
-                    if let messageVal = json["message"].stringValue as String? {
-                        message = messageVal
-                    }
-
-                    self.redirectToStart(message)
-                }
+//                } else {
+//                    var message = ""
+//                    if let messageVal = json["message"].stringValue as String? {
+//                        message = messageVal
+//                    }
+//
+//                    self.redirectToStart(message)
+//                }
             }
         } else {
             self.redirectToStart(MESSAGE_NO_TOKEN)

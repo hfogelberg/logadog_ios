@@ -55,6 +55,7 @@
                         <outlet property="loginButton" destination="bCv-in-0nU" id="eVM-r9-3pL"/>
                         <outlet property="passwordTextfield" destination="429-4y-PmP" id="knJ-K8-CQe"/>
                         <outlet property="usernameTextfield" destination="clz-Am-i20" id="fbl-kQ-2at"/>
+                        <segue destination="3bc-gV-rg0" kind="show" identifier="dogsListSegue" id="27Q-e4-tlg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -549,7 +550,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="RkS-8s-hM8">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RkS-8s-hM8" id="kOx-pT-7KG">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -588,7 +589,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="D3g-IR-S9x">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D3g-IR-S9x" id="MsS-Zn-L62">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -809,7 +810,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-Is-1NE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-Is-1NE">
                                 <rect key="frame" x="50" y="200" width="57" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -822,7 +823,7 @@
                                     <action selector="saveButtonTapped:" destination="AV7-l6-dus" eventType="touchUpInside" id="slt-sq-6vo"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jos-IB-fmO">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jos-IB-fmO">
                                 <rect key="frame" x="50" y="240" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -830,7 +831,7 @@
                                     <action selector="dobTextfieldTappd:" destination="AV7-l6-dus" eventType="touchDown" id="5ra-nv-rfq"/>
                                 </connections>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jiL-RO-b5c">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jiL-RO-b5c">
                                 <rect key="frame" x="429" y="197" width="121" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="gTF-ZC-txt"/>
@@ -843,7 +844,7 @@
                                     <action selector="genderSwitchChanged:" destination="AV7-l6-dus" eventType="valueChanged" id="M47-US-qRS"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-aA-Kgx">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-aA-Kgx">
                                 <rect key="frame" x="0.0" y="264" width="600" height="300"/>
                                 <subviews>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HdF-ki-fd5">
@@ -864,7 +865,7 @@
                                             </barButtonItem>
                                         </items>
                                     </toolbar>
-                                    <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ylK-vm-8sL">
+                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ylK-vm-8sL">
                                         <rect key="frame" x="0.0" y="44" width="600" height="256"/>
                                         <date key="date" timeIntervalSinceReferenceDate="487927838.69202799">
                                             <!--2016-06-18 07:30:38 +0000-->
@@ -936,7 +937,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="bmj-vd-SeY">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bmj-vd-SeY" id="2mW-7g-Ac0">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1325,11 +1326,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RBT-JL-Fda"/>
-        <segue reference="KU5-mu-st5"/>
         <segue reference="IeM-QS-f72"/>
+        <segue reference="KU5-mu-st5"/>
+        <segue reference="27Q-e4-tlg"/>
+        <segue reference="RBT-JL-Fda"/>
         <segue reference="ujV-Lj-T7i"/>
-        <segue reference="zej-db-6fb"/>
         <segue reference="4W1-0r-eyX"/>
+        <segue reference="zej-db-6fb"/>
     </inferredMetricsTieBreakers>
 </document>
