@@ -28,18 +28,15 @@ class IdentityViewController: UIViewController {
     }
     
     func getIdentity(){
-        let token = TokenController.getToken()
-        let params = "dogid=\(dogId)&token=\(token)"
-        
-        RestApiManager.sharedInstance.getRequest(ROUTE_IDENTITY, params: params, onCompletion: { (json: JSON) -> () in
+        let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_IDENTITY)"
+        RestApiManager.sharedInstance.getRequest(route, onCompletion: { (json: JSON) -> () in
             print(json)
-            var chip = ""
-            var passport = ""
-            var earmark = ""
-            var comment = ""
             
-            if json["identity"] != JSON.null {
-                print("Has identity")
+            if json["identity"] != nil{
+                var chip = ""
+                var passport = ""
+                var earmark = ""
+                var comment = ""
             
                 if let chipVal = json["identity", "chip"].stringValue as String? {
                     chip = chipVal
@@ -53,8 +50,10 @@ class IdentityViewController: UIViewController {
                 if let commentVal = json["identity", "comment"].stringValue as String? {
                     comment = commentVal
                 }
-            
+        
                 self.displayIdentity(chip, passport: passport, earmark: earmark, comment: comment)
+            } else {
+                self.enableFields()
             }
         })
     }
@@ -117,10 +116,10 @@ class IdentityViewController: UIViewController {
             "token": TokenController.getToken()
         ]
         
-        RestApiManager.sharedInstance.postRequest(ROUTE_IDENTITY, params: body, onCompletion: {(json: JSON) -> () in
+        let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_IDENTITY)"
+        RestApiManager.sharedInstance.postRequest(route, params: body, onCompletion: {(json: JSON) -> () in
             var status = ""
-            
-            
+            print(json)
             if let statusVal = json["status"].stringValue as String? {
                 status = statusVal
             }
@@ -144,6 +143,10 @@ class IdentityViewController: UIViewController {
     }
     
     @IBAction func editButtonTapped(sender: AnyObject) {
+        self.enableFields()
+    }
+    
+    func enableFields() {
         dispatch_async(dispatch_get_main_queue()) {
             self.chipmarkTextfield.borderStyle = .RoundedRect
             self.passportTextfield.borderStyle = .RoundedRect

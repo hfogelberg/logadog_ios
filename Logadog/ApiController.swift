@@ -14,7 +14,7 @@ typealias ServiceResponse = (JSON, NSError?) -> Void
 class RestApiManager: NSObject {
     static let sharedInstance = RestApiManager()
     
-    func getRequest(route: String, params: String,  authenticated: Bool = true, onCompletion: (JSON) -> Void) {
+    func getRequest(route: String, params: String = "",  authenticated: Bool = true, onCompletion: (JSON) -> Void) {
         var route = "\(API_ROUTE_URL)/\(route)"
         if params != "" {
             route = "\(API_ROUTE_URL)/\(route)?\(params)"
