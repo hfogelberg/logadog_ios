@@ -193,11 +193,9 @@ class ActivityViewController: UIViewController {
             "result": result,
             "position": position,
             "time": time,
-            isCompetition: isCompetition,
+            "isCompetition": isCompetition,
             "comment": comment,
-            "activityDate": activityDate,
-            "dogid": self.dogId,
-            "token": TokenController.getToken()
+            "activityDate": activityDate
         ]
         
         if self.activity == nil {
@@ -209,7 +207,7 @@ class ActivityViewController: UIViewController {
     
     func updateActivity(activity:[String:String]) {
         let activityId = self.activity.activityId
-        let route = "\(ROUTE_ACTIVITY)/\(activityId)"
+        let route = "\(ROUTE_MY_PETS)/\(self.dogId)/\(ROUTE_ACTIVITY)/\(activityId)"
         
         RestApiManager.sharedInstance.postRequest(route, params: activity, onCompletion: {(json:JSON) -> () in
             var status = ""
@@ -239,11 +237,12 @@ class ActivityViewController: UIViewController {
     }
     
     func createActivity(activity: [String:String]) {
-        RestApiManager.sharedInstance.postRequest(ROUTE_ACTIVITY, params: activity, onCompletion: {(json: JSON) -> () in
+        let route = "\(ROUTE_MY_PETS)/\(self.dogId)/\(ROUTE_ACTIVITY)"
+        RestApiManager.sharedInstance.postRequest(route, params: activity, onCompletion: {(json: JSON) -> () in
             var status = ""
+            print(json)
             
-            
-            if let statusVal = json["status"].rawString() as String? {
+            if let statusVal = json["status"].stringValue as String? {
                 status = statusVal
             }
             

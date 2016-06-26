@@ -22,12 +22,12 @@ class ActivitiesTableViewController: UITableViewController {
     }
 
     func getActivities() {
-        let token = TokenController.getToken()
-        let params = "dogid=\(self.dogId)&token=\(token)"
         self.activities.removeAll()
         
-        RestApiManager.sharedInstance.getRequest(ROUTE_ACTIVITY, params: params, onCompletion: {(json:JSON)->() in
-            if let activities = json["activities"].array {
+        let route = "\(ROUTE_MY_PETS)/\(self.dogId)/\(ROUTE_ACTIVITY)"
+
+        RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
+            if let activities = json.array {
                 for activity in activities {
                     self.activities.append(ActivityObject(json: activity))
                 }
