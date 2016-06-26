@@ -10,7 +10,7 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     
-    let menuItems = ["Home", "Contacts", "Calendar", "Diary", "Photos", "Walks", "Settings", "Sign out"]
+    let menuItems = ["Home", "Contacts", "Calendar", "Purchases", "Diary", "Photos", "Walks", "Settings", "Sign out"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
