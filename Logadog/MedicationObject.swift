@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class MedicationObject {
     var medicationId = ""
-    var medicationType = ""
+    var productType = ""
     var product = ""
     var amount = ""
     var cost = ""
@@ -20,7 +20,7 @@ class MedicationObject {
     
     init(json:JSON) {
         self.medicationId = json["_id"].stringValue
-        self.medicationType = json["medicationType"].stringValue
+        self.productType = json["productType"].stringValue
         self.product = json["product"].stringValue
         self.amount = json["amount"].stringValue
         self.cost = json["cost"].stringValue

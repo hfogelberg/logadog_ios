@@ -26,7 +26,8 @@ class MedicationTableViewController: UITableViewController {
         let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_MEDICATION)"
         
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
-            if let medications = json["medications"].array {
+            print(json)
+            if let medications = json.array {
                 for medication in medications {
                     self.medications.append(MedicationObject(json: medication))
                 }
@@ -52,7 +53,7 @@ class MedicationTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
         let medication = self.medications[indexPath.row]
-        cell.textLabel!.text = medication.medicationType
+        cell.textLabel!.text = medication.productType
 
         return cell
     }
