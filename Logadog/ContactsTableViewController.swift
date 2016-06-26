@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ContactsTableViewController: UITableViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    var contacts = [ContactObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,33 +20,48 @@ class ContactsTableViewController: UITableViewController {
         menuButton.target = self.revealViewController()
         menuButton.action = Selector("revealToggle:")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(animated: Bool) {
+        getContacts()
+    }
+    
+    func getContacts() {
+        self.contacts.removeAll()
+        
+        let route = "\(ROUTE_CONTACT)"
+        
+        RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
+            if let contacts = json.array {
+                for contact in contacts {
+                    self.contacts.append(ContactObject(json: contact))
+                }
+                
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.tableView.reloadData()
+                })
+            }
+        })
     }
 
-    // MARK: - Table view data source
 
+    // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return contacts.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
-        // Configure the cell...
+        let contact = contacts[indexPath.row]
+        cell.textLabel!.text = contact.name
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
