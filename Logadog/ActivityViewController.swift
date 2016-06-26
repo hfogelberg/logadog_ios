@@ -207,7 +207,7 @@ class ActivityViewController: UIViewController {
     
     func updateActivity(activity:[String:String]) {
         let activityId = self.activity.activityId
-        let route = "\(ROUTE_MY_PETS)/\(self.dogId)/\(ROUTE_ACTIVITY)/\(activityId)"
+        let route = "\(ROUTE_MY_PETS)/\(ROUTE_ACTIVITY)/\(activityId)"
         
         RestApiManager.sharedInstance.postRequest(route, params: activity, onCompletion: {(json:JSON) -> () in
             var status = ""
