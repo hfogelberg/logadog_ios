@@ -25,8 +25,8 @@ class ContactObject {
     init(json: JSON) {
         id = json["_id"].stringValue
         name = json["name"].stringValue
-        company = json[""].stringValue
-        web = json["company"].stringValue
+        company = json["company"].stringValue
+        web = json["web"].stringValue
         email = json["email"].stringValue
         phone = json["phone"].stringValue
         street = json["street"].stringValue

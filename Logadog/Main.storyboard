@@ -1041,6 +1041,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="KGl-Fz-zhW" kind="show" identifier="showContactSegue" id="wEo-6D-6HN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1187,7 +1190,11 @@
                                     <action selector="saveButtonTapped:" destination="KGl-Fz-zhW" id="KU6-Vy-vXU"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="edit" id="wBP-pW-xOO"/>
+                            <barButtonItem systemItem="edit" id="wBP-pW-xOO">
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="KGl-Fz-zhW" id="lWu-QR-1Rv"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -1195,7 +1202,6 @@
                         <outlet property="commenttextview" destination="mbY-hd-hDh" id="sKM-zL-BdM"/>
                         <outlet property="companyTextfield" destination="YVz-g3-BYO" id="j9R-J7-HX9"/>
                         <outlet property="countryTextfield" destination="2cA-Ry-6Dp" id="fUr-z5-26g"/>
-                        <outlet property="editButtonTapped" destination="wBP-pW-xOO" id="DIL-aE-DjN"/>
                         <outlet property="emailTextfield" destination="Ad8-rO-mmp" id="gtN-CX-Yie"/>
                         <outlet property="nameTextfield" destination="qfQ-Gp-Dl4" id="rem-Aj-luj"/>
                         <outlet property="phoneTextfield" destination="cAe-cy-1zk" id="cM2-gc-WFG"/>
@@ -1447,12 +1453,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IeM-QS-f72"/>
-        <segue reference="KU5-mu-st5"/>
         <segue reference="27Q-e4-tlg"/>
         <segue reference="RBT-JL-Fda"/>
         <segue reference="ujV-Lj-T7i"/>
         <segue reference="4W1-0r-eyX"/>
         <segue reference="zej-db-6fb"/>
+        <segue reference="IeM-QS-f72"/>
+        <segue reference="KU5-mu-st5"/>
+        <segue reference="wEo-6D-6HN"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,8 @@ import SwiftyJSON
 
 class ContactViewController: UIViewController {
     
+    var contactId = ""
+    
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var companyTextfield: UITextField!
     @IBOutlet weak var webTextfield: UITextField!
@@ -25,6 +27,55 @@ class ContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if contactId != "" {
+            getContact()
+        }
+    }
+    
+    func getContact() {
+        let route = "\(ROUTE_CONTACT)/\(self.contactId)"
+        RestApiManager.sharedInstance.getRequest(route, onCompletion: { (json: JSON) -> () in
+            print(json)
+            self.displayContact(json)
+        })
+    }
+    
+    func displayContact(contact: JSON) {
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.nameTextfield.text = contact["name"].stringValue
+            self.companyTextfield.text = contact["company"].stringValue
+            self.webTextfield.text = contact["web"].stringValue
+            self.emailTextfield.text = contact["email"].stringValue
+            self.phoneTextfield.text = contact["phone"].stringValue
+            self.streetTextfield.text = contact["street"].stringValue
+            self.postalcodeTextfield.text = contact["postalcode"].stringValue
+            self.cityTextfield.text = contact["city"].stringValue
+            self.countryTextfield.text = contact["country"].stringValue
+            self.commenttextview.text = contact["comment"].stringValue
+            
+            self.nameTextfield.borderStyle = .None
+            self.companyTextfield.borderStyle = .None
+            self.webTextfield.borderStyle = .None
+            self.emailTextfield.borderStyle = .None
+            self.phoneTextfield.borderStyle = .None
+            self.streetTextfield.borderStyle = .None
+            self.postalcodeTextfield.borderStyle = .None
+            self.cityTextfield.borderStyle = .None
+            self.countryTextfield.borderStyle = .None
+            
+            self.nameTextfield.enabled = false
+            self.companyTextfield.enabled = false
+            self.webTextfield.enabled = false
+            self.emailTextfield.enabled = false
+            self.phoneTextfield.enabled = false
+            self.streetTextfield.enabled = false
+            self.postalcodeTextfield.enabled = false
+            self.cityTextfield.enabled = false
+            self.countryTextfield.enabled = false
+            self.commenttextview.editable = false
+        }
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
@@ -70,7 +121,7 @@ class ContactViewController: UIViewController {
             comment = commentVal
         }
         
-        let contact = [
+        var contact = [
             "name": name,
             "company": company,
             "web": web,
@@ -83,11 +134,16 @@ class ContactViewController: UIViewController {
             "comment": comment,
         ]
         
-        let route = "\(ROUTE_CONTACT)"
+        var route = ""
+        if contactId != "" {
+            route = "\(ROUTE_CONTACT)/\(self.contactId)"
+            
+        } else {
+            route = "\(ROUTE_CONTACT)"
+        }
+    
         RestApiManager.sharedInstance.postRequest(route, params: contact, onCompletion: {(json: JSON) -> () in
             var status = ""
-            
-            print(json)
             
             if let statusVal = json["status"].rawString() as String? {
                 status = statusVal
@@ -109,10 +165,32 @@ class ContactViewController: UIViewController {
                 }
             }
         })
-        
-        
     }
+    
 
-    @IBOutlet weak var editButtonTapped: UIBarButtonItem!
-
+    
+    @IBAction func editButtonTapped(sender: AnyObject) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.nameTextfield.enabled = true
+            self.companyTextfield.enabled = true
+            self.webTextfield.enabled = true
+            self.emailTextfield.enabled = true
+            self.phoneTextfield.enabled = true
+            self.streetTextfield.enabled = true
+            self.postalcodeTextfield.enabled = true
+            self.cityTextfield.enabled = true
+            self.countryTextfield.enabled = true
+            self.commenttextview.editable = true
+            
+            self.nameTextfield.borderStyle = .RoundedRect
+            self.companyTextfield.borderStyle = .RoundedRect
+            self.webTextfield.borderStyle = .RoundedRect
+            self.emailTextfield.borderStyle = .RoundedRect
+            self.phoneTextfield.borderStyle = .RoundedRect
+            self.streetTextfield.borderStyle = .RoundedRect
+            self.postalcodeTextfield.borderStyle = .RoundedRect
+            self.cityTextfield.borderStyle = .RoundedRect
+            self.countryTextfield.borderStyle = .RoundedRect
+        }
+    }
 }
