@@ -1460,7 +1460,7 @@
                     <navigationItem key="navigationItem" id="VAJ-Fh-fJ7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zhT-B8-ytm">
                             <connections>
-                                <segue destination="XcS-oP-pM4" kind="show" identifier="purchaseSegue" id="mqb-5i-Nq0"/>
+                                <segue destination="xYX-4F-Jfe" kind="show" identifier="purchaseSegue" id="mqb-5i-Nq0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1480,12 +1480,60 @@
                     <view key="view" contentMode="scaleToFill" id="TpA-7l-ICx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ogA-jE-1BE">
+                                <rect key="frame" x="50" y="75" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSM-zf-btq">
+                                <rect key="frame" x="50" y="125" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNN-7Q-CwJ">
+                                <rect key="frame" x="50" y="175" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6NJ-eM-0po">
+                                <rect key="frame" x="50" y="225" width="500" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="96E-wA-xxh">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="moO-VE-0I6">
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="XcS-oP-pM4" id="nep-fn-VRJ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="Yoy-US-sv9">
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="XcS-oP-pM4" id="Je3-02-cOI"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="commentTextview" destination="6NJ-eM-0po" id="EOl-EM-xxH"/>
+                        <outlet property="costTextfield" destination="VNN-7Q-CwJ" id="iF9-X4-avw"/>
+                        <outlet property="dateTextfield" destination="fSM-zf-btq" id="yKp-LD-eJz"/>
+                        <outlet property="editButton" destination="Yoy-US-sv9" id="tFH-B9-AGp"/>
+                        <outlet property="objectTextfield" destination="ogA-jE-1BE" id="vor-dm-JJj"/>
+                        <outlet property="saveButton" destination="moO-VE-0I6" id="ZzM-wX-BZo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYr-OQ-lJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7093" y="-1609"/>
+            <point key="canvasLocation" x="7905" y="-1609"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uLb-sv-W2o">
@@ -1522,6 +1570,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBJ-io-Aiy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5407" y="-1609"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="67z-Ba-B4D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xYX-4F-Jfe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RPK-uE-jz2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XcS-oP-pM4" kind="relationship" relationship="rootViewController" id="cKS-Ez-9xp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4E-Xa-fZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7093" y="-1609"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
