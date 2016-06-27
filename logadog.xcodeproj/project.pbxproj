@@ -22,6 +22,7 @@
 		AF957D0D1D2071010060E4EE /* PuchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D0C1D2071010060E4EE /* PuchaseViewController.swift */; };
 		AF957D0F1D2071150060E4EE /* PurchasesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D0E1D2071150060E4EE /* PurchasesTableViewController.swift */; };
 		AF957D111D2071870060E4EE /* PurchaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D101D2071870060E4EE /* PurchaseObject.swift */; };
+		AF957D131D2122830060E4EE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D121D2122830060E4EE /* Segues.swift */; };
 		AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */; };
 		AFDB2B111CF5B02300236890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B101CF5B02300236890 /* AppDelegate.swift */; };
 		AFDB2B181CF5B02300236890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B171CF5B02300236890 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		AF957D0C1D2071010060E4EE /* PuchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuchaseViewController.swift; sourceTree = "<group>"; };
 		AF957D0E1D2071150060E4EE /* PurchasesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasesTableViewController.swift; sourceTree = "<group>"; };
 		AF957D101D2071870060E4EE /* PurchaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseObject.swift; sourceTree = "<group>"; };
+		AF957D121D2122830060E4EE /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		AFDB2B0D1CF5B02300236890 /* Logadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDB2B101CF5B02300236890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				AFDB2B2A1CF5B10300236890 /* ErrorMessages.swift */,
 				AFDB2B431CF5F49B00236890 /* Statuscode.swift */,
 				AF5BC3FF1D1ADB2D00E76343 /* MenuItems.swift */,
+				AF957D121D2122830060E4EE /* Segues.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				AFDB2B271CF5B0D800236890 /* ApiController.swift in Sources */,
 				AFDB2B531CF72A5A00236890 /* AppearanceObject.swift in Sources */,
 				AF5BC3FC1D1AD59200E76343 /* MenuTableViewController.swift in Sources */,
+				AF957D131D2122830060E4EE /* Segues.swift in Sources */,
 				AFEFA8C11D05735200F883AC /* MedicationViewController.swift in Sources */,
 				AF5BC3F21D19892100E76343 /* ActivityViewController.swift in Sources */,
 				AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */,

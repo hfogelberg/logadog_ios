@@ -61,7 +61,7 @@ class SignupViewController: UIViewController {
                     status = statusVal
                 }
                 
-                if status == STATUS_OK {
+                if status == STATUS_LOGIN_OK {
                     var userId = ""
                     var token = ""
                     

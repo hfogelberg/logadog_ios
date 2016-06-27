@@ -121,11 +121,11 @@ class ApperanceViewController: UIViewController {
         
         let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_APPEARANCE)"
         RestApiManager.sharedInstance.postRequest(route, params: appearance, onCompletion: {(json: JSON) -> () in
-            var status = ""
+            var status = STATUS_OK
             
             print(json)
             
-            if let statusVal = json["status"].rawString() as String? {
+            if let statusVal = json["status"].numberValue as Int? {
                 status = statusVal
             }
             

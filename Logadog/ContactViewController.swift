@@ -121,7 +121,7 @@ class ContactViewController: UIViewController {
             comment = commentVal
         }
         
-        var contact = [
+        let contact = [
             "name": name,
             "company": company,
             "web": web,
@@ -143,9 +143,9 @@ class ContactViewController: UIViewController {
         }
     
         RestApiManager.sharedInstance.postRequest(route, params: contact, onCompletion: {(json: JSON) -> () in
-            var status = ""
+            var status = STATUS_OK
             
-            if let statusVal = json["status"].rawString() as String? {
+            if let statusVal = json["status"].numberValue as Int? {
                 status = statusVal
             }
             

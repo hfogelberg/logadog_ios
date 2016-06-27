@@ -36,10 +36,12 @@ class MenuTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == MENU_HOME {
-            performSegueWithIdentifier("dogsListSegue", sender: nil)
+            performSegueWithIdentifier(SEGUE_DOGS_LIST, sender: nil)
         }
         else if indexPath.row == MENU_CONTACTS {
-            performSegueWithIdentifier("contactsSegue", sender: nil)
+            performSegueWithIdentifier(SEGUE_CONTACTS, sender: nil)
+        } else if indexPath.row == MENU_PURCHASES {
+            performSegueWithIdentifier(SEGUE_PURCHASES, sender: nil)
         }
     }
 }

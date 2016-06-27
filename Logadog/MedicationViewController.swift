@@ -125,9 +125,9 @@ class MedicationViewController: UIViewController {
         let route = "\(ROUTE_MEDICATION)/\(medicationId)"
         
         RestApiManager.sharedInstance.postRequest(route, params: medication, onCompletion: {(json:JSON) -> () in
-            var status = ""
+            var status = STATUS_OK
             
-            if let statusVal = json["status"].stringValue as String? {
+            if let statusVal = json["status"].numberValue as Int? {
                 status = statusVal
             }
             
@@ -150,10 +150,10 @@ class MedicationViewController: UIViewController {
     func createMedication(medication: [String:String]) {
         let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_MEDICATION)"
         RestApiManager.sharedInstance.postRequest(route, params: medication, onCompletion: {(json: JSON) -> () in
-            var status = ""
+            var status = STATUS_OK
             print(json)
             
-            if let statusVal = json["status"].stringValue as String? {
+            if let statusVal = json["status"].numberValue as Int? {
                 status = statusVal
             }
             

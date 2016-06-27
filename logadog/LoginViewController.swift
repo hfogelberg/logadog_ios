@@ -48,10 +48,10 @@ class LoginViewController: UIViewController {
             RestApiManager.sharedInstance.postRequest(ROUTE_AUTHENTICATE, params: params, authenticated: false) {(json:JSON) -> () in
                 print(json)
 
-                var status = ""
+                var status = STATUS_OK
                 var message = ""
                 
-                if let statusVal = json["status"].rawString() as String? {
+                if let statusVal = json["status"].numberValue as Int? {
                     status = statusVal
                 }
                 

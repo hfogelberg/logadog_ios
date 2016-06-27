@@ -210,9 +210,9 @@ class ActivityViewController: UIViewController {
         let route = "\(ROUTE_MY_PETS)/\(ROUTE_ACTIVITY)/\(activityId)"
         
         RestApiManager.sharedInstance.postRequest(route, params: activity, onCompletion: {(json:JSON) -> () in
-            var status = ""
+            var status = STATUS_OK
             
-            if let statusVal = json["status"].stringValue as String? {
+            if let statusVal = json["status"].numberValue as Int? {
                 status = statusVal
             }
             
@@ -239,10 +239,10 @@ class ActivityViewController: UIViewController {
     func createActivity(activity: [String:String]) {
         let route = "\(ROUTE_MY_PETS)/\(self.dogId)/\(ROUTE_ACTIVITY)"
         RestApiManager.sharedInstance.postRequest(route, params: activity, onCompletion: {(json: JSON) -> () in
-            var status = ""
+            var status = STATUS_OK
             print(json)
             
-            if let statusVal = json["status"].stringValue as String? {
+            if let statusVal = json["status"].numberValue as Int? {
                 status = statusVal
             }
             

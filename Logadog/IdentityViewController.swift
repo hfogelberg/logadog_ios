@@ -118,9 +118,9 @@ class IdentityViewController: UIViewController {
         
         let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_IDENTITY)"
         RestApiManager.sharedInstance.postRequest(route, params: body, onCompletion: {(json: JSON) -> () in
-            var status = ""
+            var status = STATUS_OK
             print(json)
-            if let statusVal = json["status"].stringValue as String? {
+            if let statusVal = json["status"].numberValue as Int? {
                 status = statusVal
             }
             
