@@ -27,7 +27,7 @@ class MedicationTableViewController: UITableViewController {
         
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
             print(json)
-            if let medications = json.array {
+            if let medications = json["data"].array {
                 for medication in medications {
                     self.medications.append(MedicationObject(json: medication))
                 }

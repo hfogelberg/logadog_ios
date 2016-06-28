@@ -32,33 +32,32 @@ class IdentityViewController: UIViewController {
         RestApiManager.sharedInstance.getRequest(route, onCompletion: { (json: JSON) -> () in
             print(json)
             
-            if json["identity"] != nil{
-                var chip = ""
-                var passport = ""
-                var earmark = ""
-                var comment = ""
-            
-                if let chipVal = json["identity", "chip"].stringValue as String? {
-                    chip = chipVal
-                }
-                if let passportVal = json["identity", "passport"].stringValue as String? {
-                    passport = passportVal
-                }
-                if let earmarkVal = json["identity", "earmark"].stringValue as String? {
-                    earmark = earmarkVal
-                }
-                if let commentVal = json["identity", "comment"].stringValue as String? {
-                    comment = commentVal
-                }
-        
-                self.displayIdentity(chip, passport: passport, earmark: earmark, comment: comment)
+            if let identity = json["data", "identity"] as JSON? {
+                self.displayIdentity(identity)
             } else {
                 self.enableFields()
             }
         })
     }
     
-    func displayIdentity(chip: String, passport: String, earmark: String, comment: String) {
+    func displayIdentity(identity: JSON) {
+        var chip = ""
+        var passport = ""
+        var earmark = ""
+        var comment = ""
+        
+        if let chipVal = identity["chip"].stringValue as String? {
+            chip = chipVal
+        }
+        if let passportVal = identity["passport"].stringValue as String? {
+            passport = passportVal
+        }
+        if let earmarkVal = identity["earmark"].stringValue as String? {
+            earmark = earmarkVal
+        }
+        if let commentVal = identity["comment"].stringValue as String? {
+            comment = commentVal
+        }
         
         dispatch_async(dispatch_get_main_queue()) {
             self.chipmarkTextfield.borderStyle = .None

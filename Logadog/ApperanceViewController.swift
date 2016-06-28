@@ -30,32 +30,44 @@ class ApperanceViewController: UIViewController {
         if dogId != "" {
             let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_APPEARANCE)"
             RestApiManager.sharedInstance.getRequest(route, params: "", onCompletion: { (json: JSON) -> () in
-                var color = ""
-                var height = ""
-                var weight = ""
-                var comment = ""
-                
-                if let colorVal = json["appearance", "color"].stringValue as String? {
-                    color = colorVal
+                if let status = json["status"].intValue as Int? {
+                    if status == STATUS_OK {
+                        if let appearance = json["data"] as JSON? {
+                            if appearance != nil {
+                                self.displayAppearance(appearance)
+                            } else {
+                                self.enableFields()
+                            }
+                        }
+                    }
                 }
-                if let heightVal = json["appearance", "heightInCm"].stringValue as String? {
-                    height = heightVal
-                }
-                if let weightVal = json["appearance", "weightInKg"].stringValue as String? {
-                    weight = weightVal
-                }
-                if let commentVal = json["appearance", "comment"].stringValue as String? {
-                    comment = commentVal
-                }
-                
-                self.displayAppearance(color, height: height, weight: weight, comment: comment)
             })
-        }
+        } 
     }
     
-    func displayAppearance(color: String, height: String, weight: String, comment: String){
-        dispatch_async(dispatch_get_main_queue()) {
+    func displayAppearance(appearance: JSON){
+        if appearance != [] {
             
+        }
+        var color = ""
+        var height = ""
+        var weight = ""
+        var comment = ""
+        
+        if let colorVal = appearance["color"].stringValue as String? {
+            color = colorVal
+        }
+        if let heightVal = appearance["heightInCm"].stringValue as String? {
+            height = heightVal
+        }
+        if let weightVal = appearance["weightInKg"].stringValue as String? {
+            weight = weightVal
+        }
+        if let commentVal = appearance["comment"].stringValue as String? {
+            comment = commentVal
+        }
+        
+        dispatch_async(dispatch_get_main_queue()) {
             self.colorTextfield.text = color
             self.weightTextfield.text = weight
             self.heightTextfield.text = height
@@ -74,6 +86,10 @@ class ApperanceViewController: UIViewController {
     }
     
     @IBAction func editButtonTapped(sender: AnyObject) {
+        self.enableFields()
+    }
+    
+    func enableFields() {
         self.colorTextfield.borderStyle = .RoundedRect
         self.heightTextfield.borderStyle = .RoundedRect
         self.weightTextfield.borderStyle = .RoundedRect

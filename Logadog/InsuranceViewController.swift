@@ -36,51 +36,51 @@ class InsuranceViewController: UIViewController {
             
             RestApiManager.sharedInstance.getRequest(route, onCompletion: { (json: JSON) -> () in
                 print(json)
-                if json["insurance"] != JSON.null {
-                    var company = ""
-                    var product = ""
-                    var insuranceNumber = ""
-                    var renewalDate = ""
-                    var anualCost = ""
-                    var lifeAmount = ""
-                    var vetAmount = ""
-                    var comment = ""
-                    
-                    print("Has insurance")
-                    
-                    if let companyVal = json["insurance", "company"].stringValue as String? {
-                        company = companyVal
-                    }
-                    if let productVal = json["insurance", "product"].stringValue as String? {
-                        product = productVal
-                    }
-                    if let numVal = json["insurance", "number"].stringValue as String? {
-                        insuranceNumber = numVal
-                    }
-                    if let dateVal = json["insurance", "renewalDate"].stringValue as String? {
-                        renewalDate = dateVal
-                    }
-                    if let costVal = json["insurance", "anualCost"].stringValue as String? {
-                        anualCost = costVal
-                    }
-                    if let vetVal = json["insurance", "vetAmount"].stringValue as String? {
-                        vetAmount = vetVal
-                    }
-                    if let lifeVal = json["insurance", "renewalDate"].stringValue as String? {
-                        lifeAmount = lifeVal
-                    }
-                    if let commentVal = json["insurance", "comment"].stringValue as String? {
-                        comment = commentVal
-                    }
-                    
-                    self.displayInsurance(company, product: product, insuranceNumber: insuranceNumber, renewalDate: renewalDate, anualCost: anualCost, lifeAmount: lifeAmount, vetAmount: vetAmount, comment: comment)
+                if let insurance = json["data", "insurance"] as JSON? {
+                    self.displayInsurance(insurance)
                 }
                 
             })
         }
     }
     
-    func displayInsurance(company: String, product: String, insuranceNumber: String, renewalDate: String, anualCost: String, lifeAmount: String, vetAmount: String, comment: String) {
+    func displayInsurance(insurance: JSON) {
+        var company = ""
+        var product = ""
+        var insuranceNumber = ""
+        var renewalDate = ""
+        var anualCost = ""
+        var lifeAmount = ""
+        var vetAmount = ""
+        var comment = ""
+        
+        print("Has insurance")
+        
+        if let companyVal = insurance["insurance", "company"].stringValue as String? {
+            company = companyVal
+        }
+        if let productVal = insurance["insurance", "product"].stringValue as String? {
+            product = productVal
+        }
+        if let numVal = insurance["insurance", "number"].stringValue as String? {
+            insuranceNumber = numVal
+        }
+        if let dateVal = insurance["insurance", "renewalDate"].stringValue as String? {
+            renewalDate = dateVal
+        }
+        if let costVal = insurance["insurance", "anualCost"].stringValue as String? {
+            anualCost = costVal
+        }
+        if let vetVal = insurance["insurance", "vetAmount"].stringValue as String? {
+            vetAmount = vetVal
+        }
+        if let lifeVal = insurance["insurance", "renewalDate"].stringValue as String? {
+            lifeAmount = lifeVal
+        }
+        if let commentVal = insurance["insurance", "comment"].stringValue as String? {
+            comment = commentVal
+        }
+        
         dispatch_async(dispatch_get_main_queue()) {
             self.companyTextfield.text = company
             self.productTextfield.text = product

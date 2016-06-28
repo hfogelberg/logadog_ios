@@ -27,7 +27,7 @@ class ActivitiesTableViewController: UITableViewController {
         let route = "\(ROUTE_MY_PETS)/\(self.dogId)/\(ROUTE_ACTIVITY)"
 
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
-            if let activities = json.array {
+            if let activities = json["data"].array {
                 for activity in activities {
                     self.activities.append(ActivityObject(json: activity))
                 }

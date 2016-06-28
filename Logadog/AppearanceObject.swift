@@ -16,7 +16,13 @@ class ApperanceObject {
     var weightInKg: String!
     var comment: String!
     
+    init() { }
+
     init(json: JSON) {
+        setData(json)
+    }
+    
+    func setData(json:JSON) {
         self.dogId = json["dogId"].stringValue
         self.color = json["color"].stringValue
         self.heightInCm = json["heightInCm"].stringValue
