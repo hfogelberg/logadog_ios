@@ -40,6 +40,9 @@ class ApperanceViewController: UIViewController {
                             }
                         }
                     }
+                } else {
+                    
+                    //ToDo: handle error response
                 }
             })
         } 

@@ -557,7 +557,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="QEg-jJ-nb4" kind="show" identifier="showMedicationSegue" id="wCf-e0-KA0"/>
+                                    <segue destination="QEg-jJ-nb4" kind="show" identifier="showMedicationSegue" id="RZO-JZ-sYO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -570,7 +570,7 @@
                     <navigationItem key="navigationItem" id="Y0K-3v-dNk">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lTe-KQ-PFP">
                             <connections>
-                                <segue destination="QEg-jJ-nb4" kind="show" identifier="addMedicationSegue" id="4W1-0r-eyX"/>
+                                <segue destination="QEg-jJ-nb4" kind="show" identifier="addMedicationSegue" id="BpR-5U-urH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -629,22 +629,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FcW-pf-Red">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FcW-pf-Red">
                                 <rect key="frame" x="50" y="100" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBK-LM-D5c">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBK-LM-D5c">
                                 <rect key="frame" x="50" y="150" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ZI-WF-Oj8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ZI-WF-Oj8">
                                 <rect key="frame" x="50" y="200" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cost" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwA-To-BhU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cost" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwA-To-BhU">
                                 <rect key="frame" x="50" y="250" width="220" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="jeQ-DG-v52"/>
@@ -652,21 +652,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="q94-iX-KDu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="q94-iX-KDu">
                                 <rect key="frame" x="50" y="292" width="500" height="210"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQb-aM-P2o">
-                                <rect key="frame" x="510" y="511" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveButtonTapped:" destination="QEg-jJ-nb4" eventType="touchUpInside" id="yBU-cW-GN6"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Next time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC9-LI-1vO">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Next time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC9-LI-1vO">
                                 <rect key="frame" x="330" y="250" width="220" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -674,7 +667,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PTn-tA-TmF" firstAttribute="top" secondItem="cQb-aM-P2o" secondAttribute="bottom" constant="15" id="0CH-32-Awh"/>
                             <constraint firstItem="FcW-pf-Red" firstAttribute="top" secondItem="fRW-PQ-pPn" secondAttribute="bottom" constant="36" id="ACY-gf-tDi"/>
                             <constraint firstItem="fC9-LI-1vO" firstAttribute="trailing" secondItem="3ZI-WF-Oj8" secondAttribute="trailing" id="EkJ-EL-JRb"/>
                             <constraint firstItem="FcW-pf-Red" firstAttribute="leading" secondItem="JFO-ZG-Mhm" secondAttribute="leadingMargin" constant="30" id="IDU-1H-cH1"/>
@@ -683,7 +675,6 @@
                             <constraint firstItem="q94-iX-KDu" firstAttribute="trailing" secondItem="fC9-LI-1vO" secondAttribute="trailing" id="U8M-32-TaF"/>
                             <constraint firstItem="uwA-To-BhU" firstAttribute="top" secondItem="3ZI-WF-Oj8" secondAttribute="bottom" constant="20" id="UE0-QQ-pg5"/>
                             <constraint firstItem="q94-iX-KDu" firstAttribute="top" secondItem="uwA-To-BhU" secondAttribute="bottom" constant="13" id="aVl-Eh-EZn"/>
-                            <constraint firstItem="cQb-aM-P2o" firstAttribute="top" secondItem="q94-iX-KDu" secondAttribute="bottom" constant="8" symbolic="YES" id="bKi-fx-QEM"/>
                             <constraint firstItem="fC9-LI-1vO" firstAttribute="leading" secondItem="uwA-To-BhU" secondAttribute="trailing" constant="60" id="bWW-QP-J4C"/>
                             <constraint firstItem="FcW-pf-Red" firstAttribute="leading" secondItem="IBK-LM-D5c" secondAttribute="leading" id="cFm-Ju-qAQ"/>
                             <constraint firstItem="3ZI-WF-Oj8" firstAttribute="centerX" secondItem="JFO-ZG-Mhm" secondAttribute="centerX" id="ea7-nu-TBt"/>
@@ -692,31 +683,39 @@
                             <constraint firstItem="3ZI-WF-Oj8" firstAttribute="leading" secondItem="uwA-To-BhU" secondAttribute="leading" id="kyv-I6-e5T"/>
                             <constraint firstItem="3ZI-WF-Oj8" firstAttribute="top" secondItem="IBK-LM-D5c" secondAttribute="bottom" constant="20" id="rXP-Ut-Fcp"/>
                             <constraint firstItem="IBK-LM-D5c" firstAttribute="top" secondItem="FcW-pf-Red" secondAttribute="bottom" constant="20" id="s41-ZC-ZVy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cQb-aM-P2o" secondAttribute="trailing" constant="36" id="tf3-MM-Oxd"/>
                             <constraint firstItem="q94-iX-KDu" firstAttribute="leading" secondItem="uwA-To-BhU" secondAttribute="leading" id="wRq-nO-Ebk"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="P8F-Y9-gYz">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="4oa-Hv-roK">
-                            <connections>
-                                <action selector="editButtonTapped:" destination="QEg-jJ-nb4" id="7l0-ND-rjS"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="DZo-y9-7FB">
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="QEg-jJ-nb4" id="19k-DB-caa"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="4oa-Hv-roK">
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="QEg-jJ-nb4" id="0To-zZ-7gX"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="amountTextfield" destination="3ZI-WF-Oj8" id="inP-xc-wtx"/>
                         <outlet property="commentTextview" destination="q94-iX-KDu" id="95Z-hf-qqA"/>
                         <outlet property="costTextfield" destination="uwA-To-BhU" id="VfS-Q4-3g4"/>
+                        <outlet property="editButton" destination="4oa-Hv-roK" id="9eq-m5-Bqy"/>
                         <outlet property="makeTextfield" destination="IBK-LM-D5c" id="E3R-J4-qRj"/>
                         <outlet property="productTypetextfield" destination="FcW-pf-Red" id="hgM-mc-AXO"/>
                         <outlet property="reminderTextfield" destination="fC9-LI-1vO" id="1Z5-Vh-QH9"/>
+                        <outlet property="saveButton" destination="DZo-y9-7FB" id="KEn-Su-Ghi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23S-0J-dm7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8682" y="1229"/>
+            <point key="canvasLocation" x="8411" y="1219"/>
         </scene>
         <!--Identity View Controller-->
         <scene sceneID="0tI-yz-fBs">
@@ -1591,13 +1590,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="27Q-e4-tlg"/>
-        <segue reference="RBT-JL-Fda"/>
-        <segue reference="ujV-Lj-T7i"/>
-        <segue reference="4W1-0r-eyX"/>
-        <segue reference="zej-db-6fb"/>
         <segue reference="IeM-QS-f72"/>
         <segue reference="KU5-mu-st5"/>
         <segue reference="wEo-6D-6HN"/>
+        <segue reference="27Q-e4-tlg"/>
+        <segue reference="RBT-JL-Fda"/>
+        <segue reference="ujV-Lj-T7i"/>
+        <segue reference="zej-db-6fb"/>
+        <segue reference="RZO-JZ-sYO"/>
     </inferredMetricsTieBreakers>
 </document>

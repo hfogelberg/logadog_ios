@@ -30,12 +30,18 @@ class IdentityViewController: UIViewController {
     func getIdentity(){
         let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_IDENTITY)"
         RestApiManager.sharedInstance.getRequest(route, onCompletion: { (json: JSON) -> () in
-            print(json)
-            
-            if let identity = json["data", "identity"] as JSON? {
-                self.displayIdentity(identity)
+            if let status = json["status"].intValue as Int? {
+                if status == STATUS_OK {
+                    if let identity = json["data"] as JSON? {
+                        if identity != nil {
+                            self.displayIdentity(identity)
+                        } else {
+                            self.enableFields()
+                        }
+                    }
+                }
             } else {
-                self.enableFields()
+                //ToDo: handle error response
             }
         })
     }

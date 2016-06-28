@@ -35,11 +35,19 @@ class InsuranceViewController: UIViewController {
             let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_INSURANCE)"
             
             RestApiManager.sharedInstance.getRequest(route, onCompletion: { (json: JSON) -> () in
-                print(json)
-                if let insurance = json["data", "insurance"] as JSON? {
-                    self.displayInsurance(insurance)
+                if let status = json["status"].intValue as Int? {
+                    if status == STATUS_OK {
+                        if let insurance = json["data"] as JSON? {
+                            if insurance != nil {
+                                self.displayInsurance(insurance)
+                            } else {
+                                self.enableFields()
+                            }
+                        }
+                    }
+                } else {
+                    //ToDo: handle error response
                 }
-                
             })
         }
     }
@@ -55,29 +63,29 @@ class InsuranceViewController: UIViewController {
         var comment = ""
         
         print("Has insurance")
-        
-        if let companyVal = insurance["insurance", "company"].stringValue as String? {
+    
+        if let companyVal = insurance["company"].stringValue as String? {
             company = companyVal
         }
-        if let productVal = insurance["insurance", "product"].stringValue as String? {
+        if let productVal = insurance["product"].stringValue as String? {
             product = productVal
         }
-        if let numVal = insurance["insurance", "number"].stringValue as String? {
+        if let numVal = insurance["number"].stringValue as String? {
             insuranceNumber = numVal
         }
-        if let dateVal = insurance["insurance", "renewalDate"].stringValue as String? {
+        if let dateVal = insurance["renewalDate"].stringValue as String? {
             renewalDate = dateVal
         }
-        if let costVal = insurance["insurance", "anualCost"].stringValue as String? {
+        if let costVal = insurance["anualCost"].stringValue as String? {
             anualCost = costVal
         }
-        if let vetVal = insurance["insurance", "vetAmount"].stringValue as String? {
+        if let vetVal = insurance["vetAmount"].stringValue as String? {
             vetAmount = vetVal
         }
-        if let lifeVal = insurance["insurance", "renewalDate"].stringValue as String? {
+        if let lifeVal = insurance["renewalDate"].stringValue as String? {
             lifeAmount = lifeVal
         }
-        if let commentVal = insurance["insurance", "comment"].stringValue as String? {
+        if let commentVal = insurance["comment"].stringValue as String? {
             comment = commentVal
         }
         
@@ -112,6 +120,10 @@ class InsuranceViewController: UIViewController {
     
     
     @IBAction func editButtonTapped(sender: AnyObject) {
+        self.enableFields()
+    }
+    
+    func enableFields() {
         self.companyTextfield.borderStyle = .RoundedRect
         self.productTextfield.borderStyle = .RoundedRect
         self.insuranceNumberTextfield.borderStyle = .RoundedRect

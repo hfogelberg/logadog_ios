@@ -17,6 +17,8 @@ class MedicationViewController: UIViewController {
     @IBOutlet weak var costTextfield: UITextField!
     @IBOutlet weak var reminderTextfield: UITextField!
     @IBOutlet weak var commentTextview: UITextView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var dogId = ""
     var medication: MedicationObject!
@@ -53,10 +55,7 @@ class MedicationViewController: UIViewController {
         self.reminderTextfield.enabled = false
     }
     
-    
     @IBAction func editButtonTapped(sender: AnyObject) {
-        print("Edit button tapped")
-        
         self.productTypetextfield.enabled = true
         self.makeTextfield.enabled = true
         self.amountTextfield.enabled = true
