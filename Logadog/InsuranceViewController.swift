@@ -19,13 +19,10 @@ class InsuranceViewController: UIViewController {
     @IBOutlet weak var costTextfield: UITextField!
     @IBOutlet weak var vetTextfield: UITextField!
     @IBOutlet weak var lifeTextfield: UITextField!
-    @IBOutlet weak var commentTextview: UITextView!
-    @IBOutlet weak var saveButton: UIButton!
-    
+    @IBOutlet weak var commentTextview: UITextView!    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
-        self.saveButton.setTitleColor(Colors.colorWithHexString(COLOR_BUTTON), forState: .Normal)
 
         getInsurance()
     }

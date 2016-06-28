@@ -14,8 +14,6 @@ class IdentityViewController: UIViewController {
     @IBOutlet weak var earmarktextfield: UITextField!
     @IBOutlet weak var passportTextfield: UITextField!
     @IBOutlet weak var commenttextview: UITextView!
-    @IBOutlet weak var saveButton: UIButton!
-    
     var dogId = ""
     
     override func viewDidLoad() {
@@ -79,14 +77,10 @@ class IdentityViewController: UIViewController {
             self.passportTextfield.text = passport
             self.earmarktextfield.text = earmark
             self.commenttextview.text = comment
-        
-            self.saveButton.hidden = true
         }
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
-        print("Save identity")
-        
         var chip = ""
         var earmark = ""
         var passport = ""
@@ -161,8 +155,6 @@ class IdentityViewController: UIViewController {
             self.passportTextfield.enabled = true
             self.earmarktextfield.enabled = true
             self.commenttextview.editable = true
-        
-            self.saveButton.hidden = false
         }
     }
 }
