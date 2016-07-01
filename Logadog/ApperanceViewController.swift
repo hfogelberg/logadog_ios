@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class ApperanceViewController: UIViewController {
+class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
     var dogId: String = ""
     
     @IBOutlet weak var colorTextfield: UITextField!
@@ -18,15 +18,41 @@ class ApperanceViewController: UIViewController {
     @IBOutlet weak var commentTextview: UITextView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var colorTableView: UITableView!
     
-
+    var colors = [String]()
+    var auto: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
+        
+        self.colorTextfield.delegate = self
+        self.colorTableView.delegate = self
+        self.colorTableView.dataSource = self
+        
+        colorTextfield.addTarget(self, action: "colorTextfieldFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
     }
 
     override func viewDidAppear(animated: Bool){
+        self.colorTableView.hidden = true
         getAppearance()
+        getColors()
+    }
+    
+    func getColors() {
+        self.colors.removeAll()
+        let route = "\(ROUTE_COLORS)"
+        
+        RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
+            print(json)
+            if let colors = json["data"].array {
+                for color in colors {
+                    self.colors.append(ColorObject(json: color).name)
+                }
+            }
+        })
     }
     
     func getAppearance(){
@@ -181,5 +207,50 @@ class ApperanceViewController: UIViewController {
                 }
             }
         })
+    }
+    
+    func colorTextfieldFieldDidChange(textField: UITextField) {
+        // ToDo. Case sensitive. Must be fixed!!!
+        self.colorTableView.hidden = false
+        if let text = colorTextfield.text as String? {
+            
+            auto.removeAll(keepCapacity: false)
+            for curString in self.colors
+            {
+                let myString:NSString! = curString as NSString
+                
+                let substringRange :NSRange! = myString.rangeOfString(text)
+                if (substringRange.location  == 0)
+                {
+                    auto.append(curString)
+                    print(auto)
+                }
+            }
+        }
+        
+        if auto.count > 0 {
+            self.colorTableView.reloadData()
+        } else {
+            self.colorTableView.hidden = true
+        }
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        let color = auto[indexPath.row]
+        
+        cell.textLabel!.text = color
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return auto.count
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let color = self.auto[indexPath.row]
+        self.colorTextfield.text = color
+        self.colorTableView.hidden = true
     }
 }

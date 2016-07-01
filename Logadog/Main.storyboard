@@ -327,7 +327,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Color" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PFf-p5-yHy">
                                 <rect key="frame" x="50" y="100" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPF-GE-FV8">
                                 <rect key="frame" x="50" y="150" width="500" height="30"/>
@@ -346,16 +346,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eiA-vv-tza">
+                                <rect key="frame" x="50" y="131" width="500" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4vQ-AZ-sd4" firstAttribute="top" secondItem="WiR-d3-O73" secondAttribute="bottom" constant="31" id="5pZ-tt-gK8"/>
                             <constraint firstItem="ZPF-GE-FV8" firstAttribute="top" secondItem="PFf-p5-yHy" secondAttribute="bottom" constant="20" id="6xc-d2-P9x"/>
+                            <constraint firstItem="eiA-vv-tza" firstAttribute="leading" secondItem="7gU-PG-ImP" secondAttribute="leadingMargin" constant="30" id="8ky-Xb-Mdn"/>
                             <constraint firstItem="WiR-d3-O73" firstAttribute="top" secondItem="ZPF-GE-FV8" secondAttribute="bottom" constant="20" id="B4A-m9-wsC"/>
                             <constraint firstItem="PFf-p5-yHy" firstAttribute="leading" secondItem="7gU-PG-ImP" secondAttribute="leadingMargin" constant="30" id="Crj-eZ-cKH"/>
                             <constraint firstItem="PFf-p5-yHy" firstAttribute="centerX" secondItem="7gU-PG-ImP" secondAttribute="centerX" id="Ezi-1b-mtc"/>
                             <constraint firstItem="ZPF-GE-FV8" firstAttribute="trailing" secondItem="PFf-p5-yHy" secondAttribute="trailing" id="VtJ-Ki-2Ii"/>
                             <constraint firstItem="WiR-d3-O73" firstAttribute="leading" secondItem="4vQ-AZ-sd4" secondAttribute="leading" id="VyK-CJ-Z3E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eiA-vv-tza" secondAttribute="trailing" constant="30" id="ebA-Hp-Ac5"/>
                             <constraint firstItem="PFf-p5-yHy" firstAttribute="leading" secondItem="ZPF-GE-FV8" secondAttribute="leading" id="gLk-aA-chZ"/>
                             <constraint firstItem="PFf-p5-yHy" firstAttribute="top" secondItem="rfh-nP-ILy" secondAttribute="bottom" constant="36" id="lUd-CN-6qV"/>
                             <constraint firstItem="WiR-d3-O73" firstAttribute="trailing" secondItem="4vQ-AZ-sd4" secondAttribute="trailing" id="tyx-Ml-Sep"/>
@@ -379,6 +385,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="colorTableView" destination="eiA-vv-tza" id="EQ3-DZ-JsX"/>
                         <outlet property="colorTextfield" destination="PFf-p5-yHy" id="q25-xL-xd1"/>
                         <outlet property="commentTextview" destination="4vQ-AZ-sd4" id="rJj-kM-214"/>
                         <outlet property="editButton" destination="OEm-hy-DnC" id="Yzc-xw-UNx"/>
@@ -802,7 +809,7 @@
                                     <constraint firstAttribute="height" constant="30" id="CdD-jk-4oq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-Is-1NE">
                                 <rect key="frame" x="50" y="200" width="57" height="21"/>
