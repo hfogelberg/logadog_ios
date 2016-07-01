@@ -140,16 +140,16 @@
 		AF30FE191CFAC67D00C3B7DC /* Dog */ = {
 			isa = PBXGroup;
 			children = (
+				AF5BC3EF1D1986FA00E76343 /* ActivitiesTableViewController.swift */,
+				AF5BC3F11D19892100E76343 /* ActivityViewController.swift */,
 				AFDB2B541CF72B2200236890 /* ApperanceViewController.swift */,
 				AFDB2B3F1CF5E2EB00236890 /* DogViewController.swift */,
 				AFDB2B491CF6F64600236890 /* DogsTableViewController.swift */,
-				AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */,
 				AF30FE1B1CFC71AC00C3B7DC /* IdentityViewController.swift */,
 				AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */,
 				AF278C6A1D0084FC004D085D /* MedicationTableViewController.swift */,
 				AFEFA8C01D05735200F883AC /* MedicationViewController.swift */,
-				AF5BC3EF1D1986FA00E76343 /* ActivitiesTableViewController.swift */,
-				AF5BC3F11D19892100E76343 /* ActivityViewController.swift */,
+				AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */,
 			);
 			name = Dog;
 			sourceTree = "<group>";
@@ -242,10 +242,10 @@
 		AFDB2B251CF5B0B200236890 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				AF957D0B1D2070E80060E4EE /* Puchases */,
 				AF957D051D1FE3590060E4EE /* Contacts */,
-				AF30FE181CFAC66D00C3B7DC /* Start */,
 				AF30FE191CFAC67D00C3B7DC /* Dog */,
+				AF957D0B1D2070E80060E4EE /* Puchases */,
+				AF30FE181CFAC66D00C3B7DC /* Start */,
 				AF5BC3FB1D1AD59200E76343 /* MenuTableViewController.swift */,
 			);
 			name = Viewcontrollers;

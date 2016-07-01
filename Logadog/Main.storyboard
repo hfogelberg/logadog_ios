@@ -381,7 +381,9 @@
                     <connections>
                         <outlet property="colorTextfield" destination="PFf-p5-yHy" id="q25-xL-xd1"/>
                         <outlet property="commentTextview" destination="4vQ-AZ-sd4" id="rJj-kM-214"/>
+                        <outlet property="editButton" destination="OEm-hy-DnC" id="Yzc-xw-UNx"/>
                         <outlet property="heightTextfield" destination="ZPF-GE-FV8" id="nZI-D3-bSF"/>
+                        <outlet property="saveButton" destination="jQg-kB-eXl" id="upU-TV-F0a"/>
                         <outlet property="weightTextfield" destination="WiR-d3-O73" id="Utw-dv-LqX"/>
                     </connections>
                 </viewController>
@@ -519,10 +521,12 @@
                         <outlet property="commentTextview" destination="62r-BQ-MLE" id="U8M-dn-t54"/>
                         <outlet property="companyTextfield" destination="0KD-YT-roE" id="Di9-cn-K2z"/>
                         <outlet property="costTextfield" destination="yhc-dq-t7q" id="oUW-vj-bQ2"/>
+                        <outlet property="editButton" destination="1Nu-QR-cKc" id="4Dy-dj-BPT"/>
                         <outlet property="insuranceNumberTextfield" destination="zqM-Me-LSk" id="vp4-z7-kYX"/>
                         <outlet property="lifeTextfield" destination="K3u-sT-1fJ" id="TdJ-V0-paR"/>
                         <outlet property="productTextfield" destination="BKk-M8-WTd" id="cs0-cZ-ihV"/>
                         <outlet property="renewaldateTextfield" destination="MRe-da-TwE" id="qJ8-f0-wXH"/>
+                        <outlet property="saveButton" destination="bFs-wr-PWa" id="UoP-ZI-onJ"/>
                         <outlet property="vetTextfield" destination="wh8-Ty-Zjs" id="7vC-n7-5L1"/>
                     </connections>
                 </viewController>
@@ -619,22 +623,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FcW-pf-Red">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FcW-pf-Red">
                                 <rect key="frame" x="50" y="100" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBK-LM-D5c">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBK-LM-D5c">
                                 <rect key="frame" x="50" y="150" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ZI-WF-Oj8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ZI-WF-Oj8">
                                 <rect key="frame" x="50" y="200" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cost" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwA-To-BhU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cost" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwA-To-BhU">
                                 <rect key="frame" x="50" y="250" width="220" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="jeQ-DG-v52"/>
@@ -649,7 +653,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Next time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC9-LI-1vO">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Next time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC9-LI-1vO">
                                 <rect key="frame" x="330" y="250" width="220" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -763,7 +767,9 @@
                         <outlet property="chipmarkTextfield" destination="A74-WD-5hf" id="hDk-ap-BLz"/>
                         <outlet property="commenttextview" destination="ojo-HN-civ" id="WxT-Sy-CZV"/>
                         <outlet property="earmarktextfield" destination="rZd-At-Na3" id="biZ-eF-Fog"/>
+                        <outlet property="editButton" destination="aLs-Bl-1IH" id="xqT-C2-1ne"/>
                         <outlet property="passportTextfield" destination="7Ha-IF-z6z" id="ssD-iF-fxl"/>
+                        <outlet property="saveButton" destination="s1b-RG-qS7" id="q38-YE-0jq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVD-16-kxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -798,7 +804,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-Is-1NE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-Is-1NE">
                                 <rect key="frame" x="50" y="200" width="57" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -825,7 +831,7 @@
                                     <action selector="genderSwitchChanged:" destination="AV7-l6-dus" eventType="valueChanged" id="M47-US-qRS"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-aA-Kgx">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-aA-Kgx">
                                 <rect key="frame" x="0.0" y="264" width="600" height="300"/>
                                 <subviews>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HdF-ki-fd5">
@@ -846,7 +852,7 @@
                                             </barButtonItem>
                                         </items>
                                     </toolbar>
-                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ylK-vm-8sL">
+                                    <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ylK-vm-8sL">
                                         <rect key="frame" x="0.0" y="44" width="600" height="256"/>
                                         <date key="date" timeIntervalSinceReferenceDate="487927838.69202799">
                                             <!--2016-06-18 07:30:38 +0000-->

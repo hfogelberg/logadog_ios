@@ -14,6 +14,9 @@ class IdentityViewController: UIViewController {
     @IBOutlet weak var earmarktextfield: UITextField!
     @IBOutlet weak var passportTextfield: UITextField!
     @IBOutlet weak var commenttextview: UITextView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     var dogId = ""
     
     override func viewDidLoad() {
@@ -64,20 +67,26 @@ class IdentityViewController: UIViewController {
         }
         
         dispatch_async(dispatch_get_main_queue()) {
-            self.chipmarkTextfield.borderStyle = .None
-            self.passportTextfield.borderStyle = .None
-            self.earmarktextfield.borderStyle = .None
-        
-            self.chipmarkTextfield.enabled = false
-            self.passportTextfield.enabled = false
-            self.earmarktextfield.enabled = false
-            self.commenttextview.editable = false
-        
             self.chipmarkTextfield.text = chip
             self.passportTextfield.text = passport
             self.earmarktextfield.text = earmark
             self.commenttextview.text = comment
         }
+        self.disableFields()
+    }
+    
+    func disableFields() {
+        self.chipmarkTextfield.borderStyle = .None
+        self.passportTextfield.borderStyle = .None
+        self.earmarktextfield.borderStyle = .None
+        
+        self.chipmarkTextfield.enabled = false
+        self.passportTextfield.enabled = false
+        self.earmarktextfield.enabled = false
+        self.commenttextview.editable = false
+ 
+        self.editButton.enabled = true
+        self.saveButton.enabled = false
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
@@ -147,6 +156,9 @@ class IdentityViewController: UIViewController {
     
     func enableFields() {
         dispatch_async(dispatch_get_main_queue()) {
+            self.editButton.enabled = true
+            self.saveButton.enabled = true
+            
             self.chipmarkTextfield.borderStyle = .RoundedRect
             self.passportTextfield.borderStyle = .RoundedRect
             self.earmarktextfield.borderStyle = .RoundedRect

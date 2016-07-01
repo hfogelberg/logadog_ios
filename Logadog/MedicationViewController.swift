@@ -28,9 +28,10 @@ class MedicationViewController: UIViewController {
         
         self.view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
         
-        
         if medication != nil {
             self.showMedication()
+        } else {
+            self.enableFields()
         }
     }
     
@@ -42,31 +43,49 @@ class MedicationViewController: UIViewController {
         self.reminderTextfield.text = self.medication.reminderDate
         self.commentTextview.text = self.medication.comment
         
-        self.productTypetextfield.borderStyle = .None
-        self.makeTextfield.borderStyle = .None
-        self.amountTextfield.borderStyle = .None
-        self.costTextfield.borderStyle = .None
-        self.reminderTextfield.borderStyle = .None
-        
-        self.productTypetextfield.enabled = false
-        self.makeTextfield.enabled = false
-        self.amountTextfield.enabled = false
-        self.costTextfield.enabled = false
-        self.reminderTextfield.enabled = false
+        self.disableFields()
+    }
+    
+    func disableFields() {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.productTypetextfield.borderStyle = .None
+            self.makeTextfield.borderStyle = .None
+            self.amountTextfield.borderStyle = .None
+            self.costTextfield.borderStyle = .None
+            self.reminderTextfield.borderStyle = .None
+            
+            self.productTypetextfield.enabled = false
+            self.makeTextfield.enabled = false
+            self.amountTextfield.enabled = false
+            self.costTextfield.enabled = false
+            self.reminderTextfield.enabled = false
+            
+            self.editButton.enabled = true
+            self.saveButton.enabled = false     
+        }
     }
     
     @IBAction func editButtonTapped(sender: AnyObject) {
-        self.productTypetextfield.enabled = true
-        self.makeTextfield.enabled = true
-        self.amountTextfield.enabled = true
-        self.costTextfield.enabled = true
-        self.reminderTextfield.enabled = true
+        enableFields()
+    }
+    
+    func enableFields() {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.productTypetextfield.enabled = true
+            self.makeTextfield.enabled = true
+            self.amountTextfield.enabled = true
+            self.costTextfield.enabled = true
+            self.reminderTextfield.enabled = true
         
-        self.productTypetextfield.borderStyle = .RoundedRect
-        self.makeTextfield.borderStyle = .RoundedRect
-        self.amountTextfield.borderStyle = .RoundedRect
-        self.costTextfield.borderStyle = .RoundedRect
-        self.reminderTextfield.borderStyle = .RoundedRect
+            self.productTypetextfield.borderStyle = .RoundedRect
+            self.makeTextfield.borderStyle = .RoundedRect
+            self.amountTextfield.borderStyle = .RoundedRect
+            self.costTextfield.borderStyle = .RoundedRect
+            self.reminderTextfield.borderStyle = .RoundedRect
+        
+            self.editButton.enabled = false
+            self.saveButton.enabled = true
+        }
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {

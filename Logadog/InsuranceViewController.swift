@@ -19,7 +19,10 @@ class InsuranceViewController: UIViewController {
     @IBOutlet weak var costTextfield: UITextField!
     @IBOutlet weak var vetTextfield: UITextField!
     @IBOutlet weak var lifeTextfield: UITextField!
-    @IBOutlet weak var commentTextview: UITextView!    
+    @IBOutlet weak var commentTextview: UITextView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
@@ -95,7 +98,14 @@ class InsuranceViewController: UIViewController {
             self.lifeTextfield.text = lifeAmount
             self.vetTextfield.text = vetAmount
             self.commentTextview.text = comment
-            
+        }
+        
+        self.disableFields()
+    }
+    
+    func disableFields()
+    {
+        dispatch_async(dispatch_get_main_queue()) {
             self.companyTextfield.borderStyle = .None
             self.productTextfield.borderStyle = .None
             self.insuranceNumberTextfield.borderStyle = .None
@@ -112,6 +122,9 @@ class InsuranceViewController: UIViewController {
             self.lifeTextfield.enabled = false
             self.vetTextfield.enabled = false
             self.commentTextview.editable = false
+            
+            self.editButton.enabled = true
+            self.saveButton.enabled = false
         }
     }
     
@@ -137,6 +150,9 @@ class InsuranceViewController: UIViewController {
         self.lifeTextfield.enabled = true
         self.vetTextfield.enabled = true
         self.commentTextview.editable = true
+        
+        self.editButton.enabled = false
+        self.saveButton.enabled = true
     }
     
     

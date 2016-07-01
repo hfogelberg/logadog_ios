@@ -16,6 +16,9 @@ class ApperanceViewController: UIViewController {
     @IBOutlet weak var heightTextfield: UITextField!
     @IBOutlet weak var weightTextfield: UITextField!
     @IBOutlet weak var commentTextview: UITextView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,16 +78,27 @@ class ApperanceViewController: UIViewController {
             self.weightTextfield.text = weight
             self.heightTextfield.text = height
             self.commentTextview.text = comment
-            
+        }
+        
+        self.disableFields()
+    }
+    
+    func disableFields() {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.editButton.enabled = true
+            self.saveButton.enabled = false
+    
             self.colorTextfield.borderStyle = .None
             self.heightTextfield.borderStyle = .None
             self.weightTextfield.borderStyle = .None
-            
+        
             self.colorTextfield.enabled = false
             self.heightTextfield.enabled = false
             self.weightTextfield.enabled = false
             self.commentTextview.editable = false
-            
+        
+            self.editButton.enabled = true
+            self.saveButton.enabled = false
         }
     }
     
@@ -93,6 +107,9 @@ class ApperanceViewController: UIViewController {
     }
     
     func enableFields() {
+        self.saveButton.enabled = true
+        self.editButton.enabled = false
+        
         self.colorTextfield.borderStyle = .RoundedRect
         self.heightTextfield.borderStyle = .RoundedRect
         self.weightTextfield.borderStyle = .RoundedRect
