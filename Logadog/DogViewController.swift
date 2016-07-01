@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import IQKeyboardManager
 
-class DogViewController: UIViewController {
+class DogViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate  {
     
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var breedTextfield: UITextField!
@@ -18,7 +18,10 @@ class DogViewController: UIViewController {
     @IBOutlet weak var dobTextfield: UITextField!
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var dobPicker: UIDatePicker!
+    @IBOutlet weak var breedTableView: UITableView!
     
+    var breeds = [String]()
+    var auto: [String] = []
     var gender = MALE
     var dog: DogObject!
 
@@ -26,6 +29,12 @@ class DogViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
+        self.breedTableView.dataSource = self
+        self.breedTableView.delegate = self
+        self.breedTextfield.delegate = self
+        self.breedTableView.hidden = true
+        
+        breedTextfield.addTarget(self, action: "breedTextfieldFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
         
         // Don't use IQKeyboardManager for this field
         dobTextfield.inputAccessoryView = UIView()
@@ -37,6 +46,23 @@ class DogViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         self.dateView.hidden = true
+        
+        self.getDistinctBreeds()
+    }
+
+    
+    func getDistinctBreeds() {
+        self.breeds.removeAll()
+        let route = "\(ROUTE_BREEDS)"
+        
+        RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
+            print(json)
+            if let breeds = json["data"].array {
+                for breed in breeds {
+                    self.breeds.append(BreedObject(json: breed).name)
+                }
+            }
+        })
     }
     
     func showDog(){
@@ -62,7 +88,8 @@ class DogViewController: UIViewController {
         }
     }
     
-    @IBAction func dobTextfieldTappd(sender: AnyObject) {        self.dateView.hidden = false
+    @IBAction func dobTextfieldTappd(sender: AnyObject) {
+        self.dateView.hidden = false
     }
     
     @IBAction func dobDoneButtonTapped(sender: AnyObject) {
@@ -148,5 +175,44 @@ class DogViewController: UIViewController {
                 }
             }
         })
+    }
+    
+    func breedTextfieldFieldDidChange(textField: UITextField) {
+        print("Breed text field")
+        self.breedTableView.hidden = false
+        if let text = breedTextfield.text as String? {
+            
+            auto.removeAll(keepCapacity: false)
+            for curString in self.breeds
+            {
+                let myString:NSString! = curString as NSString
+                
+                let substringRange :NSRange! = myString.rangeOfString(text)
+                if (substringRange.location  == 0)
+                {
+                    auto.append(curString)
+                    print(auto)
+                }
+            }
+        }
+        self.breedTableView.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.auto.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        let breed = self.auto[indexPath.row]
+        cell.textLabel!.text = breed
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let idx = indexPath.row
+        let breed = self.auto[idx]
+        self.breedTextfield.text = breed
+        self.breedTableView.hidden = true
     }
 }
