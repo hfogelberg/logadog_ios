@@ -11,8 +11,12 @@ import SwiftyJSON
 
 class ActivityTypeObject {
     var name = ""
+    var language = ""
+    var animal = ""
     
     init(json: JSON) {
         self.name = json["name"].stringValue
+        self.language = json["lang"].stringValue
+        self.animal = json["animal"].stringValue
     }
 }

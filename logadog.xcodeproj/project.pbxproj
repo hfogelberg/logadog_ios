@@ -24,7 +24,7 @@
 		AF957D111D2071870060E4EE /* PurchaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D101D2071870060E4EE /* PurchaseObject.swift */; };
 		AF957D131D2122830060E4EE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D121D2122830060E4EE /* Segues.swift */; };
 		AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */; };
-		AFB754271D26B13100189572 /* breedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB754261D26B13100189572 /* breedObject.swift */; };
+		AFB754271D26B13100189572 /* BreedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB754261D26B13100189572 /* BreedObject.swift */; };
 		AFB754291D26BC6A00189572 /* ColorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB754281D26BC6A00189572 /* ColorObject.swift */; };
 		AFB7542B1D26C3E200189572 /* ProdtypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7542A1D26C3E200189572 /* ProdtypeObject.swift */; };
 		AFB7542D1D28FF7600189572 /* ActivityTypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7542C1D28FF7600189572 /* ActivityTypeObject.swift */; };
@@ -74,7 +74,7 @@
 		AF957D101D2071870060E4EE /* PurchaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseObject.swift; sourceTree = "<group>"; };
 		AF957D121D2122830060E4EE /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
-		AFB754261D26B13100189572 /* breedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = breedObject.swift; sourceTree = "<group>"; };
+		AFB754261D26B13100189572 /* BreedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedObject.swift; sourceTree = "<group>"; };
 		AFB754281D26BC6A00189572 /* ColorObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorObject.swift; sourceTree = "<group>"; };
 		AFB7542A1D26C3E200189572 /* ProdtypeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdtypeObject.swift; sourceTree = "<group>"; };
 		AFB7542C1D28FF7600189572 /* ActivityTypeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTypeObject.swift; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 				AF5BC3F31D199F4000E76343 /* ActivityObject.swift */,
 				AF957D091D1FE75C0060E4EE /* ContactObject.swift */,
 				AF957D101D2071870060E4EE /* PurchaseObject.swift */,
-				AFB754261D26B13100189572 /* breedObject.swift */,
+				AFB754261D26B13100189572 /* BreedObject.swift */,
 				AFB754281D26BC6A00189572 /* ColorObject.swift */,
 				AFB7542A1D26C3E200189572 /* ProdtypeObject.swift */,
 				AFB7542C1D28FF7600189572 /* ActivityTypeObject.swift */,
@@ -412,7 +412,7 @@
 				AFDB2B4F1CF71C8200236890 /* ShowDogViewController.swift in Sources */,
 				AFDB2B421CF5E3C900236890 /* ApplicationSettings.swift in Sources */,
 				AF30FE1C1CFC71AC00C3B7DC /* IdentityViewController.swift in Sources */,
-				AFB754271D26B13100189572 /* breedObject.swift in Sources */,
+				AFB754271D26B13100189572 /* BreedObject.swift in Sources */,
 				AFDB2B4D1CF7096900236890 /* PetObject.swift in Sources */,
 				AFDB2B311CF5B12600236890 /* LoginViewController.swift in Sources */,
 				AF5BC3F81D1ABD9B00E76343 /* SWRevealViewController.m in Sources */,

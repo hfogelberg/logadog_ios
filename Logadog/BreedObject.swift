@@ -11,8 +11,12 @@ import SwiftyJSON
 
 class BreedObject {
     var name = ""
+    var language = ""
+    var animal = ""
     
     init(json: JSON) {
-        name = json["name"].stringValue
+        self.name = json["name"].stringValue
+        self.language = json["lang"].stringValue
+        self.animal = json["animal"].stringValue
     }
 }
