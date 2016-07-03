@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
-    var dogId: String = ""
+    var petId: String = ""
     
     @IBOutlet weak var colorTextfield: UITextField!
     @IBOutlet weak var heightTextfield: UITextField!
@@ -53,8 +53,8 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
     }
     
     func getAppearance(){
-        if dogId != "" {
-            let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_APPEARANCE)"
+        if petId != "" {
+            let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_APPEARANCE)"
             RestApiManager.sharedInstance.getRequest(route, params: "", onCompletion: { (json: JSON) -> () in
                 if let status = json["status"].intValue as Int? {
                     if status == STATUS_OK {
@@ -171,14 +171,14 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
         }
         
        let appearance = [
-            "dogId": self.dogId,
+            "petId": self.petId,
             "color": color,
             "heightInCm": height,
             "weightInKg": weight,
             "comment": comment
         ]
         
-        let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_APPEARANCE)"
+        let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_APPEARANCE)"
         RestApiManager.sharedInstance.postRequest(route, params: appearance, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             

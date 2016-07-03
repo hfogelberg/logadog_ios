@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class InsuranceViewController: UIViewController {
-    var dogId = ""
+    var petId = ""
 
     @IBOutlet weak var companyTextfield: UITextField!
     @IBOutlet weak var productTextfield: UITextField!
@@ -31,8 +31,8 @@ class InsuranceViewController: UIViewController {
     }
     
     func getInsurance() {
-        if dogId != "" {
-            let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_INSURANCE)"
+        if petId != "" {
+            let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_INSURANCE)"
             
             RestApiManager.sharedInstance.getRequest(route, onCompletion: { (json: JSON) -> () in
                 if let status = json["status"].intValue as Int? {
@@ -208,11 +208,11 @@ class InsuranceViewController: UIViewController {
             "renewalDate": renewalDate,
             "anualCost": anualCost,
             "comment": comment,
-            "dogid": self.dogId,
+            "petId": self.petId,
             "token": TokenController.getToken()
         ]
         
-        let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_INSURANCE)"
+        let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_INSURANCE)"
         
         RestApiManager.sharedInstance.postRequest(route, params: params, onCompletion: {(json:JSON) -> () in
             // Todo: Handle response

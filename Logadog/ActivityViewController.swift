@@ -27,7 +27,7 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var activitytypeTableview: UITableView!
     
     var activity: ActivityObject!
-    var dogId: String = ""
+    var petId: String = ""
     var isCompetition = PRACTICE
     var auto: [String] = []
     var activityTypes = [String]()
@@ -261,7 +261,7 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func createActivity(activity: [String:String]) {
-        let route = "\(ROUTE_MY_PETS)/\(self.dogId)/\(ROUTE_ACTIVITY)"
+        let route = "\(ROUTE_MY_PETS)/\(self.petId)/\(ROUTE_ACTIVITY)"
         RestApiManager.sharedInstance.postRequest(route, params: activity, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             print(json)

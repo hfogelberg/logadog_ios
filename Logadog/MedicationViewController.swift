@@ -21,7 +21,7 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var prodtypesTableview: UITableView!
     
-    var dogId = ""
+    var petId = ""
     var medication: MedicationObject!
     var auto: [String] = []
     var prodtypes = [String]()
@@ -147,7 +147,7 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
         }
         
         let medication = [
-            "dogId": dogId,
+            "petId": petId,
             "productType": productType,
             "make": make,
             "amount": amount,
@@ -192,7 +192,7 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
     }
     
     func createMedication(medication: [String:String]) {
-        let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_MEDICATION)"
+        let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_MEDICATION)"
         RestApiManager.sharedInstance.postRequest(route, params: medication, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             print(json)

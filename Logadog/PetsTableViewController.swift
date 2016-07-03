@@ -13,7 +13,7 @@ class PetsTableViewController: UITableViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    var dogs = [DogObject]()
+    var pets = [PetObject]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +24,7 @@ class PetsTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.dogs.removeAll()
+        self.pets.removeAll()
         getDogs()
     }
     
@@ -32,7 +32,7 @@ class PetsTableViewController: UITableViewController {
         let token = TokenController.getToken()
         let userId = TokenController.getUserId()
         
-        self.dogs.removeAll()
+        self.pets.removeAll()
         
         if token != "" && userId != "" {
             RestApiManager.sharedInstance.getRequest(ROUTE_MY_PETS, params: "") {(json:JSON) -> () in
@@ -44,9 +44,9 @@ class PetsTableViewController: UITableViewController {
                 }
                 
                 if status == STATUS_OK {
-                    if let dogs = json["data"].array {
-                        for dog in dogs {
-                            self.dogs.append(DogObject(json: dog))
+                    if let pets = json["data"].array {
+                        for pet in pets {
+                            self.pets.append(PetObject(json: pet))
                         }
                         
                         dispatch_async(dispatch_get_main_queue(),{
@@ -85,29 +85,27 @@ class PetsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dogs.count
+        return self.pets.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         cell.contentView.backgroundColor = UIColor.clearColor()
         cell.backgroundColor = UIColor.clearColor()
-        let dog = self.dogs[indexPath.row]
-        cell.textLabel!.text = dog.name
+        let pet = self.pets[indexPath.row]
+        cell.textLabel!.text = pet.name
         cell.textLabel?.textColor = Colors.colorWithHexString(COLOR_TABLE_TEXT)
         return cell
     }
     
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("prepare for segue")
         if segue.identifier == "showDogSegue" {
             let nextScene = segue.destinationViewController as! ShowDogViewController
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                print("Index: \(self.dogs[indexPath.row])")
-                let dog = self.dogs[indexPath.row]
-                nextScene.dog = dog
+                let pet = self.pets[indexPath.row]
+                nextScene.pet = pet
             }
         }
     }

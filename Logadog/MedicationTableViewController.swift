@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class MedicationTableViewController: UITableViewController {
-    var dogId = ""
+    var petId = ""
     var medications = [MedicationObject]()
 
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class MedicationTableViewController: UITableViewController {
     
     func getMedications() {
         self.medications.removeAll()
-        let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_MEDICATION)"
+        let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_MEDICATION)"
         
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
             print(json)
@@ -70,7 +70,7 @@ class MedicationTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMedicationSegue" {
             let nextScene = segue.destinationViewController as! MedicationViewController
-            nextScene.dogId = self.dogId
+            nextScene.petId = self.petId
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 print("Index: \(self.medications[indexPath.row])")
@@ -79,7 +79,7 @@ class MedicationTableViewController: UITableViewController {
             }
         } else if segue.identifier == "addMedicationSegue" {
             let nextScene = segue.destinationViewController as! MedicationViewController
-            nextScene.dogId = self.dogId
+            nextScene.petId = self.petId
         }
     }
 }

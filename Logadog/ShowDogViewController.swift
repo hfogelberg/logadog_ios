@@ -10,7 +10,7 @@ import UIKit
 
 class ShowDogViewController: UIViewController {
     
-    var dog: DogObject!
+    var pet: PetObject!
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var breedLabel: UILabel!
@@ -37,31 +37,31 @@ class ShowDogViewController: UIViewController {
     }
     
     func showDog() {
-        nameLabel.text = dog.name
-        breedLabel.text = dog.breed
-        genderLabel.text = dog.gender
-        dobLabel.text = dog.dob
+        nameLabel.text = pet.name
+        breedLabel.text = pet.breed
+        genderLabel.text = pet.gender
+        dobLabel.text = pet.dob
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "appearanceSegue" {
             let nextScene = segue.destinationViewController as! ApperanceViewController
-            nextScene.dogId = dog.id
+            nextScene.petId = pet.id
         } else if segue.identifier == "changeDogSegue" {
             let nextScene = segue.destinationViewController as! PetViewController
-            nextScene.dog = dog
+            nextScene.pet = pet
         } else if segue.identifier == "identitySegue" {
             let nextScene = segue.destinationViewController as! IdentityViewController
-            nextScene.dogId = dog.id
+            nextScene.petId = pet.id
         } else if segue.identifier == "insuranceSegue" {
             let nextScene = segue.destinationViewController as! InsuranceViewController
-            nextScene.dogId = dog.id
+            nextScene.petId = pet.id
         } else if segue.identifier == "medicationSegue" {
             let nextScene = segue.destinationViewController as! MedicationTableViewController
-            nextScene.dogId = dog.id
+            nextScene.petId = pet.id
         } else if segue.identifier == "activitiesSegue" {
             let nextScene = segue.destinationViewController as! ActivitiesTableViewController
-            nextScene.dogId = dog.id
+            nextScene.petId = pet.id
         }
     }
 }

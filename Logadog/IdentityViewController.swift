@@ -17,7 +17,7 @@ class IdentityViewController: UIViewController {
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    var dogId = ""
+    var petId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class IdentityViewController: UIViewController {
     }
     
     func getIdentity(){
-        let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_IDENTITY)"
+        let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_IDENTITY)"
         RestApiManager.sharedInstance.getRequest(route, onCompletion: { (json: JSON) -> () in
             if let status = json["status"].intValue as Int? {
                 if status == STATUS_OK {
@@ -120,11 +120,11 @@ class IdentityViewController: UIViewController {
             "earmark": earmark,
             "passport": passport,
             "comment": comment,
-            "dogid": dogId,
+            "petId": petId,
             "token": TokenController.getToken()
         ]
         
-        let route = "\(ROUTE_MY_PETS)/\(dogId)/\(ROUTE_IDENTITY)"
+        let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_IDENTITY)"
         RestApiManager.sharedInstance.postRequest(route, params: body, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             print(json)

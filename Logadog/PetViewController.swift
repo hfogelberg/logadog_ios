@@ -23,7 +23,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     var breeds = [String]()
     var auto: [String] = []
     var gender = MALE
-    var dog: DogObject!
+    var pet: PetObject!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +37,8 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         // Don't use IQKeyboardManager for this field
         dobTextfield.inputAccessoryView = UIView()
         
-        if dog != nil {
-            showDog()
+        if pet != nil {
+            showPet()
         }
     }
     
@@ -63,9 +63,9 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         })
     }
     
-    func showDog(){
-        nameTextfield.text = dog.name
-        breedTextfield.text = dog.breed
+    func showPet(){
+        nameTextfield.text = pet.name
+        breedTextfield.text = pet.breed
 
         if gender == MALE {
             self.genderSwitch.selectedSegmentIndex = 0
@@ -123,7 +123,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         print("Date of birth: \(dob)")
         
-        if dog == nil {
+        if pet == nil {
             body = [
                 "name": name,
                 "breed": breed,
@@ -139,7 +139,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 "breed": breed,
                 "gender": gender,
                 "dob": dob,
-                "dogid": self.dog.id
+                "petId": self.pet.id
             ]
             
             route = ROUTE_CHANGE_DOG

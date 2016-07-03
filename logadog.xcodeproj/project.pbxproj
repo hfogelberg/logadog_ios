@@ -45,7 +45,7 @@
 		AFDB2B421CF5E3C900236890 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B411CF5E3C900236890 /* ApplicationSettings.swift */; };
 		AFDB2B441CF5F49B00236890 /* Statuscode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B431CF5F49B00236890 /* Statuscode.swift */; };
 		AFDB2B4A1CF6F64600236890 /* PetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B491CF6F64600236890 /* PetsTableViewController.swift */; };
-		AFDB2B4D1CF7096900236890 /* DogObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B4C1CF7096900236890 /* DogObject.swift */; };
+		AFDB2B4D1CF7096900236890 /* PetObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B4C1CF7096900236890 /* PetObject.swift */; };
 		AFDB2B4F1CF71C8200236890 /* ShowDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */; };
 		AFDB2B531CF72A5A00236890 /* AppearanceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */; };
 		AFDB2B551CF72B2200236890 /* ApperanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B541CF72B2200236890 /* ApperanceViewController.swift */; };
@@ -97,7 +97,7 @@
 		AFDB2B411CF5E3C900236890 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
 		AFDB2B431CF5F49B00236890 /* Statuscode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statuscode.swift; sourceTree = "<group>"; };
 		AFDB2B491CF6F64600236890 /* PetsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsTableViewController.swift; sourceTree = "<group>"; };
-		AFDB2B4C1CF7096900236890 /* DogObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogObject.swift; sourceTree = "<group>"; };
+		AFDB2B4C1CF7096900236890 /* PetObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetObject.swift; sourceTree = "<group>"; };
 		AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDogViewController.swift; sourceTree = "<group>"; };
 		AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceObject.swift; sourceTree = "<group>"; };
 		AFDB2B541CF72B2200236890 /* ApperanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApperanceViewController.swift; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 		AFDB2B4B1CF7095300236890 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				AFDB2B4C1CF7096900236890 /* DogObject.swift */,
+				AFDB2B4C1CF7096900236890 /* PetObject.swift */,
 				AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */,
 				AFEFA8C21D058D0300F883AC /* MedicationObject.swift */,
 				AF5BC3F31D199F4000E76343 /* ActivityObject.swift */,
@@ -413,7 +413,7 @@
 				AFDB2B421CF5E3C900236890 /* ApplicationSettings.swift in Sources */,
 				AF30FE1C1CFC71AC00C3B7DC /* IdentityViewController.swift in Sources */,
 				AFB754271D26B13100189572 /* breedObject.swift in Sources */,
-				AFDB2B4D1CF7096900236890 /* DogObject.swift in Sources */,
+				AFDB2B4D1CF7096900236890 /* PetObject.swift in Sources */,
 				AFDB2B311CF5B12600236890 /* LoginViewController.swift in Sources */,
 				AF5BC3F81D1ABD9B00E76343 /* SWRevealViewController.m in Sources */,
 				AF957D111D2071870060E4EE /* PurchaseObject.swift in Sources */,

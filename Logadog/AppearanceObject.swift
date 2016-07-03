@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class ApperanceObject {
-    var dogId: String!
+    var petId: String!
     var color: String!
     var heightInCm: String!
     var weightInKg: String!
@@ -23,7 +23,7 @@ class ApperanceObject {
     }
     
     func setData(json:JSON) {
-        self.dogId = json["dogId"].stringValue
+        self.petId = json["petId"].stringValue
         self.color = json["color"].stringValue
         self.heightInCm = json["heightInCm"].stringValue
         self.weightInKg = json["weightInKg"].stringValue
