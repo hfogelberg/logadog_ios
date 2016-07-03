@@ -329,7 +329,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
-                                    <action selector="colorFieldChanged:" destination="4de-x7-HpW" eventType="editingDidEnd" id="eWu-Cx-JJm"/>
+                                    <action selector="colorFieldChanged:" destination="4de-x7-HpW" eventType="editingChanged" id="oTh-co-vpw"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPF-GE-FV8">
@@ -836,7 +836,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
-                                    <action selector="breedFieldChanged:" destination="AV7-l6-dus" eventType="editingDidEnd" id="41U-2R-pbN"/>
+                                    <action selector="breedFieldChanged:" destination="AV7-l6-dus" eventType="editingChanged" id="Lx8-wb-Tgu"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-Is-1NE">
