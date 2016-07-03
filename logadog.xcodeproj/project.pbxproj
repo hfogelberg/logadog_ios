@@ -27,6 +27,7 @@
 		AFB754271D26B13100189572 /* breedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB754261D26B13100189572 /* breedObject.swift */; };
 		AFB754291D26BC6A00189572 /* ColorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB754281D26BC6A00189572 /* ColorObject.swift */; };
 		AFB7542B1D26C3E200189572 /* ProdtypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7542A1D26C3E200189572 /* ProdtypeObject.swift */; };
+		AFB7542D1D28FF7600189572 /* ActivityTypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7542C1D28FF7600189572 /* ActivityTypeObject.swift */; };
 		AFDB2B111CF5B02300236890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B101CF5B02300236890 /* AppDelegate.swift */; };
 		AFDB2B181CF5B02300236890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B171CF5B02300236890 /* Assets.xcassets */; };
 		AFDB2B1B1CF5B02300236890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B191CF5B02300236890 /* LaunchScreen.storyboard */; };
@@ -76,6 +77,7 @@
 		AFB754261D26B13100189572 /* breedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = breedObject.swift; sourceTree = "<group>"; };
 		AFB754281D26BC6A00189572 /* ColorObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorObject.swift; sourceTree = "<group>"; };
 		AFB7542A1D26C3E200189572 /* ProdtypeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdtypeObject.swift; sourceTree = "<group>"; };
+		AFB7542C1D28FF7600189572 /* ActivityTypeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTypeObject.swift; sourceTree = "<group>"; };
 		AFDB2B0D1CF5B02300236890 /* Logadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDB2B101CF5B02300236890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFDB2B171CF5B02300236890 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				AFB754261D26B13100189572 /* breedObject.swift */,
 				AFB754281D26BC6A00189572 /* ColorObject.swift */,
 				AFB7542A1D26C3E200189572 /* ProdtypeObject.swift */,
+				AFB7542C1D28FF7600189572 /* ActivityTypeObject.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				AF957D131D2122830060E4EE /* Segues.swift in Sources */,
 				AFEFA8C11D05735200F883AC /* MedicationViewController.swift in Sources */,
 				AF5BC3F21D19892100E76343 /* ActivityViewController.swift in Sources */,
+				AFB7542D1D28FF7600189572 /* ActivityTypeObject.swift in Sources */,
 				AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */,
 				AFDB2B331CF5B7C600236890 /* SignupViewController.swift in Sources */,
 				AFB7542B1D26C3E200189572 /* ProdtypeObject.swift in Sources */,

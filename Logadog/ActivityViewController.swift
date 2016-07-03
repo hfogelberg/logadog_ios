@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class ActivityViewController: UIViewController {
+class ActivityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var typeTextfield: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
@@ -24,13 +24,20 @@ class ActivityViewController: UIViewController {
     @IBOutlet weak var isCompetitionSwitch: UISegmentedControl!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var activitytypeTableview: UITableView!
     
     var activity: ActivityObject!
     var dogId: String = ""
     var isCompetition = PRACTICE
+    var auto: [String] = []
+    var activityTypes = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.activitytypeTableview.delegate = self
+        self.activitytypeTableview.dataSource = self
+        self.typeTextfield.delegate = self
         
         // Don't use IQKeyboardManager for this field
         dateTextField.inputAccessoryView = UIView()
@@ -47,8 +54,25 @@ class ActivityViewController: UIViewController {
             self.saveButton.enabled = true
             self.editButton.enabled = false
         }
+        
+        self.activitytypeTableview.hidden = true
+        self.getActivityTypes()
     }
     
+    
+    func getActivityTypes() {
+        self.activityTypes.removeAll()
+        let route = "\(ROUTE_ACTIVITY_TYPES)"
+        
+        RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
+            print(json)
+            if let types = json["data"].array {
+                for type in types {
+                    self.activityTypes.append(ActivityTypeObject(json: type).name)
+                }
+            }
+        })
+    }
     
     func showActivity() {
         self.typeTextfield.text = activity.activityType
@@ -263,4 +287,45 @@ class ActivityViewController: UIViewController {
             }
         })
     }
+    
+    @IBAction func activitytypeChanged(sender: AnyObject) {
+        self.activitytypeTableview.hidden = false
+        
+        if let text = typeTextfield.text as String? {
+            auto.removeAll(keepCapacity: false)
+            for curString in self.activityTypes
+            {
+                let myString:NSString! = curString as NSString
+                
+                let substringRange :NSRange! = myString.rangeOfString(text)
+                if (substringRange.location  == 0)
+                {
+                    auto.append(curString)
+                }
+            }
+        }
+        
+        if auto.count > 0 {
+            self.activitytypeTableview.reloadData()
+        } else {
+            self.activitytypeTableview.hidden = true
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.typeTextfield.text = auto[indexPath.row]
+        self.activitytypeTableview.hidden = true
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return auto.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
+        
+        cell.textLabel!.text = self.auto[indexPath.row]
+        return cell
+    }
+    
 }

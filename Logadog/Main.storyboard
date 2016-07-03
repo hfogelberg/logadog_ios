@@ -1283,7 +1283,10 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type of activity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="syd-6V-Ju5">
                                 <rect key="frame" x="50" y="100" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <action selector="activitytypeChanged:" destination="urA-zm-65Z" eventType="editingChanged" id="s3Y-22-wWr"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJj-rn-r3x">
                                 <rect key="frame" x="50" y="150" width="500" height="30"/>
@@ -1382,18 +1385,36 @@
                                     <constraint firstItem="AEk-j5-YWF" firstAttribute="leading" secondItem="7Q7-u0-Jd9" secondAttribute="leading" id="rq9-zQ-WRS"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jdu-2F-yHH">
+                                <rect key="frame" x="50" y="130" width="500" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="O8i-If-0Kj">
+                                        <rect key="frame" x="0.0" y="28" width="500" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O8i-If-0Kj" id="NEy-cd-Bs8">
+                                            <rect key="frame" x="0.0" y="0.0" width="500" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jdu-2F-yHH" firstAttribute="leading" secondItem="XbN-gr-eke" secondAttribute="leading" id="0Rm-Wx-9L3"/>
                             <constraint firstItem="XbN-gr-eke" firstAttribute="leading" secondItem="s3k-Qo-wyB" secondAttribute="leading" id="2kT-z2-W4e"/>
                             <constraint firstItem="gME-Z7-syj" firstAttribute="top" secondItem="Uxa-a4-co3" secondAttribute="bottom" constant="8" symbolic="YES" id="4B0-7G-O94"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dxu-PZ-uqE" secondAttribute="trailing" constant="35" id="4fI-23-60e"/>
                             <constraint firstItem="fJj-rn-r3x" firstAttribute="top" secondItem="syd-6V-Ju5" secondAttribute="bottom" constant="20" id="5G9-yb-Vmy"/>
+                            <constraint firstItem="jdu-2F-yHH" firstAttribute="top" secondItem="syd-6V-Ju5" secondAttribute="bottom" id="5jb-bi-UPc"/>
                             <constraint firstItem="XbN-gr-eke" firstAttribute="trailing" secondItem="K7f-C5-Hws" secondAttribute="trailing" id="876-sm-QUc"/>
+                            <constraint firstItem="dxu-PZ-uqE" firstAttribute="top" secondItem="jdu-2F-yHH" secondAttribute="bottom" constant="9" id="8O1-hy-wu2"/>
                             <constraint firstItem="fJj-rn-r3x" firstAttribute="trailing" secondItem="XbN-gr-eke" secondAttribute="trailing" id="9HS-Ta-3mQ"/>
                             <constraint firstItem="Kq9-yT-wXr" firstAttribute="baseline" secondItem="N3f-IW-kHU" secondAttribute="baseline" id="Axf-nQ-KhQ"/>
                             <constraint firstItem="s3k-Qo-wyB" firstAttribute="top" secondItem="Uxa-a4-co3" secondAttribute="top" id="C7L-cZ-NbS"/>
                             <constraint firstItem="dxu-PZ-uqE" firstAttribute="top" secondItem="N3f-IW-kHU" secondAttribute="bottom" constant="15" id="Cqm-cr-XE6"/>
+                            <constraint firstItem="jdu-2F-yHH" firstAttribute="trailing" secondItem="N3f-IW-kHU" secondAttribute="trailing" id="GkR-Vq-QUx"/>
                             <constraint firstItem="N3f-IW-kHU" firstAttribute="trailing" secondItem="K7f-C5-Hws" secondAttribute="trailing" id="Hif-GU-WES"/>
                             <constraint firstItem="2Et-aw-XCL" firstAttribute="leading" secondItem="dxu-PZ-uqE" secondAttribute="leading" id="Iqc-n1-iha"/>
                             <constraint firstItem="syd-6V-Ju5" firstAttribute="top" secondItem="RZy-Ce-nbS" secondAttribute="bottom" constant="36" id="JFw-ZZ-aCC"/>
@@ -1433,6 +1454,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityDatePicker" destination="AEk-j5-YWF" id="NCU-p6-2Z5"/>
+                        <outlet property="activitytypeTableview" destination="jdu-2F-yHH" id="Asb-ps-pca"/>
                         <outlet property="cityTextField" destination="fJj-rn-r3x" id="HOC-RF-vYC"/>
                         <outlet property="clubTextField" destination="XbN-gr-eke" id="xa8-ei-4ia"/>
                         <outlet property="commentTextView" destination="2Et-aw-XCL" id="yW3-av-2dj"/>
