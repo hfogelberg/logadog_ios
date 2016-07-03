@@ -1,5 +1,5 @@
 //
-//  DogViewController.swift
+//  PetViewController
 //  Logadog
 //
 //  Created by Henrik Fogelberg on 2016-05-25.
@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import IQKeyboardManager
 
-class DogViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate  {
+class PetViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate  {
     
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var breedTextfield: UITextField!

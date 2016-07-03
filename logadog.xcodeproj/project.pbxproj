@@ -41,10 +41,10 @@
 		AFDB2B351CF5BCE000236890 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B341CF5BCE000236890 /* StartViewController.swift */; };
 		AFDB2B371CF5BFD500236890 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B361CF5BFD500236890 /* Api.swift */; };
 		AFDB2B391CF5D14E00236890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B381CF5D14E00236890 /* Main.storyboard */; };
-		AFDB2B401CF5E2EB00236890 /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B3F1CF5E2EB00236890 /* DogViewController.swift */; };
+		AFDB2B401CF5E2EB00236890 /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B3F1CF5E2EB00236890 /* PetViewController.swift */; };
 		AFDB2B421CF5E3C900236890 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B411CF5E3C900236890 /* ApplicationSettings.swift */; };
 		AFDB2B441CF5F49B00236890 /* Statuscode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B431CF5F49B00236890 /* Statuscode.swift */; };
-		AFDB2B4A1CF6F64600236890 /* DogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B491CF6F64600236890 /* DogsTableViewController.swift */; };
+		AFDB2B4A1CF6F64600236890 /* PetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B491CF6F64600236890 /* PetsTableViewController.swift */; };
 		AFDB2B4D1CF7096900236890 /* DogObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B4C1CF7096900236890 /* DogObject.swift */; };
 		AFDB2B4F1CF71C8200236890 /* ShowDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */; };
 		AFDB2B531CF72A5A00236890 /* AppearanceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */; };
@@ -93,10 +93,10 @@
 		AFDB2B341CF5BCE000236890 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		AFDB2B361CF5BFD500236890 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		AFDB2B381CF5D14E00236890 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		AFDB2B3F1CF5E2EB00236890 /* DogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
+		AFDB2B3F1CF5E2EB00236890 /* PetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetViewController.swift; sourceTree = "<group>"; };
 		AFDB2B411CF5E3C900236890 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
 		AFDB2B431CF5F49B00236890 /* Statuscode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statuscode.swift; sourceTree = "<group>"; };
-		AFDB2B491CF6F64600236890 /* DogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogsTableViewController.swift; sourceTree = "<group>"; };
+		AFDB2B491CF6F64600236890 /* PetsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsTableViewController.swift; sourceTree = "<group>"; };
 		AFDB2B4C1CF7096900236890 /* DogObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogObject.swift; sourceTree = "<group>"; };
 		AFDB2B4E1CF71C8200236890 /* ShowDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDogViewController.swift; sourceTree = "<group>"; };
 		AFDB2B521CF72A5A00236890 /* AppearanceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceObject.swift; sourceTree = "<group>"; };
@@ -151,8 +151,8 @@
 				AF5BC3EF1D1986FA00E76343 /* ActivitiesTableViewController.swift */,
 				AF5BC3F11D19892100E76343 /* ActivityViewController.swift */,
 				AFDB2B541CF72B2200236890 /* ApperanceViewController.swift */,
-				AFDB2B3F1CF5E2EB00236890 /* DogViewController.swift */,
-				AFDB2B491CF6F64600236890 /* DogsTableViewController.swift */,
+				AFDB2B3F1CF5E2EB00236890 /* PetViewController.swift */,
+				AFDB2B491CF6F64600236890 /* PetsTableViewController.swift */,
 				AF30FE1B1CFC71AC00C3B7DC /* IdentityViewController.swift */,
 				AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */,
 				AF278C6A1D0084FC004D085D /* MedicationTableViewController.swift */,
@@ -430,7 +430,7 @@
 				AFDB2B331CF5B7C600236890 /* SignupViewController.swift in Sources */,
 				AFB7542B1D26C3E200189572 /* ProdtypeObject.swift in Sources */,
 				AF957D0D1D2071010060E4EE /* PuchaseViewController.swift in Sources */,
-				AFDB2B4A1CF6F64600236890 /* DogsTableViewController.swift in Sources */,
+				AFDB2B4A1CF6F64600236890 /* PetsTableViewController.swift in Sources */,
 				AFDB2B2F1CF5B10300236890 /* TokenController.swift in Sources */,
 				AFDB2B2C1CF5B10300236890 /* Colors.swift in Sources */,
 				AF957D0A1D1FE75C0060E4EE /* ContactObject.swift in Sources */,
@@ -440,7 +440,7 @@
 				AFDB2B351CF5BCE000236890 /* StartViewController.swift in Sources */,
 				AFDB2B111CF5B02300236890 /* AppDelegate.swift in Sources */,
 				AFDB2B441CF5F49B00236890 /* Statuscode.swift in Sources */,
-				AFDB2B401CF5E2EB00236890 /* DogViewController.swift in Sources */,
+				AFDB2B401CF5E2EB00236890 /* PetViewController.swift in Sources */,
 				AFDB2B2E1CF5B10300236890 /* ErrorMessages.swift in Sources */,
 				AF5BC3F01D1986FA00E76343 /* ActivitiesTableViewController.swift in Sources */,
 				AFDB2B371CF5BFD500236890 /* Api.swift in Sources */,

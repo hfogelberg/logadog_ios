@@ -808,10 +808,10 @@
             </objects>
             <point key="canvasLocation" x="6170" y="2446"/>
         </scene>
-        <!--Dog View Controller-->
+        <!--Pet View Controller-->
         <scene sceneID="OUz-Ju-KXF">
             <objects>
-                <viewController id="AV7-l6-dus" customClass="DogViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AV7-l6-dus" customClass="PetViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="alq-c3-DoD"/>
                         <viewControllerLayoutGuide type="bottom" id="Y9m-iK-bhH"/>
@@ -965,7 +965,7 @@
         <!--Log a Dog-->
         <scene sceneID="jjK-I0-vE1">
             <objects>
-                <tableViewController id="3bc-gV-rg0" customClass="DogsTableViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="3bc-gV-rg0" customClass="PetsTableViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="528-b3-XVv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1651,10 +1651,10 @@
         <segue reference="IeM-QS-f72"/>
         <segue reference="KU5-mu-st5"/>
         <segue reference="wEo-6D-6HN"/>
+        <segue reference="RZO-JZ-sYO"/>
         <segue reference="27Q-e4-tlg"/>
         <segue reference="RBT-JL-Fda"/>
-        <segue reference="ta7-PI-bH7"/>
+        <segue reference="m2z-4e-0UU"/>
         <segue reference="zej-db-6fb"/>
-        <segue reference="RZO-JZ-sYO"/>
     </inferredMetricsTieBreakers>
 </document>

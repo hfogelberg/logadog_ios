@@ -1,5 +1,5 @@
 //
-//  DogsTableViewController.swift
+//  PetsTableViewController..swift
 //  Logadog
 //
 //  Created by Henrik Fogelberg on 2016-05-26.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class DogsTableViewController: UITableViewController {
+class PetsTableViewController: UITableViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
