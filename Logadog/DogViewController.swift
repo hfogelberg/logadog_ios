@@ -178,9 +178,6 @@ class DogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func breedTextfieldFieldDidChange(textField: UITextField) {
-        // ToDo. Case sensitive. Must be fixed!!!
-        
-        print("Breed text field")
         self.breedTableView.hidden = false
         if let text = breedTextfield.text as String? {
             
@@ -193,7 +190,6 @@ class DogViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 if (substringRange.location  == 0)
                 {
                     auto.append(curString)
-                    print(auto)
                 }
             }
         }

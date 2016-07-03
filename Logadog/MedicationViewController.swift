@@ -9,9 +9,9 @@
 import UIKit
 import SwiftyJSON
 
-class MedicationViewController: UIViewController {
+class MedicationViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var productTypetextfield: UITextField!
+    @IBOutlet weak var prodtypeTextfield: UITextField!
     @IBOutlet weak var makeTextfield: UITextField!
     @IBOutlet weak var amountTextfield: UITextField!
     @IBOutlet weak var costTextfield: UITextField!
@@ -19,15 +19,22 @@ class MedicationViewController: UIViewController {
     @IBOutlet weak var commentTextview: UITextView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var prodtypesTableview: UITableView!
     
     var dogId = ""
     var medication: MedicationObject!
+    var auto: [String] = []
+    var prodtypes = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
         
+        self.prodtypesTableview.delegate = self
+        self.prodtypesTableview.dataSource = self
+        self.prodtypeTextfield.delegate = self
+   
         if medication != nil {
             self.showMedication()
         } else {
@@ -35,8 +42,27 @@ class MedicationViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.prodtypesTableview.hidden = true
+        getMedTypes()
+    }
+    
+    func getMedTypes() {
+        self.prodtypes.removeAll()
+        let route = "\(ROUTE_PROD_TYPES)"
+        
+        RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
+            print(json)
+            if let prodtypes = json["data"].array {
+                for prod in prodtypes {
+                    self.prodtypes.append(ProdtypeObject(json: prod).name)
+                }
+            }
+        })
+    }
+    
     func showMedication() {
-        self.productTypetextfield.text = self.medication.productType
+        self.prodtypeTextfield.text = self.medication.productType
         self.makeTextfield.text = self.medication.product
         self.amountTextfield.text = self.medication.amount
         self.costTextfield.text = self.medication.cost
@@ -48,13 +74,13 @@ class MedicationViewController: UIViewController {
     
     func disableFields() {
         dispatch_async(dispatch_get_main_queue()) {
-            self.productTypetextfield.borderStyle = .None
+            self.prodtypeTextfield.borderStyle = .None
             self.makeTextfield.borderStyle = .None
             self.amountTextfield.borderStyle = .None
             self.costTextfield.borderStyle = .None
             self.reminderTextfield.borderStyle = .None
             
-            self.productTypetextfield.enabled = false
+            self.prodtypeTextfield.enabled = false
             self.makeTextfield.enabled = false
             self.amountTextfield.enabled = false
             self.costTextfield.enabled = false
@@ -71,13 +97,13 @@ class MedicationViewController: UIViewController {
     
     func enableFields() {
         dispatch_async(dispatch_get_main_queue()) {
-            self.productTypetextfield.enabled = true
+            self.prodtypeTextfield.enabled = true
             self.makeTextfield.enabled = true
             self.amountTextfield.enabled = true
             self.costTextfield.enabled = true
             self.reminderTextfield.enabled = true
         
-            self.productTypetextfield.borderStyle = .RoundedRect
+            self.prodtypeTextfield.borderStyle = .RoundedRect
             self.makeTextfield.borderStyle = .RoundedRect
             self.amountTextfield.borderStyle = .RoundedRect
             self.costTextfield.borderStyle = .RoundedRect
@@ -96,7 +122,7 @@ class MedicationViewController: UIViewController {
         var reminder = ""
         var comment = ""
         
-        if let productVal = self.productTypetextfield.text as String? {
+        if let productVal = self.prodtypeTextfield.text as String? {
             productType = productVal
         }
         
@@ -191,5 +217,46 @@ class MedicationViewController: UIViewController {
                 }
             }
         })
+    }
+    
+    @IBAction func typefieldChanged(sender: AnyObject) {
+        self.prodtypesTableview.hidden = false
+        if let text = self.prodtypeTextfield.text as String? {
+            
+            auto.removeAll(keepCapacity: false)
+            for curString in self.prodtypes
+            {
+                let myString:NSString! = curString as NSString
+                
+                let substringRange :NSRange! = myString.rangeOfString(text)
+                if (substringRange.location  == 0)
+                {
+                    auto.append(curString)
+                }
+            }
+        }
+        
+        if auto.count > 0 {
+            self.prodtypesTableview.reloadData()
+        } else {
+            self.prodtypesTableview.hidden = true
+        }
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return auto.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
+        let val = self.auto[indexPath.row]
+        cell.textLabel!.text = val
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let prod = self.auto[indexPath.row]
+        prodtypeTextfield.text = prod
+        prodtypesTableview.hidden = true
     }
 }

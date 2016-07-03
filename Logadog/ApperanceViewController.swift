@@ -210,7 +210,6 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
     }
     
     func colorTextfieldFieldDidChange(textField: UITextField) {
-        // ToDo. Case sensitive. Must be fixed!!!
         self.colorTableView.hidden = false
         if let text = colorTextfield.text as String? {
             
@@ -223,7 +222,6 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
                 if (substringRange.location  == 0)
                 {
                     auto.append(curString)
-                    print(auto)
                 }
             }
         }

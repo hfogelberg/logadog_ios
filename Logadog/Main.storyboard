@@ -630,22 +630,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FcW-pf-Red">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FcW-pf-Red">
                                 <rect key="frame" x="50" y="100" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <action selector="typefieldChanged:" destination="QEg-jJ-nb4" eventType="editingChanged" id="k6l-Ak-sJr"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBK-LM-D5c">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBK-LM-D5c">
                                 <rect key="frame" x="50" y="150" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ZI-WF-Oj8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ZI-WF-Oj8">
                                 <rect key="frame" x="50" y="200" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cost" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwA-To-BhU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cost" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwA-To-BhU">
                                 <rect key="frame" x="50" y="250" width="220" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="jeQ-DG-v52"/>
@@ -660,31 +663,49 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Next time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC9-LI-1vO">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Next time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC9-LI-1vO">
                                 <rect key="frame" x="330" y="250" width="220" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I9b-kV-OOA">
+                                <rect key="frame" x="50" y="131" width="500" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="IxL-un-wON">
+                                        <rect key="frame" x="0.0" y="28" width="500" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IxL-un-wON" id="DBl-cB-UVq">
+                                            <rect key="frame" x="0.0" y="0.0" width="500" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FcW-pf-Red" firstAttribute="top" secondItem="fRW-PQ-pPn" secondAttribute="bottom" constant="36" id="ACY-gf-tDi"/>
+                            <constraint firstItem="FcW-pf-Red" firstAttribute="top" secondItem="fRW-PQ-pPn" secondAttribute="bottom" constant="80" id="ACY-gf-tDi"/>
+                            <constraint firstItem="PTn-tA-TmF" firstAttribute="top" secondItem="I9b-kV-OOA" secondAttribute="bottom" constant="225" id="AMX-yo-v73"/>
                             <constraint firstItem="fC9-LI-1vO" firstAttribute="trailing" secondItem="3ZI-WF-Oj8" secondAttribute="trailing" id="EkJ-EL-JRb"/>
                             <constraint firstItem="FcW-pf-Red" firstAttribute="leading" secondItem="JFO-ZG-Mhm" secondAttribute="leadingMargin" constant="30" id="IDU-1H-cH1"/>
                             <constraint firstItem="IBK-LM-D5c" firstAttribute="trailing" secondItem="FcW-pf-Red" secondAttribute="trailing" id="PR5-JZ-ZF7"/>
                             <constraint firstItem="uwA-To-BhU" firstAttribute="baseline" secondItem="fC9-LI-1vO" secondAttribute="baseline" id="Ppm-2b-Jqk"/>
                             <constraint firstItem="q94-iX-KDu" firstAttribute="trailing" secondItem="fC9-LI-1vO" secondAttribute="trailing" id="U8M-32-TaF"/>
                             <constraint firstItem="uwA-To-BhU" firstAttribute="top" secondItem="3ZI-WF-Oj8" secondAttribute="bottom" constant="20" id="UE0-QQ-pg5"/>
-                            <constraint firstItem="q94-iX-KDu" firstAttribute="top" secondItem="uwA-To-BhU" secondAttribute="bottom" constant="13" id="aVl-Eh-EZn"/>
+                            <constraint firstItem="q94-iX-KDu" firstAttribute="top" secondItem="uwA-To-BhU" secondAttribute="bottom" constant="12" id="aVl-Eh-EZn"/>
                             <constraint firstItem="fC9-LI-1vO" firstAttribute="leading" secondItem="uwA-To-BhU" secondAttribute="trailing" constant="60" id="bWW-QP-J4C"/>
                             <constraint firstItem="FcW-pf-Red" firstAttribute="leading" secondItem="IBK-LM-D5c" secondAttribute="leading" id="cFm-Ju-qAQ"/>
                             <constraint firstItem="3ZI-WF-Oj8" firstAttribute="centerX" secondItem="JFO-ZG-Mhm" secondAttribute="centerX" id="ea7-nu-TBt"/>
                             <constraint firstItem="IBK-LM-D5c" firstAttribute="trailing" secondItem="3ZI-WF-Oj8" secondAttribute="trailing" id="ebR-64-URX"/>
                             <constraint firstItem="IBK-LM-D5c" firstAttribute="leading" secondItem="3ZI-WF-Oj8" secondAttribute="leading" id="hVl-yo-dpK"/>
+                            <constraint firstItem="I9b-kV-OOA" firstAttribute="leading" secondItem="uwA-To-BhU" secondAttribute="leading" id="ixO-Lh-eEb"/>
+                            <constraint firstItem="I9b-kV-OOA" firstAttribute="top" secondItem="FcW-pf-Red" secondAttribute="bottom" constant="1" id="jLr-h6-5QX"/>
                             <constraint firstItem="3ZI-WF-Oj8" firstAttribute="leading" secondItem="uwA-To-BhU" secondAttribute="leading" id="kyv-I6-e5T"/>
                             <constraint firstItem="3ZI-WF-Oj8" firstAttribute="top" secondItem="IBK-LM-D5c" secondAttribute="bottom" constant="20" id="rXP-Ut-Fcp"/>
                             <constraint firstItem="IBK-LM-D5c" firstAttribute="top" secondItem="FcW-pf-Red" secondAttribute="bottom" constant="20" id="s41-ZC-ZVy"/>
                             <constraint firstItem="q94-iX-KDu" firstAttribute="leading" secondItem="uwA-To-BhU" secondAttribute="leading" id="wRq-nO-Ebk"/>
+                            <constraint firstItem="I9b-kV-OOA" firstAttribute="trailing" secondItem="3ZI-WF-Oj8" secondAttribute="trailing" id="xz4-Dy-TYW"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -709,7 +730,8 @@
                         <outlet property="costTextfield" destination="uwA-To-BhU" id="VfS-Q4-3g4"/>
                         <outlet property="editButton" destination="4oa-Hv-roK" id="9eq-m5-Bqy"/>
                         <outlet property="makeTextfield" destination="IBK-LM-D5c" id="E3R-J4-qRj"/>
-                        <outlet property="productTypetextfield" destination="FcW-pf-Red" id="hgM-mc-AXO"/>
+                        <outlet property="prodtypeTextfield" destination="FcW-pf-Red" id="O2t-90-Fdx"/>
+                        <outlet property="prodtypesTableview" destination="I9b-kV-OOA" id="WHk-I4-Bfu"/>
                         <outlet property="reminderTextfield" destination="fC9-LI-1vO" id="1Z5-Vh-QH9"/>
                         <outlet property="saveButton" destination="DZo-y9-7FB" id="KEn-Su-Ghi"/>
                     </connections>
