@@ -30,9 +30,6 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
         self.colorTextfield.delegate = self
         self.colorTableView.delegate = self
         self.colorTableView.dataSource = self
-        
-        colorTextfield.addTarget(self, action: "colorTextfieldFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-        
     }
 
     override func viewDidAppear(animated: Bool){
@@ -209,7 +206,7 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
         })
     }
     
-    func colorTextfieldFieldDidChange(textField: UITextField) {
+    @IBAction func colorFieldChanged(sender: AnyObject) {
         self.colorTableView.hidden = false
         if let text = colorTextfield.text as String? {
             

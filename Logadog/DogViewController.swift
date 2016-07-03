@@ -33,9 +33,7 @@ class DogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.breedTableView.delegate = self
         self.breedTextfield.delegate = self
         self.breedTableView.hidden = true
-        
-        breedTextfield.addTarget(self, action: "breedTextfieldFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-        
+         
         // Don't use IQKeyboardManager for this field
         dobTextfield.inputAccessoryView = UIView()
         
@@ -177,7 +175,7 @@ class DogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         })
     }
     
-    func breedTextfieldFieldDidChange(textField: UITextField) {
+    @IBAction func breedFieldChanged(sender: AnyObject) {
         self.breedTableView.hidden = false
         if let text = breedTextfield.text as String? {
             
