@@ -19,8 +19,11 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var dobPicker: UIDatePicker!
     @IBOutlet weak var breedTableView: UITableView!
+    @IBOutlet weak var animaltypeTextview: UITextField!
+    @IBOutlet weak var animaltypeTableView: UITableView!
     
     var breeds = [String]()
+    var animalTypes = [String]()
     var auto: [String] = []
     var gender = MALE
     var pet: PetObject!
@@ -33,6 +36,9 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.breedTableView.delegate = self
         self.breedTextfield.delegate = self
         self.breedTableView.hidden = true
+        self.animaltypeTableView.delegate = self
+        self.animaltypeTableView.dataSource = self
+        self.animaltypeTableView.delegate = self
          
         // Don't use IQKeyboardManager for this field
         dobTextfield.inputAccessoryView = UIView()
@@ -44,8 +50,11 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     override func viewWillAppear(animated: Bool) {
         self.dateView.hidden = true
+        self.animaltypeTableView.hidden = true
+        self.breedTableView.hidden = true
         
         self.getDistinctBreeds()
+        self.getAnimaltypes()
     }
 
     
@@ -58,6 +67,20 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
             if let breeds = json["data"].array {
                 for breed in breeds {
                     self.breeds.append(BreedObject(json: breed).name)
+                }
+            }
+        })
+    }
+    
+    func getAnimaltypes() {
+        self.animalTypes.removeAll()
+        let route = "\(ROUTE_ANIMAL)"
+        
+        RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
+            print(json)
+            if let animalTypes = json["data"].array {
+                for type in animalTypes {
+                    self.animalTypes.append(AnimaltypeObject(json: type).name)
                 }
             }
         })
@@ -175,6 +198,30 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         })
     }
     
+    @IBAction func animaltypeFieldChanged(sender: AnyObject) {
+        self.animaltypeTableView.hidden = false
+        if let text = animaltypeTextview.text as String? {
+            
+            auto.removeAll(keepCapacity: false)
+            for curString in self.animalTypes
+            {
+                let myString:NSString! = curString as NSString
+                
+                let substringRange :NSRange! = myString.rangeOfString(text)
+                if (substringRange.location  == 0)
+                {
+                    auto.append(curString)
+                }
+            }
+        }
+        
+        if auto.count > 0 {
+            self.animaltypeTableView.reloadData()
+        } else {
+            self.animaltypeTableView.hidden = true
+        }
+    }
+    
     @IBAction func breedFieldChanged(sender: AnyObject) {
         self.breedTableView.hidden = false
         if let text = breedTextfield.text as String? {
@@ -205,15 +252,25 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let breed = self.auto[indexPath.row]
-        cell.textLabel!.text = breed
+        let data = self.auto[indexPath.row]
+        cell.textLabel!.text = data
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let idx = indexPath.row
-        let breed = self.auto[idx]
-        self.breedTextfield.text = breed
-        self.breedTableView.hidden = true
+        let data = self.auto[idx]
+        
+        if tableView == breedTableView {
+            self.breedTextfield.text = data
+            self.breedTableView.hidden = true
+        }
+        
+        if tableView == animaltypeTableView {
+            self.animaltypeTextview.text = data
+            self.animaltypeTableView.hidden = true
+            
+        }
+        
     }
 }

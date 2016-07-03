@@ -28,6 +28,7 @@
 		AFB754291D26BC6A00189572 /* ColorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB754281D26BC6A00189572 /* ColorObject.swift */; };
 		AFB7542B1D26C3E200189572 /* ProdtypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7542A1D26C3E200189572 /* ProdtypeObject.swift */; };
 		AFB7542D1D28FF7600189572 /* ActivityTypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7542C1D28FF7600189572 /* ActivityTypeObject.swift */; };
+		AFB7542F1D29B53F00189572 /* AnimaltypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7542E1D29B53F00189572 /* AnimaltypeObject.swift */; };
 		AFDB2B111CF5B02300236890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B101CF5B02300236890 /* AppDelegate.swift */; };
 		AFDB2B181CF5B02300236890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B171CF5B02300236890 /* Assets.xcassets */; };
 		AFDB2B1B1CF5B02300236890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B191CF5B02300236890 /* LaunchScreen.storyboard */; };
@@ -78,6 +79,7 @@
 		AFB754281D26BC6A00189572 /* ColorObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorObject.swift; sourceTree = "<group>"; };
 		AFB7542A1D26C3E200189572 /* ProdtypeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdtypeObject.swift; sourceTree = "<group>"; };
 		AFB7542C1D28FF7600189572 /* ActivityTypeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTypeObject.swift; sourceTree = "<group>"; };
+		AFB7542E1D29B53F00189572 /* AnimaltypeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimaltypeObject.swift; sourceTree = "<group>"; };
 		AFDB2B0D1CF5B02300236890 /* Logadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDB2B101CF5B02300236890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFDB2B171CF5B02300236890 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				AFB754281D26BC6A00189572 /* ColorObject.swift */,
 				AFB7542A1D26C3E200189572 /* ProdtypeObject.swift */,
 				AFB7542C1D28FF7600189572 /* ActivityTypeObject.swift */,
+				AFB7542E1D29B53F00189572 /* AnimaltypeObject.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 			files = (
 				AFDB2B4F1CF71C8200236890 /* ShowDogViewController.swift in Sources */,
 				AFDB2B421CF5E3C900236890 /* ApplicationSettings.swift in Sources */,
+				AFB7542F1D29B53F00189572 /* AnimaltypeObject.swift in Sources */,
 				AF30FE1C1CFC71AC00C3B7DC /* IdentityViewController.swift in Sources */,
 				AFB754271D26B13100189572 /* BreedObject.swift in Sources */,
 				AFDB2B4D1CF7096900236890 /* PetObject.swift in Sources */,

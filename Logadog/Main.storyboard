@@ -828,8 +828,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Breed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mgo-UM-JBe">
-                                <rect key="frame" x="50" y="150" width="500" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Breed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mgo-UM-JBe">
+                                <rect key="frame" x="50" y="186" width="500" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CdD-jk-4oq"/>
                                 </constraints>
@@ -840,13 +840,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-Is-1NE">
-                                <rect key="frame" x="50" y="200" width="57" height="21"/>
+                                <rect key="frame" x="50" y="236" width="57" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jos-IB-fmO">
-                                <rect key="frame" x="50" y="240" width="500" height="30"/>
+                                <rect key="frame" x="50" y="276" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -854,7 +854,7 @@
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jiL-RO-b5c">
-                                <rect key="frame" x="429" y="197" width="121" height="29"/>
+                                <rect key="frame" x="429" y="233" width="121" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="gTF-ZC-txt"/>
                                 </constraints>
@@ -867,7 +867,7 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-aA-Kgx">
-                                <rect key="frame" x="0.0" y="264" width="600" height="300"/>
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                                 <subviews>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HdF-ki-fd5">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -906,8 +906,34 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LXa-f3-gGc">
-                                <rect key="frame" x="50" y="179" width="500" height="200"/>
+                                <rect key="frame" x="50" y="215" width="500" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type of animal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pUb-fC-Gm3">
+                                <rect key="frame" x="50" y="148" width="500" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="animaltypeTble"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="n7w-Cq-R5p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <action selector="animaltypeFieldChanged:" destination="AV7-l6-dus" eventType="editingChanged" id="9BJ-aB-BzA"/>
+                                </connections>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qXM-jZ-26q">
+                                <rect key="frame" x="50" y="178" width="500" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="xLQ-bq-Lgv">
+                                        <rect key="frame" x="0.0" y="28" width="500" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xLQ-bq-Lgv" id="zmB-wn-Qsf">
+                                            <rect key="frame" x="0.0" y="0.0" width="500" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -915,28 +941,39 @@
                             <constraint firstItem="Jos-IB-fmO" firstAttribute="leading" secondItem="cWh-Is-1NE" secondAttribute="leading" id="3kO-ee-rd9"/>
                             <constraint firstAttribute="trailing" secondItem="GOR-aA-Kgx" secondAttribute="trailing" id="4a9-Gs-zrf"/>
                             <constraint firstItem="cWh-Is-1NE" firstAttribute="baseline" secondItem="jiL-RO-b5c" secondAttribute="baseline" id="83K-6x-l5W"/>
+                            <constraint firstItem="qXM-jZ-26q" firstAttribute="top" secondItem="pUb-fC-Gm3" secondAttribute="bottom" id="8AX-uL-KPv"/>
                             <constraint firstItem="Mgo-UM-JBe" firstAttribute="trailing" secondItem="jiL-RO-b5c" secondAttribute="trailing" id="9um-2v-KUe"/>
+                            <constraint firstItem="qXM-jZ-26q" firstAttribute="leading" secondItem="Jos-IB-fmO" secondAttribute="leading" id="ErF-aK-AYd"/>
                             <constraint firstItem="cWh-Is-1NE" firstAttribute="baseline" secondItem="jiL-RO-b5c" secondAttribute="firstBaseline" id="I0C-Of-oib"/>
                             <constraint firstItem="GOR-aA-Kgx" firstAttribute="top" secondItem="jiL-RO-b5c" secondAttribute="bottom" constant="39" id="JVU-2f-a6s"/>
                             <constraint firstItem="jiL-RO-b5c" firstAttribute="trailing" secondItem="Jos-IB-fmO" secondAttribute="trailing" id="KdR-7Y-ClC"/>
+                            <constraint firstItem="pUb-fC-Gm3" firstAttribute="trailing" secondItem="Mgo-UM-JBe" secondAttribute="trailing" id="PNF-m6-fbw"/>
                             <constraint firstItem="97u-Yq-Hks" firstAttribute="top" secondItem="alq-c3-DoD" secondAttribute="bottom" constant="36" id="Qv1-wi-ey2"/>
                             <constraint firstItem="Mgo-UM-JBe" firstAttribute="top" secondItem="97u-Yq-Hks" secondAttribute="bottom" constant="20" id="SiA-l3-TPS"/>
                             <constraint firstItem="Jos-IB-fmO" firstAttribute="top" secondItem="cWh-Is-1NE" secondAttribute="bottom" constant="19" id="SsS-nE-TDv"/>
                             <constraint firstItem="jiL-RO-b5c" firstAttribute="baseline" secondItem="cWh-Is-1NE" secondAttribute="firstBaseline" id="U47-XD-P3b"/>
                             <constraint firstItem="LXa-f3-gGc" firstAttribute="trailing" secondItem="Jos-IB-fmO" secondAttribute="trailing" id="YU5-BE-qX9"/>
+                            <constraint firstItem="qXM-jZ-26q" firstAttribute="trailing" secondItem="jiL-RO-b5c" secondAttribute="trailing" id="Zje-5D-VUz"/>
                             <constraint firstItem="jiL-RO-b5c" firstAttribute="centerY" secondItem="cWh-Is-1NE" secondAttribute="centerY" id="bip-VL-HgF"/>
                             <constraint firstAttribute="bottomMargin" secondItem="GOR-aA-Kgx" secondAttribute="bottom" constant="36" id="ghi-7j-1oc"/>
+                            <constraint firstItem="Mgo-UM-JBe" firstAttribute="top" secondItem="pUb-fC-Gm3" secondAttribute="bottom" constant="8" symbolic="YES" id="iHw-Cc-NK5"/>
+                            <constraint firstItem="pUb-fC-Gm3" firstAttribute="top" secondItem="97u-Yq-Hks" secondAttribute="bottom" constant="18" id="jlT-4s-bdM"/>
+                            <constraint firstItem="pUb-fC-Gm3" firstAttribute="leading" secondItem="Mgo-UM-JBe" secondAttribute="leading" id="kKb-Iw-QYp"/>
                             <constraint firstItem="jiL-RO-b5c" firstAttribute="top" secondItem="Mgo-UM-JBe" secondAttribute="bottom" constant="17" id="m1c-W5-aSh"/>
                             <constraint firstItem="GOR-aA-Kgx" firstAttribute="leading" secondItem="4aj-R7-yUC" secondAttribute="leading" id="pa5-lI-oHu"/>
                             <constraint firstItem="LXa-f3-gGc" firstAttribute="top" secondItem="97u-Yq-Hks" secondAttribute="bottom" constant="49" id="tIL-b2-RZ1"/>
+                            <constraint firstItem="Y9m-iK-bhH" firstAttribute="top" secondItem="qXM-jZ-26q" secondAttribute="bottom" constant="178" id="tPx-SA-AAe"/>
                             <constraint firstItem="97u-Yq-Hks" firstAttribute="leading" secondItem="4aj-R7-yUC" secondAttribute="leadingMargin" constant="30" id="tRB-Ke-gcb"/>
+                            <constraint firstItem="pUb-fC-Gm3" firstAttribute="top" secondItem="4aj-R7-yUC" secondAttribute="top" constant="148" id="tzf-zG-h0e"/>
                             <constraint firstItem="Jos-IB-fmO" firstAttribute="top" secondItem="jiL-RO-b5c" secondAttribute="bottom" constant="15" id="uIc-Ok-A4P"/>
                             <constraint firstItem="Y9m-iK-bhH" firstAttribute="top" secondItem="LXa-f3-gGc" secondAttribute="bottom" constant="177" id="uZK-6O-ZeT"/>
+                            <constraint firstItem="pUb-fC-Gm3" firstAttribute="leading" secondItem="LXa-f3-gGc" secondAttribute="leading" id="vRM-Mc-fU7"/>
                             <constraint firstItem="LXa-f3-gGc" firstAttribute="leading" secondItem="4aj-R7-yUC" secondAttribute="leadingMargin" constant="50" id="vU5-c3-wtO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LXa-f3-gGc" secondAttribute="trailing" constant="50" id="wi8-Ei-82H"/>
                             <constraint firstItem="Mgo-UM-JBe" firstAttribute="leading" secondItem="97u-Yq-Hks" secondAttribute="leading" id="xE5-Bd-X9p"/>
                             <constraint firstItem="Mgo-UM-JBe" firstAttribute="leading" secondItem="cWh-Is-1NE" secondAttribute="leading" id="xuQ-QV-bOg"/>
                             <constraint firstItem="97u-Yq-Hks" firstAttribute="trailing" secondItem="Mgo-UM-JBe" secondAttribute="trailing" id="y8y-UP-1oB"/>
+                            <constraint firstItem="pUb-fC-Gm3" firstAttribute="centerX" secondItem="GOR-aA-Kgx" secondAttribute="centerX" id="zwO-Ro-wWr"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -949,6 +986,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="animaltypeTableView" destination="qXM-jZ-26q" id="PCo-BU-6Zw"/>
+                        <outlet property="animaltypeTextview" destination="pUb-fC-Gm3" id="VIu-Ya-K7j"/>
                         <outlet property="breedTableView" destination="LXa-f3-gGc" id="N0M-yt-Vx4"/>
                         <outlet property="breedTextfield" destination="Mgo-UM-JBe" id="VF2-wL-AfV"/>
                         <outlet property="dateView" destination="GOR-aA-Kgx" id="tb1-L5-i0d"/>
