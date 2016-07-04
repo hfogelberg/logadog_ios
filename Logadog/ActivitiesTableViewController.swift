@@ -65,17 +65,48 @@ class ActivitiesTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let id = indexPath.row
+            self.deleteActivity(id)
+        }
     }
-    */
+    
+    func deleteActivity(index: Int) {
+        let activity = activities[index]
+        let message = "Do you want to delete \(activity.activityType)?"
+        let ac = UIAlertController(title: "Delete", message: message, preferredStyle: .ActionSheet)
+        let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: {(action) -> Void in
+            let route = "\(ROUTE_PETS)/\(ROUTE_ACTIVITY)/\(activity.activityId)"
+            RestApiManager.sharedInstance.deleteRequest(route, onCompletion: {(json: JSON) -> () in
+                var status = STATUS_OK
+                
+                if let statusVal = json["status"].numberValue as Int? {
+                    status = statusVal
+                }
+                
+                if status == STATUS_OK {
+                    self.getActivities()
+                } else {
+                    var message = ""
+                    if let messageVal = json["message"].stringValue as String? {
+                        message = messageVal
+                    }
+                    dispatch_async(dispatch_get_main_queue()) {
+                        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+                        alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    }
+                }
+            })
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        ac.addAction(deleteAction)
+        ac.addAction(cancelAction)
+        presentViewController(ac, animated: true, completion: nil)
+    }
 
     /*
     // Override to support rearranging the table view.
