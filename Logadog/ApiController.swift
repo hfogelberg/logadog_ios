@@ -35,12 +35,45 @@ class RestApiManager: NSObject {
         })
     }
     
+    func deleteRequest(route: String, params: String = "",  authenticated: Bool = true, onCompletion: (JSON) -> Void) {
+        let route = "\(API_ROUTE_URL)/\(route)"
+        
+        print("DELETE route \(route)")
+        makeHTTPDeleteRequest(route, onCompletion: { json, err in
+            onCompletion(json as JSON)
+        })
+    }
     
     private func makeHTTPGetRequest(urlWithParams: String,authenticated: Bool = true, onCompletion: ServiceResponse) {
         let request = NSMutableURLRequest(URL: NSURL(string: urlWithParams)!)
         print(request)
         
         //let session = NSURLSession.sharedSession()
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        if authenticated {
+            let auth = getAuthentication() as [NSObject : AnyObject]
+            config.HTTPAdditionalHeaders = auth
+        }
+        
+        let session = NSURLSession(configuration: config)
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            if let jsonData = data {
+                let json:JSON = JSON(data: jsonData)
+                print(json)
+                onCompletion(json, error)
+            } else {
+                onCompletion(nil, error)
+            }
+        })
+        task.resume()
+    }
+    
+    private func makeHTTPDeleteRequest(urlWithParams: String,authenticated: Bool = true, onCompletion: ServiceResponse) {
+        let request = NSMutableURLRequest(URL: NSURL(string: urlWithParams)!)
+        request.HTTPMethod = "Delete"
+        print(request)
+        
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         if authenticated {
             let auth = getAuthentication() as [NSObject : AnyObject]
