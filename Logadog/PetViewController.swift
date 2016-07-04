@@ -19,7 +19,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var dobPicker: UIDatePicker!
     @IBOutlet weak var breedTableView: UITableView!
-    @IBOutlet weak var animaltypeTextview: UITextField!
+    @IBOutlet weak var animaltypeTextfield: UITextField!
     @IBOutlet weak var animaltypeTableView: UITableView!
     
     var breeds = [String]()
@@ -129,6 +129,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         var name = ""
         var breed = ""
         var route = ""
+        var animaltype = ""
         var body: [String:String]
         var dob = ""
         
@@ -140,32 +141,26 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
             breed = breedVal
         }
         
+        if let animaltypeVal = animaltypeTextfield.text as String? {
+            animaltype = animaltypeVal
+        }
+        
         if let dobVal = dobTextfield.text as String? {
             dob = dobVal
         }
         
-        print("Date of birth: \(dob)")
-        
+        body = [
+            "name": name,
+            "breed": breed,
+            "animaltype": animaltype,
+            "gender": gender,
+            "dob": dob,
+            "userId": TokenController.getUserId()
+        ]
         if pet == nil {
-            body = [
-                "name": name,
-                "breed": breed,
-                "gender": gender,
-                "dob": dob,
-                "userId": TokenController.getUserId()
-            ]
-            
             route = ROUTE_PETS
         } else {
-            body = [
-                "name": name,
-                "breed": breed,
-                "gender": gender,
-                "dob": dob,
-                "petId": self.pet.id
-            ]
-            
-            route = ROUTE_CHANGE_DOG
+            route = "\(ROUTE_PETS)/\(self.pet.id)"
         }
         
         postJson(route, body: body)
@@ -200,7 +195,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     @IBAction func animaltypeFieldChanged(sender: AnyObject) {
         self.animaltypeTableView.hidden = false
-        if let text = animaltypeTextview.text as String? {
+        if let text = animaltypeTextfield.text as String? {
             
             auto.removeAll(keepCapacity: false)
             for curString in self.animalTypes
@@ -267,7 +262,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         }
         
         if tableView == animaltypeTableView {
-            self.animaltypeTextview.text = data
+            self.animaltypeTextfield.text = data
             self.animaltypeTableView.hidden = true
             
         }

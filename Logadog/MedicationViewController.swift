@@ -192,7 +192,7 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
     }
     
     func createMedication(medication: [String:String]) {
-        let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_MEDICATION)"
+        let route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_MEDICATION)"
         RestApiManager.sharedInstance.postRequest(route, params: medication, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             print(json)

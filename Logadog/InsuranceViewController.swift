@@ -32,7 +32,7 @@ class InsuranceViewController: UIViewController {
     
     func getInsurance() {
         if petId != "" {
-            let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_INSURANCE)"
+            let route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_INSURANCE)"
             
             RestApiManager.sharedInstance.getRequest(route, onCompletion: { (json: JSON) -> () in
                 if let status = json["status"].intValue as Int? {
@@ -212,7 +212,7 @@ class InsuranceViewController: UIViewController {
             "token": TokenController.getToken()
         ]
         
-        let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_INSURANCE)"
+        let route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_INSURANCE)"
         
         RestApiManager.sharedInstance.postRequest(route, params: params, onCompletion: {(json:JSON) -> () in
             // Todo: Handle response

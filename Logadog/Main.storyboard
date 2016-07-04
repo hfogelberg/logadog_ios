@@ -987,7 +987,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="animaltypeTableView" destination="qXM-jZ-26q" id="PCo-BU-6Zw"/>
-                        <outlet property="animaltypeTextview" destination="pUb-fC-Gm3" id="VIu-Ya-K7j"/>
+                        <outlet property="animaltypeTextfield" destination="pUb-fC-Gm3" id="6Ws-Aq-cf6"/>
                         <outlet property="breedTableView" destination="LXa-f3-gGc" id="N0M-yt-Vx4"/>
                         <outlet property="breedTextfield" destination="Mgo-UM-JBe" id="VF2-wL-AfV"/>
                         <outlet property="dateView" destination="GOR-aA-Kgx" id="tb1-L5-i0d"/>

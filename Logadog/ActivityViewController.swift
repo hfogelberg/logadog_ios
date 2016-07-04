@@ -231,7 +231,7 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func updateActivity(activity:[String:String]) {
         let activityId = self.activity.activityId
-        let route = "\(ROUTE_MY_PETS)/\(ROUTE_ACTIVITY)/\(activityId)"
+        let route = "\(ROUTE_PETS)/\(ROUTE_ACTIVITY)/\(activityId)"
         
         RestApiManager.sharedInstance.postRequest(route, params: activity, onCompletion: {(json:JSON) -> () in
             var status = STATUS_OK
@@ -261,7 +261,7 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func createActivity(activity: [String:String]) {
-        let route = "\(ROUTE_MY_PETS)/\(self.petId)/\(ROUTE_ACTIVITY)"
+        let route = "\(ROUTE_PETS)/\(self.petId)/\(ROUTE_ACTIVITY)"
         RestApiManager.sharedInstance.postRequest(route, params: activity, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             print(json)

@@ -24,7 +24,7 @@ class ActivitiesTableViewController: UITableViewController {
     func getActivities() {
         self.activities.removeAll()
         
-        let route = "\(ROUTE_MY_PETS)/\(self.petId)/\(ROUTE_ACTIVITY)"
+        let route = "\(ROUTE_PETS)/\(self.petId)/\(ROUTE_ACTIVITY)"
 
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
             if let activities = json["data"].array {

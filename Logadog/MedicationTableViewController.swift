@@ -23,7 +23,7 @@ class MedicationTableViewController: UITableViewController {
     
     func getMedications() {
         self.medications.removeAll()
-        let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_MEDICATION)"
+        let route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_MEDICATION)"
         
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
             print(json)

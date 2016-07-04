@@ -35,7 +35,7 @@ class PetsTableViewController: UITableViewController {
         self.pets.removeAll()
         
         if token != "" && userId != "" {
-            RestApiManager.sharedInstance.getRequest(ROUTE_MY_PETS, params: "") {(json:JSON) -> () in
+            RestApiManager.sharedInstance.getRequest(ROUTE_PETS, params: "") {(json:JSON) -> () in
                 var status = STATUS_OK
                 print(json)
                 

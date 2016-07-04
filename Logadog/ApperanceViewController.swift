@@ -54,7 +54,7 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
     
     func getAppearance(){
         if petId != "" {
-            let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_APPEARANCE)"
+            let route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_APPEARANCE)"
             RestApiManager.sharedInstance.getRequest(route, params: "", onCompletion: { (json: JSON) -> () in
                 if let status = json["status"].intValue as Int? {
                     if status == STATUS_OK {
@@ -178,7 +178,7 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
             "comment": comment
         ]
         
-        let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_APPEARANCE)"
+        let route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_APPEARANCE)"
         RestApiManager.sharedInstance.postRequest(route, params: appearance, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             

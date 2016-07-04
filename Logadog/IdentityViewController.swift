@@ -29,7 +29,7 @@ class IdentityViewController: UIViewController {
     }
     
     func getIdentity(){
-        let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_IDENTITY)"
+        let route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_IDENTITY)"
         RestApiManager.sharedInstance.getRequest(route, onCompletion: { (json: JSON) -> () in
             if let status = json["status"].intValue as Int? {
                 if status == STATUS_OK {
@@ -124,7 +124,7 @@ class IdentityViewController: UIViewController {
             "token": TokenController.getToken()
         ]
         
-        let route = "\(ROUTE_MY_PETS)/\(petId)/\(ROUTE_IDENTITY)"
+        let route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_IDENTITY)"
         RestApiManager.sharedInstance.postRequest(route, params: body, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             print(json)
