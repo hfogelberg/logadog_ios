@@ -17,6 +17,10 @@ class PurchaceObject {
     var object = ""
     
     init(json:JSON) {
-        
+        id = json["_id"].stringValue
+        comment = json["comment"].stringValue
+        date = json["date"].stringValue
+        cost = json["cost"].stringValue
+        object = json["object"].stringValue
     }
 }

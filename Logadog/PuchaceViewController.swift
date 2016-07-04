@@ -72,6 +72,7 @@ class PuchaceViewController: UIViewController {
             
             if status == STATUS_OK {
                 dispatch_async(dispatch_get_main_queue()) {
+                    print("***POP***")
                     self.navigationController?.popViewControllerAnimated(true)
                 }
             } else {

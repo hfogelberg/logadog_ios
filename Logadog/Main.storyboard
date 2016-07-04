@@ -1530,16 +1530,16 @@
             </objects>
             <point key="canvasLocation" x="2903" y="1262"/>
         </scene>
-        <!--Purchases Table View Controller-->
+        <!--Puchace Table View Controller-->
         <scene sceneID="wlP-dz-uNg">
             <objects>
-                <tableViewController id="vOF-nI-7g7" customClass="PurchasesTableViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="vOF-nI-7g7" customClass="PuchaceTableViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vx9-d3-LAH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dVm-Xa-H2K">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="dVm-Xa-H2K">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVm-Xa-H2K" id="Soz-D3-V34">
@@ -1556,7 +1556,7 @@
                     <navigationItem key="navigationItem" id="VAJ-Fh-fJ7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zhT-B8-ytm">
                             <connections>
-                                <segue destination="xYX-4F-Jfe" kind="show" identifier="purchaseSegue" id="mqb-5i-Nq0"/>
+                                <segue destination="XcS-oP-pM4" kind="show" identifier="purchaseSegue" id="fFQ-Jz-dh2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1565,10 +1565,10 @@
             </objects>
             <point key="canvasLocation" x="6219" y="-1609"/>
         </scene>
-        <!--Puchase View Controller-->
+        <!--Puchace View Controller-->
         <scene sceneID="43l-Cw-6Xy">
             <objects>
-                <viewController id="XcS-oP-pM4" customClass="PuchaseViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XcS-oP-pM4" customClass="PuchaceViewController" customModule="Logadog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J39-iP-kXS"/>
                         <viewControllerLayoutGuide type="bottom" id="mzl-nM-wBw"/>
@@ -1629,7 +1629,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYr-OQ-lJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7905" y="-1609"/>
+            <point key="canvasLocation" x="6941" y="-1609"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uLb-sv-W2o">
@@ -1666,24 +1666,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBJ-io-Aiy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5407" y="-1609"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="67z-Ba-B4D">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xYX-4F-Jfe" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RPK-uE-jz2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="XcS-oP-pM4" kind="relationship" relationship="rootViewController" id="cKS-Ez-9xp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n4E-Xa-fZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7093" y="-1609"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

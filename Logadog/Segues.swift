@@ -10,4 +10,4 @@ import Foundation
 
 let SEGUE_DOGS_LIST = "dogsListSegue"
 let SEGUE_CONTACTS = "contactsSegue"
-let SEGUE_PURCHASES = "puchacesSegue"
+let SEGUE_PURCHACES = "puchacesSegue"

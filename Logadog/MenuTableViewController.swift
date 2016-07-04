@@ -10,7 +10,7 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     
-    let menuItems = ["Home", "Contacts", "Calendar", "Purchases", "Diary", "Photos", "Walks", "Settings", "Sign out"]
+    let menuItems = ["Home", "Contacts", "Calendar", "Purchaces", "Diary", "Photos", "Walks", "Settings", "Sign out"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +40,8 @@ class MenuTableViewController: UITableViewController {
         }
         else if indexPath.row == MENU_CONTACTS {
             performSegueWithIdentifier(SEGUE_CONTACTS, sender: nil)
-        } else if indexPath.row == MENU_PURCHASES {
-            performSegueWithIdentifier(SEGUE_PURCHASES, sender: nil)
+        } else if indexPath.row == MENU_PURCHACES {
+            performSegueWithIdentifier(SEGUE_PURCHACES, sender: nil)
         }
     }
 }
