@@ -107,7 +107,10 @@ class ContactsTableViewController: UITableViewController {
             })
         })
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
         ac.addAction(deleteAction)
+        ac.addAction(cancelAction)
         presentViewController(ac, animated: true, completion: nil)
     }
 
