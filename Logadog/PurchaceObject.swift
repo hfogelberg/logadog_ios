@@ -1,5 +1,5 @@
 //
-//  PurchaseObject.swift
+//  PurchaceObject.swift
 //  Logadog
 //
 //  Created by Henrik Fogelberg on 2016-06-26.
@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class PurchaseObject {
+class PurchaceObject {
     var id = ""
     var comment = ""
     var date = ""

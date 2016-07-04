@@ -1,5 +1,5 @@
 //
-//  PuchaseViewController.swift
+//  PuchaceViewController.swift
 //  Logadog
 //
 //  Created by Henrik Fogelberg on 2016-06-26.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class PuchaseViewController: UIViewController {
+class PuchaceViewController: UIViewController {
 
     @IBOutlet weak var objectTextfield: UITextField!
     @IBOutlet weak var dateTextfield: UITextField!
@@ -57,10 +57,10 @@ class PuchaseViewController: UIViewController {
         
         var route = ""
         if purchaseId != "" {
-            route = "\(ROUTE_PURCHASE)/\(self.purchaseId)"
+            route = "\(ROUTE_PURCHACE)/\(self.purchaseId)"
             
         } else {
-            route = "\(ROUTE_PURCHASE)"
+            route = "\(ROUTE_PURCHACE)"
         }
         
         RestApiManager.sharedInstance.postRequest(route, params: purchase, onCompletion: {(json: JSON) -> () in

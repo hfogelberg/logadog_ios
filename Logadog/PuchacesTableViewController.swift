@@ -1,5 +1,5 @@
 //
-//  PurchasesTableViewController.swift
+//  PuchaceTableViewController.swift
 //  Logadog
 //
 //  Created by Henrik Fogelberg on 2016-06-26.
@@ -9,12 +9,19 @@
 import UIKit
 import SwiftyJSON
 
-class PurchasesTableViewController: UITableViewController {
+class PuchaceTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        getPurchases()
+    }
+    
+    func getPurchases() {
+        
+    }
 
     // MARK: - Table view data source
 

@@ -19,9 +19,9 @@
 		AF5BC4001D1ADB2D00E76343 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5BC3FF1D1ADB2D00E76343 /* MenuItems.swift */; };
 		AF957D081D1FE39A0060E4EE /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D071D1FE39A0060E4EE /* ContactViewController.swift */; };
 		AF957D0A1D1FE75C0060E4EE /* ContactObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D091D1FE75C0060E4EE /* ContactObject.swift */; };
-		AF957D0D1D2071010060E4EE /* PuchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D0C1D2071010060E4EE /* PuchaseViewController.swift */; };
-		AF957D0F1D2071150060E4EE /* PurchasesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D0E1D2071150060E4EE /* PurchasesTableViewController.swift */; };
-		AF957D111D2071870060E4EE /* PurchaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D101D2071870060E4EE /* PurchaseObject.swift */; };
+		AF957D0D1D2071010060E4EE /* PuchaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D0C1D2071010060E4EE /* PuchaceViewController.swift */; };
+		AF957D0F1D2071150060E4EE /* PuchacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D0E1D2071150060E4EE /* PuchacesTableViewController.swift */; };
+		AF957D111D2071870060E4EE /* PurchaceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D101D2071870060E4EE /* PurchaceObject.swift */; };
 		AF957D131D2122830060E4EE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF957D121D2122830060E4EE /* Segues.swift */; };
 		AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */; };
 		AFB754271D26B13100189572 /* BreedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB754261D26B13100189572 /* BreedObject.swift */; };
@@ -70,9 +70,9 @@
 		AF5BC3FF1D1ADB2D00E76343 /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		AF957D071D1FE39A0060E4EE /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		AF957D091D1FE75C0060E4EE /* ContactObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactObject.swift; sourceTree = "<group>"; };
-		AF957D0C1D2071010060E4EE /* PuchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuchaseViewController.swift; sourceTree = "<group>"; };
-		AF957D0E1D2071150060E4EE /* PurchasesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasesTableViewController.swift; sourceTree = "<group>"; };
-		AF957D101D2071870060E4EE /* PurchaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseObject.swift; sourceTree = "<group>"; };
+		AF957D0C1D2071010060E4EE /* PuchaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuchaceViewController.swift; sourceTree = "<group>"; };
+		AF957D0E1D2071150060E4EE /* PuchacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuchacesTableViewController.swift; sourceTree = "<group>"; };
+		AF957D101D2071870060E4EE /* PurchaceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaceObject.swift; sourceTree = "<group>"; };
 		AF957D121D2122830060E4EE /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		AFAE103B1CFF88CE00B94C38 /* InsuranceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceViewController.swift; sourceTree = "<group>"; };
 		AFB754261D26B13100189572 /* BreedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedObject.swift; sourceTree = "<group>"; };
@@ -173,13 +173,13 @@
 			name = Contacts;
 			sourceTree = "<group>";
 		};
-		AF957D0B1D2070E80060E4EE /* Puchases */ = {
+		AF957D0B1D2070E80060E4EE /* Puchaces */ = {
 			isa = PBXGroup;
 			children = (
-				AF957D0C1D2071010060E4EE /* PuchaseViewController.swift */,
-				AF957D0E1D2071150060E4EE /* PurchasesTableViewController.swift */,
+				AF957D0C1D2071010060E4EE /* PuchaceViewController.swift */,
+				AF957D0E1D2071150060E4EE /* PuchacesTableViewController.swift */,
 			);
-			name = Puchases;
+			name = Puchaces;
 			sourceTree = "<group>";
 		};
 		AFDB2B041CF5B02300236890 = {
@@ -254,7 +254,7 @@
 			children = (
 				AF957D051D1FE3590060E4EE /* Contacts */,
 				AF30FE191CFAC67D00C3B7DC /* Pet */,
-				AF957D0B1D2070E80060E4EE /* Puchases */,
+				AF957D0B1D2070E80060E4EE /* Puchaces */,
 				AF30FE181CFAC66D00C3B7DC /* Start */,
 				AF5BC3FB1D1AD59200E76343 /* MenuTableViewController.swift */,
 			);
@@ -279,7 +279,7 @@
 				AFEFA8C21D058D0300F883AC /* MedicationObject.swift */,
 				AF5BC3F31D199F4000E76343 /* ActivityObject.swift */,
 				AF957D091D1FE75C0060E4EE /* ContactObject.swift */,
-				AF957D101D2071870060E4EE /* PurchaseObject.swift */,
+				AF957D101D2071870060E4EE /* PurchaceObject.swift */,
 				AFB754261D26B13100189572 /* BreedObject.swift */,
 				AFB754281D26BC6A00189572 /* ColorObject.swift */,
 				AFB7542A1D26C3E200189572 /* ProdtypeObject.swift */,
@@ -420,7 +420,7 @@
 				AFDB2B4D1CF7096900236890 /* PetObject.swift in Sources */,
 				AFDB2B311CF5B12600236890 /* LoginViewController.swift in Sources */,
 				AF5BC3F81D1ABD9B00E76343 /* SWRevealViewController.m in Sources */,
-				AF957D111D2071870060E4EE /* PurchaseObject.swift in Sources */,
+				AF957D111D2071870060E4EE /* PurchaceObject.swift in Sources */,
 				AF5BC3FE1D1AD81F00E76343 /* ContactsTableViewController.swift in Sources */,
 				AFDB2B271CF5B0D800236890 /* ApiController.swift in Sources */,
 				AFDB2B531CF72A5A00236890 /* AppearanceObject.swift in Sources */,
@@ -433,13 +433,13 @@
 				AFAE103C1CFF88CE00B94C38 /* InsuranceViewController.swift in Sources */,
 				AFDB2B331CF5B7C600236890 /* SignupViewController.swift in Sources */,
 				AFB7542B1D26C3E200189572 /* ProdtypeObject.swift in Sources */,
-				AF957D0D1D2071010060E4EE /* PuchaseViewController.swift in Sources */,
+				AF957D0D1D2071010060E4EE /* PuchaceViewController.swift in Sources */,
 				AFDB2B4A1CF6F64600236890 /* PetsTableViewController.swift in Sources */,
 				AFDB2B2F1CF5B10300236890 /* TokenController.swift in Sources */,
 				AFDB2B2C1CF5B10300236890 /* Colors.swift in Sources */,
 				AF957D0A1D1FE75C0060E4EE /* ContactObject.swift in Sources */,
 				AF957D081D1FE39A0060E4EE /* ContactViewController.swift in Sources */,
-				AF957D0F1D2071150060E4EE /* PurchasesTableViewController.swift in Sources */,
+				AF957D0F1D2071150060E4EE /* PuchacesTableViewController.swift in Sources */,
 				AF5BC4001D1ADB2D00E76343 /* MenuItems.swift in Sources */,
 				AFDB2B351CF5BCE000236890 /* StartViewController.swift in Sources */,
 				AFDB2B111CF5B02300236890 /* AppDelegate.swift in Sources */,
