@@ -27,11 +27,8 @@ class ContactsTableViewController: UITableViewController {
     
     func getContacts() {
         self.contacts.removeAll()
-        
         let route = "\(ROUTE_CONTACT)"
-        
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
-            
             if let contacts = json["data"].array {
                 for contact in contacts {
                     self.contacts.append(ContactObject(json: contact))
