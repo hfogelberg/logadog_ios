@@ -59,12 +59,45 @@ class MedicationTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            // ToDo: Call API method to delete
-            
+            let idx = indexPath.row
+            deleteMedication(idx)
         }
     }
 
+    func deleteMedication(index: Int) {
+        let medication = medications[index]
+        let message = "Do you want to delete \(medication.product)?"
+        let ac = UIAlertController(title: "Delete", message: message, preferredStyle: .ActionSheet)
+        let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: {(action) -> Void in
+            let route = "\(ROUTE_MEDICATION)/\(medication.medicationId)"
+            RestApiManager.sharedInstance.deleteRequest(route, onCompletion: {(json: JSON) -> () in
+                var status = STATUS_OK
+                
+                if let statusVal = json["status"].numberValue as Int? {
+                    status = statusVal
+                }
+                
+                if status == STATUS_OK {
+                    self.getMedications()
+                } else {
+                    var message = ""
+                    if let messageVal = json["message"].stringValue as String? {
+                        message = messageVal
+                    }
+                    dispatch_async(dispatch_get_main_queue()) {
+                        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+                        alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    }
+                }
+            })
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        ac.addAction(deleteAction)
+        ac.addAction(cancelAction)
+        presentViewController(ac, animated: true, completion: nil)
+    }
 
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
