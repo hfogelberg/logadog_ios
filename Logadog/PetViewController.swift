@@ -59,9 +59,20 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
 
     
     func getDistinctBreeds() {
-        self.breeds.removeAll()
-        let route = "\(ROUTE_BREEDS)"
+        var animal = ""
+        var route = ""
         
+        if let animalVal = animaltypeTextfield.text as String? {
+            animal = animalVal
+        }
+        if animal == "" {
+            route = "\(ROUTE_BREEDS)?lang=\(DEFAULT_LANGUAGE)"
+        } else {
+            route = "\(ROUTE_BREEDS)?lang=\(DEFAULT_LANGUAGE)&(route)&animal=\(animal)"
+        }
+        print(route)
+        
+        self.breeds.removeAll()
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
             print(json)
             if let breeds = json["data"].array {
@@ -264,8 +275,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         if tableView == animaltypeTableView {
             self.animaltypeTextfield.text = data
             self.animaltypeTableView.hidden = true
-            
+            self.getDistinctBreeds()
         }
-        
     }
 }
