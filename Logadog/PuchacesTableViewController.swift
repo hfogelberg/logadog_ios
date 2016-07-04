@@ -10,10 +10,15 @@ import UIKit
 import SwiftyJSON
 
 class PuchaceTableViewController: UITableViewController {
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     var purchaces = [PurchaceObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuButton.target = self.revealViewController()
+        menuButton.action = Selector("revealToggle:")
     }
     
     override func viewWillAppear(animated: Bool) {

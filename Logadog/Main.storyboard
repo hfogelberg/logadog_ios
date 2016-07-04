@@ -1093,7 +1093,7 @@
                     <connections>
                         <segue destination="5Ag-hu-20P" kind="showDetail" identifier="contactsSegue" customClass="SWRevealViewControllerSeguePushController" id="Raq-7o-4hK"/>
                         <segue destination="t0U-vf-tua" kind="show" identifier="dogsListSegue" customClass="SWRevealViewControllerSeguePushController" id="KU5-mu-st5"/>
-                        <segue destination="dzj-6S-PIC" kind="show" identifier="puchacesSegue" id="iZy-av-XwH"/>
+                        <segue destination="dzj-6S-PIC" kind="show" identifier="puchacesSegue" customClass="SWRevealViewControllerSeguePushController" id="iZy-av-XwH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2x8-eL-rHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1554,12 +1554,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="VAJ-Fh-fJ7">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="qFB-W8-730"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zhT-B8-ytm">
                             <connections>
                                 <segue destination="XcS-oP-pM4" kind="show" identifier="purchaseSegue" id="fFQ-Jz-dh2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="qFB-W8-730" id="zWN-3v-nQi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ol-sT-tDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

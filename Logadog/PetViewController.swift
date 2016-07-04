@@ -74,7 +74,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func getAnimaltypes() {
         self.animalTypes.removeAll()
-        let route = "\(ROUTE_ANIMAL)"
+        let route = "\(ROUTE_ANIMAL)?lang=\(DEFAULT_LANGUAGE)"
         
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
             print(json)
