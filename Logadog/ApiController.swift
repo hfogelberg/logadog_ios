@@ -45,10 +45,12 @@ class RestApiManager: NSObject {
     }
     
     private func makeHTTPGetRequest(urlWithParams: String,authenticated: Bool = true, onCompletion: ServiceResponse) {
-        let request = NSMutableURLRequest(URL: NSURL(string: urlWithParams)!)
+        print(urlWithParams)
+        
+        let escapedAddress = urlWithParams.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        let request = NSMutableURLRequest(URL: NSURL(string: escapedAddress!)!)
         print(request)
         
-        //let session = NSURLSession.sharedSession()
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         if authenticated {
             let auth = getAuthentication() as [NSObject : AnyObject]

@@ -27,7 +27,7 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var activitytypeTableview: UITableView!
     
     var activity: ActivityObject!
-    var petId: String = ""
+    var pet: PetObject!
     var isCompetition = PRACTICE
     var auto: [String] = []
     var activityTypes = [String]()
@@ -62,7 +62,13 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func getActivityTypes() {
         self.activityTypes.removeAll()
-        let route = "\(ROUTE_ACTIVITY_TYPES)"
+        var route = ""
+        
+        if pet.animaltype != "" {
+            route = "\(ROUTE_ACTIVITY_TYPES)?lang=\(DEFAULT_LANGUAGE)&animal=\(pet.animaltype)"
+        } else {
+            route = "\(ROUTE_ACTIVITY_TYPES)?lang=\(DEFAULT_LANGUAGE)"
+        }
         
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
             print(json)
@@ -261,7 +267,7 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func createActivity(activity: [String:String]) {
-        let route = "\(ROUTE_PETS)/\(self.petId)/\(ROUTE_ACTIVITY)"
+        let route = "\(ROUTE_PETS)/\(self.pet.id)/\(ROUTE_ACTIVITY)?lang=\(DEFAULT_LANGUAGE)"
         RestApiManager.sharedInstance.postRequest(route, params: activity, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             print(json)

@@ -50,13 +50,12 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     override func viewWillAppear(animated: Bool) {
         self.dateView.hidden = true
-        self.animaltypeTableView.hidden = true
+//        self.animaltypeTableView.hidden = true
         self.breedTableView.hidden = true
         
         self.getDistinctBreeds()
         self.getAnimaltypes()
     }
-
     
     func getDistinctBreeds() {
         var animal = ""
@@ -68,7 +67,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         if animal == "" {
             route = "\(ROUTE_BREEDS)?lang=\(DEFAULT_LANGUAGE)"
         } else {
-            route = "\(ROUTE_BREEDS)?lang=\(DEFAULT_LANGUAGE)&(route)&animal=\(animal)"
+            route = "\(ROUTE_BREEDS)?lang=\(DEFAULT_LANGUAGE)&animal=\(animal)"
         }
         print(route)
         
@@ -99,6 +98,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func showPet(){
         nameTextfield.text = pet.name
+        animaltypeTextfield.text = pet.animaltype
         breedTextfield.text = pet.breed
 
         if gender == MALE {
@@ -120,7 +120,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         }
     }
     
-    @IBAction func dobTextfieldTappd(sender: AnyObject) {
+    @IBAction func dobFieldTapped(sender: AnyObject) {
         self.dateView.hidden = false
     }
     
@@ -204,7 +204,8 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         })
     }
     
-    @IBAction func animaltypeFieldChanged(sender: AnyObject) {
+    @IBAction func animaltypeChanged(sender: AnyObject) {
+        print("Animal type tapped")
         self.animaltypeTableView.hidden = false
         if let text = animaltypeTextfield.text as String? {
             
@@ -228,7 +229,8 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         }
     }
     
-    @IBAction func breedFieldChanged(sender: AnyObject) {
+    @IBAction func breedfieldCahnged(sender: AnyObject) {
+        print("Breed tappe")
         self.breedTableView.hidden = false
         if let text = breedTextfield.text as String? {
             
@@ -275,6 +277,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         if tableView == animaltypeTableView {
             self.animaltypeTextfield.text = data
             self.animaltypeTableView.hidden = true
+            self.breedTextfield.text = ""
             self.getDistinctBreeds()
         }
     }

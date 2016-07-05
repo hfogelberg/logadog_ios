@@ -24,6 +24,6 @@ let FEMALE = "Female"
 let COMPETITION = "Competition"
 let PRACTICE = "Practise"
 
-let DEFAULT_LANGUAGE = "sv"
+let DEFAULT_LANGUAGE = "en"
 
 

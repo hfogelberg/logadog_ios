@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class ActivitiesTableViewController: UITableViewController {
-    var petId = ""
+    var pet:PetObject!
     var activities = [ActivityObject]()
 
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class ActivitiesTableViewController: UITableViewController {
     func getActivities() {
         self.activities.removeAll()
         
-        let route = "\(ROUTE_PETS)/\(self.petId)/\(ROUTE_ACTIVITY)"
+        let route = "\(ROUTE_PETS)/\(self.pet.id)/\(ROUTE_ACTIVITY)"
 
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
             if let activities = json["data"].array {
@@ -127,10 +127,10 @@ class ActivitiesTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "activitySegue" {
             let nextScene = segue.destinationViewController as! ActivityViewController
-            nextScene.petId = self.petId
+            nextScene.pet = self.pet
         } else if segue.identifier == "showActivitySegue" {
             let nextScene = segue.destinationViewController as! ActivityViewController
-            nextScene.petId = self.petId
+            nextScene.pet = self.pet
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 print("Index: \(self.activities[indexPath.row])")

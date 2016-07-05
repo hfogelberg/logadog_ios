@@ -101,7 +101,7 @@ class PetsTableViewController: UITableViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDogSegue" {
-            let nextScene = segue.destinationViewController as! ShowDogViewController
+            let nextScene = segue.destinationViewController as! ShowPetViewController
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let pet = self.pets[indexPath.row]

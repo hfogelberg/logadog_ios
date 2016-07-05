@@ -1,5 +1,5 @@
 //
-//  ShowDogViewController.swift
+//  ShowPetViewController.swift
 //  Logadog
 //
 //  Created by Henrik Fogelberg on 2016-05-26.
@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ShowDogViewController: UIViewController {
+class ShowPetViewController: UIViewController {
     
     var pet: PetObject!
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var breedLabel: UILabel!
+    @IBOutlet weak var animaltypeLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var dobLabel: UILabel!
     
@@ -38,6 +39,7 @@ class ShowDogViewController: UIViewController {
     
     func showDog() {
         nameLabel.text = pet.name
+        animaltypeLabel.text = pet.animaltype
         breedLabel.text = pet.breed
         genderLabel.text = pet.gender
         dobLabel.text = pet.dob
@@ -61,7 +63,7 @@ class ShowDogViewController: UIViewController {
             nextScene.petId = pet.id
         } else if segue.identifier == "activitiesSegue" {
             let nextScene = segue.destinationViewController as! ActivitiesTableViewController
-            nextScene.petId = pet.id
+            nextScene.pet = pet
         }
     }
 }
