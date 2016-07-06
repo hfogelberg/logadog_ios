@@ -30,10 +30,15 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
         self.colorTextfield.delegate = self
         self.colorTableView.delegate = self
         self.colorTableView.dataSource = self
+        
+        // Don't use IQKeyboardManager for this field
+        colorTextfield.inputAccessoryView = UIView()
     }
 
     override func viewDidAppear(animated: Bool){
         self.colorTableView.hidden = true
+        
+        disableFields()
         getAppearance()
         getColors()
     }

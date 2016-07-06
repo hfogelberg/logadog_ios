@@ -236,6 +236,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         print("Breed tapped")
         self.animaltypeTableView.hidden = true
         self.breedTableView.hidden = false
+
         if let text = breedTextfield.text as String? {
             
             auto.removeAll(keepCapacity: false)
