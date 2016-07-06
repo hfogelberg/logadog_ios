@@ -22,12 +22,21 @@ class InsuranceViewController: UIViewController {
     @IBOutlet weak var commentTextview: UITextView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var dateView: UIView!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Colors.colorWithHexString(COLOR_BACKGROUND_VIEW)
+        
+        // Don't use IQKeyboardManager for this field
+        renewaldateTextfield.inputAccessoryView = UIView()
 
         getInsurance()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        dateView.hidden = true
     }
     
     func getInsurance() {
@@ -128,7 +137,19 @@ class InsuranceViewController: UIViewController {
         }
     }
     
+    @IBAction func renewaldateTapped(sender: AnyObject) {
+        dateView.hidden = false
+    }
     
+    @IBAction func dateDoneTapped(sender: AnyObject) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.stringFromDate(datePicker.date)
+        renewaldateTextfield.text = date
+        dateView.hidden = true
+    }
+    
+    @IBOutlet weak var dateCancelTapped: UIBarButtonItem!
     @IBAction func editButtonTapped(sender: AnyObject) {
         self.enableFields()
     }
