@@ -34,6 +34,10 @@ class ShowPetViewController: UIViewController {
         medicationButton.setTitleColor(Colors.colorWithHexString(COLOR_BUTTON), forState: .Normal)
         activitiesButton.setTitleColor(Colors.colorWithHexString(COLOR_BUTTON), forState: .Normal)
         
+        
+        // ToDo: IMPORTANT
+        // Should pass pet id and get pet object from API
+        
         showDog()
     }
     

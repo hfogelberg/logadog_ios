@@ -207,6 +207,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     @IBAction func animaltypeChanged(sender: AnyObject) {
         print("Animal type tapped")
+        self.breedTableView.hidden = true
         self.animaltypeTableView.hidden = false
         if let text = animaltypeTextfield.text as String? {
             
@@ -233,6 +234,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
 
     @IBAction func breedFieldChanged(sender: AnyObject) {
         print("Breed tapped")
+        self.animaltypeTableView.hidden = true
         self.breedTableView.hidden = false
         if let text = breedTextfield.text as String? {
             
