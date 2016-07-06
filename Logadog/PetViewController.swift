@@ -39,7 +39,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.animaltypeTableView.delegate = self
         self.animaltypeTableView.dataSource = self
         self.animaltypeTableView.delegate = self
-         
+        
         // Don't use IQKeyboardManager for this field
         dobTextfield.inputAccessoryView = UIView()
         

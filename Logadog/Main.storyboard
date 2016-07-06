@@ -831,7 +831,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="animaltypeChanged:" destination="AV7-l6-dus" eventType="valueChanged" id="1Go-C6-Fzb"/>
+                                    <action selector="animaltypeChanged:" destination="AV7-l6-dus" eventType="editingChanged" id="SOf-Tr-ab7"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWY-IW-aLT">
@@ -845,7 +845,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="breedFieldChanged:" destination="AV7-l6-dus" eventType="valueChanged" id="xss-w5-PLN"/>
+                                    <action selector="breedFieldChanged:" destination="AV7-l6-dus" eventType="editingChanged" id="dKK-wy-Ioy"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehR-JG-8m2">
