@@ -169,6 +169,7 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBAction func dateFieldTapped(sender: AnyObject) {
+        print("Date field tapped")
        dateView.hidden = false
     }
     

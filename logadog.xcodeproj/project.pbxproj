@@ -29,6 +29,7 @@
 		AFB7542B1D26C3E200189572 /* ProdtypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7542A1D26C3E200189572 /* ProdtypeObject.swift */; };
 		AFB7542D1D28FF7600189572 /* ActivityTypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7542C1D28FF7600189572 /* ActivityTypeObject.swift */; };
 		AFB7542F1D29B53F00189572 /* AnimaltypeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7542E1D29B53F00189572 /* AnimaltypeObject.swift */; };
+		AFC9E9AF1D2C605300349C49 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC9E9AE1D2C605300349C49 /* 1.png */; };
 		AFDB2B111CF5B02300236890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB2B101CF5B02300236890 /* AppDelegate.swift */; };
 		AFDB2B181CF5B02300236890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B171CF5B02300236890 /* Assets.xcassets */; };
 		AFDB2B1B1CF5B02300236890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDB2B191CF5B02300236890 /* LaunchScreen.storyboard */; };
@@ -80,6 +81,7 @@
 		AFB7542A1D26C3E200189572 /* ProdtypeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdtypeObject.swift; sourceTree = "<group>"; };
 		AFB7542C1D28FF7600189572 /* ActivityTypeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTypeObject.swift; sourceTree = "<group>"; };
 		AFB7542E1D29B53F00189572 /* AnimaltypeObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimaltypeObject.swift; sourceTree = "<group>"; };
+		AFC9E9AE1D2C605300349C49 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		AFDB2B0D1CF5B02300236890 /* Logadog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logadog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDB2B101CF5B02300236890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFDB2B171CF5B02300236890 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +184,14 @@
 			name = Puchaces;
 			sourceTree = "<group>";
 		};
+		AFC9E9AD1D2C601600349C49 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AFC9E9AE1D2C605300349C49 /* 1.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		AFDB2B041CF5B02300236890 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +213,7 @@
 		AFDB2B0F1CF5B02300236890 /* Logadog */ = {
 			isa = PBXGroup;
 			children = (
+				AFC9E9AD1D2C601600349C49 /* Images */,
 				AFDB2B381CF5D14E00236890 /* Main.storyboard */,
 				AFDB2B221CF5B09800236890 /* Constants */,
 				AFDB2B241CF5B0AC00236890 /* Controllers */,
@@ -352,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFDB2B391CF5D14E00236890 /* Main.storyboard in Resources */,
+				AFC9E9AF1D2C605300349C49 /* 1.png in Resources */,
 				AFDB2B1B1CF5B02300236890 /* LaunchScreen.storyboard in Resources */,
 				AFDB2B181CF5B02300236890 /* Assets.xcassets in Resources */,
 			);

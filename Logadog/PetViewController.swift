@@ -50,7 +50,7 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     override func viewWillAppear(animated: Bool) {
         self.dateView.hidden = true
-//        self.animaltypeTableView.hidden = true
+        self.animaltypeTableView.hidden = true
         self.breedTableView.hidden = true
         
         self.getDistinctBreeds()
@@ -121,10 +121,11 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     @IBAction func dobFieldTapped(sender: AnyObject) {
+        print("Show date view")
         self.dateView.hidden = false
     }
     
-    @IBAction func dobDoneButtonTapped(sender: AnyObject) {
+    @IBAction func dobDonebuttonTapped(sender: AnyObject) {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let dobDate = dateFormatter.stringFromDate(dobPicker.date)
@@ -229,8 +230,9 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         }
     }
     
-    @IBAction func breedfieldCahnged(sender: AnyObject) {
-        print("Breed tappe")
+
+    @IBAction func breedFieldChanged(sender: AnyObject) {
+        print("Breed tapped")
         self.breedTableView.hidden = false
         if let text = breedTextfield.text as String? {
             
