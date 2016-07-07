@@ -38,8 +38,8 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
     override func viewDidAppear(animated: Bool){
         self.colorTableView.hidden = true
         
-        disableFields()
-        getAppearance()
+//        disableFields()
+//        getAppearance()
         getColors()
     }
     
