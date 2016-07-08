@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class MenuTableViewController: UITableViewController {
     
@@ -42,6 +43,37 @@ class MenuTableViewController: UITableViewController {
             performSegueWithIdentifier(SEGUE_CONTACTS, sender: nil)
         } else if indexPath.row == MENU_PURCHACES {
             performSegueWithIdentifier(SEGUE_PURCHACES, sender: nil)
+        } else if indexPath.row == MENU_SIGN_OUT {
+            self.logout()
         }
+    }
+    
+    func logout() {
+        let route = "\(ROUTE_LOGOUT)"
+        
+        RestApiManager.sharedInstance.postRequest(route, params: ["": ""],onCompletion: {(json: JSON) -> () in
+            var status = STATUS_OK
+            print(json)
+            
+            if let statusVal = json["status"].numberValue as Int? {
+                status = statusVal
+            }
+            
+            if status == STATUS_OK {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.navigationController?.popToRootViewControllerAnimated(true)
+                }
+            } else {
+                var message = ""
+                if let messageVal = json["message"].stringValue as String? {
+                    message = messageVal
+                }
+                dispatch_async(dispatch_get_main_queue()) {
+                    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+                    alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+            }
+        })
     }
 }

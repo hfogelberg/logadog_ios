@@ -185,9 +185,9 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
         
         var route = ""
         if self.medication == nil {
-            route = "\(ROUTE_MEDICATION)/\(self.medication.medicationId)"
-        } else {
             route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_MEDICATION)"
+        } else {
+            route = "\(ROUTE_MEDICATION)/\(self.medication.medicationId)"
         }
         
         self.saveMedication(medication, route: route)
