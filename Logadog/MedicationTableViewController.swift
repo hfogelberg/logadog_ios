@@ -66,7 +66,7 @@ class MedicationTableViewController: UITableViewController {
 
     func deleteMedication(index: Int) {
         let medication = medications[index]
-        let message = "Do you want to delete \(medication.product)?"
+        let message = "Do you want to delete \(medication.make)?"
         let ac = UIAlertController(title: "Delete", message: message, preferredStyle: .ActionSheet)
         let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: {(action) -> Void in
             let route = "\(ROUTE_MEDICATION)/\(medication.medicationId)"

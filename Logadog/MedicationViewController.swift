@@ -14,17 +14,23 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
     @IBOutlet weak var prodtypeTextfield: UITextField!
     @IBOutlet weak var makeTextfield: UITextField!
     @IBOutlet weak var amountTextfield: UITextField!
+    @IBOutlet weak var medDateTextfield: UITextField!
     @IBOutlet weak var costTextfield: UITextField!
     @IBOutlet weak var reminderTextfield: UITextField!
     @IBOutlet weak var commentTextview: UITextView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var prodtypesTableview: UITableView!
+    @IBOutlet weak var dateView: UIView!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var dateDoneButton: UIBarButtonItem!
+    @IBOutlet weak var dateCancelButton: UIBarButtonItem!
     
     var petId = ""
     var medication: MedicationObject!
     var auto: [String] = []
     var prodtypes = [String]()
+    var dateFieldType = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +39,17 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
         
         self.prodtypesTableview.delegate = self
         self.prodtypesTableview.dataSource = self
+        
+        self.medDateTextfield.delegate = self
+        self.reminderTextfield.delegate = self
+        
         self.prodtypeTextfield.delegate = self
+        
+        // Don't use IQKeyboardManager for this field
+        self.medDateTextfield.inputAccessoryView = UIView()
+        self.medDateTextfield.inputAccessoryView = UIView()
+        
+        self.dateView.hidden = true
    
         if medication != nil {
             self.showMedication()
@@ -63,7 +79,8 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
     
     func showMedication() {
         self.prodtypeTextfield.text = self.medication.productType
-        self.makeTextfield.text = self.medication.product
+        self.makeTextfield.text = self.medication.make
+        self.medDateTextfield.text = self.medication.medicationDate
         self.amountTextfield.text = self.medication.amount
         self.costTextfield.text = self.medication.cost
         self.reminderTextfield.text = self.medication.reminderDate
@@ -76,12 +93,14 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
         dispatch_async(dispatch_get_main_queue()) {
             self.prodtypeTextfield.borderStyle = .None
             self.makeTextfield.borderStyle = .None
+            self.medDateTextfield.borderStyle = .None
             self.amountTextfield.borderStyle = .None
             self.costTextfield.borderStyle = .None
             self.reminderTextfield.borderStyle = .None
             
             self.prodtypeTextfield.enabled = false
             self.makeTextfield.enabled = false
+            self.medDateTextfield.enabled = false
             self.amountTextfield.enabled = false
             self.costTextfield.enabled = false
             self.reminderTextfield.enabled = false
@@ -99,12 +118,14 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
         dispatch_async(dispatch_get_main_queue()) {
             self.prodtypeTextfield.enabled = true
             self.makeTextfield.enabled = true
+            self.medDateTextfield.enabled = true
             self.amountTextfield.enabled = true
             self.costTextfield.enabled = true
             self.reminderTextfield.enabled = true
         
             self.prodtypeTextfield.borderStyle = .RoundedRect
             self.makeTextfield.borderStyle = .RoundedRect
+            self.medDateTextfield.borderStyle = .RoundedRect
             self.amountTextfield.borderStyle = .RoundedRect
             self.costTextfield.borderStyle = .RoundedRect
             self.reminderTextfield.borderStyle = .RoundedRect
@@ -118,6 +139,7 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
         var productType = ""
         var make = ""
         var amount = ""
+        var medDate = ""
         var cost = ""
         var reminder = ""
         var comment = ""
@@ -132,6 +154,10 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
         
         if let amountVal = self.amountTextfield.text as String? {
             amount = amountVal
+        }
+        
+        if let medDateVal = self.medDateTextfield.text as String? {
+            medDate = medDateVal
         }
         
         if let costVal = self.costTextfield.text as String? {
@@ -151,48 +177,23 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
             "productType": productType,
             "make": make,
             "amount": amount,
+            "medicationDate": medDate,
             "cost": cost,
             "reminder": reminder,
             "comment": comment
         ]
         
+        var route = ""
         if self.medication == nil {
-            self.createMedication(medication)
+            route = "\(ROUTE_MEDICATION)/\(self.medication.medicationId)"
         } else {
-            self.updateMedication(medication)
+            route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_MEDICATION)"
         }
         
+        self.saveMedication(medication, route: route)
     }
     
-    func updateMedication(medication: [String:String] ){
-        let medicationId = self.medication.medicationId
-        let route = "\(ROUTE_MEDICATION)/\(medicationId)"
-        
-        RestApiManager.sharedInstance.postRequest(route, params: medication, onCompletion: {(json:JSON) -> () in
-            var status = STATUS_OK
-            
-            if let statusVal = json["status"].numberValue as Int? {
-                status = statusVal
-            }
-            
-            if status == STATUS_OK {
-                // ToDo!!!
-            } else {
-                var message = ""
-                if let messageVal = json["message"].stringValue as String? {
-                    message = messageVal
-                }
-                dispatch_async(dispatch_get_main_queue()) {
-                    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
-                    alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
-                    self.presentViewController(alertController, animated: true, completion: nil)
-                }
-            }
-        })
-    }
-    
-    func createMedication(medication: [String:String]) {
-        let route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_MEDICATION)"
+    func saveMedication(medication: [String:String], route: String) {
         RestApiManager.sharedInstance.postRequest(route, params: medication, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
             print(json)
@@ -219,7 +220,38 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
         })
     }
     
-    @IBAction func typefieldChanged(sender: AnyObject) {
+    @IBAction func medDateTapped(sender: AnyObject) {
+        self.dateView.hidden = false
+        self.dateFieldType = DATE_MEDICATION
+    }
+    
+    @IBAction func dateDoneTapped(sender: AnyObject) {
+        self.dateView.hidden = true
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let theDate = dateFormatter.stringFromDate(self.datePicker.date)
+        
+        if dateFieldType == DATE_MEDICATION {
+            medDateTextfield.text = theDate
+        } else {
+            reminderTextfield.text = theDate
+        }
+        dateFieldType = ""
+        self.dateView.hidden = true
+    }
+    
+    @IBAction func reminderDateTapped(sender: AnyObject) {
+        self.dateView.hidden = false
+        self.dateFieldType = DATE_REMINDER
+    }
+    
+    @IBAction func dateCancelTapped(sender: AnyObject) {
+        self.dateView.hidden = true
+        
+    }
+    
+    @IBAction func typeFieldChanged(sender: AnyObject) {
         self.prodtypesTableview.hidden = false
         if let text = self.prodtypeTextfield.text as String? {
             

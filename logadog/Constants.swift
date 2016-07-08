@@ -26,4 +26,8 @@ let PRACTICE = "Practise"
 
 let DEFAULT_LANGUAGE = "en"
 
+// Medication date field
+let DATE_MEDICATION = "DATE_MEDICATION"
+let DATE_REMINDER = "DATE_REMINDER"
+
 
