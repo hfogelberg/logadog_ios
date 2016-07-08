@@ -73,7 +73,6 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         self.breeds.removeAll()
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
-            print(json)
             if let breeds = json["data"].array {
                 for breed in breeds {
                     self.breeds.append(BreedObject(json: breed).name)
@@ -87,7 +86,6 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let route = "\(ROUTE_ANIMAL)?lang=\(DEFAULT_LANGUAGE)"
         
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
-            print(json)
             if let animalTypes = json["data"].array {
                 for type in animalTypes {
                     self.animalTypes.append(AnimaltypeObject(json: type).name)
@@ -181,7 +179,6 @@ class PetViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func postJson(route: String, body:[String:String]) {
         RestApiManager.sharedInstance.postRequest(route, params: body, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
-            print(json)
             
             if let statusVal = json["status"].numberValue as Int? {
                 status = statusVal

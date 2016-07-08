@@ -62,7 +62,6 @@ class RestApiManager: NSObject {
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             if let jsonData = data {
                 let json:JSON = JSON(data: jsonData)
-                print(json)
                 onCompletion(json, error)
             } else {
                 onCompletion(nil, error)
@@ -87,7 +86,6 @@ class RestApiManager: NSObject {
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             if let jsonData = data {
                 let json:JSON = JSON(data: jsonData)
-                print(json)
                 onCompletion(json, error)
             } else {
                 onCompletion(nil, error)
@@ -114,7 +112,6 @@ class RestApiManager: NSObject {
             let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
                 if let jsonData = data {
                     let json:JSON = JSON(data: jsonData)
-                    print(json)
                     onCompletion(json, nil)
                 } else {
                     onCompletion(nil, error)

@@ -53,7 +53,6 @@ class MenuTableViewController: UITableViewController {
         
         RestApiManager.sharedInstance.postRequest(route, params: ["": ""],onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
-            print(json)
             
             if let statusVal = json["status"].numberValue as Int? {
                 status = statusVal

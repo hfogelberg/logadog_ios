@@ -55,8 +55,6 @@ class SignupViewController: UIViewController {
             RestApiManager.sharedInstance.postRequest(ROUTE_USERS, params: body, authenticated: false) {(json:JSON) -> () in
                 var status = ""
                 
-                print(json)
-                
                 if let statusVal = json["status"].rawString() as String? {
                     status = statusVal
                 }

@@ -37,7 +37,6 @@ class PetsTableViewController: UITableViewController {
         if token != "" && userId != "" {
             RestApiManager.sharedInstance.getRequest(ROUTE_PETS, params: "") {(json:JSON) -> () in
                 var status = STATUS_OK
-                print(json)
                 
                 if let statusVal = json["status"].numberValue as Int? {
                     status = statusVal

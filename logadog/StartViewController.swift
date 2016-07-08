@@ -24,65 +24,21 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let token = getToken()
+        let token = TokenController.getToken()
         if !(token ?? "").isEmpty {
-           //let hasValidToken = tokenIsValid(token!)
-            
-            //if hasValidToken == true {
-                // There's a valid token. Show dogs list
                 dispatch_async(dispatch_get_main_queue()) {
                     self.performSegueWithIdentifier("dogsListSegue", sender: self)
                 }
             } else {
-                // There is a token, but it's expired. Log in again
+                // There is a token, but it's expired. User must log in again
                 TokenController.removeTokenAndUser()
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     self.performSegueWithIdentifier("loginSegue", sender: self)
                 }
-            }
         }
     }
+}
     
-    func getToken() -> String? {
-        var token = ""
-        
-        if let tokenVal = TokenController.getToken() as String? {
-            token = tokenVal
-        }
-        
-        return token
-    }
-    
-//    func tokenIsValid(token: String) -> Bool {
-//        var retVal = true
-//        let params = "token=\(token)"
-//        
-//        RestApiManager.sharedInstance.getRequest(ROUTE_CHECK_TOKEN, params: params, onCompletion: {(json:JSON) ->() in            var status = STATUS_OK
-//            
-//            print(json)
-//            
-//            if let statusVal = json["status"].stringValue as String? {
-//                status = statusVal
-//            }
-//            
-//            if status != STATUS_OK {
-//                var message = ""
-//                if let messageVal = json["message"].stringValue as String? {
-//                    message = messageVal
-//                }
-//                
-//                dispatch_async(dispatch_get_main_queue()) {
-//                    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
-//                    alertController.addAction(UIAlertAction(title: "Cacel", style: .Cancel, handler: nil))
-//                    self.presentViewController(alertController, animated: true, completion: nil)
-//                }
-//                
-//                TokenController.removeTokenAndUser()
-//                retVal = false
-//            }
-//        })
-//        
-//        return retVal
-//    }
-//}
+
+

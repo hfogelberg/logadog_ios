@@ -29,7 +29,6 @@ class PuchaceTableViewController: UITableViewController {
         self.purchaces.removeAll()
         let route = "\(ROUTE_PURCHACE)"
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
-            print(json)
             if let purchaces = json["data"].array {
                 for purchace in purchaces {
                     self.purchaces.append(PurchaceObject(json: purchace))

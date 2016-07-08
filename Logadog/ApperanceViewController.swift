@@ -38,8 +38,8 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
     override func viewDidAppear(animated: Bool){
         self.colorTableView.hidden = true
         
-//        disableFields()
-//        getAppearance()
+        disableFields()
+        getAppearance()
         getColors()
     }
     
@@ -48,7 +48,6 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
         let route = "\(ROUTE_COLORS)"
         
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
-            print(json)
             if let colors = json["data"].array {
                 for color in colors {
                     self.colors.append(ColorObject(json: color).name)
@@ -186,8 +185,6 @@ class ApperanceViewController: UIViewController, UITextFieldDelegate, UITableVie
         let route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_APPEARANCE)"
         RestApiManager.sharedInstance.postRequest(route, params: appearance, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
-            
-            print(json)
             
             if let statusVal = json["status"].numberValue as Int? {
                 status = statusVal

@@ -68,7 +68,6 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
         let route = "\(ROUTE_PROD_TYPES)"
         
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
-            print(json)
             if let prodtypes = json["data"].array {
                 for prod in prodtypes {
                     self.prodtypes.append(ProdtypeObject(json: prod).name)
@@ -196,7 +195,6 @@ class MedicationViewController: UIViewController, UITextFieldDelegate, UITableVi
     func saveMedication(medication: [String:String], route: String) {
         RestApiManager.sharedInstance.postRequest(route, params: medication, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
-            print(json)
             
             if let statusVal = json["status"].numberValue as Int? {
                 status = statusVal

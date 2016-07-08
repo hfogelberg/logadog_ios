@@ -26,7 +26,6 @@ class MedicationTableViewController: UITableViewController {
         let route = "\(ROUTE_PETS)/\(petId)/\(ROUTE_MEDICATION)"
         
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
-            print(json)
             if let medications = json["data"].array {
                 for medication in medications {
                     self.medications.append(MedicationObject(json: medication))

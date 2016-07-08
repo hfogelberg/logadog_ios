@@ -71,7 +71,6 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->() in
-            print(json)
             if let types = json["data"].array {
                 for type in types {
                     self.activityTypes.append(ActivityTypeObject(json: type).name)
@@ -271,7 +270,6 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
         let route = "\(ROUTE_PETS)/\(self.pet.id)/\(ROUTE_ACTIVITY)?lang=\(DEFAULT_LANGUAGE)"
         RestApiManager.sharedInstance.postRequest(route, params: activity, onCompletion: {(json: JSON) -> () in
             var status = STATUS_OK
-            print(json)
             
             if let statusVal = json["status"].numberValue as Int? {
                 status = statusVal
