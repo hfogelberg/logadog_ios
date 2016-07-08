@@ -167,8 +167,6 @@ class ContactViewController: UIViewController {
         })
     }
     
-
-    
     @IBAction func editButtonTapped(sender: AnyObject) {
         dispatch_async(dispatch_get_main_queue()) {
             self.nameTextfield.enabled = true

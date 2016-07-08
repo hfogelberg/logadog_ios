@@ -25,7 +25,6 @@ class PuchaceViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    
     @IBAction func saveButtonTapped(sender: AnyObject) {
         var object = ""
         var date = ""
