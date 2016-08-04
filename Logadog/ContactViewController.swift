@@ -36,6 +36,7 @@ class ContactViewController: UIViewController {
     func getContact() {
         let route = "\(ROUTE_CONTACT)/\(self.contactId)"
         RestApiManager.sharedInstance.getRequest(route, onCompletion: { (json: JSON) -> () in
+            // ToDo: Error handling
             print(json["data"])
             self.displayContact(json["data"])
         })

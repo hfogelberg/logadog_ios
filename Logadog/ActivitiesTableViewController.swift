@@ -99,7 +99,6 @@ class ActivitiesTableViewController: UITableViewController {
         presentViewController(ac, animated: true, completion: nil)
     }
 
-
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "activitySegue" {
@@ -112,7 +111,8 @@ class ActivitiesTableViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 print("Index: \(self.activities[indexPath.row])")
                 let activity = self.activities[indexPath.row]
-                nextScene.activity = activity
+                nextScene.activityId = activity.activityId
+                nextScene.pet = self.pet
             }
         }
     }

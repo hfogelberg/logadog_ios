@@ -22,6 +22,7 @@ class ActivityObject {
     var activityDate = ""
     
     init(json:JSON) {
+        print(json)
         activityId = json["_id"].stringValue
         activityType = json["activityType"].stringValue
         city = json["city"].stringValue

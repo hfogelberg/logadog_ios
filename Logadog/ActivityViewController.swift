@@ -25,7 +25,9 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var activitytypeTableview: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
+    var activityId = ""
     var activity: ActivityObject!
     var pet: PetObject!
     var isCompetition = PRACTICE
@@ -34,20 +36,22 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.activitytypeTableview.delegate = self
         self.activitytypeTableview.dataSource = self
         self.typeTextfield.delegate = self
+        
+        self.getActivityTypes()
         
         // Don't use IQKeyboardManager for this field
         dateTextField.inputAccessoryView = UIView()
     }
     
     override func viewWillAppear(animated: Bool) {
-        dateView.hidden = true
+//        dateView.hidden = true
         
-        if activity != nil {
-            self.showActivity()
+        if activityId != "" {
+            self.getActivity()
             self.saveButton.enabled = false
             self.editButton.enabled = true
         } else {
@@ -56,9 +60,34 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         self.activitytypeTableview.hidden = true
-        self.getActivityTypes()
     }
     
+    func getActivity() {
+        let route = "\(ROUTE_PETS)/\(ROUTE_ACTIVITY)/\(activityId)"
+        RestApiManager.sharedInstance.getRequest(route, onCompletion: {(json:JSON)->()in
+            print(json)
+            if let status = json["status"].intValue as Int? {
+                if status == STATUS_OK {
+                    let data = json["data"]
+                    print("Get activity: Activity: " + data.stringValue)
+                    self.activity = ActivityObject(json: data)
+                    print("Get activity. ActivityType: " + self.activity.activityType)
+                    self.showActivity()
+//                    if self.activity = json["data"] as JSON? {
+//                        print(activity)
+//                        if activity != nil {
+//                            self.showActivity()
+//                        } else {
+//                            self.enableFields()
+//                        }
+//                    }
+                } else {
+                    // ToDo: Handle error
+                    
+                }
+            }
+        })
+    }
     
     func getActivityTypes() {
         self.activityTypes.removeAll()
@@ -80,39 +109,42 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func showActivity() {
-        self.typeTextfield.text = activity.activityType
-        self .clubTextField.text = activity.club
-        self.cityTextField.text = activity.city
-        self.resultTextField.text = activity.result
-        self.positionTextField.text = activity.position
-        self.timeTextField.text = activity.time
-        self.commentTextView.text = activity.comment
-        self.dateTextField.text = activity.activityDate
+        dispatch_async(dispatch_get_main_queue()) {
+            print("Show activity. ActivityType: " + self.activity.activityType)
+            self.typeTextfield.text = self.activity.activityType
+            self .clubTextField.text = self.activity.club
+            self.cityTextField.text = self.activity.city
+            self.resultTextField.text = self.activity.result
+            self.positionTextField.text = self.activity.position
+            self.timeTextField.text = self.activity.time
+            self.commentTextView.text = self.activity.comment
+            self.dateTextField.text = self.activity.activityDate
 
-        if self.isCompetition == COMPETITION {
-            self.isCompetitionSwitch.selectedSegmentIndex = 0
-        } else {
-            self.isCompetitionSwitch.selectedSegmentIndex = 1
+            if self.isCompetition == COMPETITION {
+                self.isCompetitionSwitch.selectedSegmentIndex = 0
+            } else {
+                self.isCompetitionSwitch.selectedSegmentIndex = 1
+            }
+            
+            self.typeTextfield.enabled = false
+            self.clubTextField.enabled = false
+            self.cityTextField.enabled = false
+            self.resultTextField.enabled = false
+            self.positionTextField.enabled = false
+            self.timeTextField.enabled = false
+            self.dateTextField.enabled = false
+            self.commentTextView.editable = false
+            self.isCompetitionSwitch.enabled = false
+            self.dateTextField.enabled = false
+            
+            self.typeTextfield.borderStyle = .None
+            self.clubTextField.borderStyle = .None
+            self.cityTextField.borderStyle = .None
+            self.resultTextField.borderStyle = .None
+            self.positionTextField.borderStyle = .None
+            self.timeTextField.borderStyle = .None
+            self.dateTextField.borderStyle = .None
         }
-        
-        self.typeTextfield.enabled = false
-        self.clubTextField.enabled = false
-        self.cityTextField.enabled = false
-        self.resultTextField.enabled = false
-        self.positionTextField.enabled = false
-        self.timeTextField.enabled = false
-        self.dateTextField.enabled = false
-        self.commentTextView.editable = false
-        self.isCompetitionSwitch.enabled = false
-        self.dateTextField.enabled = false
-        
-        self.typeTextfield.borderStyle = .None
-        self.clubTextField.borderStyle = .None
-        self.cityTextField.borderStyle = .None
-        self.resultTextField.borderStyle = .None
-        self.positionTextField.borderStyle = .None
-        self.timeTextField.borderStyle = .None
-        self.dateTextField.borderStyle = .None
     }
     
     @IBAction func isCompetitionChanged(sender: AnyObject) {
@@ -294,6 +326,7 @@ class ActivityViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBAction func activitytypeChanged(sender: AnyObject) {
+        print("Activity type")
         self.activitytypeTableview.hidden = false
         
         if let text = typeTextfield.text as String? {
